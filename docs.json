@@ -20,22 +20,6 @@
           "anchor": "Releases",
           "icon": "github",
           "href": "https://github.com/Gerome-Elassaad/codinit-app/releases"
-        },
-
-        {
-          "tab": "Support",
-          "groups": [
-            {
-              "group": "Support",
-              "icon": "life-buoy",
-              "expanded": false,
-              "pages": [
-                "support/frequently-asked-questions",
-                "support/integration-issues",
-                "support/troubleshooting"
-              ]
-            }
-          ]
         }
       ]
     },
