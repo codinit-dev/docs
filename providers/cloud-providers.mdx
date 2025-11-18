@@ -1,100 +1,146 @@
 ---
-title: "Cloud Providers"
-description: "Connect CodinIT with 19+ AI providers for intelligent code generation."
+title: 'Cloud Providers'
+description: 'Connect CodinIT with 19+ AI providers including cloud models, local inference, and specialized services.'
 ---
 
-## Supported Providers
+### Enterprise & Research Models
 
 <CardGroup cols={2}>
-  <Card title="Anthropic" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=7637711b686e2c7f7d86ee532820018a" href="/providers/anthropic" data-og-width="24" width="24" data-og-height="24" height="24" data-path="assets/ai-icons/anthropic.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=f91a50197a64dbb1595004311251a443 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=017727abd4f32ba15c198948def3048a 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=3866aebe6b231da0392687fbc4829ed6 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=8b55e6eec05b34e94a95874d701907c5 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=47cfaad164b0c01b9d0fa21586ec5a6f 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/anthropic.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=bd7470d848baaf47e21d672182cef870 2500w">
+  <Card title="Anthropic" icon="/assets/ai-icons/anthropic.svg" href="/providers/anthropic">
     Claude models with advanced reasoning capabilities
   </Card>
 
-  <Card title="OpenAI" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=180bef9ded94e43a50bc9cd0cae43f27" href="/providers/openai" data-og-width="24" width="24" data-og-height="24" height="24" data-path="assets/ai-icons/openai.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=7b4d3bc9394744f910db9f85f1c7f557 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=1989996596d8f8d6f74354e469368f78 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=2741bb44beb9f78e0a60654e0a2a569a 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=e600cad41658943975d2d20285398848 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=85162940c7d463434614ff4f80ec699e 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openai.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=3ef2c8467307d8baed92cba4d169c33c 2500w">
-    GPT-5 and GPT-5 models for versatile AI assistance
-  </Card>
+<Card title="OpenAI" icon="/assets/ai-icons/openai.svg" href="/providers/openai">
+  GPT-4 and GPT-3.5 models for versatile AI assistance
+</Card>
 
-  <Card title="Google" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=32b274fd8e60c3fc47a7a49d597ac9b4" href="/providers/google" data-og-width="24" width="24" data-og-height="24" height="24" data-path="assets/ai-icons/google.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=83ac398aaead415a0717478facaec687 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=08fab67bf2a7eaf08e8e9c1923b4d8df 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=658769047f69171f7c2392d8d6ced0cc 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=8c2834dd1f79181678e3c7a4b56aedeb 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=bf95d47b47595f0f6826cf1b920dea84 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/google.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=10b1371bfcbd63a3a2b269f2913c886e 2500w">
-    Gemini models with multimodal capabilities
-  </Card>
+<Card title="Google" icon="/assets/ai-icons/google.svg" href="/providers/google">
+  Gemini models with multimodal capabilities
+</Card>
 
-  <Card title="Mistral AI" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=47552b8f02966cef022bfa42ef17b7c0" href="/providers/mistral-ai" data-og-width="16" width="16" data-og-height="15" height="15" data-path="assets/ai-icons/mistral.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=d4a8e4fea88057fe787d2319305c4146 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=33fd8292e515cc351718abe219506d5d 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=5987c1d2647eaea246fda9acaead5de5 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=c5fc20046979e585fee837e2441c6de0 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=b13707a09dfd08c2f04f93e75d4f70ad 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/mistral.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=af91e767715baf2f6eb9ae6dccf39fa2 2500w">
-    Open-source and commercial Mistral models
+  <Card title="DeepSeek" icon="/assets/ai-icons/deepseek.svg" href="/providers/deepseek">
+    Advanced reasoning models for complex tasks
   </Card>
 </CardGroup>
 
-### Specialized Providers
+### Specialized & Fast Inference
 
-<CardGroup cols={2}>
-  <Card title="Groq" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=bbf361e53ea0bfcdf2792028b338c773" href="/providers/groq" data-og-width="26" width="26" data-og-height="26" height="26" data-path="assets/ai-icons/groq.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=8a2178df2a4d9924be83a360563302ce 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=4e075b8ced8819a2fbd1b83eac602705 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=f7897049735e65fc9ae2ad8d9f921a02 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=20a43bf5960a03f0712ed1708eb59d72 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=555e7a5de97d00f06ac9b073b0e02912 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/groq.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=550a087b99b671db90a53b2f5d0a534d 2500w">
+<CardGroup cols={3}>
+  <Card title="Groq" icon="/assets/ai-icons/groq.svg" href="/providers/groq">
     Ultra-fast inference with LPU technology
   </Card>
 
-  <Card title="DeepSeek" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=5940ee1928bd469af0dc50ee64a24d9d" href="/providers/deepseek" data-og-width="16" width="16" data-og-height="16" height="16" data-path="assets/ai-icons/deepseek.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=eabfc9664a4e22ac07277a3e28970fba 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=0a8c8337e8349a1fa1dac46380ea20e9 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=066e62fdfcfade6e379ddb872e782f5b 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=922b039a98d4211e264a2831b78638e5 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=4a247ed62f464e6e079aca5fb65483a5 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/deepseek.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=8446b226d7b99367a25368c0b5a468ba 2500w">
-    Advanced reasoning models for complex tasks
-  </Card>
+<Card title="Together AI" icon="/assets/ai-icons/together.svg" href="/providers/togetherai">
+  Access to 50+ open-source models
+</Card>
 
-  <Card title="Fireworks" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=2de9060e1f6bb6d0c8b21e20bb23ffba" href="/providers/fireworks" data-og-width="638" width="638" data-og-height="315" height="315" data-path="assets/ai-icons/fireworks.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=d6dd03640c683c19987d418f1e462445 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=7204c26d26e7a70353d3b57f07b971c3 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=f46ca7a81e9f24b0e9b61d681d15596b 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=bec9fbda950eba9c4f995ca694ade6a3 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=45e8233379f931db2d26dcb3f80566f3 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/fireworks.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=aa7e4325199ae9fa3a93566f16e2da47 2500w">
-    Fast and cost-effective model serving
-  </Card>
+<Card title="Hyperbolic" icon="/assets/ai-icons/hyperbolic.svg" href="/providers/hyperbolic">
+  Optimized inference for open-source models
+</Card>
 
-  <Card title="OpenRouter" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=93ad9875f5ef84a3e32f8768eef2f95a" href="/providers/openrouter" data-og-width="200" width="200" data-og-height="200" height="200" data-path="assets/ai-icons/openrouter.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=6891ae8e40543ebcb99b1766ff2f2fb8 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=cf129f751cbe10e951e87bbaf1a7fd25 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=e06db282eb7042b5899d9f2fbc316965 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=28caf88de0656073b721c3073a8ed43a 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=e10103f3bcc589fe2b9325b888b39cd0 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/openrouter.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=86f0b0f52ec5225de0356f510bf2caee 2500w">
-    Access multiple models through a unified API
-  </Card>
+<Card title="Perplexity" icon="/assets/ai-icons/perplexity.svg" href="/providers/perplexity">
+  AI models with integrated web search
+</Card>
 
-  <Card title="XAI Grok" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=5cf6181fd4d4678c910af8e55bc4456d" href="/providers/xai-grok" data-og-width="440" width="440" data-og-height="483" height="483" data-path="assets/ai-icons/xai.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=f65505c7ef963f05fb3b69cec3762df2 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=98980401561f2016d58e0385d9ecb8a0 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=c476f3254b3efa59c5af5ef3db124ea5 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=87da3cf0b0390f2b8e5059212e77fd16 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=727b2592a6ffafdc668303ec85e3ea4e 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/xai.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=5657354fb99a46269264244462ed667c 2500w">
+  <Card title="XAI Grok" icon="/assets/ai-icons/xai.svg" href="/providers/xai-grok">
     X.AI's Grok models with real-time knowledge
   </Card>
 </CardGroup>
 
-### AWS Integration
+### Open Source & Community
 
-<CardGroup cols={1}>
-  <Card title="AWS Bedrock" icon="https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=67cfe6aa33cc8ebe4e49ce683924cb99" href="/providers/aws-bedrock" data-og-width="16" width="16" data-og-height="16" height="16" data-path="assets/ai-icons/bedrock.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=280&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=4712b28281a0b3e15cafd37fd793c5ef 280w, https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=560&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=c551be7cd6990c8f49105e80eed13e85 560w, https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=840&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=01fbbd680c247ab5ff2220434d4bf2cd 840w, https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=1100&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=cf6cca4e0df366333572ae0f760105e3 1100w, https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=1650&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=cedd0d6b21fae77ea6244d3b10b661f2 1650w, https://mintcdn.com/codinitdev/liNhdvOQJu4vOSbz/assets/ai-icons/bedrock.svg?w=2500&fit=max&auto=format&n=liNhdvOQJu4vOSbz&q=85&s=f9b5ddc95847c73fce7a1aaeb45a86f5 2500w">
-    AWS Bedrock
+<CardGroup cols={3}>
+  <Card title="Cohere" icon="/assets/ai-icons/cohere.svg" href="/providers/cohere">
+    Command R series models for coding and analysis
+  </Card>
+
+<Card title="HuggingFace" icon="/assets/ai-icons/huggingface.svg" href="/providers/huggingface">
+  Open-source model hub with community models
+</Card>
+
+<Card title="Mistral AI" icon="/assets/ai-icons/mistral.svg" href="/providers/mistral-ai">
+  Open-source and commercial Mistral models
+</Card>
+
+  <Card title="Moonshot" icon="/assets/ai-icons/moonshot.svg" href="/providers/moonshot">
+    Chinese language models with Kimi series
   </Card>
 </CardGroup>
 
-### Local Models
+### Unified & Routing
 
 <CardGroup cols={2}>
-  <Card title="Ollama" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=fd30588a5b32b65b3b348224f39d90e7" href="/providers/ollama" data-og-width="24" width="24" data-og-height="24" height="24" data-path="assets/ai-icons/ollama.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=d203d97980d640d7c2004009c7847b2b 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=84f3520718ad0efadb955e0206fe5995 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=8899bb165cefac86e119589e150d4e93 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=0aa709f6a603f80c3b75bb9615924d2e 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=9fd9c90416e027f8b91e60fd535c23c5 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/ollama.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=14a48a86284fb7d1f7ca6fc655bcb45f 2500w">
+  <Card title="OpenRouter" icon="/assets/ai-icons/openrouter.svg" href="/providers/openrouter">
+    Access multiple models through a unified API
+  </Card>
+
+  <Card title="OpenAI Compatible" icon="/assets/ai-icons/openai.svg" href="/providers/openai-like">
+    Connect to any OpenAI-compatible API endpoint
+  </Card>
+</CardGroup>
+
+### Cloud & Enterprise
+
+<CardGroup cols={2}>
+  <Card title="AWS Bedrock" icon="/assets/ai-icons/bedrock.svg" href="/providers/aws-bedrock">
+    Enterprise-grade AI models through AWS infrastructure
+  </Card>
+
+  <Card title="GitHub Models" icon="/assets/ai-icons/github.svg" href="/providers/github">
+    Access OpenAI and other models through GitHub
+  </Card>
+</CardGroup>
+
+### Local & Private
+
+<CardGroup cols={2}>
+  <Card title="Ollama" icon="/assets/ai-icons/ollama.svg" href="/providers/ollama">
     Run open-source models locally with Ollama
   </Card>
 
-  <Card title="LM Studio" icon="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=43fa42d9790be8d21be15e0e42ae3696" href="/running-models-locally/lm-studio" data-og-width="200" width="200" data-og-height="200" height="200" data-path="assets/ai-icons/lmstudio.svg" data-optimize="true" data-opv="3" srcSet="https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=280&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=eb926ac307a8e1eccd9ac80f41aae325 280w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=560&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=df05cb8d89144659fc332b1905e766d8 560w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=840&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=a99e67cd9c1b1e61ca9ced33e929738c 840w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=1100&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=5a334c82795ef8ed0df0d7fd4466b8d4 1100w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=1650&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=13b62fc6260c7491a07f5b727c35a876 1650w, https://mintcdn.com/codinitdev/NU0f94GmbRUSPIZu/assets/ai-icons/lmstudio.svg?w=2500&fit=max&auto=format&n=NU0f94GmbRUSPIZu&q=85&s=1a05328e0b2b96427612a1d60b4f289a 2500w">
+  <Card title="LM Studio" icon="/assets/ai-icons/lmstudio.svg" href="/providers/lmstudio">
     Desktop app for running models locally
   </Card>
 </CardGroup>
 
 ## Choosing the Right Provider
 
-Consider these factors when selecting an AI provider:
+With 19+ AI providers available, selecting the right model depends on your specific needs. Consider these key factors:
 
 <AccordionGroup>
   <Accordion title="Performance & Speed">
-    * **Fastest inference**: Groq, Fireworks
-    * **Best reasoning**: Anthropic Claude, DeepSeek
-    * **Balanced performance**: OpenAI GPT-5, Google Gemini
+    * **Ultra-fast inference**: Groq (LPU technology), Together AI
+    * **Best reasoning**: Anthropic Claude, DeepSeek, OpenAI o1
+    * **Balanced performance**: OpenAI GPT-4, Google Gemini, Cohere
+    * **Local speed**: Ollama, LM Studio (no network latency)
   </Accordion>
 
-  <Accordion title="Cost Considerations">
-    * **Free/Low-cost**: Local models (Ollama), OpenRouter
-    * **Pay-per-use**: Most cloud providers
-    * **Enterprise**: AWS Bedrock, Anthropic
-  </Accordion>
+<Accordion title="Cost Considerations">
+  * **Free/Low-cost**: Local models (Ollama, LM Studio), OpenRouter * **Budget-friendly**: Together AI, HuggingFace,
+  Hyperbolic * **Premium**: Anthropic, OpenAI, Google (higher quality) * **Enterprise**: AWS Bedrock, GitHub Models
+  (included benefits)
+</Accordion>
 
-  <Accordion title="Privacy & Security">
-    * **Highest privacy**: Local models (Ollama, LM Studio)
-    * **Enterprise-grade**: AWS Bedrock
-    * **SOC 2 compliant**: Anthropic, OpenAI, Google
-  </Accordion>
+<Accordion title="Privacy & Security">
+  * **Maximum privacy**: Local models (Ollama, LM Studio) - data never leaves your device * **Enterprise-grade**: AWS
+  Bedrock, Anthropic (SOC 2 compliant) * **Cloud security**: OpenAI, Google, Cohere (encrypted transmission) *
+  **Specialized**: Perplexity (search integration with privacy considerations)
+</Accordion>
 
-  <Accordion title="Model Capabilities">
-    * **Code generation**: All providers support coding tasks
-    * **Multimodal**: Google Gemini, GPT-5 Vision
-    * **Long context**: Claude (200K), Gemini (1M+)
-    * **Function calling**: OpenAI, Anthropic, Google
+<Accordion title="Model Capabilities">
+  * **Code generation**: All providers support coding, specialized: Cohere, Together AI, GitHub * **Multimodal**: Google
+  Gemini, OpenAI GPT-4 Vision, Moonshot * **Long context**: Claude (200K+), Gemini (1M+), GPT-4 (128K) * **Function
+  calling**: OpenAI, Anthropic, Google, Cohere * **Search integration**: Perplexity (real-time web search) *
+  **Multilingual**: Cohere, Google, Moonshot (Chinese), Mistral
+</Accordion>
+
+  <Accordion title="Use Case Optimization">
+    * **Rapid prototyping**: Groq, Together AI (fast iteration)
+    * **Production applications**: Anthropic, OpenAI, AWS Bedrock
+    * **Research & analysis**: DeepSeek, Perplexity, Cohere
+    * **Offline development**: Ollama, LM Studio
+    * **Enterprise integration**: AWS Bedrock, GitHub Models
+    * **Cost optimization**: Hyperbolic, HuggingFace, OpenRouter
   </Accordion>
 </AccordionGroup>
 
@@ -102,52 +148,82 @@ Consider these factors when selecting an AI provider:
 
 <Steps>
   <Step title="Choose Your Provider">
-    Select a provider from the list above based on your needs
+    Select from 19+ providers based on your needs: speed, cost, capabilities, or privacy requirements
   </Step>
 
-  <Step title="Get API Credentials">
-    Sign up for the provider and obtain your API key
-  </Step>
+<Step title="Get API Credentials">
+  For cloud providers: Sign up and get API keys. For local providers: Download and install the software
+</Step>
 
-  <Step title="Configure in CodinIT">
-    Add your credentials in CodinIT's settings under AI Providers
-  </Step>
+<Step title="Configure in CodinIT">
+  Add your credentials in CodinIT's settings under AI Providers or use provider-specific setup prompts
+</Step>
 
-  <Step title="Select Your Model">
-    Choose the specific model you want to use for your project
+<Step title="Select Your Model">
+  Choose from available models within your selected provider, considering context limits and capabilities
+</Step>
+
+  <Step title="Start Building">
+    Begin using AI assistance in your development workflow with the configured provider
   </Step>
 </Steps>
 
 ## Configuration Tips
 
 <Tip>
-  **Multi-Provider Setup**: You can configure multiple providers simultaneously and switch between them based on your task requirements.
+  **Multi-Provider Setup**: Configure multiple providers simultaneously and switch between them based on task
+  requirements, cost considerations, or performance needs.
 </Tip>
 
 <Info>
-  **API Key Security**: Your API keys are stored locally and never sent to CodinIT servers. They are only used to communicate directly with your chosen AI provider.
+  **API Key Security**: Your API keys are stored locally and never transmitted to CodinIT servers. They are only used to
+  communicate directly with your chosen AI provider.
 </Info>
 
 <Warning>
-  **Rate Limits**: Each provider has different rate limits. Check your provider's documentation for details.
+  **Rate Limits**: Each provider has different rate limits and usage quotas. Monitor your usage and consider provider
+  switching for high-volume workloads.
 </Warning>
+
+<Callout type="tip">
+  **Provider Switching**: Easily switch between providers mid-project. CodinIT maintains separate contexts for different
+  providers, allowing you to leverage specialized capabilities as needed.
+</Callout>
+
+<Callout type="info">
+  **Local vs Cloud**: Local providers (Ollama, LM Studio) offer maximum privacy but require hardware resources. Cloud
+  providers offer convenience and advanced features but involve data transmission.
+</Callout>
 
 ## Next Steps
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Model Configuration" icon="sliders" href="/model-config/context-windows">
     Learn about context windows and model parameters
   </Card>
 
-  <Card title="Compare Models" icon="chart-line" href="/model-config/model-comparison">
-    Compare different models and their capabilities
-  </Card>
+<Card title="Compare Models" icon="chart-line" href="/model-config/model-comparison">
+  Compare different models and their capabilities
+</Card>
 
-  <Card title="Run Models Locally" icon="server" href="/running-models-locally/local-model-setup">
-    Set up local models for complete privacy
-  </Card>
+<Card title="Run Models Locally" icon="server" href="/running-models-locally/local-model-setup">
+  Set up local models for complete privacy
+</Card>
 
-  <Card title="Prompt Engineering" icon="book" href="/prompting/prompt-engineering-guide">
-    Optimize your prompts for better results
+<Card title="Prompt Engineering" icon="book" href="/prompting/prompt-engineering-guide">
+  Optimize your prompts for better results
+</Card>
+
+<Card title="Token Efficiency" icon="zap" href="/prompting/maximize-token-efficiency">
+  Optimize costs and performance across providers
+</Card>
+
+  <Card title="Integration Guides" icon="plug" href="/integrations/supabase">
+    Connect with databases, deployments, and APIs
   </Card>
 </CardGroup>
+
+<Callout type="success">
+  **Provider Ecosystem**: With 19+ AI providers, you can choose the perfect model for every task - from rapid
+  prototyping to production deployment, from cost optimization to maximum privacy.
+</Callout>

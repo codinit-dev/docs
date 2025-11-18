@@ -1,99 +1,215 @@
 ---
-title: "Chat Mode"
-description: "Chat with CodinIT to get help without immediately generating code"
+title: Discussion Mode
+description: Technical consultant mode for collaborative problem-solving and guidance
 ---
 
-<img
-  className="dark:hidden block rounded-lg"
-  src="/assets/images/discuss-light.webp"
-  alt="chat mode light"
-/>
+Discussion mode transforms the AI into a technical consultant who provides guidance, plans, and structured approaches to development challenges without directly implementing code.
 
-<img
-  className="hidden dark:block rounded-lg"
-  src="/assets/images/discuss-dark.webp"
-  alt="chat mode dark"
-/>
+## Overview
 
-Each agent in CodinIT has its own chat mode where you can plan and ask questions without making changes to your code.
+In discussion mode, the AI acts as an experienced senior software engineer and technical consultant, offering strategic advice, architectural guidance, and detailed planning for your development projects.
 
-With **Claude Agent, this is called Plan Mode**, and with the **v1 Agent (legacy), it's called Discussion Mode**. Both modes provide project-specific help, drawing on CodinIT’s documentation and other online sources when needed.
+## Key Features
 
-Using Plan or Discussion Mode lets you explore ideas safely, save tokens by avoiding unnecessary code exchanges, and ensure you get things right before moving into Build Mode.
+- **Technical Consulting**: Expert guidance on development approaches and best practices
+- **Strategic Planning**: Structured plans for implementing features and solving problems
+- **Code Review Guidance**: Advice on code quality, architecture, and optimization
+- **Technology Recommendations**: Suggestions for tools, frameworks, and libraries
+- **Debugging Strategies**: Systematic approaches to identifying and resolving issues
 
-## Features
+## How It Works
 
-### Project context awareness
+When you activate discussion mode, the AI switches to a specialized prompt that focuses on:
 
-Every discussion message includes your project codebase for context-aware responses, as well as the most recent messages.
+- **Planning Over Implementation**: Providing detailed plans rather than writing code
+- **Educational Approach**: Explaining concepts and teaching best practices
+- **Strategic Thinking**: Considering long-term implications and scalability
+- **Collaborative Problem-Solving**: Working with you to develop optimal solutions
 
-Because Plan and Discussion Modes have the entire context of your projects, there are a wide range of use cases, including:
+## When to Use Discussion Mode
 
-* Debugging assistance
-* Recommendations on tools, libraries and APIs
-* Product/project decision-making
-* Suggestions on how to improve design
-* Suggestions for new features
-* Understanding and integrating external APIs
-* Generating implementation plans for later execution
-* Use the Inspector tool to highlight a component within a page, and discuss potential changes
+### Architecture & Planning
 
-### Web research
+- Designing system architecture for new applications
+- Planning database schemas and data models
+- Choosing between different technical approaches
+- Evaluating framework and library options
 
-When CodinIT answers a question, it can pull in real-time, up-to-date information from trusted web sources instead of just relying on what it was trained on. This helps ensure the answers are accurate, relevant, and not outdated. When a search has been conducted, CodinIT displays the sources at the top of the response.
+### Code Quality & Best Practices
 
-For example:
+- Reviewing existing code for improvements
+- Learning modern development patterns
+- Understanding design principles and their application
+- Getting guidance on code organization and structure
 
-* If you ask about the latest Stripe API updates, CodinIT won't just rely on old knowledge; it will search for the latest documentation and give you a more reliable answer.
-* If you ask about a bug in a popular library, it can check forums or support pages for the most recent solutions.
+### Problem-Solving & Debugging
 
-### Quick action buttons
+- Analyzing complex bugs or performance issues
+- Developing systematic debugging strategies
+- Understanding error patterns and root causes
+- Planning refactoring and optimization efforts
 
-If your question or prompt has an intuitive action associated with it, CodinIT will likely generate quick action buttons at the end of its response.
+### Learning & Skill Development
 
-With these buttons, you can take immediate actions such as:
+- Understanding advanced programming concepts
+- Learning new technologies and frameworks
+- Exploring industry best practices
+- Developing problem-solving methodologies
 
-* **Implement this plan** (auto-switches to Build Mode to apply changes)
-* **Show an example**
-* **Refine this idea**
+## Discussion Mode Interface
 
-The quick action buttons are contextual and will vary depending on your project and the topic of discussion.
+### Activating Discussion Mode
 
-## How to use Plan Mode
+Click the "Discuss" button in the chat interface to switch to technical consultant mode. The AI will confirm the mode change and be ready to provide consultative guidance.
 
-Plan Mode appears when you are using the Claude Agent. It helps you map out steps, reason through complex problems, and build strategies.
+### Response Format
 
-While its main strength is structured planning, it can also search the web or explore your code base if needed. Powered by Claude Agent, it offers strong reasoning abilities to support your work.
+In discussion mode, responses typically include:
 
-### Use Plan Mode on the CodinIT homepage
+- **Clear Plans**: Numbered steps for implementing solutions
+- **Technology Recommendations**: Specific tools and approaches
+- **Best Practice Guidance**: Industry-standard approaches
+- **Educational Context**: Explanations of why certain approaches are recommended
+- **Quick Actions**: Interactive buttons for common next steps
 
-You can begin your CodinIT project in Plan Mode right from the first prompt. This lets you create and refine a plan through back-and-forth discussion before executing a build, helping you avoid unwanted changes and use fewer tokens overall.
+## Best Practices for Discussion Mode
 
-Simply click **Plan** before submitting your prompt to generate a plan for your build.
+### Preparing Your Questions
 
-<Warning>
-  When you use Plan mode from the homepage, it starts by creating the base structure of your app. After that, it shares a plan in the chatbox. You can review this plan, suggest changes, and continue building step by step.
-</Warning>
+**Be Specific About Your Goals:**
 
-<Note>
-  If you want to create a mobile app, it’s important to mention this directly in your prompt. For example, you might prompt: “Build a mobile app that helps people track their daily habits.”
-</Note>
+```
+❌ "Help me build an app"
+✅ "I need to build a task management app for a team of 10 developers. What architecture would you recommend for real-time collaboration features?"
+```
 
-Plan Mode highlights blue when active. Click it again to turn it off and return to Build mode.
+**Provide Context:**
 
-### Use Plan Mode in a CodinIT project
+```
+❌ "My code is slow"
+✅ "I'm building a React dashboard that loads 1000+ data points. Currently using useEffect with fetch. What optimization strategies would you suggest?"
+```
 
-Follow the steps below to switch to Plan Mode while working in a CodinIT project:
+### Effective Question Types
 
-1. Open a project working with Claude Agent.
-2. In the bottom-right corner of the chatbox, click **Plan**.
-3. Enter your question or prompt, and read the response. You can then either:
-   * Continue the discussion.
-   * Use one of the quick action buttons to implement the suggestion.
+**Architecture Questions:**
 
-<Tip>
-  Plan Mode highlights blue when active. Click it again to turn it off and return to Build mode.
-</Tip>
+- "What's the best way to structure a microservices architecture for an e-commerce platform?"
+- "How should I handle state management in a large-scale React application?"
+
+**Technology Selection:**
+
+- "Should I use PostgreSQL or MongoDB for a social media analytics platform?"
+- "What's the recommended approach for implementing real-time features in a web application?"
+
+**Code Quality & Patterns:**
+
+- "How can I improve the performance of this database query?"
+- "What design patterns would be appropriate for implementing a plugin system?"
+
+### Maximizing Value from Discussions
+
+**Iterative Refinement:**
+Start with high-level questions, then drill down into specifics based on the guidance provided.
+
+**Actionable Plans:**
+Look for responses that include specific, implementable steps rather than vague suggestions.
+
+**Follow-up Questions:**
+Use the AI's recommendations as a foundation for more detailed questions about implementation.
+
+## Response Characteristics
+
+### Planning-Focused Responses
+
+Discussion mode responses emphasize planning and strategy:
+
+- **Step-by-step implementation plans**
+- **Technology recommendations with reasoning**
+- **Consideration of trade-offs and alternatives**
+- **Scalability and maintainability considerations**
+
+### Educational Approach
+
+Responses include educational elements:
+
+- **Explanation of concepts and principles**
+- **Rationale behind recommendations**
+- **Industry best practices and standards**
+- **Common pitfalls and how to avoid them**
+
+### Interactive Elements
+
+Discussion mode often includes interactive elements:
+
+- **Quick action buttons** for common next steps
+- **File references** for examining specific code
+- **Link suggestions** for additional resources
+- **Structured recommendations** with clear priorities\*\*
+
+## Integration with Other Features
+
+### Combining with Regular Chat
+
+You can switch between discussion mode and regular chat mode:
+
+1. Use **discussion mode** for planning and architectural decisions
+2. Switch to **regular chat** for implementation and code writing
+3. Return to **discussion mode** for reviewing and refining implemented code
+
+### Using with Project Context
+
+Discussion mode works best when you provide:
+
+- **Current project structure** and technology stack
+- **Existing code snippets** for review
+- **Performance requirements** and constraints
+- **Team size and expertise** levels
+- **Timeline and resource** considerations
+
+## Common Use Cases
+
+### Startup Development
+
+```
+Planning MVP architecture, choosing tech stack, designing scalable systems
+```
+
+### Enterprise Applications
+
+```
+Large-scale system design, performance optimization, security considerations
+```
+
+### Learning Projects
+
+```
+Understanding advanced concepts, exploring new technologies, building best practices
+```
+
+### Code Reviews
+
+```
+Analyzing existing codebases, identifying improvement opportunities, planning refactoring
+```
+
+## Tips for Success
+
+1. **Start with Context**: Provide background about your project, team, and goals
+2. **Ask Specific Questions**: Clear, focused questions get better guidance
+3. **Iterate on Plans**: Use initial plans as starting points for more detailed discussions
+4. **Combine Modes**: Use discussion mode for planning, regular mode for implementation
+5. **Follow Recommendations**: The structured plans are designed to be actionable
+
+<Callout type="info">
+  **Discussion Mode Philosophy**: The goal is to empower you with knowledge and planning skills, not to do the work for
+  you. This approach helps you grow as a developer while building better software.
+</Callout>
+
+<Callout type="tip">
+  **When to Switch Modes**: Use discussion mode when you need guidance, planning, or learning. Switch to regular chat
+  mode when you're ready to implement the plans and write code.
+</Callout>
 
 ## How to use Discussion Mode
 
@@ -104,9 +220,7 @@ Follow the steps below to use Discussion Mode in a CodinIT project:
 1. Open a project working with the v1 Agent (legacy).
 2. In the bottom-right corner of the chatbox, click **Discuss**.
 3. Enter your question or prompt, and read the response. You can then either:
-   * Continue the discussion.
-   * Use one of the quick action buttons to implement the suggestion.
+   - Continue the discussion.
+   - Use one of the quick action buttons to implement the suggestion.
 
-<Tip>
-  Discussion Mode highlights blue when active. Click it again to turn it off and return to Build mode.
-</Tip>
+<Tip>Discussion Mode highlights blue when active. Click it again to turn it off and return to Build mode.</Tip>

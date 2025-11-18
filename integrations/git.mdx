@@ -1,102 +1,427 @@
 ---
-title: "Git Integration"
-description: "Seamlessly connect and manage Git repositories from GitHub and GitLab for collaborative development and automated deployments"
+title: 'Git Integration'
+description: 'Advanced Git integration with proxy functionality, GitHub templates, and seamless version control'
 ---
 
-> CodinIT integrates directly with GitHub, handling all commit and update operations automatically.
+# Git Integration
 
-<Tip>
-  If you're new to version control and GitHub, we strongly recommend reading our [Introduction to version history, version control, and GitHub](/integrations/git) to get familiar with the basics.
-</Tip>
+CodinIT provides comprehensive Git integration that goes beyond basic repository management to include advanced features like Git proxy operations, GitHub template integration, and seamless version control workflows.
 
-When you connect CodinIT to GitHub, your work is automatically backed up with a full history of changes.
+## Overview
 
-This means you’re never locked into using CodinIT. You can build in CodinIT, switch to working directly in GitHub, and then come back to CodinIT whenever you want. And since your code lives in GitHub, you can publish your site with other services too, not just through CodinIT hosting or the CodinIT/Netlify integration.
+The Git integration system offers multiple layers of functionality:
 
-The GitHub connection is designed to:
+<CardGroup cols={3}>
+  <Card title="Git Proxy" icon="git-branch">
+    Remote Git operations through secure proxy
+  </Card>
+  <Card title="GitHub Templates" icon="file-code">
+    Quick project setup from GitHub templates
+  </Card>
+  <Card title="Version Control" icon="history">
+    Automatic commits and branch management
+  </Card>
+</CardGroup>
 
-* **Keep things simple**: CodinIT handles the tricky parts of Git for you.
-* **Keep branches separate**: Each branch has its own memory, so nothing “bleeds over” between them.
-* **Give you control**: You decide which projects connect to GitHub.
+### Key Features
 
-You can bring an existing GitHub project into CodinIT, or start fresh in CodinIT and create a new GitHub repository for it.
+- **Git Proxy Operations**: Execute Git commands on remote repositories
+- **Template Integration**: Import and use GitHub repository templates
+- **Automatic Commits**: Seamless version control without manual Git commands
+- **Branch Management**: Create, switch, and merge branches
+- **Repository Sync**: Bidirectional synchronization with GitHub
+- **Conflict Resolution**: Intelligent merge conflict handling
 
-## Connect GitHub
+<Callout type="info">
+  **Freedom of Choice**: Your code always lives in Git, giving you complete control and the ability to work with any
+  Git-compatible tools or services.
+</Callout>
 
-To connect your GitHub account to CodinIT, you'll first need an **individual** GitHub account.
+## Git Proxy Operations
 
-<Info>
-  CodinIT currently doesn't support GitHub organization accounts.
-</Info>
+### Remote Git Command Execution
 
-[Sign up for one](https://github.com/signup?ref=codinit.dev) if you don't already have one.
+The Git proxy allows secure execution of Git commands on remote repositories:
 
-To connect an individual GitHub account to CodinIT, follow these steps:
+**Supported Operations:**
 
-1. Log in to your CodinIT account and open a project.
-2. Click the **GitHub icon** in the top right of your screen.
-3. Click **Log in to GitHub**.
-4. Click **Authorize stackblitz**. (StackBlitz is CodinIT's parent company.)
-5. Follow any further verification steps required.
+- Repository cloning and fetching
+- Branch creation and switching
+- Commit and push operations
+- Merge conflict resolution
+- Status checking and diff viewing
 
-## Create a new repository from a CodinIT project
+**Usage Example:**
 
-<Info>
-  Prerequisite: You must have GitHub connected to CodinIT.
-</Info>
+```bash
+# Clone a repository
+git clone https://github.com/user/repo.git
 
-To create a repository from your CodinIT project:
+# Create and switch to new branch
+git checkout -b feature/new-feature
 
-1. Log in to your CodinIT account and open the project you want to link with a new GitHub repository.
-2. Click the **GitHub icon** in the top right of your screen.
-3. In the Create a repository window that appears, enter a name for your new repository.
-4. Click **Create repository**
-5. Click **Start building** to return to CodinIT.
+# Push changes
+git push origin main
+```
 
-The repository starts as private, on a `main` branch. You can set the repository to public in your GitHub settings, and you can create new branches in CodinIT or on GitHub. See [Branching and merging](#branching-and-merging) for more information.
+### Security and Access Control
 
-## Import an existing repository
+**Authentication Methods:**
 
-To import a project into CodinIT from one of your GitHub repositories, follow the steps below:
+- Personal Access Tokens (PAT)
+- SSH keys (when supported)
+- OAuth integration with GitHub
+- Repository-specific permissions
 
-1. On the [CodinIT homepage](https://codinit.dev), click the GitHub icon below the primary chatbot.
-2. Choose how you want to import:
-   * Use the drop-down menu to select the repository you'd like to import, or
-   * Click the **Import from URL** button, then enter your GitHub repository URL.
-3. Click **Choose this repository**.
-4. CodinIT will load your repository as a new CodinIT project.
+**Security Features:**
 
-## Disconnect GitHub
+- Command validation and sanitization
+- Rate limiting and abuse prevention
+- Audit logging of all operations
+- Secure credential storage
 
-Fully removing your GitHub integration is a one-step process if you used your GitHub account to create your CodinIT account, or a two-step process if you did not.
+## GitHub Template Integration
 
-Either way, start by following the steps below:
+### Template-Based Project Creation
 
-<Steps>
-  <Step title="Revoke access in GitHub">
-    1. [Log in to GitHub](https://github.com/login).
-    2. Click your profile icon in the top-right corner of your screen.
-    3. Click **Settings**.
-    4. Click **Applications** in the left-side navigation menu (likely near the bottom of the menu).
-    5. Click the **Authorized GitHub Apps** tab.
-    6. Click **Revoke** in the CodinIT/StackBlitz row.
-    7. Click **I understand, revoke access**.
+Quickly start projects using GitHub repository templates:
 
-    <Warning>
-      If you signed up for your CodinIT account with GitHub, you do not need to perform Part 2. If you signed up using Google or email, you will to complete the process.
-    </Warning>
-  </Step>
+**Available Template Types:**
 
-  <Step title="Delete the GitHub connection">
-    1. Click **Settings** in the left navigation menu.
-    2. Click the **Credentials** tab.
-    3. Click **Delete** in the GitHub section.
+- Frontend frameworks (React, Vue, Angular)
+- Backend APIs (Express, FastAPI, NestJS)
+- Full-stack applications
+- Mobile app templates
+- DevOps and deployment templates
 
-    <Tip>
-      If you added a second email to your account specifically for GitHub, you can go to **Settings** > **Profile** to delete it from your account.
-    </Tip>
-  </Step>
-</Steps>
+**Template Usage:**
+
+```typescript
+// Import template via API
+const template = await fetch('/api/github-template', {
+  method: 'POST',
+  body: JSON.stringify({
+    template: 'facebook/react',
+    name: 'my-react-app',
+  }),
+});
+```
+
+### Custom Template Creation
+
+**Creating Templates:**
+
+- Convert existing repositories to templates
+- Define template variables and configuration
+- Set up automated setup scripts
+- Include documentation and examples
+
+**Template Structure:**
+
+```
+template-repo/
+├── template.json      # Template configuration
+├── setup.js          # Automated setup script
+├── README.md         # Usage instructions
+└── src/              # Template source code
+```
+
+## Repository Management
+
+### Creating New Repositories
+
+**From Existing Projects:**
+
+```typescript
+// API endpoint for repository creation
+POST /api/github-template
+{
+  "action": "create-repo",
+  "name": "my-new-project",
+  "private": false,
+  "description": "Project created with CodinIT"
+}
+```
+
+**Repository Configuration:**
+
+- **Visibility**: Public or private repositories
+- **Branch Protection**: Main branch protection rules
+- **Collaborators**: Team member access management
+- **Topics and Labels**: Organization and categorization
+- **GitHub Actions**: Automated CI/CD workflows
+
+### Importing Existing Repositories
+
+**Supported Import Methods:**
+
+- Direct GitHub repository URLs
+- GitHub organization repositories
+- Private repository access
+- Large repository handling
+
+**Import Process:**
+
+```typescript
+// Repository import via API
+const importResult = await fetch('/api/git-proxy/import', {
+  method: 'POST',
+  body: JSON.stringify({
+    url: 'https://github.com/user/repo.git',
+    branch: 'main',
+    depth: 1, // Shallow clone for large repos
+  }),
+});
+```
+
+**Post-Import Setup:**
+
+- Dependency installation
+- Environment configuration
+- Build verification
+- Development server startup
+
+### Repository Synchronization
+
+**Bidirectional Sync:**
+
+- Automatic commit creation on file changes
+- Pull request synchronization
+- Conflict detection and resolution
+- Branch status monitoring
+
+**Sync Configuration:**
+
+```json
+{
+  "sync": {
+    "autoCommit": true,
+    "pullInterval": 30000,
+    "conflictStrategy": "manual",
+    "ignorePatterns": [".env", "node_modules"]
+  }
+}
+```
+
+## Advanced Git Operations
+
+### Branch Management
+
+**Creating and Managing Branches:**
+
+```bash
+# Create new feature branch
+git checkout -b feature/user-authentication
+
+# Switch between branches
+git checkout main
+git checkout feature/user-authentication
+
+# Merge branches
+git merge feature/user-authentication
+```
+
+**Branch Protection Rules:**
+
+- Required pull request reviews
+- Required status checks
+- Restrictions on force pushes
+- Branch naming conventions
+
+### Commit Strategies
+
+**Atomic Commits:**
+
+- Each commit represents one logical change
+- Clear, descriptive commit messages
+- Related changes grouped together
+- Easy to understand and revert
+
+**Commit Message Conventions:**
+
+```
+feat: add user authentication system
+fix: resolve login form validation bug
+docs: update API documentation
+refactor: simplify user state management
+```
+
+### Conflict Resolution
+
+**Handling Merge Conflicts:**
+
+```bash
+# Check for conflicts
+git status
+
+# Resolve conflicts in files
+# Then add resolved files
+git add resolved-file.js
+
+# Complete the merge
+git commit
+```
+
+**Prevention Strategies:**
+
+- Regular branch synchronization
+- Clear ownership of code areas
+- Code review requirements
+- Automated testing before merges
+
+## Git Hooks and Automation
+
+### Pre-commit Quality Checks
+
+**Automated Validation:**
+
+```bash
+# .git/hooks/pre-commit
+#!/bin/sh
+npm run lint
+npm run test
+npm run type-check
+```
+
+**Code Quality Gates:**
+
+- ESLint for code style
+- Prettier for formatting
+- TypeScript type checking
+- Unit test execution
+
+### CI/CD Integration
+
+**GitHub Actions Workflows:**
+
+```yaml
+# .github/workflows/ci.yml
+name: CI Pipeline
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Build project
+        run: npm run build
+```
+
+**Deployment Automation:**
+
+- Automatic preview deployments
+- Production deployment on merge
+- Rollback capabilities
+- Environment-specific configurations
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Authentication Issues" icon="key">
+    ### Git Authentication Problems
+
+    **Common Issues:**
+    - Expired personal access tokens
+    - Incorrect repository permissions
+    - Two-factor authentication conflicts
+    - SSH key configuration problems
+
+    **Solutions:**
+    - Regenerate GitHub personal access tokens
+    - Verify repository access permissions
+    - Use SSH keys for secure authentication
+    - Check token expiration dates
+
+  </Accordion>
+
+  <Accordion title="Sync Conflicts" icon="git-merge">
+    ### Repository Synchronization Issues
+
+    **Common Issues:**
+    - Merge conflicts during sync
+    - Divergent branch histories
+    - Large file handling problems
+    - Network connectivity issues
+
+    **Solutions:**
+    - Resolve conflicts manually or use merge tools
+    - Force push only when necessary and safe
+    - Use Git LFS for large files
+    - Check network stability and retry operations
+
+  </Accordion>
+
+  <Accordion title="Performance Issues" icon="gauge">
+    ### Git Operation Performance
+
+    **Common Issues:**
+    - Slow clone operations for large repositories
+    - Memory issues with large histories
+    - Network latency problems
+    - Disk space constraints
+
+    **Solutions:**
+    - Use shallow clones for large repositories
+    - Implement Git LFS for binary files
+    - Optimize network settings
+    - Clean up unnecessary branches and tags
+
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+### Repository Organization
+
+**Branch Strategy:**
+
+- `main`/`master`: Production-ready code
+- `develop`: Integration branch for features
+- `feature/*`: Individual feature development
+- `hotfix/*`: Critical bug fixes
+- `release/*`: Release preparation
+
+**Commit Hygiene:**
+
+- Write clear, descriptive commit messages
+- Keep commits focused and atomic
+- Use conventional commit format
+- Squash related commits before merging
+
+### Collaboration Workflows
+
+**Code Review Process:**
+
+- Create feature branches for all changes
+- Submit pull requests for review
+- Require approvals before merging
+- Use automated checks and tests
+
+**Team Coordination:**
+
+- Regular branch synchronization
+- Clear ownership of code areas
+- Documentation of processes
+- Regular team communication
+
+<Callout type="info">
+  **Git Mastery**: Effective Git usage is a key skill for modern development. Mastering these advanced features will
+  significantly improve your development workflow.
+</Callout>
+
+<Callout type="tip">
+  **Learn Continuously**: Git has extensive capabilities. Consider exploring advanced features like interactive
+  rebasing, advanced merge strategies, and custom hooks.
+</Callout>
 
 ## Branching and merging
 
@@ -104,18 +429,17 @@ When you create or import a repository in CodinIT, you’ll start on the **main*
 
 Branches allow you to:
 
-* Work with others without overwriting each other’s changes.
-* Work on different features separately, so unfinished work doesn’t go live.
+- Work with others without overwriting each other’s changes.
+- Work on different features separately, so unfinished work doesn’t go live.
 
   <Info>
-    For example, if you’re building three new features on the main branch, you’d have to finish all three before publishing. With branches, you can finish and merge each one into main as they're ready.
+    For example, if you’re building three new features on the main branch, you’d have to finish all three before
+    publishing. With branches, you can finish and merge each one into main as they're ready.
   </Info>
 
 ### Create a new branch in CodinIT
 
-<Info>
-  Prerequisite: You must have GitHub connected to CodinIT and a repository already created.
-</Info>
+<Info>Prerequisite: You must have GitHub connected to CodinIT and a repository already created.</Info>
 
 1. Log in to CodinIT and open a project that is already linked to a GitHub repository.
 2. Click the GitHub icon in the top-right of your screen.
@@ -123,9 +447,7 @@ Branches allow you to:
 4. Enter a branch name.
 5. Click **Create branch**.
 
-<Check>
-  You're now working on your new branch, which is also created in your GitHub repository.
-</Check>
+<Check>You're now working on your new branch, which is also created in your GitHub repository.</Check>
 
 ### Change branches in CodinIT
 
@@ -137,9 +459,7 @@ Branches allow you to:
 2. Click the GitHub icon in the top-right of your screen.
 3. Select the branch you want to switch to.
 
-<Tip>
-  CodinIT currently doesn't support merging branches in-app. You need to merge branches in GitHub.
-</Tip>
+<Tip>CodinIT currently doesn't support merging branches in-app. You need to merge branches in GitHub.</Tip>
 
 ### Committing and fetching
 
@@ -148,5 +468,6 @@ CodinIT saves your work automatically. Every time you make a change that doesn�
 It also checks GitHub every 30 seconds for any updates made outside CodinIT and pulls those in.
 
 <Warning>
-  Very rarely, both CodinIT and GitHub might update at almost the same time. If that happens, CodinIT will keep your changes and overwrite the GitHub version.
+  Very rarely, both CodinIT and GitHub might update at almost the same time. If that happens, CodinIT will keep your
+  changes and overwrite the GitHub version.
 </Warning>

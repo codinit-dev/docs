@@ -1,212 +1,456 @@
 ---
-title: "Supabase Integration"
-description: "Connect your CodinIT projects with Supabase for database, authentication, and real-time functionality"
+title: 'Supabase Integration'
+description: 'Complete Supabase integration with database operations, authentication, real-time subscriptions, and TypeScript support'
 ---
 
-<img
-  className="dark:hidden block rounded-lg"
-  src="/assets/images/supabase-light.webp"
-  alt="Light mode interface"
-/>
+# Supabase Integration
 
-<img
-  className="hidden dark:block rounded-lg"
-  src="/assets/images/supabase-dark.webp"
-  alt="Dark mode interface"
-/>
-
-> Use Supabase with CodinIT to add a database, authentication, or edge functions to your app as an alternative to CodinIT Database.
-
-## Projects with Supabase databases published prior to September 30, 2025
-
-<Danger>
-  Before September 30, 2025, CodinIT projects required you to use your own Supabase account for databases. After this date, new projects created with Claude Agent use CodinIT databases by default. CodinIT does not support switching existing projects from Supabase to CodinIT Database.
-</Danger>
-
-If you have an existing project using Supabase databases:
-
-* Keep using Supabase for your databases.
-* Supabase databases cannot be converted into CodinIT databases.
-* You can switch from v1 Agent (legacy) to Claude Agent at any time. Your Supabase databases will still work. The only change you may notice is that your chat history window will reset when you switch.
-
-If you are starting a new project:
-
-* Claude Agent will create and use CodinIT databases by default.
-* You can migrate a CodinIT database to Supabase later if you want.
-* Projects created with v1 Agent (legacy) only support Supabase databases. These must be added after the initial build. The v1 Agent (legacy) cannot create CodinIT databases.
-
-## New to databases and related terminology?
-
-Databases and their features, such as server functions and authentication, are among the more technical parts of CodinIT. If you are just getting started and want a simple introduction to the key concepts, see our [Introduction to databases](/essentials/project-templates) article.
+CodinIT provides comprehensive Supabase integration, enabling you to build full-stack applications with PostgreSQL databases, authentication, real-time subscriptions, and edge functions. This integration goes beyond basic database connectivity to include advanced features like Row Level Security, automated migrations, and TypeScript type generation.
 
 ## Overview
 
-By default, new projects created with Claude Agent use CodinIT databases.
+The Supabase integration in CodinIT offers enterprise-grade database capabilities with developer-friendly tooling:
 
-Projects created before September 30, 2025, used Supabase by default, as explained in the section above.
+<CardGroup cols={3}>
+  <Card title="PostgreSQL Database" icon="database">
+    Hosted PostgreSQL with advanced features and extensions
+  </Card>
+  <Card title="Authentication" icon="shield">
+    Complete user management with social providers and custom flows
+  </Card>
+  <Card title="Real-time" icon="zap">
+    Live subscriptions and real-time data synchronization
+  </Card>
+</CardGroup>
 
-You can choose to claim CodinIT databases created with Claude Agent in Supabase if you want to work there, or continue using Supabase directly to create and manage databases for projects that use CodinIT’s v1 Agent (legacy).
+### Key Features
 
-Supabase provides:
+- **Automated Migrations**: Generate and execute SQL migrations with rollback support
+- **Row Level Security**: Automatic RLS policy creation and management
+- **TypeScript Integration**: Auto-generated types from your database schema
+- **Real-time Subscriptions**: Live data updates without manual polling
+- **Authentication Flows**: Complete user registration, login, and session management
+- **Edge Functions**: Serverless functions for API endpoints and integrations
+- **File Storage**: Built-in file upload and management capabilities
 
-* A hosted [SQL database](https://supabase.com/database), which you can connect your application to. You don't need to worry about managing your database.
-* [Authentication](https://supabase.com/auth) services, for adding user login and user management to your application.
-* [Edge functions](https://supabase.com/edge-functions): CodinIT uses these if your application needs to include an API. They're also used for communicating with other applications, such as Stripe for payment handling.
+<Callout type="info">
+  **Default Choice**: Supabase is the recommended database solution for CodinIT projects requiring advanced database
+  features, authentication, or real-time capabilities.
+</Callout>
 
-Explore Supabase's [website](https://supabase.com/) and [documentation](https://supabase.com/docs) for full details of Supabase's features.
+## Setup and Configuration
 
-<Warning>
-  Supabase connections are **available with Vite projects**. Next.js projects are not supported at this time.
-</Warning>
-
-## Connect CodinIT to Supabase
-
-To start working with Supabase, you'll first need to connect CodinIT to Supabase in the Applications section of your Personal Settings.
-
-1. Log in to any project.
-2. Click the **gear icon** in the top center of your screen, then click **All project settings.**
-3. Click **Applications** under Personal Settings.
-4. Click **Connect** in the Supabase row.
-5. Log in with your Supabase credentials.
-6. Follow the steps to authorize CodinIT.
-
-## View Supabase data in your CodinIT settings
-
-When managing a project with Supabase in CodinIT, your Supabase data appears in the database-related CodinIT Project Settings.
-
-Click the **database icon** at the top center of your screen to view general database information. To access settings like Authentication, Server Functions, or Secrets, use the **gear icon** and select from the menu.
-
-## Version history and database restores
-
-Restoring to an earlier project version will not change your current Supabase databases.
-
-## Connect a Supabase database
-
-If you already have a Supabase database you want to use in your CodinIT project, or want to create a new one, follow the steps below to connect it.
-
-<Warning>
-  If your project already has a CodinIT database, connecting a Supabase database will replace the connection, which may cause data loss. To keep your existing data, you can [claim your current CodinIT database in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase) instead.
-</Warning>
-
-1. Ensure you have [connected CodinIT to your Supabase account](https://codinit.dev/docs/integrations/supabase).
-2. Log in and open the project with the database you want to claim.
-3. Click the **Database icon** in the top center of your screen.
-4. Click the **Advanced** tab.
-5. Click **Connect**.
-6. Select an existing Supabase project or create a new one.
-7. Click **Connect project**.
-
-## Claim your CodinIT Database in Supabase
-
-<Info>
-  This section is for migrating an existing CodinIT database to Supabase. To connect an existing or new Supabase database instead, see [Connect a Supabase database.](/integrations/supabase#connect-a-supabase-database)
-</Info>
-
-The primary reason for claiming a CodinIT database is to unlock advanced Supabase features. For most use cases, staying with CodinIT keeps things simple and gives you unlimited free databases. However, if you need external management tools, SQL editing, or advanced monitoring, you may prefer to use Supabase.
-
-To migrate your CodinIT database to Supabase and start using Supabase in your project, follow these steps:
+### Connecting to Supabase
 
 <Steps>
-  <Step title="Claim your CodinIT database in Supabase">
-
-    1. Ensure you have [connected CodinIT to your Supabase account](https://support.codinit.dev/docs/integrations/supabase#connect-CodinIT-to-supabase).
-    2. Log in and open the project with the database you want to claim.
-    3. Click the **Database icon** in the top center of your screen.
-    4. Click the **Advanced** tab.
-    5. Click **Claim**.
-    6. Complete additional steps in Supabase.
-    7. After you've claimed a CodinIT database with a Supabase project, refresh your project in your browser.
+  <Step title="Create Supabase Account">Visit [Supabase](https://supabase.com/) and create a free account</Step>
+  <Step title="Create New Project">Click "New Project" and fill in your project details</Step>
+  <Step title="Get Connection Details">Navigate to Settings > API to get your project URL and API keys</Step>
+  <Step title="Configure in CodinIT">
+    Use the Supabase connection prompt in chat: "Connect to Supabase in the chat box"
   </Step>
-
-  <Step title="Disconnect your Supabase project">
-
-    1. Click the **gear icon** in the top center of your screen.
-    2. Click **Supabase > Disconnect project.**
-    3. Click **Disconnect** to confirm.
-  </Step>
-
-  <Step title="Switch to v1 Agent (legacy)">
-    <Note>
-      Skip ahead to Step 4 if you already working in the v1 Agent (legacy) agent.
-    </Note>
-
-    1. In the bottom-left corner of the chatbox, click the **plus icon**.
-    2. Hover over **Claude Agent** to open the Agents menu.
-    3. Click **v1 Agent (legacy)** to switch agents.
-    4. Click **Switch to v1 Agent (legacy)** to confirm.
-  </Step>
-
-  <Step title="Connect to a Supabase project">
-
-    1. Click the **gear icon** in the top center of your screen.
-    2. Click **Supabase**.
-    3. Select an existing Supabase project or create a new one.
-    4. Follow the steps to connect to Supabase.
-
-    <Check>
-      Your CodinIT project will now work with your connected Supabase database. You can safely switch back to working with Claude Agent.
-    </Check>
-  </Step>
+  <Step title="Provide Credentials">Share your Supabase URL and anon key when prompted</Step>
 </Steps>
 
-## Use Supabase in a v1 Agent (legacy) CodinIT project
+### Environment Variables
 
-<Note>
-  Use this section only if your project does not yet have a CodinIT database and is working with the v1 Agent (legacy). If it does have a CodinIT database, you must [claim it in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase).
-</Note>
+CodinIT automatically creates the necessary environment variables:
 
-To use Supabase in a CodinIT project using the v1 Agent (legacy) that does not yet have a database set up, follow the steps below:
+```bash
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
+<Callout type="warning">
+  **Security Note**: Never commit your Supabase service role key to version control. The anon key is safe for
+  client-side use.
+</Callout>
 
-1. Ensure you have [connected CodinIT to your Supabase account](https://codinit.dev/docs/integrations/supabase/).
-2. Click the **gear icon** in the top center of your screen, then click **Supabase**.
-3. Choose an existing Supabase project to connect to, or create a new one.
-4. Refresh your CodinIT project in your browser.
+### Connection Verification
 
-<Check>
-  CodinIT will now use your connected Supabase project for database operations.
-</Check>
+Once connected, CodinIT will:
 
-## Disconnect Supabase
+- ✅ Confirm successful connection
+- ✅ Set up environment variables
+- ✅ Prepare for database operations
 
-1. Log in to any project.
-2. Click the **gear icon** in the top center of your screen, then click **All project settings.**
-3. Click **Applications** under Personal Settings.
-4. In the Supabase row, click **Disconnect**.
-5. In Supabase, remove CodinIT from your authorized applications:
-   1. In the [Supabase dashboard](https://supabase.com/dashboard), make sure you're in the organization that you connected to CodinIT.
-   2. In the left menu, click **Organization settings**.
-   3. Go to the **OAuth Apps** tab.
-   4. Next to CodinIT, click **Delete**.
+If connection fails, you'll receive guidance to:
 
-## Using authentication
+- Verify your API keys
+- Check project permissions
+- Ensure network connectivity
 
-If you tell CodinIT to add authentication with Supabase, users will be able to sign up for your application and log in using Supabase's [user management service](https://supabase.com/auth).
+## Database Operations
 
-Make sure you've connected your Supabase account as described above. Prompt CodinIT to add authentication with Supabase, including adding a signup and login screen to your application.
+### Creating Tables and Schemas
 
-Once everything is working in your application, you can confirm users are being added correctly in Supabase:
+CodinIT automatically generates SQL migrations for database changes:
 
-1. Go through the signup process in your application.
-2. Supabase should send you an email to confirm your email address.
-3. In Supabase, open your project.
-4. In the left navigation menu, select **Authentication**.
-5. Check the **Users** list to confirm that the user you just created was added there.
+**Example Migration Creation:**
 
-## Using edge functions
+```
+<exampleArtifact id="create-users-table" title="Create Users Table">
+  <exampleAction type="supabase" operation="migration" filePath="/supabase/migrations/create_users.sql">
+    CREATE TABLE users (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      email text UNIQUE NOT NULL,
+      created_at timestamptz DEFAULT now()
+    );
+  </exampleAction>
 
-Edge functions in CodinIT rely on databases. Before you begin, make sure you have connected your Supabase account as described above. To get started, prompt CodinIT to create the edge function you are interested in. For example: `Create an edge function to handle a conversation with an AI Bot (OpenAI)`. From here, CodinIT generates the edge function.
+  <exampleAction type="supabase" operation="query" projectId="${projectId}">
+    CREATE TABLE users (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      email text UNIQUE NOT NULL,
+      created_at timestamptz DEFAULT now()
+    );
+  </exampleAction>
+</exampleArtifact>
+```
 
-Edge functions can be complex, as they connect up services and involve authentication steps. For help with common errors, check out [Integrations issues | Supabase edge functions](/support/integration-issues#supabase-edge-functions).
+### Row Level Security (RLS)
 
-## FAQs and troubleshooting
+All tables automatically get RLS enabled with appropriate policies:
+
+```sql
+-- Enable RLS
+ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+
+-- Create policies for authenticated users
+CREATE POLICY "Users can read own data"
+  ON users
+  FOR SELECT
+  TO authenticated
+  USING (auth.uid() = id);
+```
+
+### Data Operations
+
+**Querying Data:**
+
+```typescript
+// CodinIT generates type-safe queries
+const { data: users } = await supabase.from('users').select('*').eq('status', 'active');
+```
+
+**Real-time Subscriptions:**
+
+```typescript
+// Live data updates
+const channel = supabase
+  .channel('users')
+  .on(
+    'postgres_changes',
+    {
+      event: '*',
+      schema: 'public',
+      table: 'users',
+    },
+    (payload) => {
+      console.log('Change received!', payload);
+    },
+  )
+  .subscribe();
+```
+
+## Authentication System
+
+### User Registration and Login
+
+CodinIT implements complete authentication flows using Supabase Auth:
+
+**Supported Authentication Methods:**
+
+- Email and password registration
+- Social provider login (Google, GitHub, etc.)
+- Magic link authentication
+- Password reset functionality
+
+**Example Implementation:**
+
+```typescript
+// Sign up new user
+const { data, error } = await supabase.auth.signUp({
+  email: 'user@example.com',
+  password: 'securepassword',
+});
+
+// Sign in existing user
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'user@example.com',
+  password: 'securepassword',
+});
+```
+
+### Session Management
+
+**Automatic Session Handling:**
+
+- JWT token management
+- Automatic token refresh
+- Session persistence across page reloads
+- Secure logout functionality
+
+**Protected Routes:**
+
+```typescript
+// Route protection example
+const {
+  data: { user },
+} = await supabase.auth.getUser();
+if (!user) {
+  // Redirect to login
+}
+```
+
+### User Profile Management
+
+**Profile Data:**
+
+- User metadata storage
+- Avatar management
+- Custom user fields
+- Profile update functionality
+
+<Callout type="info">
+  **Email Confirmation**: By default, email confirmation is disabled for easier development. Enable it in production for
+  security.
+</Callout>
+
+## TypeScript Integration
+
+### Auto-Generated Types
+
+CodinIT generates TypeScript types from your Supabase schema:
+
+**Type Generation:**
+
+```typescript
+// Auto-generated types from your database schema
+export interface Database {
+  public: {
+    Tables: {
+      users: {
+        Row: {
+          id: string;
+          email: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          created_at?: string;
+        };
+      };
+    };
+  };
+}
+```
+
+### Type-Safe Queries
+
+**Full Type Safety:**
+
+```typescript
+// Type-safe database operations
+const { data, error } = await supabase
+  .from('users') // Fully typed table name
+  .select('id, email') // Typed column selection
+  .eq('status', 'active') // Typed filter conditions
+  .returns<User[]>(); // Explicit return type
+```
+
+## Advanced Features
+
+### Real-Time Subscriptions
+
+**Live Data Updates:**
+
+```typescript
+const channel = supabase
+  .channel('realtime-users')
+  .on(
+    'postgres_changes',
+    {
+      event: 'INSERT',
+      schema: 'public',
+      table: 'users',
+    },
+    (payload) => {
+      console.log('New user:', payload.new);
+    },
+  )
+  .subscribe();
+```
+
+### File Storage
+
+**File Upload and Management:**
+
+```typescript
+// Upload files to Supabase Storage
+const { data, error } = await supabase.storage.from('avatars').upload('user-avatar.jpg', file);
+
+// Get public URL
+const {
+  data: { publicUrl },
+} = supabase.storage.from('avatars').getPublicUrl('user-avatar.jpg');
+```
+
+### Edge Functions
+
+**Serverless API Endpoints:**
+
+```typescript
+// Call Supabase Edge Functions
+const { data, error } = await supabase.functions.invoke('my-function', {
+  body: { key: 'value' },
+});
+```
+
+## Best Practices
+
+### Database Design
+
+**Schema Best Practices:**
+
+- Use UUID primary keys with `gen_random_uuid()`
+- Enable RLS on all tables
+- Create appropriate indexes for query performance
+- Use foreign key constraints for data integrity
+
+**Migration Strategy:**
+
+- One logical change per migration
+- Include descriptive comments in SQL
+- Test migrations on development data
+- Plan rollback strategies
+
+### Security Considerations
+
+**RLS Policies:**
+
+- Always enable RLS on user-facing tables
+- Create policies for each operation type (SELECT, INSERT, UPDATE, DELETE)
+- Test policies with different user roles
+- Avoid overly permissive policies
+
+**Authentication Security:**
+
+- Use HTTPS for all authentication flows
+- Implement proper session management
+- Validate user input on both client and server
+- Regularly rotate API keys
+
+## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I can't get CodinIT to connect to my Supabase database via prompting, why?" icon="seal-question">
-    The most common reasons CodinIT cannot connect to Supabase are that your CodinIT account is not [connected to Supabase](/integrations/supabase#connect-CodinIT-to-supabase) or that your CodinIT database has not been [claimed in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase).
+  <Accordion title="Connection Issues" icon="wifi-off">
+    ### Database Connection Problems
+
+    **Common Issues:**
+    - Verify API keys are correct and have proper permissions
+    - Check that the Supabase project is active and not paused
+    - Ensure network connectivity to Supabase servers
+    - Confirm environment variables are properly set
+
+    **Solutions:**
+    - Regenerate API keys in Supabase dashboard
+    - Check Supabase project status and billing
+    - Verify firewall settings allow Supabase connections
+    - Test connection with a simple query
+
   </Accordion>
 
-  <Accordion title="I want to switch from Supabase to CodinIT Database, can I?" icon="seal-question">
-    There is currently no supported flow for migrating Supabase databases to CodinIT databases.
+  <Accordion title="Migration Errors" icon="alert-triangle">
+    ### Database Migration Failures
+
+    **Common Issues:**
+    - SQL syntax errors in migration files
+    - Foreign key constraint violations
+    - RLS policy conflicts
+    - Insufficient permissions
+
+    **Solutions:**
+    - Validate SQL syntax before applying migrations
+    - Check existing data before adding constraints
+    - Review RLS policies for conflicts
+    - Use Supabase dashboard for manual testing
+
+  </Accordion>
+
+  <Accordion title="Authentication Problems" icon="shield-x">
+    ### Auth Flow Issues
+
+    **Common Issues:**
+    - Email confirmation settings
+    - Social provider configuration
+    - JWT token expiration
+    - Password policy conflicts
+
+    **Solutions:**
+    - Check email confirmation settings in Supabase
+    - Verify social provider API keys
+    - Implement proper token refresh logic
+    - Review password requirements
+
+  </Accordion>
+
+  <Accordion title="Performance Issues" icon="gauge">
+    ### Query Performance Problems
+
+    **Common Issues:**
+    - Missing database indexes
+    - Inefficient query patterns
+    - Large result sets
+    - Real-time subscription overhead
+
+    **Solutions:**
+    - Add appropriate indexes for query patterns
+    - Optimize query structure and filtering
+    - Implement pagination for large datasets
+    - Limit real-time subscriptions to necessary data
+
   </Accordion>
 </AccordionGroup>
+
+## Migration Examples
+
+### From Local Database to Supabase
+
+**Migration Process:**
+
+1. Export existing data from local database
+2. Create Supabase tables with proper schemas
+3. Import data using Supabase client or SQL
+4. Update application to use Supabase URLs
+5. Test all functionality with migrated data
+
+### Schema Evolution
+
+**Safe Schema Changes:**
+
+```sql
+-- Adding a new column with default
+ALTER TABLE users ADD COLUMN last_login timestamptz;
+
+-- Adding an index for performance
+CREATE INDEX idx_users_email ON users(email);
+
+-- Safe constraint addition
+ALTER TABLE users ADD CONSTRAINT email_format
+  CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+```
+
+<Callout type="warning">
+  **Data Safety**: Always backup data before making schema changes. Test migrations on development data first.
+</Callout>
+
+<Callout type="tip">
+  **Development Workflow**: Use Supabase's dashboard for quick testing and data exploration during development.
+</Callout>

@@ -1,134 +1,167 @@
 ---
-title: "Prompting Best Practices"
-description: "Master the art of writing effective prompts to get the best results from CodinIT's AI capabilities"
+title: 'Prompt Engineering Guide'
+description: 'Advanced techniques for crafting effective prompts and optimizing AI interactions'
 ---
 
-<div className="w-full aspect-video rounded-xl overflow-hidden">
-<video autoPlay muted loop playsInline className="w-full h-full object-cover rounded-xl hidden dark:block" src="/assets/videos/prompting-dark.mp4" />
+Master the art of prompt engineering to get the best results from AI models. This guide covers advanced techniques for structuring prompts, optimizing for different models, and maximizing the quality of AI-generated code and responses.
 
-<video autoPlay muted loop playsInline className="w-full h-full object-cover rounded-xl block dark:hidden" src="/assets/videos/prompting-light.mp4" />
+## Understanding AI Model Capabilities
 
-</div>
-
-## Prompting Best Practices
-
-Crafting effective prompts helps Codinit.dev generate projects that match your exact vision.\
-This guide walks you through how to **be specific about your stack** and how to **leverage the Prompt Enhancer** for optimal results.
+Different AI models have different strengths and limitations. Effective prompt engineering involves adapting your communication style to leverage each model's capabilities optimally.
 
 ---
 
-## Be Specific About Your Stack
+## Technology Stack Specification
 
-Codinit’s AI understands context, but it works best when you **clearly define your tech stack**.\
-If you specify which frameworks, libraries, or tools you prefer, Codinit will scaffold the project with the right configurations out of the box.
+### Be Explicit About Technologies
 
-<Info>
-  If you don’t specify your stack, Codinit defaults to modern web standards — usually a JavaScript framework like React with minimal styling.
-</Info>
+AI models work best when you clearly specify your preferred technology stack. This ensures the generated code uses the right frameworks, libraries, and architectural patterns from the start.
 
-### Example
-
-```markdown
-Build me a portfolio website using Astro, TailwindCSS, and ShadCN UI.  
-Include a responsive navbar, project cards, and a contact form.
-```
-
-This ensures that:
-
-- **Astro** handles static site generation.
-- **TailwindCSS** manages styling.
-- **ShadCN UI** provides elegant, prebuilt UI components.
-
-### Supported Stacks
-
-You can freely mix and match stacks. Here are some supported combinations:
-
-| Category                   | Examples                                    |
-| -------------------------- | ------------------------------------------- |
-| **Frontend Frameworks**    | React, Next.js, Astro, Vue, Svelte          |
-| **Styling / UI Libraries** | TailwindCSS, ShadCN, Chakra UI, Material UI |
-| **Backend / API**          | Express, Supabase, Firebase                 |
-| **Animations / Effects**   | Framer Motion, GSAP                         |
-
-<Note>
-  When specifying your stack, include versions or preferences if needed:
-
-  > “Generate a Next.js 15 app using TailwindCSS v4 and ShadCN components.”
-</Note>
-
----
-
-## Using the Prompt Enhancer
-
-The **Prompt Enhancer** is your built-in AI assistant for refining your instructions before submission.
-
-Click the **Enhance** icon next to the prompt input field to automatically improve your request.
-
-### How It Works
-
-1. **You start with an idea**
-
-   > “Make me a dashboard.”
-2. **Click “Enhance”** The AI rewrites it into a clearer, more actionable version:
-
-   > “Create a responsive analytics dashboard using Next.js, TailwindCSS, and Chart.js. Include user login, light/dark mode, and sample data charts.”
-3. **You review and edit** You can adjust frameworks, add details, or remove anything unnecessary.
-4. **Submit the enhanced prompt** Once it’s clear and complete, hit **Generate** to scaffold your project.
-
----
-
-### Why Use the Enhancer
-
-| Benefit         | Description                                                        |
-| --------------- | ------------------------------------------------------------------ |
-| **Clarity**     | Ensures your idea is expressed in a way the AI fully understands   |
-| **Specificity** | Adds stack details, dependencies, and best practices automatically |
-| **Speed**       | Reduces back-and-forth revisions after generation                  |
-| **Control**     | You can edit before submission — the final say is always yours     |
-
-<Tip>
-  The Prompt Enhancer won’t lock your stack — it suggests improvements but lets you **retain control** over every word.
-</Tip>
-
----
-
-## Best Practices Checklist
-
-<Steps>
-  <Step title="Define your goal clearly">
-    Describe what you want Codinit to build — e.g., _a blog, dashboard, or landing page._
-  </Step>
-  <Step title="Specify frameworks and libraries">
-    Mention frameworks like Astro, Next.js, or React, and tools like Tailwind or ShadCN.
-  </Step>
-  <Step title="Use the Enhance icon">
-    Click enhance button to refine your prompt for clarity and specificity.
-  </Step>
-  <Step title="Edit before submitting">
-    Review the enhanced prompt, customize as needed, and then submit.
-  </Step>
-  <Step title="Iterate if needed">
-    If the initial result isn’t perfect, re-prompt with added context or adjustments.
-  </Step>
-</Steps>
-
----
-
-## Example Workflow
+**Clear Stack Specification:**
 
 ```
-Initial Prompt:“Build a landing page for a startup.”Enhanced Prompt:“Create a responsive SaaS landing page using Next.js, TailwindCSS, and Framer Motion. Include a hero section, pricing table, and signup form integrated with Supabase.”
+Build a modern e-commerce dashboard using:
+- React with TypeScript for the frontend
+- Supabase for backend and database
+- Tailwind CSS for styling
+- React Query for data fetching
+- React Router for navigation
 ```
 
-The enhanced version gives Codinit a **precise blueprint** — resulting in a cleaner, production-ready scaffold.
+### Recommended Technology Combinations
 
----
+| Category               | Primary Choice     | Alternatives                   | Use Case                     |
+| ---------------------- | ------------------ | ------------------------------ | ---------------------------- |
+| **Frontend Framework** | React + TypeScript | Vue.js, Svelte, SolidJS        | Interactive web applications |
+| **Styling**            | Tailwind CSS       | CSS Modules, Styled Components | Utility-first styling        |
+| **Backend**            | Supabase           | Express.js, FastAPI            | Full-stack applications      |
+| **State Management**   | Zustand            | Redux, Jotai                   | Complex application state    |
+| **Data Fetching**      | TanStack Query     | SWR, Apollo                    | Server state management      |
 
-## Summary
+### Framework-Specific Considerations
 
-| Best Practice                    | Why It Matters                                         |
-| -------------------------------- | ------------------------------------------------------ |
-| **Be specific about your stack** | Codinit scaffolds the right dependencies and structure |
-| **Use the Prompt Enhancer**      | Produces refined, actionable prompts automatically     |
-| **Edit before submitting**       | Keeps your creative intent intact                      |
-| **Iterate often**                | Small refinements lead to the best final output        |
+**React Applications:**
+
+- Specify component structure (functional vs class components)
+- Include state management preferences
+- Define routing approach (React Router, Next.js App Router)
+
+**Vue.js Applications:**
+
+- Specify composition API vs options API
+- Include UI library preferences (Quasar, Vuetify)
+- Define build tool (Vite, Vue CLI)
+
+**Backend Integration:**
+
+- Specify API patterns (REST, GraphQL)
+- Include authentication requirements
+- Define data validation approach (Zod, Joi)
+
+## Advanced Prompting Techniques
+
+### Contextual Information
+
+**Provide Relevant Context:**
+
+- Include existing code snippets when relevant
+- Reference specific files or components
+- Mention current technology constraints
+- Specify performance requirements
+
+**Progressive Refinement:**
+
+- Start with high-level requirements
+- Add implementation details iteratively
+- Use follow-up prompts for clarification
+- Build upon previous responses
+
+### Model-Specific Optimization
+
+**Claude/Gemini Models:**
+
+- Provide comprehensive context upfront
+- Use structured formats (numbered lists, sections)
+- Include examples and edge cases
+- Specify output format preferences
+
+**GPT Models:**
+
+- Break complex requests into smaller parts
+- Use clear, direct language
+- Provide concrete examples
+- Specify desired output structure
+
+### Error Prevention
+
+**Common Pitfalls to Avoid:**
+
+- Vague requirements that lead to assumptions
+- Missing technical specifications
+- Inconsistent naming conventions
+- Unspecified integration requirements
+
+**Validation Techniques:**
+
+- Include acceptance criteria
+- Specify testing requirements
+- Define success metrics
+- Request validation checkpoints
+
+<Callout type="info">
+  **Version Specification**: When possible, specify framework versions to ensure compatibility and avoid deprecated
+  features.
+</Callout>
+
+<Callout type="tip">
+  **Iterative Refinement**: Start with a clear prompt, then use follow-up messages to add details and make adjustments
+  as needed.
+</Callout>
+
+## Best Practices Summary
+
+### Essential Prompting Principles
+
+1. **Clarity First**: Be specific about what you want to build and how it should work
+2. **Technology Specification**: Clearly state your preferred frameworks and libraries
+3. **Context Provision**: Include relevant background information and constraints
+4. **Iterative Approach**: Start simple, then add complexity through follow-up prompts
+
+### Quality Checklist
+
+**Before Submitting:**
+
+- ✅ Goal is clearly defined
+- ✅ Technology stack is specified
+- ✅ Key features are listed
+- ✅ User requirements are outlined
+- ✅ Success criteria are defined
+
+**During Development:**
+
+- 🔄 Provide feedback on generated code
+- 🔄 Request specific modifications
+- 🔄 Ask for explanations when needed
+- 🔄 Use discussion mode for planning
+
+### Common Success Patterns
+
+**Effective Prompts Include:**
+
+- Specific functionality requirements
+- Technology stack preferences
+- User experience considerations
+- Performance and scalability needs
+- Integration requirements
+
+**Ineffective Prompts Lack:**
+
+- Clear objectives
+- Technical specifications
+- Implementation details
+- Success criteria
+
+<Callout type="info">
+  **Remember**: The AI can only work with the information you provide. The more specific and complete your prompts, the
+  better the results.
+</Callout>

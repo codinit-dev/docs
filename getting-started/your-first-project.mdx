@@ -1,110 +1,314 @@
 ---
-title: "Build Your First Project"
-description: "Build your first project with CodinIT in under a minute."
+title: 'Build Your First Project'
+description: 'Create a modern React application with database integration and deployment in 15 minutes.'
 ---
 
-Ready to see CodinIT in action? This hands-on tutorial will walk you through building a website in under a minute. You'll experience how CodinIT understands your requirements, creates files, and iterates on your feedback—all through natural conversation.
+# Build Your First Project
 
-By the end of this guide, you'll have built a working website and learned the fundamentals of working with CodinIT.
+Ready to experience CodinIT's full development workflow? This comprehensive tutorial will guide you through building a modern task management application with React, Supabase database integration, and deployment to production.
+
+By the end of this guide, you'll have created a professional web application and learned how to use CodinIT's advanced features including discussion mode, database integration, and deployment.
 
 ## Prerequisites
 
 - **CodinIT installed** in your editor [Install Guide](/getting-started/installation)
-- **AI model selected** [Model Setup](/getting-started/select-your-model)
-- **Any folder open** in your editor (or create a new empty folder)
+- **AI provider configured** [Model Setup](/getting-started/select-your-model)
+- **Supabase account** (free tier available) [Supabase Setup](/integrations/supabase)
+- **GitHub account** (for deployment) [Git Setup](/integrations/git)
 
-## Step 1: Open CodinIT
+## Step 1: Plan Your Application
 
-Click the CodinIT icon in your editor's sidebar (left side). The chat panel will open.
+Start by using **Discussion Mode** to plan your application architecture:
 
-<Info>
-**Quick Tip:** You can also use `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux) and search for "CodinIT: Open In New Tab"
-</Info>
-
-## Step 2: Give CodinIT a Task
-
-Copy and paste this prompt into CodinIT's chat:
+1. Click the **"Discuss"** button in the chat interface
+2. Enter this planning prompt:
 
 ```
-Create a simple website in a single HTML file. It should have:
-- A welcome message saying "Hello from CodinIT!"
-- A colorful gradient background
-- A button that cycles through different color themes when clicked
-- Modern, clean design
-- All CSS and JavaScript should be included in the same HTML file
+I want to build a task management application with the following features:
+- User authentication (sign up/login)
+- Create, read, update, delete tasks
+- Mark tasks as complete/incomplete
+- Clean, modern UI with Tailwind CSS
+- Database storage with Supabase
+- Deploy to Vercel
+
+What architecture would you recommend? Should I use React with TypeScript? What database schema makes sense?
 ```
 
-Press Enter and watch CodinIT work!
+**What happens:** CodinIT will analyze your requirements and provide architectural recommendations, technology suggestions, and a development roadmap.
 
-## Step 3: What Happens Next
+## Step 2: Set Up the Project
 
-CodinIT will:
-
-1. **Create a single file:**
-   - `index.html` - A complete webpage with embedded CSS and JavaScript
-
-2. **Ask for approval** (unless you've enabled auto-approve)
-   - Click "Approve" to let CodinIT create the file
-   - You can review what it plans to do first
-
-3. **Complete the task** within seconds
-
-## Step 4: View Your Website
-
-Once CodinIT finishes:
-
-1. **Find `index.html`** in your editor's file explorer
-2. **Right-click it** and select:
-   - "Reveal in Finder/Explorer" then double-click to open in your browser
-3. **Click the button** to see the color themes change!
-
-## Try Making Changes
-
-In the same chat, try asking:
+Based on the discussion, start building:
 
 ```
-Add a counter that shows how many times the button has been clicked
+Create a modern task management application with:
+- React + TypeScript + Vite
+- Tailwind CSS for styling
+- Supabase for database and authentication
+- Clean, professional UI
+
+Start with the basic project structure and authentication setup.
+```
+
+**What CodinIT creates:**
+
+- Modern React application with TypeScript
+- Vite build configuration
+- Tailwind CSS setup
+- Supabase client configuration
+- Basic project structure with components
+
+## Step 3: Connect to Supabase
+
+Set up your database connection:
+
+```
+Connect to Supabase in the chat box
+```
+
+When prompted, provide your Supabase URL and anon key. CodinIT will:
+
+- Configure environment variables
+- Set up the Supabase client
+- Create database connection utilities
+
+## Step 4: Build Authentication
+
+Add user authentication:
+
+```
+Add user authentication with Supabase:
+- Sign up form with email/password
+- Login form
+- Password reset functionality
+- Protected routes
+- User session management
+```
+
+**Features added:**
+
+- Authentication components
+- Route protection
+- User context and hooks
+- Login/logout functionality
+
+## Step 5: Create Database Schema
+
+Design and implement the database:
+
+```
+Create a tasks table in Supabase with:
+- id (UUID, primary key)
+- title (text, required)
+- description (text, optional)
+- completed (boolean, default false)
+- user_id (UUID, foreign key to auth.users)
+- created_at (timestamp)
+- updated_at (timestamp)
+
+Include Row Level Security policies for user data protection.
+```
+
+**What gets created:**
+
+- Database migration files
+- TypeScript types for the schema
+- RLS policies for data security
+- Database utility functions
+
+## Step 6: Build Task Management
+
+Implement the core functionality:
+
+```
+Create task management features:
+- Task list component showing all user tasks
+- Add new task form with title and description
+- Edit existing tasks inline
+- Delete tasks with confirmation
+- Toggle task completion status
+- Filter tasks by completion status
+```
+
+**Components created:**
+
+- Task list with real-time updates
+- Task form components
+- Task item components with actions
+- State management for tasks
+
+## Step 7: Add Real-time Updates
+
+Enable live synchronization:
+
+```
+Add real-time subscriptions for tasks:
+- Live updates when tasks are added/modified/deleted
+- Real-time completion status updates
+- Instant synchronization across browser tabs
+- Optimistic UI updates
+```
+
+**Real-time features:**
+
+- Supabase real-time subscriptions
+- Live task updates
+- Conflict resolution
+- Offline support considerations
+
+## Step 8: Polish the UI
+
+Enhance the user experience:
+
+```
+Improve the UI with:
+- Responsive design for mobile and desktop
+- Loading states and error handling
+- Empty states for no tasks
+- Smooth animations and transitions
+- Professional color scheme and typography
+- Accessibility features
+```
+
+**UI enhancements:**
+
+- Mobile-responsive layouts
+- Loading skeletons
+- Error boundaries
+- Toast notifications
+- Keyboard navigation
+
+## Step 9: Deploy to Production
+
+Launch your application:
+
+```
+Deploy to Vercel
+```
+
+**Deployment process:**
+
+- Automatic build configuration
+- Environment variable setup
+- Custom domain configuration (optional)
+- Production optimization
+
+## Step 10: Test and Iterate
+
+Your application is now live! Test all features and make improvements:
+
+```
+Add a dark mode toggle to the application
 ```
 
 or
 
 ```
-Make the welcome message fade in when the page loads
+Add task categories/tags for better organization
 ```
 
-CodinIT understands the context from your previous conversation and will update the file accordingly.
+**Iteration tips:**
+
+- Test user authentication flows
+- Verify database operations
+- Check responsive design
+- Validate real-time updates
+- Monitor performance
 
 <Tip>
-**You now know how to:**
-- Give CodinIT a task with a clear prompt
-- Review and approve CodinIT's actions
-- Build a complete project in seconds
-- Iterate and improve on existing work
+  **You've now learned:** - Discussion mode for project planning - Modern React development with TypeScript - Supabase
+  database integration and RLS - Real-time data synchronization - Professional UI development - Production deployment
+  workflows - Iterative development and testing
 </Tip>
+
+## What You've Built
+
+Congratulations! You've created a production-ready task management application with:
+
+- **Modern Tech Stack**: React, TypeScript, Tailwind CSS, Supabase
+- **User Authentication**: Secure sign-up and login flows
+- **Database Integration**: PostgreSQL with Row Level Security
+- **Real-time Features**: Live task synchronization
+- **Professional UI**: Responsive design with smooth interactions
+- **Production Deployment**: Live application on Vercel
 
 ## Next Steps
 
-Now that you've experienced CodinIT's capabilities, explore more:
+Now that you understand the full development workflow, explore advanced features:
 
 <CardGroup cols={2}>
-<Card title="AI Providers" href="/running-models-locally/local-model-setup" icon="plug">
-Explore 19+ AI providers and choose the best models
+<Card title="Database Deep Dive" href="/integrations/supabase" icon="database">
+Master Supabase with advanced queries, RLS policies, and edge functions
 </Card>
 
-<Card title="Features Overview" href="/features/overview" icon="sparkles">
-Discover all the powerful features CodinIT offers
+<Card title="Advanced Prompting" href="/prompting/prompt-engineering-guide" icon="brain">
+  Learn sophisticated prompting techniques for complex applications
 </Card>
 
-<Card title="Development Tools" href="/features/development/workbench" icon="code">
-Master the integrated development environment
+<Card title="Deployment Mastery" href="/integrations/deployments" icon="rocket">
+  Explore Netlify, Vercel, and advanced deployment strategies
 </Card>
 
-<Card title="Planning Guide" href="/prompting/plan-your-app" icon="book">
-Learn to write prompts that get the best results
+<Card title="MCP Integration" href="/mcp/mcp-overview" icon="plug">
+  Connect external services and APIs through Model Context Protocol
+</Card>
+
+<Card title="Discussion Mode" href="/prompting/discussion-mode" icon="message-circle">
+  Use technical consultant mode for architecture and planning
+</Card>
+
+<Card title="Token Efficiency" href="/prompting/maximize-token-efficiency" icon="zap">
+Optimize your AI usage and reduce costs
 </Card>
 </CardGroup>
 
-## Need Help?
+## Advanced Project Ideas
 
-- **Stuck?** Try starting fresh with `/new` in the chat
-- **Found a bug?** Use `/reportbug` to help us improve
+Ready for more challenging projects? Try building:
+
+- **E-commerce Store**: Product catalog, shopping cart, payment integration
+- **Social Media Dashboard**: Posts, comments, user profiles, real-time updates
+- **Project Management Tool**: Teams, projects, tasks, time tracking
+- **Content Management System**: Articles, categories, user roles, SEO
+- **Analytics Dashboard**: Data visualization, charts, reporting features
+
+## Troubleshooting
+
+### Common Issues
+
+**Database Connection Failed:**
+
+- Verify Supabase credentials are correct
+- Check that your project is active in Supabase
+- Ensure proper network connectivity
+
+**Authentication Not Working:**
+
+- Confirm Supabase auth settings
+- Check email confirmation configuration
+- Verify redirect URLs in Supabase
+
+**Deployment Issues:**
+
+- Check build logs for errors
+- Verify environment variables are set
+- Ensure all dependencies are properly installed
+
+**Real-time Updates Not Working:**
+
+- Confirm Supabase real-time is enabled
+- Check RLS policies allow subscriptions
+- Verify network allows WebSocket connections
+
+### Getting Help
+
+- **Community Support**: Join our Discord for real-time help
+- **Documentation**: Check specific integration guides for detailed troubleshooting
+- **Bug Reports**: Use `/reportbug` in chat for technical issues
+- **Reset Project**: Use `/new` to start fresh if you encounter persistent issues
+
+<Callout type="success">
+  **You're now ready to build professional applications!** Remember to use discussion mode for planning, leverage
+  Supabase for data needs, and deploy early and often.
+</Callout>

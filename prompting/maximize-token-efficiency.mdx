@@ -1,209 +1,203 @@
 ---
-title: "Maximize token efficiency"
-description: Optimize token usage to keep your costs down
+title: 'Maximize Token Efficiency'
+description: Optimize token usage to keep your costs down and work more effectively
 ---
 
-> Optimize token usage to keep your costs down
+Optimize your token usage to reduce costs, improve response times, and work more efficiently with AI models. Understanding how tokens work and implementing best practices can significantly impact your development workflow.
 
-## Understand tokens
+## Understanding Tokens
 
-CodinIT runs on AI agents powered by large language model (LLM) providers such as Anthropic. Each agent has a specific role and they work together to plan, generate, and improve your application.
+CodinIT uses AI models powered by various providers (Anthropic, OpenAI, Google, etc.). Each interaction consumes **tokens**, which are chunks of text that AI models process.
 
-To make this work, CodinIT uses **tokens** from the provider. A token is a small chunk of text, sometimes a full word and sometimes just part of one.
+### How Tokens Are Used
 
-Every time you use CodinIT, tokens are used in three main ways:
+Tokens are consumed in several ways:
 
-* When you chat with CodinIT
-* When CodinIT writes code
-* When CodinIT looks at your code to see what you changed
+- **Input tokens**: Your prompts, questions, and context
+- **Output tokens**: AI-generated responses, code, and explanations
+- **Context tokens**: Project files and conversation history that provide context
 
-<Info>
-  To learn more about large language models, see our [Introduction to LLMs](/providers/cloud-providers). To learn more about the LLM-powered agents CodinIT uses, see [Agents](/features/development/code-editor).
-</Info>
+### Token Consumption Factors
 
-## Use buttons instead of prompting where possible
+- **Model type**: Different models have different token costs and limits
+- **Context length**: Larger projects require more tokens for context
+- **Response complexity**: Detailed explanations use more tokens than simple answers
+- **Conversation length**: Longer chat histories consume more context tokens
 
-Most prompts use tokens, so avoid them when CodinIT already provides buttons or built-in actions for the same task, which don't use tokens. For example:
+<Callout type="info">
+  **Token Limits**: Each AI model has maximum token limits for both input context and output generation. Exceeding these
+  limits can cause errors or truncated responses.
+</Callout>
 
-* To publish the latest version of your site, use the Publish button instead of prompting CodinIT.
-* To revert to a previous version of your project, use the Version History feature instead of prompting CodinIT.
+## Token Efficiency Strategies
 
-## How you can reduce token usage
+### Use Built-in Features Over Prompts
 
-Every chatbox interaction you have with CodinIT costs tokens, which affect your speed, cost, and project size limits.
+Leverage CodinIT's interface features instead of text prompts where possible:
 
-CodinIT is built to keep token usage lean, and ongoing improvements continue to boost efficiency. At the same time, being mindful of how you use tokens is important for keeping projects smooth and cost-effective.
+- **Example Prompts**: Use the suggested prompt buttons instead of typing similar requests
+- **File Operations**: Use the file tree and editor features instead of asking for file operations
+- **Terminal Commands**: Run commands directly in the terminal instead of asking the AI to execute them
 
-This page lists the top ways to reduce token usage, including the following tips:
+### Optimize Your Communication Style
 
-* Plan your app
-* Use Discussion mode
-* Undo changes using the Version history feature
-* Keep your prompts specific and focused
-* Avoid repeated automated error fix attempts
-* Add functionality incrementally
-* Use the `.CodinIT/ignore` file
-* Reduce the size of your project
+**Be Specific and Concise:**
 
-## Plan your app
+```
+❌ "Make this website look better"
+✅ "Add a hero section with gradient background, centered heading, and call-to-action button to the homepage"
+```
 
-Planning your app before you start building saves time, tokens, and avoids headaches later. Start by deciding what type of app you’re making (website, web app, or mobile app) and who it’s for.
+**Provide Context Efficiently:**
 
-List the key features you want, sketch out a simple design, and think about how users will move through the app.
+```
+❌ "Fix the login page" (requires AI to explore entire codebase)
+✅ "Fix the password validation error on /login - the error occurs when password is less than 8 characters"
+```
 
-Examples:
+**Use Structured Requests:**
 
-* A **CRM** might need lead capture, contact profiles, and search filters
-* A **portfolio site** needs galleries, project descriptions, and contact links
-* A **habit tracker** might include a daily checklist, progress charts, and reminders
+```
+❌ "Add user authentication"
+✅ "Add user authentication with: 1) Login form with email/password, 2) Registration form, 3) Password reset, 4) Protected routes"
+```
 
-Once you have a plan, you can write a clear first prompt and build your app step by step. This makes it easier to test changes, catch issues early, and maintain stability as your project grows.
+## Key Efficiency Techniques
 
-<Tip>
-  To learn more, see our article on [Planning your app](/prompting/plan-your-app).
-</Tip>
+### Use Discussion Mode for Planning
 
-### Use Plan or Discussion Modes
+Switch to discussion mode when you need guidance without code implementation:
 
-In Build mode, CodinIT updates your code everytime you submit a prompt, which uses up tokens.
+- **Planning Phase**: Use discussion mode to plan features before implementing
+- **Architecture Decisions**: Get advice on system design and technology choices
+- **Code Review**: Discuss code improvements without making changes
+- **Learning**: Ask questions and get explanations without consuming implementation tokens
 
-To avoid unnecessary code changes, use Plan or Discussion mode when you want to get help, troubleshoot, or discuss plans, but don't want to implement anything immediately.
+### Strategic Development Approach
 
-Both Plan and Discussion Modes uses far fewer tokens than Build Mode.
+**Plan Before You Build:**
 
-<Tip>
-  To learn more, see our article on [Plan and Discussion Mode tips.](/prompting/discussion-mode)
-</Tip>
+- Outline your application structure and features upfront
+- Break complex projects into manageable phases
+- Identify potential challenges before implementation
+- Create a development roadmap to guide your work
 
-## Undo changes using the Version history feature
+**Iterative Development:**
 
-Use the [Version history](/features/overview) feature to restore your project to a previous state without consuming tokens. This is similar to an undo button that can take you back to any prior state of your project.
+- Implement features incrementally rather than all at once
+- Test and validate each component before moving to the next
+- Use version control to track progress and enable rollbacks
+- Focus on core functionality before adding advanced features
 
-If you've made a change you don't like, rather than prompting CodinIT to fix it, you can switch back to a previous version of your project without using tokens.
+### Error Handling Strategies
 
-This can save time and tokens if something goes wrong with your project.
+**Avoid Repeated Fix Attempts:**
 
-## Keep your prompts specific and focused
+- Don't repeatedly click "Attempt fix" for the same error
+- Analyze error messages to understand root causes
+- Use discussion mode to get guidance on complex issues
+- Implement proper error handling in your code to prevent future issues
 
-When prompting, be clear and specific. See [Prompt effectively](/prompting/prompting-effectively) for more information. Tell the model to focus on specific files or functions rather than the entire codebase.
+**Add Comprehensive Error Handling:**
 
-## Avoid repeated automated error fix attempts
+- Include detailed logging to understand error patterns
+- Implement graceful error states in your UI
+- Add input validation to prevent common errors
+- Use try-catch blocks appropriately in your code
 
-When an error occurs, CodinIT gives you the option to try an automatic fix. Sometimes clicking it a second time will resolve the issue, but remember that each attempt uses tokens. Avoid clicking **Attempt fix** over and over, hoping for things to eventually work out.
+### Project Size Management
 
-If CodinIT can’t resolve the issue with automatic fixes, research the errors you’re getting and step in manually.
+**Optimize Project Structure:**
 
-You can also switch to Discussion mode to ask focused questions, explore solutions, and confirm a plan before the next fix.
+- Keep files under 500 lines when possible
+- Split large components into smaller, focused modules
+- Remove unused dependencies and code
+- Use efficient data structures and algorithms
 
-## Add error handling to your project
+**Context Window Management:**
 
-If you find yourself stuck in an error loop, a useful strategy is to prompt CodinIT to enhance error handling and implement detailed logging throughout the problematic area.
+- Be mindful of how much context your project provides
+- Use specific file references instead of broad requests
+- Clean up chat history when conversations become too long
+- Focus on specific components rather than entire applications
 
-When prompted to, CodinIT excels at inserting robust error logs, even at a granular level, such as between functions or key steps. These logs provide valuable feedback that the AI can use to better understand the root cause of the issue.
+<Callout type="info">
+  **Discussion Mode**: Use discussion mode for planning, architecture decisions, and getting guidance without
+  implementing code changes.
+</Callout>
 
-This additional logging also provides more precise information when the error occurs again. With this detailed feedback, CodinIT can make more accurate adjustments to fix the issue.
+<Callout type="tip">
+  **Version Control**: Leverage Git/version control features to manage project state without consuming AI tokens for
+  undo operations.
+</Callout>
 
-## Add functionality incrementally
+## Model Selection Strategies
 
-Before you focus on advanced functionality, make sure the basics of your app are in place.
+### Choose Appropriate Models
 
-* **Create your core pages:** For example, a homepage, a dashboard, and a basic contact or help page
-* **Set up navigation:** Make sure users can move between pages smoothly, like jumping from a leads page to a customer profile in a CRM
-* **Keep the design consistent:** Use the same colors, fonts, and layout so the app feels professional and easy to use
+Different AI models have different strengths and token costs:
 
-Once you have that solid foundation, add new features one at a time.
+- **Use smaller models** for simple tasks, drafting, and initial development
+- **Reserve larger models** for complex reasoning, code review, and final polishing
+- **Consider model context limits** when working with large codebases
+- **Balance cost vs. capability** based on your current development phase
 
-* Start small, such as adding a form to capture leads or customer data
-* Next, add functionality to store and display those records, like a simple customer list or profile view
-* Then layer on search, filters, or analytics so users can find data quickly
-* Test after each new piece to catch problems early and avoid breaking what already works
+### Provider-Specific Optimization
 
-This step-by-step approach makes it easier to test changes, fix issues as they arise, and maintain your app's stability as it grows. Think of it like building with blocks: get the base right, then stack on new pieces carefully so everything stays strong.
+**Anthropic Claude:**
 
-## Use a `.CodinIT/ignore` file
+- Excellent for reasoning and code generation
+- Higher token costs but superior code quality
+- Best for complex development tasks
 
-In the `.CodinIT/ignore` file, you can list any files or folders that you want CodinIT to exclude.
+**OpenAI GPT:**
 
-<Warning>
-  Instructing CodinIT to ignore files can have unintended consequences, as CodinIT is no longer aware of your entire project. This approach is powerful, but is only recommended for advanced users who can make informed decisions about what can safely be excluded, and can understand and resolve issues that may arise from this approach.
-</Warning>
+- Fast and cost-effective for many tasks
+- Good for quick iterations and prototyping
+- Consider GPT-4 for complex reasoning tasks
 
-To add files or folders to the list, follow the steps below:
+**Other Providers:**
 
-1. In your CodinIT project, switch to **Code** view to view your file list.
-2. Log in to your [StackBlitz](https://stackblitz.com/) account.
-3. Either:
-   * In the `.CodinIT` directory, click `ignore` to open the file in the editor.
-   * If there isn't an `ignore` file, right-click the `.CodinIT` directory, then click **New File...**, then name the file `ignore`.
-4. List the files you want CodinIT to ignore. Provide the full path to the files, including directories. You can use as a wildcard. For example: to ignore all files in a directory called `test`, write `test/*` in your `ignore` file. These files are now completely invisible to the AI, which frees up space in the context window.
+- Evaluate based on specific use cases
+- Consider regional availability and data privacy requirements
+- Compare pricing and performance for your workload
 
-## Reduce the size of your project
+## Advanced Optimization Techniques
 
-As your project grows, more tokens are required to keep CodinIT in sync with your code.
+### Context Management
 
-Larger projects (and longer chat conversations) demand more resources for the AI to stay aware of the context, so it's important to be mindful of how project size impacts token usage.
+**File-Specific Requests:**
 
-### Clean up unused files
+- Reference specific files instead of asking about "the entire codebase"
+- Use imports and dependencies to provide necessary context
+- Focus on individual components rather than full applications
 
-CodinIT uses a tool called Knip to perform a cleanup. You can run this when prompted by CodinIT, or run it manually at any time.
+**Progressive Development:**
 
-Before proceeding, back up your project using one or both of these methods:
+- Build core functionality first, then add features incrementally
+- Test each component thoroughly before moving to the next
+- Use modular architecture to keep context windows manageable
 
-* In the top left of your screen, click the **project title**, then click **Export** > **Download**, **or**
-* In the top left of your screen, click the **project title**, then click **Duplicate**.
+### Performance Monitoring
 
-**Automatic cleanup when prompted**
+**Track Your Usage:**
 
-If your CodinIT project exceeds the context window, you’ll see a message in chat: **Project size exceeded**. The context window is the maximum amount of information CodinIT can process at once. Paid plans offer larger windows, allowing bigger projects before reaching this limit.
+- Monitor token consumption across different tasks
+- Identify patterns in high-token activities
+- Adjust your approach based on usage analytics
 
-Click **Remove unused files** to run the cleanup.
+**Optimize Workflows:**
 
-**Manually run the cleanup**
+- Combine related changes into single requests
+- Use batch operations when possible
+- Plan complex changes to minimize back-and-forth communication
 
-In the CodinIT terminal run the following command:
+<Callout type="info">
+  **Token Awareness**: Understanding token consumption helps you work more efficiently and control costs. Focus on
+  quality over quantity in your interactions.
+</Callout>
 
-`npx knip --production --fix --allow-remove-files`
-
-Check the output in the terminal to see if the command ran successfully. This command removes unnecessary files from the codebase, which reduces the project size.
-
-### Split the project
-
-An advanced technique is to split a large app into smaller parts, then connect them later outside of CodinIT. A common approach is to keep the backend and frontend as separate projects. If you are new to development, proceed carefully or get help.
-
-If you decide to try this, keep in mind:
-
-* Plan what each part is responsible for.
-* Decide how the parts will talk to each other, such as through an API.
-* Keep each project in its own repository or folder.
-* Write down how to set up and run each part.
-
-### Split files longer than 500 lines
-
-It's usually best to keep files less than around 500 lines. If you find that one of your files has grown larger than that, try the following prompt:
-
-`Refactor [filename] by splitting it into multiple files. Add comments to understand what each new file is for. Keep the original file to act as a router for functions, so the app remains functional after the split.`
-
-### Reset your chat history window
-
-Resetting your chat history reduces the information sent to CodinIT. Before you do this, ask CodinIT to summarize your chat history so you can keep track of important details.
-
-To do so, follow these steps:
-
-1. In the bottom-left corner of the chatbox, click the **plus icon**, then click  **Discussion mode**.
-2. Enter this prompt: `Please generate a short summary of our conversation so far`.
-3. Check that CodinIT’s response is accurate and contains everything you need.
-4. Copy the response out of CodinIT and save it as a `.txt` or `.md` file.
-
-Next, reset your chat history:
-
-1. In the top left of your screen, click the **project title**, then click **Duplicate**.
-2. If you have integrations active in the project, CodinIT displays a dialog that confirms which integration settings it will copy. Click **Duplicate** in the dialog to continue.
-3. CodinIT creates a new copy of the project, with an empty chat history.
-
-Lastly, in your new project, add the chat summary:
-
-1. In the bottom-left corner of the chatbox, click the **plus icon**, then click  **Discussion mode**.
-2. Click the **plus icon** again, then click **Attach a file**. 
-3. Attach the `.txt` or `.md` file you saved earlier.
-4. Enter this prompt: `The attached file is a summary of the previous discussion about this project. Use it when working on future changes.`
-5. Press `Enter` to upload the file and your prompt.
+<Callout type="tip">
+  **Continuous Learning**: As you work more with AI models, you'll develop intuition for which approaches are most
+  token-efficient for different types of tasks.
+</Callout>
