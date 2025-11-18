@@ -36,12 +36,7 @@
             "group": "Getting Started",
             "icon": "play",
             "expanded": true,
-            "pages": [
-              "quickstart",
-              "getting-started/installation",
-              "getting-started/select-your-model",
-              "getting-started/your-first-project"
-            ]
+            "pages": ["quickstart", "getting-started/installation", "getting-started/select-your-model"]
           },
           {
             "group": "Features",
@@ -94,21 +89,20 @@
               "providers/lmstudio",
               "providers/mistral-ai",
               "providers/moonshot",
-              "providers/netlify",
               "providers/ollama",
               "providers/openai",
+              "providers/openai-like",
               "providers/openrouter",
               "providers/perplexity",
+              "providers/together",
+              "providers/togetherai",
               "providers/xai-grok"
             ]
           },
           {
             "group": "Running Models Locally",
             "icon": "cpu",
-            "pages": [
-              "running-models-locally/lm-studio",
-              "running-models-locally/local-model-setup"
-            ]
+            "pages": ["running-models-locally/lm-studio", "running-models-locally/local-model-setup"]
           }
         ]
       },
@@ -118,11 +112,7 @@
           {
             "group": "Essentials",
             "icon": "wrench",
-            "pages": [
-              "essentials/ai-chat-commands",
-              "essentials/customization",
-              "essentials/project-templates"
-            ]
+            "pages": ["essentials/ai-chat-commands", "essentials/customization", "essentials/project-templates"]
           },
           {
             "group": "Integrations",
@@ -148,11 +138,7 @@
           {
             "group": "Support",
             "icon": "life-buoy",
-            "pages": [
-              "support/frequently-asked-questions",
-              "support/integration-issues",
-              "support/troubleshooting"
-            ]
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
           }
         ]
       }
