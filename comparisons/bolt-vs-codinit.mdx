@@ -1,0 +1,87 @@
+---
+title: "Bolt.DIY vs CodinIT.dev"
+description: "Compare Bolt.DIY and CodinIT.dev - two open-source AI coding assistants. Learn which platform best fits your development needs."
+image: /assets/images/bolt-vs-codinit.png
+---
+
+<img
+  className="dark:hidden block rounded-lg"
+  src="/assets/images/bolt-vs-codinit-light.png"
+  alt="Light mode interface"
+/>
+
+<img
+  className="hidden dark:block rounded-lg"
+  src="/assets/images/bolt-vs-codinit-dark.png"
+  alt="Dark mode interface"
+/>
+
+
+Both Bolt.DIY and CodinIT.dev are open-source AI-powered coding assistants designed to help developers build applications faster. This comparison highlights their key differences to help you choose the right tool for your workflow.
+
+## Overview
+
+<Tabs>
+  <Tab title="Bolt.DIY">
+    A developer-focused platform that emphasizes customization and runs in a browser sandbox using WebContainers. It offers extensive model and provider support with advanced tooling like a code diff viewer.
+  </Tab>
+  <Tab title="CodinIT.dev">
+    A beginner-friendly tool with easy installation and local Node.js execution for better performance and native module support. Ideal for rapid prototyping and non-technical users.
+  </Tab>
+</Tabs>
+
+## Side-by-Side Comparison
+
+| Feature                  | Bolt.DIY                                                                 | CodinIT.dev                                                            |
+|--------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Target Audience**      | Developers and power users seeking deep customization                   | Non-technical users and those wanting fast onboarding                |
+| **Setup**                | CLI-based with developer familiarity expected                           | Simple installer for quick start                                       |
+| **Runtime**              | Browser sandbox (WebContainers) – safer, limited native modules         | Local Node.js – better performance and native module support          |
+| **Model & Provider Support** | Broad support (OpenAI, Anthropic, etc.) – check repo for list          | Model-agnostic with custom support on roadmap                          |
+| **Editor & Tooling**     | Code diff viewer and advanced config options                            | Experimental in-browser editor                                         |
+| **Best Use Case**        | Customization, debugging, multi-provider experimentation               | Rapid prototyping and easy local runs                                  |
+| **Source**               | [Stackblitz-Labs/bolt.diy](https://github.com/Stackblitz-Labs/bolt.diy) | [codinit.dev](https://codinit.dev/) • [github.com/codinit-dev](https://github.com/codinit-dev) |
+
+<Callout type="info">
+  Both platforms are actively evolving open-source projects. Always refer to their respective repositories or documentation for the latest features and supported providers.
+</Callout>
+
+## Runtimes & Model Providers
+
+### Bolt.DIY Runtime
+Uses WebContainers, a browser-based Node.js environment. This provides instant sandboxed execution but may not fully support native npm modules. For more details, visit [WebContainers](https://webcontainers.io).
+
+### CodinIT.dev Runtime
+Runs directly on your local Node.js environment. This ensures better performance and full compatibility with native modules. Learn more at [Node.js](https://nodejs.org).
+
+### Model Providers
+Both platforms support popular providers like OpenAI and Hugging Face, with goals toward model-agnostic architectures. Consult each project's README for configuration details and API key setup.
+
+## Choosing the Right Platform
+
+<Tip>
+  **Choose CodinIT.dev if you prioritize:**
+  - Quick, low-friction setup for non-engineers
+  - Superior local performance and native module compatibility
+  - Simple documentation and onboarding
+</Tip>
+
+<Tip>
+  **Choose Bolt.DIY if you need:**
+  - Extensive customization and broader provider options
+  - Developer tools like diff viewers and advanced configurations
+  - Safe, sandboxed experimentation in the browser
+</Tip>
+
+## Quick Links
+
+- [Bolt.DIY GitHub](https://github.com/Stackblitz-Labs/bolt.diy)
+- [Bolt.new (Upstream)](https://github.com/stackblitz/bolt.new)
+- [CodinIT.dev Website](https://codinit.dev/)
+- [CodinIT.dev Download](https://github.com/Gerome-Elassaad/codinit-app)
+- [CodinIT.dev E2B SaaS](https://github.com/Gerome-Elassaad/codingit)
+- [CodinIT.dev GitHub Org](https://github.com/codinit-dev)
+- [WebContainers](https://webcontainers.io)
+- [Node.js](https://nodejs.org)
+- [OpenAI Docs](https://platform.openai.com/docs)
+- [Hugging Face Docs](https://huggingface.co/docs)

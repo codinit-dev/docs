@@ -1,0 +1,168 @@
+---
+title: "Plan your app"
+descriptiom: "Learn how to get the most out of using your tokens when building with CodinIT.dev."
+---
+
+> The lifecyle of an app, and how to work through it with CodinIT.
+
+This guide is for people who are new to CodinIT and software development. It's designed to help you plan your project, create a good first <Tooltip tip="A prompt is a message you send to the AI">prompt</Tooltip>, and understand the steps involved in building an application.
+
+## The lifecycle of an application
+
+```mermaid  theme={"system"}
+flowchart LR
+    A(Design and plan) --> B(Start building: \n first prompt) --> C{Iterate: \n more prompting} --> D(Deploy) --> C
+    style A fill:#D8F1FF,stroke:#154E93,color:black;
+    style B fill:#D8F1FF,stroke:#154E93,color:black;
+    style C fill:#D8F1FF,stroke:#154E93,color:black;
+    style D fill:#D8F1FF,stroke:#154E93,color:black;
+```
+
+## Step 1: Design and plan
+
+Before you start building, you need to know what you're building and why.
+
+CodinIT provides multiple ways to add your designs:
+
+* Describe them in the prompt.
+* [Import from Github](/integrations/git).
+
+Although you can start with an open-ended prompt, such as `Hey CodinIT, please build a todo list app`, you'll have more success if you design and plan first. Try to come up with answers to the following questions.
+
+**What do you want to build?**
+
+In general terms, what are you creating? For example: a todo list application, or a portfolio website, or a mobile habit tracker app.
+
+**Who is it for?**
+
+Your user should be at the center of your design choices. Think about what they need and how they'll use your application.
+
+**What features does it have?**
+
+List out the features: the things users can do. For example, if building a to-do list app, your feature list might include:
+
+> * Create new todos
+> * Edit existing todos
+> * Delete todos
+> * Schedule the time and date for a todo
+
+
+**How will users access it?**
+
+It’s important to make this decision at the start, so that CodinIT can structure your application to work with the platforms you want to publish to.
+
+Think about the format:
+
+* Website: the user accesses this in their browser. It's mostly content and information. For example: blogs, news sites, portfolios, galleries, and so on.
+* Web application: the user accesses this in their browser. It's interactive, allowing users to add their own data. It's a tool, not just a content site. For example: CodinIT is a web application!
+* Mobile application: the user installs an app on their phone or tablet.
+
+Then you'll prompt CodinIT to build for the format you want:
+
+* If users will access your application in their browser, the easiest way is to publish and host using [CodinIT's deployment integrations](/integrations/deployments).
+* If you want to build a mobile app, you can use popular frameworks which allow you to build your application once, then package it up for multiple platforms.
+
+**An example answer**
+
+> I want to build a todo list app. It's for people who love timeblocking and the pomodoro productivty method. Its features should include: adding and scheduling todos, and a pomodoro timer. It should have a modern, clean, but colorful aesthetic. Users should be able to add, edit, and delete todos. Users should be able to schedule the time and date for their todos. Users should be able to view both their unscheduled task list, and a daily schedule with any scheduled tasks. Users will access the application in their browser, so make sure it's suitable for hosting on Netlify.
+
+## Step 2: Your first prompt
+
+Writing good prompts is key to success with AI tools.
+
+<Tip>
+  For detailed guidance, there's a full best practices article on how to [prompt effectively](/prompting/prompting-effectively). It's recommended to read this in full for more tips on working with AI models.
+</Tip>
+
+If you built up answers to the questions above, you can use those as the basis for your first prompt. Before you start, use CodinIT to improve your prompt:
+
+![Screencapture of how to enhance prompts in CodinIT](/assets/images/prompt-tools-dark.webp)
+
+1. Write your prompt in the chatbox.
+2. In the bottom-left corner of the chatbox, click the **plus icon**, then click **Enhance prompt**.
+3. CodinIT generates a recommended prompt, which you can then edit.
+
+### Comparing original and enhanced prompt results
+
+The image below compares two websites created with the same prompt. The version on the right was built with a simple prompt, while the version on the left was enhanced to produce a more engaging homepage and additional pages.
+
+![Comparison of original vs enhanced prompt results](/assets/images/prompt-comparison.webp)
+
+
+For example, taking the example answer from the previous section and enhancing it generates a much longer, more detailed prompt.
+
+<Accordion title="Full enhanced prompt result">
+  Create a web-based task management application optimized for time-blocking and Pomodoro technique enthusiasts. The application should be built using modern web technologies (React/Vue.js) and include the following core features:
+
+  Core Functionality:
+
+  * Task Management System
+    * Add, edit, and delete tasks
+    * Mark tasks as complete/incomplete
+    * Add descriptions, priority levels, and categories to tasks
+    * Drag-and-drop functionality for task reordering
+  * Scheduling Features
+    * Schedule tasks with specific dates and time blocks
+    * Visual calendar interface for time blocking
+    * Split view showing both unscheduled task list and daily schedule
+    * Ability to reschedule tasks via drag-and-drop
+  * Pomodoro Timer Integration
+    * 25-minute work sessions with 5-minute breaks
+    * Customizable timer durations
+    * Visual and audio notifications
+    * Track completed Pomodoro sessions per task
+
+  Technical Requirements:
+
+  * Single Page Application (SPA) architecture
+  * Responsive design for all screen sizes
+  * Local storage for data persistence
+  * Static site compatible for Netlify hosting
+  * Progressive Web App capabilities
+
+  Design Guidelines:
+
+  * Modern, minimalist interface
+  * Vibrant but professional color palette
+  * Clear visual hierarchy
+  * Intuitive navigation
+  * Smooth animations for interactions
+  * High contrast for accessibility
+
+  Optional Enhancements:
+
+  * Dark/light mode toggle
+  * Keyboard shortcuts
+  * Task statistics and productivity insights
+  * Export/import task data
+  * Integration with calendar applications
+</Accordion>
+
+Once you enhance your prompt, read through the new prompt to make sure it still does what you want.
+
+## Step 3: Iterate
+
+After CodinIT generates your application from your first prompt, you'll probably want to make changes:
+
+* Adding more features.
+* Tweaking behavior or appearance.
+* Fixing bugs.
+
+Do one thing at a time. Don't try to add multiple features in one go. Remember the guidance in [prompt effectively](/prompting/prompting-effectively).
+
+Read the [features overview](/features/overview) for help using CodinIT's interface and capabilities.
+
+## Step 4: Publish
+
+After building your application, the next step is to make it available to users. This is where publishing and hosting come in.
+
+CodinIT provides multiple deployment options. You can choose to:
+
+* Use CodinIT's Netlify integration: this connects CodinIT to Netlify, enabling one-click publishing from within CodinIT. Follow the [Netlify integration](/integrations/netlify) guide to set this up and to learn more about building for Netlify.
+* Use CodinIT's Vercel integration: deploy your applications with Vercel's global edge network. Follow the [Vercel integration](/integrations/vercel) guide.
+* Connect to GitHub and set up publishing from GitHub using other CI/CD tools: this is a common devops pattern. The [GitHub integration](/integrations/git) guide walks you through connecting CodinIT and GitHub. You'll then need to set up your own build and publishing tools.
+* Explore other [deployment platforms](/integrations/deployments) for additional hosting options.
+
+If you're new to building applications and unsure which option to choose, using Netlify or Vercel integration is usually the best option.
+
+Once you've successfully set up your deployment integration by following the instructions above, you can publish your application directly from CodinIT. Learn more about [deployment options](/integrations/deployments) to find the best fit for your project.

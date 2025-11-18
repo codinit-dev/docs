@@ -1,0 +1,114 @@
+---
+title: "Chat Mode"
+description: "Chat with CodinIT to get help without immediately generating code"
+---
+
+<img
+  className="dark:hidden block rounded-lg"
+  src="/assets/images/discuss-light.webp"
+  alt="chat mode light"
+/>
+
+<img
+  className="hidden dark:block rounded-lg"
+  src="/assets/images/discuss-dark.webp"
+  alt="chat mode dark"
+/>
+
+Each agent in CodinIT has its own chat mode where you can plan and ask questions without making changes to your code.
+
+With **Claude Agent, this is called Plan Mode**, and with the **v1 Agent (legacy), it's called Discussion Mode**. Both modes provide project-specific help, drawing on CodinIT’s documentation and other online sources when needed.
+
+Using Plan or Discussion Mode lets you explore ideas safely, save tokens by avoiding unnecessary code exchanges, and ensure you get things right before moving into Build Mode.
+
+## Features
+
+### Project context awareness
+
+Every discussion message includes your project codebase for context-aware responses, as well as the most recent messages.
+
+Because Plan and Discussion Modes have the entire context of your projects, there are a wide range of use cases, including:
+
+* Debugging assistance
+* Recommendations on tools, libraries and APIs
+* Product/project decision-making
+* Suggestions on how to improve design
+* Suggestions for new features
+* Understanding and integrating external APIs
+* Generating implementation plans for later execution
+* Use the Inspector tool to highlight a component within a page, and discuss potential changes
+
+### Web research
+
+When CodinIT answers a question, it can pull in real-time, up-to-date information from trusted web sources instead of just relying on what it was trained on. This helps ensure the answers are accurate, relevant, and not outdated. When a search has been conducted, CodinIT displays the sources at the top of the response.
+
+For example:
+
+* If you ask about the latest Stripe API updates, CodinIT won't just rely on old knowledge; it will search for the latest documentation and give you a more reliable answer.
+* If you ask about a bug in a popular library, it can check forums or support pages for the most recent solutions.
+
+### Quick action buttons
+
+If your question or prompt has an intuitive action associated with it, CodinIT will likely generate quick action buttons at the end of its response.
+
+With these buttons, you can take immediate actions such as:
+
+* **Implement this plan** (auto-switches to Build Mode to apply changes)
+* **Show an example**
+* **Refine this idea**
+
+The quick action buttons are contextual and will vary depending on your project and the topic of discussion.
+
+## How to use Plan Mode
+
+Plan Mode appears when you are using the Claude Agent. It helps you map out steps, reason through complex problems, and build strategies.
+
+While its main strength is structured planning, it can also search the web or explore your code base if needed. Powered by Claude Agent, it offers strong reasoning abilities to support your work.
+
+### Use Plan Mode on the CodinIT homepage
+
+You can begin your CodinIT project in Plan Mode right from the first prompt. This lets you create and refine a plan through back-and-forth discussion before executing a build, helping you avoid unwanted changes and use fewer tokens overall.
+
+Simply click **Plan** before submitting your prompt to generate a plan for your build.
+
+<Warning>
+  When you use Plan mode from the homepage, it starts by creating the base structure of your app. After that, it shares a plan in the chatbox. You can review this plan, suggest changes, and continue building step by step.
+</Warning>
+
+<Note>
+  If you want to create a mobile app, it’s important to mention this directly in your prompt. For example, you might prompt: “Build a mobile app that helps people track their daily habits.”
+</Note>
+
+<img src="/assets/images/plan.webp" alt="Screencapture of Plan Mode enabled on CodinIT homepage" data-og-width="1781" width="1781" data-og-height="1006" height="1006" data-path="/assets/images/plan.webp" data-optimize="true" data-opv="3" />
+
+Plan Mode highlights blue when active. Click it again to turn it off and return to Build mode.
+
+### Use Plan Mode in a CodinIT project
+
+Follow the steps below to switch to Plan Mode while working in a CodinIT project:
+
+1. Open a project working with Claude Agent.
+2. In the bottom-right corner of the chatbox, click **Plan**.
+3. Enter your question or prompt, and read the response. You can then either:
+   * Continue the discussion.
+   * Use one of the quick action buttons to implement the suggestion.
+
+<Tip>
+  Plan Mode highlights blue when active. Click it again to turn it off and return to Build mode.
+</Tip>
+
+## How to use Discussion Mode
+
+Discussion Mode appears when you are using the v1 Agent (legacy). It lets you explore ideas by chatting with CodinIT without making changes to your code. Powered by Google Gemini, it is versatile and works well for a wide range of topics. You can use it any time you want to brainstorm or think through ideas.
+
+Follow the steps below to use Discussion Mode in a CodinIT project:
+
+1. Open a project working with the v1 Agent (legacy).
+2. In the bottom-right corner of the chatbox, click **Discuss**.
+3. Enter your question or prompt, and read the response. You can then either:
+   * Continue the discussion.
+   * Use one of the quick action buttons to implement the suggestion.
+
+<Tip>
+  Discussion Mode highlights blue when active. Click it again to turn it off and return to Build mode.
+</Tip>

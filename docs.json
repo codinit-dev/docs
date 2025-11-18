@@ -1,0 +1,245 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "Docs",
+  "colors": {
+    "primary": "#3B82F6",
+    "light": "#F8FAFC",
+    "dark": "#0F172A"
+  },
+  "favicon": "/favicon.ico",
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://codinit.dev/blog"
+        },
+        {
+          "anchor": "Releases",
+          "icon": "github",
+          "href": "https://github.com/Gerome-Elassaad/codinit-app/releases"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Introduction",
+            "icon": "book-open",
+            "pages": [
+              "index",
+              "introduction/welcome"
+            ]
+          },
+          {
+            "group": "Getting Started",
+            "icon": "play",
+            "expanded": true,
+            "pages": [
+              "quickstart",
+              "getting-started/installation",
+              "getting-started/select-your-model",
+              "getting-started/your-first-project"
+            ]
+          },
+          {
+            "group": "Features",
+            "icon": "star",
+            "pages": [
+              "features/overview",
+              "features/development/code-editor",
+              "features/development/developers",
+              "features/development/terminal",
+              "features/development/webcontainer",
+              "features/development/workbench"
+            ]
+          },
+          {
+            "group": "Comparisons",
+            "icon": "scale",
+            "pages": [
+              "comparisons/bolt-vs-codinit",
+              "comparisons/lovable-vs-codinit"
+            ]
+          },
+          {
+            "group": "Prompting",
+            "icon": "message-square",
+            "pages": [
+              "prompting/discussion-mode",
+              "prompting/maximize-token-efficiency",
+              "prompting/plan-your-app",
+              "prompting/prompt-engineering-guide",
+              "prompting/prompting-effectively"
+            ]
+          },
+          {
+            "group": "Model Configuration",
+            "icon": "settings",
+            "pages": [
+              "model-config/context-windows",
+              "model-config/model-comparison"
+            ]
+          },
+          {
+            "group": "Providers",
+            "icon": "cloud",
+            "pages": [
+              "providers/cloud-providers",
+              "providers/anthropic",
+              "providers/aws-bedrock",
+              "providers/deepseek",
+              "providers/fireworks",
+              "providers/google",
+              "providers/groq",
+              "providers/mistral-ai",
+              "providers/ollama",
+              "providers/openai",
+              "providers/openrouter",
+              "providers/xai-grok"
+            ]
+          },
+          {
+            "group": "Running Models Locally",
+            "icon": "cpu",
+            "pages": [
+              "running-models-locally/lm-studio",
+              "running-models-locally/local-model-setup"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Essentials",
+        "groups": [
+          {
+            "group": "Essentials",
+            "icon": "wrench",
+            "pages": [
+              "essentials/ai-chat-commands",
+              "essentials/customization",
+              "essentials/project-templates"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "icon": "plug",
+            "pages": [
+              "integrations/deployments",
+              "integrations/git",
+              "integrations/netlify",
+              "integrations/supabase",
+              "integrations/vercel"
+            ]
+          },
+          {
+            "group": "MCP",
+            "icon": "blocks",
+            "pages": [
+              "mcp/mcp-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Support",
+            "icon": "life-buoy",
+            "pages": [
+              "support/frequently-asked-questions",
+              "support/integration-issues",
+              "support/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/logo-dark.webp",
+    "dark": "/logo/icon.webp"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Issues",
+        "href": "https://github.com/Gerome-Elassaad/codinit-app"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download",
+      "href": "https://codinit.dev/download"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/codinit-dev"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "canonical": "https://codinit.dev/docs"
+    }
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": {
+      "theme": {
+        "light": "github-light",
+        "dark": "github-dark"
+      }
+    }
+  },
+  "integrations": {
+    "telemetry": {
+      "enabled": true
+    }
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+  "interaction": {
+    "drilldown": false
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "description": "Documentation for CodinIT.dev, an AI-powered development platform for building applications with local and cloud AI models.",
+  "background": {
+    "decoration": "gradient",
+    "color": {
+      "light": "#ffffff",
+      "dark": "#0a0a0a"
+    }
+  }
+}

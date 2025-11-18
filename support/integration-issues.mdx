@@ -1,0 +1,183 @@
+---
+title: "Integration issues"
+description: "Solve common issues with CodinIT, integrations in development environment"
+---
+
+> Troubleshooting for integrations
+
+This page offers troubleshooting guidance for CodinIT integrations. The tips here assume you already have some familiarity with the underlying technologies.
+
+If you’re new to Netlify publishing, Supabase databases, or other tools that CodinIT offers integrations for, find the respective [integration page](/integrations/deployments) for the tool you’re using as a starting point. Those pages include introductory information to help you get set up before diving into troubleshooting.
+
+## CodinIT loses connection to Netlify when duplicating projects
+
+If you fork or duplicate your project, you'll need to reconnect to Netlify. To do so, follow the steps in the [Netlify integration](/integrations/deployments) guide.
+
+Doing this will create a new Netlify site, so you'll need to make sure your custom domains are pointed to the new site:
+
+* If you bought your domain through Netlify and you're using Netlify DNS, you can remove the domain from the old site and add it to the new one, all in Netlify. This [Netlify support answer](https://answers.netlify.com/t/migrate-domains-to-new-site/76080) provides more information.
+* If you use another domain provider, look for their guide to updating domains.
+
+## "Another project is already using this domain" error
+
+If you see this error, it usually means the domain is still connected to a previous deployment on another hosting service. This happens when the domain was not fully removed from that service’s domain management settings.
+
+### Domains originally purchased through Netlify
+
+Typically, Netlify lets you [disconnect a domain from your project](https://answers.netlify.com/t/support-guide-another-site-is-using-this-domain-verifying-domain-ownership-for-netlify-production-domain/13765) when this issue occurs.
+
+However, in some situations, due to an underlying communications issue between CodinIT and Netlify, doing this manually isn't enough to solve the problem.
+
+If you registered your domain with Netlify, removed it from your Netlify projects, and CodinIT still shows an error message, [contact Netlify support](https://www.netlify.com/support/). They will be able to make changes to the domain settings so that it can be used with CodinIT. They can adjust your domain settings so it can be used with CodinIT.
+
+### Domains originally purchased through any other provider
+
+If you see the “another project is already using this domain” error with a provider other than Netlify, follow these steps to resolve the issue:
+
+1. Log in to the hosting service where the domain was previously connected (for example, Netlify).
+2. Go to the domain management settings.
+3. Check if your domain is still listed or connected to any old projects.
+
+   <Tip>
+     Domain records can be confusing, and that’s completely normal. If you run into any trouble, reach out to your registrar's support team for help.
+   </Tip>
+4. Remove the domain if it is still connected.
+5. Return to your CodinIT dashboard and try connecting the domain again.
+
+## CodinIT failed to publish to Netlify
+
+If CodinIT fails to publish, you have the option of publishing manually to Netlify:
+
+1. Run the project build command (usually `npm run build`).
+2. Click **Download** to download the project.
+3. Follow Netlify's [Manual deploy instructions](https://docs.netlify.com/site-deploys/create-deploys/#drag-and-drop).
+
+<Note>
+  Note that CodinIT calls this feature **Publish,** whereas Netlify calls it **Deploy**.
+</Note>
+
+## GitHub authentication issues
+
+Sometimes, GitHub authentication conflicts can occur if you’ve connected the same GitHub account to more than one CodinIT account. This usually happens when:
+
+* You originally signed up for CodinIT using your GitHub account.
+* Later, you created a new CodinIT account and tried to connect that same GitHub account through the GitHub integration.
+
+When you use GitHub to sign in to CodinIT, the same credentials are automatically used for the GitHub integration. These two functions can’t be separated, so you’ll need to adjust your setup if you want to use the same GitHub account with a new CodinIT account.
+
+Follow the steps below to resolve this issue.
+
+<Steps>
+  <Step title="Create a new login method for your original CodinIT account">
+    1. In your first CodinIT account (the one you signed up for using GitHub), reset your password using the email address associated with your GitHub account.
+
+       <Check>
+         This adds an email and password login option to that account.
+       </Check>
+    2. Log out once the reset is complete.
+  </Step>
+
+  <Step title="Remove GitHub authentication from the old account">
+    1. Log back in to the original account using your new email and password credentials.
+    2. Click **Settings** in the left menu.
+    3. Click the **Credentials** tab.
+    4. Under GitHub, click **Delete** to remove GitHub as an authentication method.
+  </Step>
+
+  <Step title="Connect the GitHub integration to your new account">
+    1. Log in to your new CodinIT account (the one you want to use going forward).
+    2. Go through the usual steps to connect the GitHub integration.
+  </Step>
+</Steps>
+
+## Supabase row-level security rules aren't working
+
+If your Supabase row-level security (RLS) rules aren’t behaving as expected (such as returning no data, exposing too much data, or causing authorization errors), it’s often due to a misconfigured policy or a mismatch between your schema and the rule conditions.
+
+You can resolve this by resetting your RLS configuration and reapplying the correct rule through CodinIT.
+
+To do so, follow these steps:
+
+1. In the chatbox, prompt CodinIT to remove all existing row-level security rules from the affected Supabase table. This clears out any incorrect or conflicting policies.
+2. Once the rules are removed, prompt CodinIT to add back the relevant row-level security rule. Be specific about the intended behavior (for example, “only allow users to view rows where user\_id matches their authenticated ID”).
+3. After the new rule is applied, test your queries or endpoints again to confirm the policy is now enforced correctly.
+
+<Tip>
+  If the issue persists, check that the table’s **RLS feature** is enabled in Supabase
+</Tip>
+
+## Supabase edge functions
+
+Supabase Edge Functions act as the central bridge between your application, external services, and your database. Edge functions can connect your project with services like OpenAI, Notion, Stripe, or GitHub. Each connection type introduces its own potential issues, shown at the interaction points in the diagram:
+
+* **CORS errors** may occur when a web browser tries to call an edge function from a domain that isn’t permitted in your CORS configuration.
+* **Authorization header or JWT issues** happen when external services like Stripe or GitHub send webhook requests that do not include a JSON Web Token. In these cases, JWT verification must be disabled, and other validation methods should be added instead.
+* **Missing secrets** can arise when an edge function attempts to connect to an external API, such as OpenAI, without including the required authentication key or environment variable.
+
+### CORS (cross-origin resource sharing) errors
+
+If your edge function isn't working, it may be due to a [CORS](https://developer.mozilla.org/en-US/Web/HTTP/Guides/CORS) error. To check this:
+
+1. Open [Chrome DevTools](https://developer.chrome.com/devtools/open): press `Command + Option + J` on Mac, `Control + Shift + J` on Windows or Linux.
+2. Check the **Network** tab. Look for errors related to CORS.
+3. Next, check if CORS headers are set correctly in the file responsible for your edge function. Here are the CORS headers for a chatbot built with CodinIT using OpenAI:
+
+   ```typescript  theme={"system"}
+   const corsHeaders = {
+   'Access-Control-Allow-Origin': '*',
+   'Access-Control-Allow-Methods': 'POST, OPTIONS',
+   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+   };
+   ```
+
+<Tip>
+  You can use [Plan or Discussion Mode](/prompting/discussion-mode) to ask CodinIT if CORS headers exist and are set correctly in your application.
+</Tip>
+
+### Missing secret
+
+If your Supabase edge function fails to connect to a service like OpenAI, it’s often because a required API key or secret is missing from your Supabase project. You’ll need to add the secret in Supabase first, then let CodinIT know about the update so it can continue development correctly.
+
+<Steps>
+  <Step title="Add the secret in Supabase">
+    1. In your Supabase project, hover over the left-hand side of the page to open the main menu.
+    2. Select **Edge Functions > Secrets**.
+    3. Click **Add secret** and enter the required key–value pair.
+
+       <Info>
+         For example, to connect to OpenAI, add a secret named `OPENAI_API_KEY` and paste in your API key.
+       </Info>
+
+    4. Save the change.
+
+    <Check>
+      This step securely stores your secret within Supabase so your edge functions can access it when running.
+    </Check>
+  </Step>
+
+  <Step title="Update CodinIT">
+    After you’ve added or updated the secret in Supabase, prompt CodinIT to refresh its connection. You can do this by telling CodinIT that you’ve added a new secret, so it can recognize the change and continue development or testing.
+
+    This ensures CodinIT uses the most up-to-date configuration from your Supabase environment.
+  </Step>
+</Steps>
+
+### Webhooks: authorization headers and JWT
+
+When a webhook in your project is triggered by a third-party service (such as GitHub, Slack, or Stripe), the request will come from outside your application’s authentication system. This means it will not include a valid JSON Web Token (JWT).
+
+By default, Supabase edge functions expect authenticated requests. If JWT verification remains enabled, your webhook calls from external services will fail with an authorization error.
+
+How to handle this correctly:
+
+1. **Disable JWT verification** for the edge function that receives the webhook.
+
+<Check>
+  This allows the function to accept incoming requests from third-party services that don’t use your app’s authentication.
+</Check>
+
+2. **Add custom validation and authorization logic** inside your edge function to ensure requests are legitimate. For example:
+   * Validate a secret or signature header provided by the third-party service.
+   * Confirm the request source matches the expected domain or IP range.
+
+Refer to GitHub’s [validating webhook deliveries](https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries#about-validating-webhook-deliveries) for example steps.

@@ -1,0 +1,152 @@
+---
+title: "Git Integration"
+description: "Seamlessly connect and manage Git repositories from GitHub and GitLab for collaborative development and automated deployments"
+---
+
+> CodinIT integrates directly with GitHub, handling all commit and update operations automatically.
+
+<Tip>
+  If you're new to version control and GitHub, we strongly recommend reading our [Introduction to version history, version control, and GitHub](/integrations/git) to get familiar with the basics.
+</Tip>
+
+When you connect CodinIT to GitHub, your work is automatically backed up with a full history of changes.
+
+This means you’re never locked into using CodinIT. You can build in CodinIT, switch to working directly in GitHub, and then come back to CodinIT whenever you want. And since your code lives in GitHub, you can publish your site with other services too, not just through CodinIT hosting or the CodinIT/Netlify integration.
+
+The GitHub connection is designed to:
+
+* **Keep things simple**: CodinIT handles the tricky parts of Git for you.
+* **Keep branches separate**: Each branch has its own memory, so nothing “bleeds over” between them.
+* **Give you control**: You decide which projects connect to GitHub.
+
+You can bring an existing GitHub project into CodinIT, or start fresh in CodinIT and create a new GitHub repository for it.
+
+## Connect GitHub
+
+To connect your GitHub account to CodinIT, you'll first need an **individual** GitHub account.
+
+<Info>
+  CodinIT currently doesn't support GitHub organization accounts.
+</Info>
+
+[Sign up for one](https://github.com/signup?ref=codinit.dev) if you don't already have one.
+
+To connect an individual GitHub account to CodinIT, follow these steps:
+
+1. Log in to your CodinIT account and open a project.
+2. Click the **GitHub icon** in the top right of your screen.
+3. Click **Log in to GitHub**.
+4. Click **Authorize stackblitz**. (StackBlitz is CodinIT's parent company.)
+5. Follow any further verification steps required.
+
+## Create a new repository from a CodinIT project
+
+<Info>
+  Prerequisite: You must have GitHub connected to CodinIT.
+</Info>
+
+To create a repository from your CodinIT project:
+
+1. Log in to your CodinIT account and open the project you want to link with a new GitHub repository.
+2. Click the **GitHub icon** in the top right of your screen.
+3. In the Create a repository window that appears, enter a name for your new repository.
+4. Click **Create repository**
+5. Click **Start building** to return to CodinIT.
+
+The repository starts as private, on a `main` branch. You can set the repository to public in your GitHub settings, and you can create new branches in CodinIT or on GitHub. See [Branching and merging](#branching-and-merging) for more information.
+
+## Import an existing repository
+
+To import a project into CodinIT from one of your GitHub repositories, follow the steps below:
+
+1. On the [CodinIT homepage](https://codinit.dev), click the GitHub icon below the primary chatbot.
+2. Choose how you want to import:
+   * Use the drop-down menu to select the repository you'd like to import, or
+   * Click the **Import from URL** button, then enter your GitHub repository URL.
+3. Click **Choose this repository**.
+4. CodinIT will load your repository as a new CodinIT project.
+
+## Disconnect GitHub
+
+Fully removing your GitHub integration is a one-step process if you used your GitHub account to create your CodinIT account, or a two-step process if you did not.
+
+Either way, start by following the steps below:
+
+<Steps>
+  <Step title="Revoke access in GitHub">
+    1. [Log in to GitHub](https://github.com/login).
+    2. Click your profile icon in the top-right corner of your screen.
+    3. Click **Settings**.
+    4. Click **Applications** in the left-side navigation menu (likely near the bottom of the menu).
+    5. Click the **Authorized GitHub Apps** tab.
+    6. Click **Revoke** in the CodinIT/StackBlitz row.
+    7. Click **I understand, revoke access**.
+
+    <Warning>
+      If you signed up for your CodinIT account with GitHub, you do not need to perform Part 2. If you signed up using Google or email, you will to complete the process.
+    </Warning>
+  </Step>
+
+  <Step title="Delete the GitHub connection">
+    1. Click **Settings** in the left navigation menu.
+    2. Click the **Credentials** tab.
+    3. Click **Delete** in the GitHub section.
+
+    <Tip>
+      If you added a second email to your account specifically for GitHub, you can go to **Settings** > **Profile** to delete it from your account.
+    </Tip>
+  </Step>
+</Steps>
+
+## Branching and merging
+
+When you create or import a repository in CodinIT, you’ll start on the **main** branch. This is usually the live version of your project. You can do all your work on main, or create branches.
+
+Branches allow you to:
+
+* Work with others without overwriting each other’s changes.
+* Work on different features separately, so unfinished work doesn’t go live.
+
+  <Info>
+    For example, if you’re building three new features on the main branch, you’d have to finish all three before publishing. With branches, you can finish and merge each one into main as they're ready.
+  </Info>
+
+### Create a new branch in CodinIT
+
+<Info>
+  Prerequisite: You must have GitHub connected to CodinIT and a repository already created.
+</Info>
+
+1. Log in to CodinIT and open a project that is already linked to a GitHub repository.
+2. Click the GitHub icon in the top-right of your screen.
+3. Click **Create new branch**.
+4. Enter a branch name.
+5. Click **Create branch**.
+
+<Check>
+  You're now working on your new branch, which is also created in your GitHub repository.
+</Check>
+
+### Change branches in CodinIT
+
+<Info>
+  Prerequisite: You must have GitHub connected to CodinIT, a repository already created, and multiple branches created.
+</Info>
+
+1. Log in to CodinIT and open a project that is already linked to a GitHub repository.
+2. Click the GitHub icon in the top-right of your screen.
+3. Select the branch you want to switch to.
+
+<Tip>
+  CodinIT currently doesn't support merging branches in-app. You need to merge branches in GitHub.
+</Tip>
+
+### Committing and fetching
+
+CodinIT saves your work automatically. Every time you make a change that doesn’t break the project, CodinIT creates a commit for you.
+
+It also checks GitHub every 30 seconds for any updates made outside CodinIT and pulls those in.
+
+<Warning>
+  Very rarely, both CodinIT and GitHub might update at almost the same time. If that happens, CodinIT will keep your changes and overwrite the GitHub version.
+</Warning>

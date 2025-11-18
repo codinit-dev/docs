@@ -1,0 +1,212 @@
+---
+title: "Supabase Integration"
+description: "Connect your CodinIT projects with Supabase for database, authentication, and real-time functionality"
+---
+
+<img
+  className="dark:hidden block rounded-lg"
+  src="/assets/images/supabase-light.webp"
+  alt="Light mode interface"
+/>
+
+<img
+  className="hidden dark:block rounded-lg"
+  src="/assets/images/supabase-dark.webp"
+  alt="Dark mode interface"
+/>
+
+> Use Supabase with CodinIT to add a database, authentication, or edge functions to your app as an alternative to CodinIT Database.
+
+## Projects with Supabase databases published prior to September 30, 2025
+
+<Danger>
+  Before September 30, 2025, CodinIT projects required you to use your own Supabase account for databases. After this date, new projects created with Claude Agent use CodinIT databases by default. CodinIT does not support switching existing projects from Supabase to CodinIT Database.
+</Danger>
+
+If you have an existing project using Supabase databases:
+
+* Keep using Supabase for your databases.
+* Supabase databases cannot be converted into CodinIT databases.
+* You can switch from v1 Agent (legacy) to Claude Agent at any time. Your Supabase databases will still work. The only change you may notice is that your chat history window will reset when you switch.
+
+If you are starting a new project:
+
+* Claude Agent will create and use CodinIT databases by default.
+* You can migrate a CodinIT database to Supabase later if you want.
+* Projects created with v1 Agent (legacy) only support Supabase databases. These must be added after the initial build. The v1 Agent (legacy) cannot create CodinIT databases.
+
+## New to databases and related terminology?
+
+Databases and their features, such as server functions and authentication, are among the more technical parts of CodinIT. If you are just getting started and want a simple introduction to the key concepts, see our [Introduction to databases](/essentials/project-templates) article.
+
+## Overview
+
+By default, new projects created with Claude Agent use CodinIT databases.
+
+Projects created before September 30, 2025, used Supabase by default, as explained in the section above.
+
+You can choose to claim CodinIT databases created with Claude Agent in Supabase if you want to work there, or continue using Supabase directly to create and manage databases for projects that use CodinIT’s v1 Agent (legacy).
+
+Supabase provides:
+
+* A hosted [SQL database](https://supabase.com/database), which you can connect your application to. You don't need to worry about managing your database.
+* [Authentication](https://supabase.com/auth) services, for adding user login and user management to your application.
+* [Edge functions](https://supabase.com/edge-functions): CodinIT uses these if your application needs to include an API. They're also used for communicating with other applications, such as Stripe for payment handling.
+
+Explore Supabase's [website](https://supabase.com/) and [documentation](https://supabase.com/docs) for full details of Supabase's features.
+
+<Warning>
+  Supabase connections are **available with Vite projects**. Next.js projects are not supported at this time.
+</Warning>
+
+## Connect CodinIT to Supabase
+
+To start working with Supabase, you'll first need to connect CodinIT to Supabase in the Applications section of your Personal Settings.
+
+1. Log in to any project.
+2. Click the **gear icon** in the top center of your screen, then click **All project settings.**
+3. Click **Applications** under Personal Settings.
+4. Click **Connect** in the Supabase row.
+5. Log in with your Supabase credentials.
+6. Follow the steps to authorize CodinIT.
+
+## View Supabase data in your CodinIT settings
+
+When managing a project with Supabase in CodinIT, your Supabase data appears in the database-related CodinIT Project Settings.
+
+Click the **database icon** at the top center of your screen to view general database information. To access settings like Authentication, Server Functions, or Secrets, use the **gear icon** and select from the menu.
+
+## Version history and database restores
+
+Restoring to an earlier project version will not change your current Supabase databases.
+
+## Connect a Supabase database
+
+If you already have a Supabase database you want to use in your CodinIT project, or want to create a new one, follow the steps below to connect it.
+
+<Warning>
+  If your project already has a CodinIT database, connecting a Supabase database will replace the connection, which may cause data loss. To keep your existing data, you can [claim your current CodinIT database in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase) instead.
+</Warning>
+
+1. Ensure you have [connected CodinIT to your Supabase account](https://codinit.dev/docs/integrations/supabase).
+2. Log in and open the project with the database you want to claim.
+3. Click the **Database icon** in the top center of your screen.
+4. Click the **Advanced** tab.
+5. Click **Connect**.
+6. Select an existing Supabase project or create a new one.
+7. Click **Connect project**.
+
+## Claim your CodinIT Database in Supabase
+
+<Info>
+  This section is for migrating an existing CodinIT database to Supabase. To connect an existing or new Supabase database instead, see [Connect a Supabase database.](/integrations/supabase#connect-a-supabase-database)
+</Info>
+
+The primary reason for claiming a CodinIT database is to unlock advanced Supabase features. For most use cases, staying with CodinIT keeps things simple and gives you unlimited free databases. However, if you need external management tools, SQL editing, or advanced monitoring, you may prefer to use Supabase.
+
+To migrate your CodinIT database to Supabase and start using Supabase in your project, follow these steps:
+
+<Steps>
+  <Step title="Claim your CodinIT database in Supabase">
+
+    1. Ensure you have [connected CodinIT to your Supabase account](https://support.codinit.dev/docs/integrations/supabase#connect-CodinIT-to-supabase).
+    2. Log in and open the project with the database you want to claim.
+    3. Click the **Database icon** in the top center of your screen.
+    4. Click the **Advanced** tab.
+    5. Click **Claim**.
+    6. Complete additional steps in Supabase.
+    7. After you've claimed a CodinIT database with a Supabase project, refresh your project in your browser.
+  </Step>
+
+  <Step title="Disconnect your Supabase project">
+
+    1. Click the **gear icon** in the top center of your screen.
+    2. Click **Supabase > Disconnect project.**
+    3. Click **Disconnect** to confirm.
+  </Step>
+
+  <Step title="Switch to v1 Agent (legacy)">
+    <Note>
+      Skip ahead to Step 4 if you already working in the v1 Agent (legacy) agent.
+    </Note>
+
+    1. In the bottom-left corner of the chatbox, click the **plus icon**.
+    2. Hover over **Claude Agent** to open the Agents menu.
+    3. Click **v1 Agent (legacy)** to switch agents.
+    4. Click **Switch to v1 Agent (legacy)** to confirm.
+  </Step>
+
+  <Step title="Connect to a Supabase project">
+
+    1. Click the **gear icon** in the top center of your screen.
+    2. Click **Supabase**.
+    3. Select an existing Supabase project or create a new one.
+    4. Follow the steps to connect to Supabase.
+
+    <Check>
+      Your CodinIT project will now work with your connected Supabase database. You can safely switch back to working with Claude Agent.
+    </Check>
+  </Step>
+</Steps>
+
+## Use Supabase in a v1 Agent (legacy) CodinIT project
+
+<Note>
+  Use this section only if your project does not yet have a CodinIT database and is working with the v1 Agent (legacy). If it does have a CodinIT database, you must [claim it in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase).
+</Note>
+
+To use Supabase in a CodinIT project using the v1 Agent (legacy) that does not yet have a database set up, follow the steps below:
+
+
+1. Ensure you have [connected CodinIT to your Supabase account](https://codinit.dev/docs/integrations/supabase/).
+2. Click the **gear icon** in the top center of your screen, then click **Supabase**.
+3. Choose an existing Supabase project to connect to, or create a new one.
+4. Refresh your CodinIT project in your browser.
+
+<Check>
+  CodinIT will now use your connected Supabase project for database operations.
+</Check>
+
+## Disconnect Supabase
+
+1. Log in to any project.
+2. Click the **gear icon** in the top center of your screen, then click **All project settings.**
+3. Click **Applications** under Personal Settings.
+4. In the Supabase row, click **Disconnect**.
+5. In Supabase, remove CodinIT from your authorized applications:
+   1. In the [Supabase dashboard](https://supabase.com/dashboard), make sure you're in the organization that you connected to CodinIT.
+   2. In the left menu, click **Organization settings**.
+   3. Go to the **OAuth Apps** tab.
+   4. Next to CodinIT, click **Delete**.
+
+## Using authentication
+
+If you tell CodinIT to add authentication with Supabase, users will be able to sign up for your application and log in using Supabase's [user management service](https://supabase.com/auth).
+
+Make sure you've connected your Supabase account as described above. Prompt CodinIT to add authentication with Supabase, including adding a signup and login screen to your application.
+
+Once everything is working in your application, you can confirm users are being added correctly in Supabase:
+
+1. Go through the signup process in your application.
+2. Supabase should send you an email to confirm your email address.
+3. In Supabase, open your project.
+4. In the left navigation menu, select **Authentication**.
+5. Check the **Users** list to confirm that the user you just created was added there.
+
+## Using edge functions
+
+Edge functions in CodinIT rely on databases. Before you begin, make sure you have connected your Supabase account as described above. To get started, prompt CodinIT to create the edge function you are interested in. For example: `Create an edge function to handle a conversation with an AI Bot (OpenAI)`. From here, CodinIT generates the edge function.
+
+Edge functions can be complex, as they connect up services and involve authentication steps. For help with common errors, check out [Integrations issues | Supabase edge functions](/support/integration-issues#supabase-edge-functions).
+
+## FAQs and troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I can't get CodinIT to connect to my Supabase database via prompting, why?" icon="seal-question">
+    The most common reasons CodinIT cannot connect to Supabase are that your CodinIT account is not [connected to Supabase](/integrations/supabase#connect-CodinIT-to-supabase) or that your CodinIT database has not been [claimed in Supabase](/integrations/supabase#claim-your-CodinIT-database-in-supabase).
+  </Accordion>
+
+  <Accordion title="I want to switch from Supabase to CodinIT Database, can I?" icon="seal-question">
+    There is currently no supported flow for migrating Supabase databases to CodinIT databases.
+  </Accordion>
+</AccordionGroup>
