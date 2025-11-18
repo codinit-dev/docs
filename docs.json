@@ -30,17 +30,23 @@
           {
             "group": "Introduction",
             "icon": "book-open",
+            "expanded": false,
             "pages": ["index", "introduction/welcome"]
           },
           {
             "group": "Getting Started",
             "icon": "play",
             "expanded": true,
-            "pages": ["quickstart", "getting-started/installation", "getting-started/select-your-model"]
+            "pages": [
+              "quickstart",
+              "getting-started/installation",
+              "getting-started/select-your-model"
+            ]
           },
           {
             "group": "Features",
             "icon": "star",
+            "expanded": false,
             "pages": [
               "features/overview",
               "features/development/code-editor",
@@ -53,11 +59,13 @@
           {
             "group": "Comparisons",
             "icon": "scale",
+            "expanded": false,
             "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
           },
           {
             "group": "Prompting",
             "icon": "message-square",
+            "expanded": false,
             "pages": [
               "prompting/discussion-mode",
               "prompting/maximize-token-efficiency",
@@ -69,11 +77,13 @@
           {
             "group": "Model Configuration",
             "icon": "settings",
+            "expanded": false,
             "pages": ["model-config/context-windows", "model-config/model-comparison"]
           },
           {
             "group": "Providers",
             "icon": "cloud",
+            "expanded": false,
             "pages": [
               "providers/cloud-providers",
               "providers/anthropic",
@@ -101,46 +111,39 @@
           {
             "group": "Running Models Locally",
             "icon": "cpu",
-            "pages": ["running-models-locally/lm-studio", "running-models-locally/local-model-setup"]
-      },
-      {
+            "pages": [
+              "running-models-locally/lm-studio",
+              "running-models-locally/local-model-setup"
+            ]
+          },
+          {
             "group": "Hosting",
             "icon": "globe",
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare" ]
+            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
           }
         ]
-      },      
+      },
       {
         "tab": "Essentials",
         "groups": [
           {
             "group": "Essentials",
             "icon": "wrench",
-            "pages": ["essentials/ai-chat-commands", "essentials/customization", "essentials/project-templates"]
+            "pages": [
+              "essentials/ai-chat-commands",
+              "essentials/customization",
+              "essentials/project-templates"
+            ]
           },
           {
             "group": "Integrations",
             "icon": "plug",
+            "expanded": false,
             "pages": [
-              "integrations/deployments",
-              "integrations/git",
-              "integrations/supabase"
+              "support/frequently-asked-questions",
+              "support/integration-issues",
+              "support/troubleshooting"
             ]
-          },
-          {
-            "group": "MCP",
-            "icon": "blocks",
-            "pages": ["mcp/mcp-overview"]
-          }
-        ]
-      },
-      {
-        "tab": "Support",
-        "groups": [
-          {
-            "group": "Support",
-            "icon": "life-buoy",
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
           }
         ]
       }
