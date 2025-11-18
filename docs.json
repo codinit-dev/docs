@@ -30,10 +30,7 @@
           {
             "group": "Introduction",
             "icon": "book-open",
-            "pages": [
-              "index",
-              "introduction/welcome"
-            ]
+            "pages": ["index", "introduction/welcome"]
           },
           {
             "group": "Getting Started",
@@ -61,10 +58,7 @@
           {
             "group": "Comparisons",
             "icon": "scale",
-            "pages": [
-              "comparisons/bolt-vs-codinit",
-              "comparisons/lovable-vs-codinit"
-            ]
+            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
           },
           {
             "group": "Prompting",
@@ -80,10 +74,7 @@
           {
             "group": "Model Configuration",
             "icon": "settings",
-            "pages": [
-              "model-config/context-windows",
-              "model-config/model-comparison"
-            ]
+            "pages": ["model-config/context-windows", "model-config/model-comparison"]
           },
           {
             "group": "Providers",
@@ -92,14 +83,22 @@
               "providers/cloud-providers",
               "providers/anthropic",
               "providers/aws-bedrock",
+              "providers/cohere",
               "providers/deepseek",
               "providers/fireworks",
+              "providers/github",
               "providers/google",
               "providers/groq",
+              "providers/huggingface",
+              "providers/hyperbolic",
+              "providers/lmstudio",
               "providers/mistral-ai",
+              "providers/moonshot",
+              "providers/netlify",
               "providers/ollama",
               "providers/openai",
               "providers/openrouter",
+              "providers/perplexity",
               "providers/xai-grok"
             ]
           },
@@ -139,9 +138,7 @@
           {
             "group": "MCP",
             "icon": "blocks",
-            "pages": [
-              "mcp/mcp-overview"
-            ]
+            "pages": ["mcp/mcp-overview"]
           }
         ]
       },
@@ -179,16 +176,7 @@
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "footer": {
     "socials": {
