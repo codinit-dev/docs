@@ -161,7 +161,6 @@
             "pages": ["integrations/deployments", "integrations/git", "integrations/supabase"]
           }
         ]
-      }
       },
       {
         "tab": "Support",
