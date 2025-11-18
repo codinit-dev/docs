@@ -31,17 +31,23 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": ["index", "introduction/welcome"]
+            "pages": ["/", "introduction/welcome"]
           },
           {
             "group": "Getting Started",
             "icon": "play",
             "expanded": false,
             "pages": [
-              "quickstart",
-              "getting-started/installation",
-              "getting-started/select-your-model",
-              "getting-started/your-first-project"
+              {
+                "group": "Setup",
+                "expanded": false,
+                "pages": ["quickstart", "getting-started/installation"]
+              },
+              {
+                "group": "Configuration",
+                "expanded": false,
+                "pages": ["getting-started/select-your-model", "getting-started/your-first-project"]
+              }
             ]
           },
           {
@@ -63,37 +69,7 @@
               }
             ]
           },
-          {
-            "group": "Comparisons",
-            "icon": "scale",
-            "expanded": false,
-            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
-          },
-          {
-            "group": "Prompting",
-            "icon": "message-square",
-            "expanded": false,
-            "pages": [
-              "prompting/discussion-mode",
-              "prompting/maximize-token-efficiency",
-              "prompting/plan-your-app",
-              "prompting/prompt-engineering-guide",
-              "prompting/prompting-effectively"
-            ]
-          },
-          {
-            "group": "Model Configuration",
-            "icon": "settings",
-            "expanded": false,
-            "pages": ["model-config/context-windows", "model-config/model-comparison"]
-          },
-          {
-            "group": "Hosting",
-            "icon": "globe",
-            "expanded": false,
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
-          },
-          {
+            {
             "group": "Providers",
             "icon": "cloud",
             "expanded": false,
@@ -122,13 +98,48 @@
                   "providers/togetherai",
                   "providers/xai-grok"
                 ]
-              },
-              {
-                "group": "Local Providers",
-                "expanded": false,
-                "pages": ["providers/lmstudio", "providers/ollama"]
               }
             ]
+          },
+          {
+            "group": "Comparisons",
+            "icon": "scale",
+            "expanded": false,
+            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
+          },
+          {
+            "group": "Prompting",
+            "icon": "message-square",
+            "expanded": false,
+            "pages": [
+              {
+                "group": "Techniques",
+                "expanded": false,
+                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
+              },
+              {
+                "group": "Optimization",
+                "expanded": false,
+                "pages": ["prompting/maximize-token-efficiency", "prompting/plan-your-app"]
+              }
+            ]
+          },
+          {
+            "group": "Model Configuration",
+            "icon": "settings",
+            "expanded": false,
+            "pages": ["model-config/context-windows", "model-config/model-comparison"]
+          },
+          {
+            "group": "Hosting",
+            "icon": "globe",
+            "expanded": false,
+            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
+          },
+          {
+            "group": "Local Providers",
+            "expanded": false,
+            "pages": ["providers/lmstudio", "providers/ollama"]
           },
           {
             "group": "Running Models Locally",
@@ -149,9 +160,16 @@
             "icon": "wrench",
             "expanded": false,
             "pages": [
-              "essentials/ai-chat-commands",
-              "essentials/customization",
-              "essentials/project-templates"
+              {
+                "group": "AI Features",
+                "expanded": false,
+                "pages": ["essentials/ai-chat-commands", "essentials/project-templates"]
+              },
+              {
+                "group": "Configuration",
+                "expanded": false,
+                "pages": ["essentials/customization"]
+              }
             ]
           },
           {
