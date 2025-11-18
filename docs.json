@@ -162,6 +162,18 @@
           }
         ]
       }
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Support",
+            "icon": "life-buoy",
+            "expanded": false,
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
+          }
+        ]
+      }
     ]
   },
   "logo": {
@@ -173,6 +185,18 @@
       {
         "label": "Issues",
         "href": "https://github.com/Gerome-Elassaad/codinit-app"
+      }
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Support",
+            "icon": "life-buoy",
+            "expanded": false,
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
+          }
+        ]
       }
     ],
     "primary": {
@@ -200,6 +224,18 @@
       "theme": {
         "light": "github-light",
         "dark": "github-dark"
+      }
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Support",
+            "icon": "life-buoy",
+            "expanded": false,
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
+          }
+        ]
       }
     }
   },
