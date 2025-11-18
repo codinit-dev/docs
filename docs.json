@@ -50,11 +50,17 @@
             "expanded": false,
             "pages": [
               "features/overview",
-              "features/development/code-editor",
-              "features/development/developers",
-              "features/development/terminal",
-              "features/development/webcontainer",
-              "features/development/workbench"
+              {
+                "group": "Development",
+                "expanded": false,
+                "pages": [
+                  "features/development/code-editor",
+                  "features/development/developers",
+                  "features/development/terminal",
+                  "features/development/webcontainer",
+                  "features/development/workbench"
+                ]
+              }
             ]
           },
           {
@@ -87,26 +93,35 @@
             "expanded": false,
             "pages": [
               "providers/cloud-providers",
-              "providers/anthropic",
-              "providers/aws-bedrock",
-              "providers/cohere",
-              "providers/deepseek",
-              "providers/fireworks",
-              "providers/github",
-              "providers/google",
-              "providers/groq",
-              "providers/huggingface",
-              "providers/hyperbolic",
-              "providers/lmstudio",
-              "providers/mistral-ai",
-              "providers/moonshot",
-              "providers/ollama",
-              "providers/openai",
-              "providers/openai-like",
-              "providers/openrouter",
-              "providers/perplexity",
-              "providers/togetherai",
-              "providers/xai-grok"
+              {
+                "group": "Cloud Providers",
+                "expanded": false,
+                "pages": [
+                  "providers/anthropic",
+                  "providers/aws-bedrock",
+                  "providers/cohere",
+                  "providers/deepseek",
+                  "providers/fireworks",
+                  "providers/github",
+                  "providers/google",
+                  "providers/groq",
+                  "providers/huggingface",
+                  "providers/hyperbolic",
+                  "providers/mistral-ai",
+                  "providers/moonshot",
+                  "providers/openai",
+                  "providers/openai-like",
+                  "providers/openrouter",
+                  "providers/perplexity",
+                  "providers/togetherai",
+                  "providers/xai-grok"
+                ]
+              },
+              {
+                "group": "Local Providers",
+                "expanded": false,
+                "pages": ["providers/lmstudio", "providers/ollama"]
+              }
             ]
           },
           {
