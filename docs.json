@@ -36,11 +36,12 @@
           {
             "group": "Getting Started",
             "icon": "play",
-            "expanded": true,
+            "expanded": false,
             "pages": [
               "quickstart",
               "getting-started/installation",
-              "getting-started/select-your-model"
+              "getting-started/select-your-model",
+              "getting-started/your-first-project"
             ]
           },
           {
@@ -111,6 +112,7 @@
           {
             "group": "Running Models Locally",
             "icon": "cpu",
+            "expanded": false,
             "pages": [
               "running-models-locally/lm-studio",
               "running-models-locally/local-model-setup"
@@ -119,6 +121,7 @@
           {
             "group": "Hosting",
             "icon": "globe",
+            "expanded": false,
             "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
           }
         ]
@@ -129,6 +132,7 @@
           {
             "group": "Essentials",
             "icon": "wrench",
+            "expanded": false,
             "pages": [
               "essentials/ai-chat-commands",
               "essentials/customization",
@@ -139,11 +143,7 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": [
-              "support/frequently-asked-questions",
-              "support/integration-issues",
-              "support/troubleshooting"
-            ]
+            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase"]
           }
         ]
       }
