@@ -1,166 +1,56 @@
 ---
-title: "Netlify"
-description: "Learn how to integrate vercel to deploy your apps directly from your desktop"
+title: Netlify
+description: 'Deploy your CodinIT projects directly to Netlify with one click'
 ---
 
-> If you published a CodinIT project before August 14, 2025, it was deployed through Netlify, not CodinIT hosting. You can now choose which hosting service you’d like to use.
+**Website:** [https://netlify.com/](https://netlify.com/)
 
-For your existing projects published to Netlify, you can either:
+### Getting a Netlify Access Token
 
-* Keep publishing them to Netlify, or
-* Switch to CodinIT hosting
+1. **Sign Up/Sign In:** Go to [Netlify](https://netlify.com/) and create an account
+2. **Navigate to Access Tokens:** Go to User Settings → Applications → Personal access tokens
+3. **Create Token:** Click "New access token", give it a name (e.g., "CodinIT")
+4. **Copy Token:** Save the token securely
 
-<Warning>
-  If your project was published to Netlify before CodinIT hosting was introduced, see the section on **Managing projects published to Netlify before August 14, 2025**.
-</Warning>
+### Configuration in CodinIT
 
-## Connect CodinIT to your Netlify account
+1. **Open Settings:** Click the gear icon on sidebar → Connections tab
+2. **Find Netlify:** Scroll to the Netlify connection section
+3. **Enter Token:** Paste your access token and click "Connect"
+4. **Verify:** You should see your Netlify account information
 
-A Netlify account is required to connect CodinIT to Netlify. If you don't have one, [sign up for one](https://app.netlify.com/signup).
+### Deploying Your Project
 
-Follow these steps to connect your Netlify account to CodinIT:
+1. **Click Deploy:** In any project, click the deploy button in the header
+2. **Choose Netlify:** Select "Deploy to Netlify" from the deployment dialog
+3. **Wait for Build:** CodinIT automatically builds your project and deploys it
+4. **View Live Site:** Click the deployment URL when complete
 
-1. Open any CodinIT project.
-2. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-3. Click **Applications** under Personal Settings.
-4. Click **Connect** in the Netlify section.
-5. Log in to Netlify as prompted.
-6. Follow Netlify's steps to complete the process.
+### Build Configuration
 
-## Publish new projects to Netlify instead of CodinIT hosting
+CodinIT automatically detects your build output in these common directories:
 
-While CodinIT hosting is the default hosting option provided when you choose to publish a project, you can also choose to connect a Netlify account and publish your project to Netlify hosting instead.
+- `/dist` - Vite, Rollup
+- `/build` - Create React App
+- `/out` - Next.js static export
+- `/.next` - Next.js (served automatically)
+- `/public` - Static sites
 
-To switch a project from CodinIT to Netlify hosting, two things are required:
+### Troubleshooting
 
-* You must not have already published your project to CodinIT hosting. (There is no going back; you'll have to create a new, unpublished copy of the project if you've already published it to CodinIT hosting.)
+**Build Fails:**
 
-To switch from CodinIT to Netlify hosting and publish your site, follow these steps:
+- Check the terminal output for build errors
+- Ensure your `package.json` has a `build` script
+- Verify all dependencies are installed
 
-1. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-2. Click **Domains & Hosting**.
-3. Use the drop-down to select **Netlify** for your hosting provider.
-4. Close the Setting window.
-5. Click **Publish** in the top-right corner of your screen.
-6. Click the second **Publish** button that appears.
-7. Wait about a minute for CodinIT to deploy your site.
-8. Click the link that appears in the chat window to open your site (published to Netlify) in your browser.
+**Deployment Fails:**
 
-## Unpublish a project with Netlify hosting
+- Confirm your Netlify token has deployment permissions
+- Check that your project builds successfully locally
+- Ensure build output directory exists and contains files
 
-Want to take down a site you've published with Netlify hosting? No problem, just follow these steps:
+**Wrong Build Directory:**
 
-1. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-2. Click **Domains & hosting**.
-3. Click the red **Unpublish** text.
-4. Confirm by clicking **Unpublish** again.
-
-## Switch your project from Netlify to CodinIT hosting
-
-<Danger>
-  You cannot switch from Netlify to CodinIT hosting when your project is in a published state.
-</Danger>
-
-<Info>
-  This information applies to projects published after August 14, 2025. For projects published prior to that date, before the introduction of CodinIT hosting, see the next section on **Managing projects published to Netlify before August 14, 2025**.
-</Info>
-
-To switch your project from Netlify to CodinIT hosting, follow the steps below:
-
-1. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-2. Click **Domains & Hosting**.
-3. Use the drop-down to select between **CodinIT Cloud** for your hosting provider.
-
-<Check>
-  Your project will now publish to CodinIT hosting.
-</Check>
-
-## Managing projects published to Netlify before August 14, 2025
-
-If you’ve published your site to Netlify prior to August 14, 2025, you have the option of continuing to use Netlify, or you can switch to CodinIT hosting.
-
-How you manage a project published before August 14, 2025 depends on how it was set up:
-
-* **Published by CodinIT to a Netlify domain with no Netlify account connected:** CodinIT created a public copy of your site on a Netlify URL when you originally published it, but you have never connected a Netlify account to CodinIT as an integration.
-* **Published by CodinIT to your own connected Netlify account:** CodinIT created a public copy of your site on a Netlify URL connected to your account via the CodinIT/Netlify integration.
-
-The following sections provide information on how to switch to CodinIT hosting, unpublish a project, or add a custom domain.
-
-### Switch a project to CodinIT hosting originally published to Netlify prior to August 14, 2025
-
-Switching a project published to Netlify before August 14, 2025 works the same whether or not you had connected a Netlify account. Follow the steps below:
-
-1. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-2. Click **Domains & Hosting**.
-3. Click **Switch to CodinIT hosting**.
-4. Click **Confirm hosting switch**. CodinIT will begin moving your hosting.
-5. Wait about a minute for CodinIT to finish. You’ll see a notification that your site was deployed to a `CodinIT.host` domain.
-
-### Unpublish a project originally published to Netlify prior to August 14, 2025
-
-If you need to remove an older Netlify deployment, how you can do it depends on whether or not you had a Netlify integration connected when the site was published:
-
-* If your project was published to Netlify by CodinIT **without a Netlify integration** set up on your account, [contact CodinIT support](/support/troubleshooting).
-* If your site was **connected to your Netlify account** when it was published, you must handle its removal from your Netlify dashboard. To learn more, see Netlify's article on [Deploys, rollback, and deletion](https://www.netlify.com/blog/deploy-deletion/).
-
-### Add a domain to a project originally published to Netlify prior to August 14, 2025
-
-For projects published before August 14, 2025, you can keep working on them and publishing updates to their Netlify URL as usual.
-
-However, you won’t be able to add a custom domain to these projects through the CodinIT chatbox or project settings. To add a custom domain to a CodinIT project published on Netlify prior to August 14, 2025, you’ll need to either:
-
-## Limitations
-
-If you plan to continue using Netlify, you may want to understand more about the platform and the type of software it's designed to host. For example, Netlify can't host your database or a traditional backend.
-
-* [What is Netlify?](https://docs.netlify.com/platform/what-is-netlify): Netlify's own description of their purpose and features.
-* [Intro to Composable Architecture](https://www.netlify.com/guide-to-composable-architecture): this is a big topic, but it's worth exploring, as it helps you understand what Netlify can and can't support, and how to build for publishing to Netlify.
-
-<Info>
-  Explore Netlify's [website](https://www.netlify.com) and [documentation](https://docs.netlify.com) for full details of Netlify's features.
-</Info>
-
-## Publish manually
-
-You can also publish your project to Netlify without connecting your CodinIT account.
-
-1. Run the project build command (usually `npm run build`).
-2. Click **Download** to download the project.
-3. Follow Netlify's [Manual deploy instructions](https://docs.netlify.com/site-deploys/create-deploys/#drag-and-drop).
-
-<Note>
-  Note that CodinIT calls this feature **Publish** whereas Netlify calls it **Deploy**.
-</Note>
-
-Netlify provides a video tutorial:
-
-<iframe width="750" height="315" src="https://www.youtube.com/embed/etZ9HSUoTPU?si=k52FvcYCCQ7b_H5T" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
-
-## Disconnect your Netlify integration
-
-If you'd like to disconnect your Netlify integration, follow the steps below:
-
-1. Open any CodinIT project.
-2. Click the **gear icon** in the top center of your screen, then click **All project settings**.
-3. Click **Applications** under Personal Settings.
-4. Click **Disconnect** in the Netlify row.
-5. Log in to your Netlify account and remove CodinIT from your authorized applications:
-   1. Click your profile > **User settings** > **OAuth**.
-   2. Under **Authorized applications**, click the menu for the **CodinIT** entry.
-   3. Click **Revoke access**.
-
-## Netlify FAQs and troubleshooting
-
-<AccordionGroup>
-  <Accordion title="How can I unpublish a project on Netlify?" icon="seal-question">
-    For projects published after August 14, 2025, see [Unpublish a project with Netlify hosting](/integrations/netlify#unpublish-a-project-with-netlify-hosting). For projects originally published to Netlify prior to August 14, 2025, **without a Netlify integration**, contact [CodinIT customer support](/support/troubleshooting) to request unpublishing. If your account does have a Netlify integration, you can unpublish your site through your Netlify account. See their article on [Deploys, rollback, and deletion](https://www.netlify.com/blog/deploy-deletion/).
-  </Accordion>
-
-  <Accordion title="I published my project with Netlify before CodinIT hosting was introduced on August 14, 2025, do I have to switch off Netlify to CodinIT?" icon="seal-question">
-    No, you do not have to make the switch. The choice is yours to continue publishing your existing projects to Netlify and use them to manage any custom domains, or to [switch to CodinIT hosting](/integrations/netlify).
-  </Accordion>
-
-  <Accordion title="Can I publish new projects to Netlify?" icon="seal-question">
-    Yes, though your project needs to be in an unpublished state to make the switch. See [Publish new projects to Netlify instead of CodinIT hosting](/integrations/netlify#publish-new-projects-to-netlify-instead-of-CodinIT-hosting).
-  </Accordion>
-</AccordionGroup>
+- CodinIT tries common directories automatically
+- If your build outputs to a different directory, modify your build script

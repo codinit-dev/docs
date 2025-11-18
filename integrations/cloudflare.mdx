@@ -1,0 +1,82 @@
+---
+title: 'Cloudflare Pages'
+description: 'Deploy your CodinIT projects to Cloudflare Pages with global CDN and edge computing'
+---
+
+**Website:** [https://pages.cloudflare.com/](https://pages.cloudflare.com/)
+
+### Getting Cloudflare API Token & Account ID
+
+1. **Sign Up/Sign In:** Go to [Cloudflare](https://cloudflare.com/) and create an account
+2. **Navigate to API Tokens:** Go to Profile → API Tokens → Create Token
+3. **Create Pages Token:** Use "Edit Cloudflare Pages" template or create custom token with:
+   - Account: Cloudflare Pages:Edit
+   - Zone: Page Rules:Edit (optional)
+4. **Copy Token:** Save the token securely
+5. **Get Account ID:** Go to Account Home → Account ID (copy this too)
+
+### Configuration in CodinIT
+
+1. **Open Settings:** Click the gear icon → Connections tab
+2. **Find Cloudflare:** Scroll to the Cloudflare connection section
+3. **Enter Credentials:**
+   - Paste your API token
+   - Paste your Account ID
+4. **Verify:** You should see your Cloudflare account information
+
+### Deploying Your Project
+
+1. **Click Deploy:** In any project, click the deploy button in the header
+2. **Choose Cloudflare:** Select "Deploy to Cloudflare" from the deployment dialog
+3. **Wait for Deployment:** CodinIT automatically builds and deploys your project
+4. **View Live Site:** Click the deployment URL when complete
+
+### Build Configuration
+
+CodinIT automatically detects your build output. Cloudflare Pages will:
+
+- **Serve static files** from your build directory
+- **Handle routing** automatically for SPAs
+- **Enable edge computing** for optimal performance
+
+### Environment Variables
+
+Set environment variables in your Cloudflare Pages dashboard:
+
+- Go to Pages → Your Project → Settings → Environment variables
+- Add variables needed for your application
+- They will be available during build and runtime
+
+### Custom Domains
+
+Connect custom domains through Cloudflare Pages:
+
+- Go to Pages → Your Project → Custom domains
+- Add your domain and follow DNS setup instructions
+- SSL certificates are provisioned automatically
+
+### Troubleshooting
+
+**Build Fails:**
+
+- Check the terminal output for build errors
+- Ensure your build command works locally
+- Verify all dependencies are listed in `package.json`
+
+**Deployment Fails:**
+
+- Confirm your API token has Pages:Edit permissions
+- Verify your Account ID is correct
+- Check that your project builds successfully locally
+
+**Domain Issues:**
+
+- Ensure DNS records point to Cloudflare
+- Wait for SSL certificate provisioning (can take a few minutes)
+- Check Pages domain settings if using custom domain
+
+**Performance:**
+
+- Cloudflare Pages automatically optimizes assets
+- Enable "Always Use HTTPS" in domain settings
+- Consider using Cloudflare's image optimization

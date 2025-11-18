@@ -94,7 +94,6 @@
               "providers/openai-like",
               "providers/openrouter",
               "providers/perplexity",
-              "providers/together",
               "providers/togetherai",
               "providers/xai-grok"
             ]
@@ -103,9 +102,14 @@
             "group": "Running Models Locally",
             "icon": "cpu",
             "pages": ["running-models-locally/lm-studio", "running-models-locally/local-model-setup"]
+      },
+      {
+            "group": "Hosting",
+            "icon": "globe",
+            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare" ]
           }
         ]
-      },
+      },      
       {
         "tab": "Essentials",
         "groups": [
@@ -120,9 +124,7 @@
             "pages": [
               "integrations/deployments",
               "integrations/git",
-              "integrations/netlify",
-              "integrations/supabase",
-              "integrations/vercel"
+              "integrations/supabase"
             ]
           },
           {

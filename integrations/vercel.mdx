@@ -1,87 +1,61 @@
 ---
-title: "Vercel"
-description: "Learn how to integrate Vercel to deploy your apps directly from your desktop"
+title: Vercel
+description: Learn how to integrate Vercel to deploy your apps directly from your desktop
 ---
 
-### Overview
+### Getting a Vercel Access Token
 
-Vercel is the optimal platform for deploying Next.js applications and modern React frameworks. CodinIT provides full Vercel integration for seamless deployments with edge computing capabilities.
+1. **Sign Up/Sign In:** Go to [Vercel](https://vercel.com/) and create an account
+2. **Navigate to Tokens:** Go to Account Settings → Tokens
+3. **Create Token:** Click "Create Token", give it a name (e.g., "CodinIT")
+4. **Copy Token:** Save the token securely
 
-<Card
-  title="Get Vercel API Token"
-  icon="key"
-  href="https://vercel.com/account/tokens/"
-  horizontal
->
-  Create your Vercel API token to enable automated deployments.
-</Card>
+### Configuration in CodinIT
 
-### Features
+1. **Open Settings:** Click the gear icon → Connections tab
+2. **Find Vercel:** Scroll to the Vercel connection section
+3. **Enter Token:** Paste your access token and click "Connect"
+4. **Verify:** You should see your Vercel account information
 
-<Expandable title="Framework Optimization">
-  <CardGroup cols={2}>
-    <Card title="Next.js Optimized" icon="nextjs">
-      Built-in optimizations for Next.js applications including ISR and SSR support.
-    </Card>
-    <Card title="React SPAs" icon="react">
-      Optimized deployments for React single-page applications.
-    </Card>
-    <Card title="Edge Functions" icon="cpu">
-      Deploy serverless functions at the edge for optimal performance.
-    </Card>
-    <Card title="Static Generation" icon="bolt">
-      Automatic static generation for improved loading speeds.
-    </Card>
-  </CardGroup>
-</Expandable>
+### Deploying Your Project
 
-<Expandable title="Deployment Features">
-  <CardGroup cols={2}>
-    <Card title="Instant Deployments" icon="zap">
-      Deploy changes instantly with Vercel's global edge network.
-    </Card>
-    <Card title="Preview Deployments" icon="eye">
-      Preview every push to a branch with shareable URLs for review.
-    </Card>
-    <Card title="Environment Variables" icon="settings">
-      Securely manage environment variables across different environments.
-    </Card>
-    <Card title="Custom Domains" icon="link">
-      Connect custom domains with automatic SSL and global CDN.
-    </Card>
-  </CardGroup>
-</Expandable>
+1. **Click Deploy:** In any project, click the deploy button in the header
+2. **Choose Vercel:** Select "Deploy to Vercel" from the deployment dialog
+3. **Wait for Deployment:** CodinIT automatically builds and deploys your project
+4. **View Live Site:** Click the deployment URL when complete
 
-### Setup Instructions
+### Framework Optimization
 
-<Steps>
-  <Step title="Connect Vercel Account">
-    Visit [Vercel Dashboard](https://vercel.com/dashboard) and ensure you're logged in.
-  </Step>
+Vercel provides automatic optimizations for:
 
-  <Step title="Create API Token">
-    Go to **Settings > Tokens** and click **"Create Token"**.
-  </Step>
+- **Next.js:** ISR, SSR, API routes, middleware
+- **React:** Automatic static generation and optimization
+- **Static Sites:** Global CDN with instant cache invalidation
 
-  <Step title="Configure in CodinIT">
-    Navigate to **Settings > Deployments** and add your Vercel token.
-  </Step>
+### Environment Variables
 
-  <Step title="Connect Repository (Optional)">
-    Import your GitHub/GitLab repository for automatic deployments.
-  </Step>
+Set environment variables in your Vercel dashboard:
 
-  <Step title="Deploy Application">
-    Click **"Deploy to Vercel"** to launch your application on the edge.
-  </Step>
-</Steps>
+- Go to Project Settings → Environment Variables
+- Add variables needed for your application
+- They will be available during build and runtime
 
-### Configuration Options
+### Troubleshooting
 
-<ParamField name="VERCEL_ACCESS_TOKEN" type="string" required>
-  Your Vercel access token. Get this from [Vercel Tokens](https://vercel.com/account/tokens).
-</ParamField>
+**Build Fails:**
 
-<ParamField name="VERCEL_TEAM_ID" type="string">
-  Team ID for organization deployments. Leave empty for personal projects.
-</ParamField>
+- Check the terminal output for specific errors
+- Ensure your build command works locally
+- Verify all dependencies are listed in `package.json`
+
+**Deployment Fails:**
+
+- Confirm your Vercel token is valid and has deployment permissions
+- Check that your project doesn't exceed Vercel's limits
+- Ensure your build produces a valid output directory
+
+**Performance Issues:**
+
+- Vercel automatically optimizes static assets
+- Check your bundle size if experiencing slow loads
+- Consider using Next.js for better performance
