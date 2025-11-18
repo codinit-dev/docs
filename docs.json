@@ -88,6 +88,12 @@
             "pages": ["model-config/context-windows", "model-config/model-comparison"]
           },
           {
+            "group": "Hosting",
+            "icon": "globe",
+            "expanded": false,
+            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
+          },
+          {
             "group": "Providers",
             "icon": "cloud",
             "expanded": false,
@@ -132,12 +138,6 @@
               "running-models-locally/lm-studio",
               "running-models-locally/local-model-setup"
             ]
-          },
-          {
-            "group": "Hosting",
-            "icon": "globe",
-            "expanded": false,
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
           }
         ]
       },
@@ -185,18 +185,6 @@
         "label": "Issues",
         "href": "https://github.com/Gerome-Elassaad/codinit-app"
       }
-      },
-      {
-        "tab": "Support",
-        "groups": [
-          {
-            "group": "Support",
-            "icon": "life-buoy",
-            "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
-          }
-        ]
-      }
     ],
     "primary": {
       "type": "button",
@@ -223,18 +211,6 @@
       "theme": {
         "light": "github-light",
         "dark": "github-dark"
-      }
-      },
-      {
-        "tab": "Support",
-        "groups": [
-          {
-            "group": "Support",
-            "icon": "life-buoy",
-            "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
-          }
-        ]
       }
     }
   },
