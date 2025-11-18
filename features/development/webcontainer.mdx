@@ -1,368 +1,83 @@
 ---
-title: "WebContainers"
-description: "Browser-based Node.js runtime environment providing full development capabilities directly in your browser."
+title: WebContainer Preview Management
+description: Multi-preview instance management and port selection
 ---
 
-<Card
-  title="No Local Setup Required"
-  icon="zap"
-  href="https://webcontainers.io"
-  horizontal
->
-  Start coding immediately without installing Node.js, npm, or any development tools on your local machine.
-</Card>
+Manage multiple development server instances running in WebContainer environments. The port dropdown provides seamless switching between different preview instances and server configurations.
 
-CodinIT’s **WebContainer** provides a complete Node.js development environment running entirely in your browser.  
-Built on [StackBlitz’s WebContainer API](https://webcontainers.io), it eliminates the need for local setup while providing full Node.js capabilities.
+## Overview
 
----
+When running multiple development servers or microservices, the WebContainer Preview Management system allows you to switch between different application instances with a simple dropdown interface.
 
-## Core Features
-
-<ParamField type="runtime">
-Complete Node.js environment including npm, yarn, and all standard Node.js APIs running in your browser.
-
-- **Process Management**: Spawn and manage multiple Node.js processes  
-- **File System**: Full read/write access to project files  
-- **Network**: HTTP servers, WebSocket connections, and API calls  
-- **Environment Variables**: Full Node.js env variable support
-</ParamField>
-
-<ParamField type="package">
-Native support for npm and yarn package management.
-
-- **Dependency Installation**: Install packages from npm registry  
-- **Script Execution**: Run npm scripts and build processes  
-- **Package Resolution**: Automatic dependency resolution and caching  
-- **Lock File Support**: Compatible with `package-lock.json` and `yarn.lock`
-</ParamField>
-
----
-
-### Preview System
-
-<ParamField type="preview">
-Real-time preview of your applications with hot reload support.
-
-- **Instant Updates**: See changes reflected immediately  
-- **Error Overlay**: Visual error indicators with stack traces  
-- **Cross-Origin Support**: Handle COEP requirements for modern web features  
-- **Port Management**: Automatic port allocation and management
-</ParamField>
-
-<ParamField type="errors">
-Comprehensive error forwarding from preview iframes.
-
-- **Uncaught Exceptions**: Capture and display JavaScript errors  
-- **Promise Rejections**: Handle unhandled promise rejections  
-- **Stack Traces**: Detailed stack traces with source mapping  
-- **Error Context**: File path, line numbers, and execution context
-</ParamField>
-
----
-
-## Development Workflow
-
-<Steps>
-  <Step title="Container Initialization">
-    WebContainer boots in your browser, creating an isolated Node.js environment with its own file system and process space.
-  </Step>
-  <Step title="Project Setup">
-    Initialize your project with `package.json`, install dependencies, and configure your dev environment.
-  </Step>
-  <Step title="Code Development">
-    Write code with full IDE features: syntax highlighting, error detection, and autocomplete.
-  </Step>
-  <Step title="Live Preview">
-    See your app running in real-time with automatic updates as you code.
-  </Step>
-  <Step title="Build & Deploy">
-    Run build processes, tests, and deployment scripts — all in the browser.
-  </Step>
-</Steps>
-
----
-
-### Hot Module Replacement
-
-<Expandable title="HMR Capabilities">
-  <ResponseField name="File System Watching" type="feature">
-    Detect file changes automatically across your project.
-  </ResponseField>
-  <ResponseField name="Incremental Updates" type="feature">
-    Update only changed modules without full reloads.
-  </ResponseField>
-  <ResponseField name="State Preservation" type="feature">
-    Maintain app state during live development.
-  </ResponseField>
-  <ResponseField name="Build Tool Integration" type="feature">
-    Compatible with Vite, Webpack, and other modern tools.
-  </ResponseField>
-</Expandable>
-
----
-
-## Technical Specifications
-
-<CardGroup cols="2">
-  <Card title="Startup Time" icon="timer">
-    Container initialization in under 2 seconds for most projects.
+<CardGroup cols={3}>
+  <Card title="Port Selection" icon="hash">
+    Quick switching between server instances
   </Card>
-  <Card title="Memory Usage" icon="memory">
-    Efficient memory management with automatic cleanup.
+  <Card title="Instance Management" icon="server">
+    Multiple preview environments
   </Card>
-  <Card title="CPU Utilization" icon="cpu">
-    Optimized for browsers with minimal CPU overhead.
-  </Card>
-  <Card title="Network Efficiency" icon="network">
-    Intelligent caching and compression for faster installs.
+  <Card title="Status Indicators" icon="activity">
+    Active preview identification
   </Card>
 </CardGroup>
 
----
-
-### Security Model
+## Preview Management
 
 <AccordionGroup>
-  <Accordion title="Sandbox Environment">
-    **Isolated Execution**: Complete separation from your local file system and OS.
+  <Accordion title="Port Organization" icon="list-ordered">
+
+    ### Server Instance Selection
+
+    Organized access to all running preview instances:
+    - **Port-based sorting** - Numerical ordering of available ports
+    - **Active indication** - Clear highlighting of current preview
+    - **Quick switching** - One-click navigation between instances
+    - **Instance persistence** - Maintains selection across sessions
+
   </Accordion>
-  <Accordion title="Resource Limits">
-    **Controlled Access**: Configurable limits on CPU, memory, and network usage.
+
+  <Accordion title="Multi-Server Support" icon="network">
+
+    ### Complex Application Management
+
+    Handle applications with multiple server components:
+    - **Frontend servers** - Main application interfaces
+    - **API servers** - Backend service endpoints
+    - **Development tools** - Additional development servers
+    - **Microservices** - Individual service previews
+
   </Accordion>
-  <Accordion title="Content Security">
-    **CSP Compliance**: Works under strict enterprise content security policies.
-  </Accordion>
-  <Accordion title="Data Protection">
-    **No Data Persistence**: Project data exists only in memory and is cleared on session end.
+
+  <Accordion title="Navigation Integration" icon="link">
+  
+    ### Address Bar Integration
+
+    Seamlessly integrated with preview navigation:
+    - **URL path support** - Navigate within selected instance
+    - **Port preservation** - Maintains port context during navigation
+    - **Reload functionality** - Refresh current preview instance
+    - **External access** - Open previews in new tabs/windows
+
   </Accordion>
 </AccordionGroup>
 
----
+## Usage Scenarios
 
-## Browser Compatibility
+<BadgeGroup>
+  <Badge variant="secondary">Full-Stack Apps</Badge>
+  <Badge variant="secondary">Microservices</Badge>
+  <Badge variant="secondary">Multi-Tenant Apps</Badge>
+  <Badge variant="secondary">Development Tools</Badge>
+</BadgeGroup>
 
-<ParamField type="browser">
-Full support for WebContainer features including advanced Node.js APIs.
-</ParamField>
+### Common Use Cases
 
-<ParamField type="browser">
-Complete compatibility with modern JavaScript and WebAssembly.
-</ParamField>
+- **Full-stack applications** - Frontend and backend servers
+- **Microservice architectures** - Multiple service endpoints
+- **Development tooling** - Build tools, testing servers
+- **Multi-environment** - Different configurations
 
-<ParamField type="browser">
-Native support for SharedArrayBuffer and required APIs.
-</ParamField>
-
-<ParamField type="browser">
-Recommended: Chromium-based browsers for full compatibility.
-</ParamField>
-
----
-
-### Browser Requirements
-
-<Expandable title="Required Permissions">
-  <ResponseField name="SharedArrayBuffer" type="permission">
-    Required for high-performance JavaScript execution.
-  </ResponseField>
-  <ResponseField name="WebAssembly" type="permission">
-    Needed to run the Node.js runtime in the browser.
-  </ResponseField>
-  <ResponseField name="Cross-Origin Isolation" type="permission">
-    COEP and COOP headers required for certain APIs.
-  </ResponseField>
-  <ResponseField name="WebGL" type="permission">
-    Enables hardware acceleration for performance.
-  </ResponseField>
-</Expandable>
-
----
-
-## Configuration Options
-
-<ParamField type="string">
-Configure Cross-Origin Embedder Policy for preview error handling.
-</ParamField>
-
-<ParamField type="string">
-Set the working directory name for the container (default: project-specific).
-</ParamField>
-
-<ParamField type="string">
-Control WebContainer logging verbosity (`debug`, `info`, `warn`, `error`).
-</ParamField>
-
----
-
-### Runtime Settings
-
-<CodeGroup>
-
-```typescript WebContainer Configuration
-{
-  coep: 'credentialless',
-  workdirName: 'my-project',
-  forwardPreviewErrors: true,
-  logLevel: 'info'
-}
-````
-
-```bash Environment Variables
-WEBCONTAINER_COEP=credentialless
-WEBCONTAINER_WORKDIR=my-project
-WEBCONTAINER_LOG_LEVEL=info
-```
-
-</CodeGroup>
-
----
-
-## Use Cases
-
-<CodeGroup>
-
-```javascript React Development
-// Create React app in browser
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-
-function App() {
-  return <h1>Hello from WebContainer!</h1>;
-}
-
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
-```
-
-```bash Terminal Commands
-npm install react react-dom
-npm run dev
-npm run build
-```
-
-</CodeGroup>
-
----
-
-### Node.js Backend Development
-
-<CodeGroup>
-
-```javascript Express Server
-const express = require('express');
-const app = express();
-
-app.get('/api/users', (req, res) => {
-  res.json({ users: ['Alice', 'Bob', 'Charlie'] });
-});
-
-app.listen(3000, () => console.log('Server running on port 3000'));
-```
-
-```bash Package Installation
-npm install express cors helmet
-```
-
-</CodeGroup>
-
----
-
-## Best Practices
-
-<Steps>
-  <Step title="Optimize Dependencies">
-    Use selective imports and tree shaking to reduce bundle size.
-  </Step>
-  <Step title="Efficient File Operations">
-    Minimize file operations and use streaming for large files.
-  </Step>
-  <Step title="Memory Management">
-    Clean up unused resources and use efficient data structures.
-  </Step>
-  <Step title="Network Optimization">
-    Use HTTP/2 and compression for faster installs and API calls.
-  </Step>
-</Steps>
-
----
-
-### Development Workflow
-
-<CardGroup cols="2">
-  <Card title="Incremental Development" icon="code">
-    Make small, frequent changes and test in the preview environment.
-  </Card>
-  <Card title="Error Monitoring" icon="bug">
-    Monitor preview errors and fix issues immediately.
-  </Card>
-  <Card title="Dependency Management" icon="package">
-    Keep dependencies up to date and audit regularly.
-  </Card>
-  <Card title="Code Organization" icon="folder">
-    Organize code into logical modules for maintainability.
-  </Card>
-</CardGroup>
-
----
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Container Won’t Start">
-    **Error**: WebContainer fails to initialize  
-    **Fixes**:
-    - Check browser compatibility  
-    - Clear cache and reload  
-    - Disable conflicting extensions  
-    - Ensure stable connection
-  </Accordion>
-
-  <Accordion title="Preview Not Loading">
-    **Error**: Blank preview or runtime errors  
-    **Fixes**:
-    - Check JavaScript console  
-    - Verify dependencies  
-    - Ensure dev server runs correctly  
-    - Check for port conflicts
-  </Accordion>
-
-  <Accordion title="Performance Issues">
-    **Error**: Slow or laggy experience  
-    **Fixes**:
-    - Close unused tabs  
-    - Restart WebContainer  
-    - Check for memory leaks  
-    - Optimize bundle size
-  </Accordion>
-
-  <Accordion title="Network Problems">
-    **Error**: Package installs or API calls fail  
-    **Fixes**:
-    - Check internet stability  
-    - Verify npm registry access  
-    - Clear WebContainer cache  
-    - Try alternate npm registry
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Getting Help
-
-<Steps>
-  <Step title="Documentation">
-    Visit [WebContainer Docs](https://webcontainers.io/) for comprehensive guides.
-  </Step>
-  <Step title="Community Support">
-    Join the WebContainer community for Q&A and discussions.
-  </Step>
-  <Step title="Bug Reports">
-    Report issues and suggest features via CodinIT feedback.
-  </Step>
-</Steps>
-
-<Note>
-**Ready to start developing?**  
-WebContainer provides everything you need for modern web development directly in your browser — from simple static sites to complex full-stack applications.
-</Note>
+<Callout type="info">
+  **Port Management**: The port dropdown automatically detects and lists all available WebContainer preview instances,
+  making it easy to switch between different parts of your application during development.
+</Callout>
