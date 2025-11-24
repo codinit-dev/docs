@@ -88,24 +88,13 @@ CodinIT automatically generates SQL migrations for database changes:
 
 **Example Migration Creation:**
 
-```
-<exampleArtifact id="create-users-table" title="Create Users Table">
-  <exampleAction type="supabase" operation="migration" filePath="/supabase/migrations/create_users.sql">
-    CREATE TABLE users (
-      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-      email text UNIQUE NOT NULL,
-      created_at timestamptz DEFAULT now()
-    );
-  </exampleAction>
-
-  <exampleAction type="supabase" operation="query" projectId="${projectId}">
-    CREATE TABLE users (
-      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-      email text UNIQUE NOT NULL,
-      created_at timestamptz DEFAULT now()
-    );
-  </exampleAction>
-</exampleArtifact>
+```sql
+-- Create users table migration
+CREATE TABLE users (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  email text UNIQUE NOT NULL,
+  created_at timestamptz DEFAULT now()
+);
 ```
 
 ### Row Level Security (RLS)
