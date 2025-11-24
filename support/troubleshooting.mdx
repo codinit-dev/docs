@@ -62,6 +62,23 @@ description: "Solve common issues with CodinIT, AI providers, and development en
   </Accordion>
 </AccordionGroup>
 
+## MacOS Specific Issues
+<AccordionGroup>
+  <Accordion title="App won't open" icon="x-circle">
+    **Problem**: Application fails to launch or shows security warning.
+
+    **Solutions**:
+   1. After moving the app to your **Applications** folder (or another location of your choice), open **Terminal**.
+   2. Enter the following command to remove the security quarantine:
+
+   `xattr -cr /path/to/your/codinit... `
+
+   <Info>
+     This happens because the app is not notarized by Apple. We are working on getting it notarized for future releases.
+   </Info>
+  </Accordion>
+</AccordionGroup>
+
 ## Development Environment Issues
 
 <AccordionGroup>
