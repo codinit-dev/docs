@@ -3,9 +3,13 @@ title: "Context Window Guide"
 description: "Understanding and managing AI model context windows"
 ---
 
-## What is a Context Window?
+## What is a context window?
 
 A context window is the maximum amount of text an AI model can process at once. Think of it as the model's "working memory" - it determines how much of your conversation and code the model can consider when generating responses.
+
+<Note>
+  **What are tokens?** Tokens are small chunks of text that AI models read. A token is roughly ¾ of a word. For example, the word "hamburger" becomes two tokens: "ham" and "burger". When we talk about context window sizes like "128K tokens," that means the AI can read about 96,000 words at once.
+</Note>
 
 <Note>
   **Key Point**: Larger context windows allow the model to understand more of your codebase at once, but may increase costs and response times.
