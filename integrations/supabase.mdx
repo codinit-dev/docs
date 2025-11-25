@@ -112,13 +112,17 @@ CREATE TABLE users (
 
 ### Row Level Security (RLS)
 
+<Note>
+  **What is Row Level Security?** RLS is like a security guard for your data. It automatically filters what each user can see or change. For example, you can set rules so users only see their own orders, not everyone else's.
+</Note>
+
 All tables automatically get RLS enabled with appropriate policies:
 
 ```sql
--- Enable RLS
+-- Enable RLS (turn on the security guard)
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
--- Create policies for authenticated users
+-- Create a rule: users can only read their own data
 CREATE POLICY "Users can read own data"
   ON users
   FOR SELECT
