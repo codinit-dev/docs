@@ -130,19 +130,20 @@ CREATE POLICY "Users can read own data"
   USING (auth.uid() = id);
 ```
 
-### Data Operations
+### Data operations
 
-**Querying Data:**
+**Querying data (getting information from your database):**
 
 ```typescript
-// CodinIT generates type-safe queries
+// Get all active users from the database
 const { data: users } = await supabase.from('users').select('*').eq('status', 'active');
 ```
 
-**Real-time Subscriptions:**
+**Real-time subscriptions (automatically update when data changes):**
 
 ```typescript
-// Live data updates
+// Listen for any changes to the users table
+// When someone signs up or updates their profile, your app knows immediately
 const channel = supabase
   .channel('users')
   .on(
