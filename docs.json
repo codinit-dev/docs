@@ -18,7 +18,7 @@
         },
         {
           "anchor": "Releases",
-          "icon": "github",
+          "icon": "tag",
           "href": "https://github.com/Gerome-Elassaad/codinit-app/releases"
         }
       ]
