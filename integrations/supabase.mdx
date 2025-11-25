@@ -58,7 +58,11 @@ The Supabase integration in CodinIT offers powerful database capabilities with e
   <Step title="Provide Credentials">Share your Supabase URL and anon key when prompted</Step>
 </Steps>
 
-### Environment Variables
+### Environment variables
+
+<Note>
+  **What are environment variables?** These are secret settings stored outside your code. They keep sensitive information like passwords and API keys safe, and let you use different settings for testing vs. your live app.
+</Note>
 
 CodinIT automatically creates the necessary environment variables:
 
@@ -68,8 +72,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 <Callout type="warning">
-  **Security Note**: Never commit your Supabase service role key to version control. The anon key is safe for
-  client-side use.
+  **Security note**: Never share or publish your Supabase service role key. The "anon key" is safe to use in your app's front-end code.
 </Callout>
 
 ### Connection Verification
