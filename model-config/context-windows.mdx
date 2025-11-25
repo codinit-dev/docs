@@ -106,27 +106,29 @@ CodinIT can automatically summarize long conversations to free up space in the c
 - Use search instead of reading many files
 - Break work into smaller tasks
 
-## Advanced Context Management
+## Advanced context management
 
-### Plan/Act Mode Optimization
+### Plan/Act mode optimization
 
 Leverage Plan/Act mode for better context usage:
 
-- **Plan Mode**: Use smaller context for discussion
-- **Act Mode**: Include necessary files for implementation
+- **Plan Mode**: Use smaller context for discussion and planning
+- **Act Mode**: Include necessary files when you're ready to write code
 
-Configuration:
+Configuration example:
 
 ```
 Plan Mode: DeepSeek V3 (128K) - Lower cost planning
 Act Mode: Claude Sonnet (1M) - Maximum context for coding
 ```
 
-### Context Pruning Strategies
+### Context pruning strategies
 
-1. **Temporal Pruning**: Remove old conversation parts
-2. **Semantic Pruning**: Keep only relevant code sections
-3. **Hierarchical Pruning**: Maintain high-level structure, prune details
+These are ways CodinIT can reduce the amount of text in your context window:
+
+1. **Temporal pruning**: Remove older parts of your conversation that are no longer relevant
+2. **Semantic pruning**: Keep only the code sections related to your current task
+3. **Hierarchical pruning**: Keep the big picture but remove fine details
 
 ### Token Counting Tips
 
