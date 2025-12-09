@@ -194,8 +194,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/logo.png",
-    "dark": "/logo/logo.svg"
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo.png"
   },
   "navbar": {
     "links": [
