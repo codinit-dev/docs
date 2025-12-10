@@ -190,6 +190,10 @@
             "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
           }
         ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "openapi.json"
       }
     ]
   },
