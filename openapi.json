@@ -1,0 +1,1527 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CodinIT API",
+    "version": "1.1.23",
+    "description": "full-stack development platform API with support for 19+ LLM providers, deployment services, and system integration.",
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/codinit-dev/codinit-dev/blob/main/LICENSE"
+    },
+    "contact": {
+      "url": "https://github.com/codinit-dev/codinit-dev"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5173",
+      "description": "Local development server"
+    },
+    {
+      "url": "https://{domain}",
+      "description": "Production server",
+      "variables": {
+        "domain": {
+          "default": "codinit.dev"
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "Chat & LLM",
+      "description": "AI chat and language model operations"
+    },
+    {
+      "name": "Deployment",
+      "description": "Deployment services for Netlify and Vercel"
+    },
+    {
+      "name": "Database",
+      "description": "Supabase database integration"
+    },
+    {
+      "name": "System",
+      "description": "System information and diagnostics"
+    },
+    {
+      "name": "MCP",
+      "description": "Model Context Protocol management"
+    },
+    {
+      "name": "Utilities",
+      "description": "Utility endpoints for configuration and updates"
+    },
+    {
+      "name": "Proxy",
+      "description": "CORS-enabled proxy services"
+    }
+  ],
+  "paths": {
+    "/api/chat": {
+      "post": {
+        "tags": ["Chat & LLM"],
+        "summary": "Stream chat responses with AI models",
+        "description": "Initiates a streaming chat session with the selected AI model and provider. Returns server-sent events.",
+        "operationId": "streamChat",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Streaming response",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          },
+          "413": {
+            "$ref": "#/components/responses/ContextTooLarge"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimitError"
+          },
+          "504": {
+            "$ref": "#/components/responses/TimeoutError"
+          }
+        }
+      }
+    },
+    "/api/llmcall": {
+      "post": {
+        "tags": ["Chat & LLM"],
+        "summary": "Direct LLM invocation",
+        "description": "Execute a direct call to a language model with optional streaming support.",
+        "operationId": "callLLM",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LLMCallRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "LLM response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LLMCallResponse"
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          }
+        }
+      }
+    },
+    "/api/enhancer": {
+      "post": {
+        "tags": ["Chat & LLM"],
+        "summary": "Enhance prompts using AI",
+        "description": "Improves user prompts using AI model suggestions with streaming response.",
+        "operationId": "enhancePrompt",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["prompt"],
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "description": "Original prompt to enhance"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Enhanced prompt stream",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          }
+        }
+      }
+    },
+    "/api/models": {
+      "get": {
+        "tags": ["Chat & LLM"],
+        "summary": "List all available models and providers",
+        "description": "Returns a list of all supported AI models and their providers.",
+        "operationId": "listModels",
+        "responses": {
+          "200": {
+            "description": "List of models and providers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "providers": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ProviderInfo"
+                      }
+                    },
+                    "models": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ModelInfo"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models/{provider}": {
+      "get": {
+        "tags": ["Chat & LLM"],
+        "summary": "Get models for a specific provider",
+        "description": "Returns all available models for the specified provider.",
+        "operationId": "getProviderModels",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Provider name (e.g., anthropic, openai, google)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Provider models",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModelInfo"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/netlify-deploy": {
+      "post": {
+        "tags": ["Deployment"],
+        "summary": "Deploy to Netlify",
+        "description": "Creates or updates a Netlify site deployment with the provided files.",
+        "operationId": "deployToNetlify",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetlifyDeployRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deployment successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          }
+        }
+      }
+    },
+    "/api/vercel-deploy": {
+      "get": {
+        "tags": ["Deployment"],
+        "summary": "Get Vercel deployment status",
+        "description": "Retrieves the status of current Vercel deployments.",
+        "operationId": "getVercelStatus",
+        "responses": {
+          "200": {
+            "description": "Deployment status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "deployments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Deployment"],
+        "summary": "Deploy to Vercel",
+        "description": "Creates a new deployment on Vercel platform.",
+        "operationId": "deployToVercel",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VercelDeployRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deployment successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          }
+        }
+      }
+    },
+    "/api/supabase": {
+      "post": {
+        "tags": ["Database"],
+        "summary": "Get Supabase projects list",
+        "description": "Retrieves all Supabase projects for the authenticated user.",
+        "operationId": "listSupabaseProjects",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["accessToken"],
+                "properties": {
+                  "accessToken": {
+                    "type": "string",
+                    "description": "Supabase access token"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "List of projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          }
+        }
+      }
+    },
+    "/api/supabase.query": {
+      "post": {
+        "tags": ["Database"],
+        "summary": "Execute Supabase queries",
+        "description": "Executes SQL queries against a Supabase database.",
+        "operationId": "executeSupabaseQuery",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupabaseQueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Query results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    },
+                    "error": {
+                      "type": "object",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          }
+        }
+      }
+    },
+    "/api/supabase.variables": {
+      "post": {
+        "tags": ["Database"],
+        "summary": "Fetch Supabase API keys",
+        "description": "Retrieves API keys and configuration for a Supabase project.",
+        "operationId": "getSupabaseVariables",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["accessToken", "projectRef"],
+                "properties": {
+                  "accessToken": {
+                    "type": "string"
+                  },
+                  "projectRef": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "API keys and configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "anonKey": {
+                      "type": "string"
+                    },
+                    "serviceKey": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/AuthError"
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Health check endpoint",
+        "description": "Simple health check to verify API availability.",
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.app-info": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get application metadata",
+        "description": "Returns application version, dependencies, and build information.",
+        "operationId": "getAppInfo",
+        "responses": {
+          "200": {
+            "description": "Application information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["System"],
+        "summary": "Get application metadata (POST)",
+        "description": "Alternative POST endpoint for application metadata.",
+        "operationId": "getAppInfoPost",
+        "responses": {
+          "200": {
+            "description": "Application information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.git-info": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get Git repository information",
+        "description": "Returns local and GitHub repository information including repos, organizations, and activity.",
+        "operationId": "getGitInfo",
+        "responses": {
+          "200": {
+            "description": "Git information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GitInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.memory-info": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get system memory statistics",
+        "description": "Returns total, free, used, and swap memory information (cross-platform).",
+        "operationId": "getMemoryInfo",
+        "responses": {
+          "200": {
+            "description": "Memory statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["System"],
+        "summary": "Get system memory statistics (POST)",
+        "description": "Alternative POST endpoint for memory information.",
+        "operationId": "getMemoryInfoPost",
+        "responses": {
+          "200": {
+            "description": "Memory statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.disk-info": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get disk usage information",
+        "description": "Returns disk usage per filesystem/drive.",
+        "operationId": "getDiskInfo",
+        "responses": {
+          "200": {
+            "description": "Disk usage information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["System"],
+        "summary": "Get disk usage information (POST)",
+        "description": "Alternative POST endpoint for disk information.",
+        "operationId": "getDiskInfoPost",
+        "responses": {
+          "200": {
+            "description": "Disk usage information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.process-info": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get running process information",
+        "description": "Returns information about running processes including PID, CPU%, and memory usage.",
+        "operationId": "getProcessInfo",
+        "responses": {
+          "200": {
+            "description": "Process information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["System"],
+        "summary": "Get running process information (POST)",
+        "description": "Alternative POST endpoint for process information.",
+        "operationId": "getProcessInfoPost",
+        "responses": {
+          "200": {
+            "description": "Process information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system.diagnostics": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get comprehensive diagnostics",
+        "description": "Returns complete system diagnostics including app info, memory, disk, processes, and git information.",
+        "operationId": "getDiagnostics",
+        "responses": {
+          "200": {
+            "description": "Complete diagnostics data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "appInfo": {
+                      "$ref": "#/components/schemas/AppInfo"
+                    },
+                    "memoryInfo": {
+                      "$ref": "#/components/schemas/MemoryInfo"
+                    },
+                    "diskInfo": {
+                      "$ref": "#/components/schemas/DiskInfo"
+                    },
+                    "processInfo": {
+                      "$ref": "#/components/schemas/ProcessInfo"
+                    },
+                    "gitInfo": {
+                      "$ref": "#/components/schemas/GitInfo"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp-check": {
+      "get": {
+        "tags": ["MCP"],
+        "summary": "Check MCP server availability",
+        "description": "Verifies that configured MCP servers are available and responsive.",
+        "operationId": "checkMCPServers",
+        "responses": {
+          "200": {
+            "description": "MCP server status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "servers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": ["available", "unavailable"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp-update-config": {
+      "post": {
+        "tags": ["MCP"],
+        "summary": "Update MCP configuration",
+        "description": "Updates the Model Context Protocol server configuration.",
+        "operationId": "updateMCPConfig",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MCPConfigUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Configuration updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          }
+        }
+      }
+    },
+    "/api/check-env-key": {
+      "get": {
+        "tags": ["Utilities"],
+        "summary": "Check if API key is configured",
+        "description": "Verifies whether a specific API key is configured in the environment.",
+        "operationId": "checkEnvKey",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Environment variable name to check"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Key status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "exists": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/export-api-keys": {
+      "get": {
+        "tags": ["Utilities"],
+        "summary": "Export all configured API keys",
+        "description": "Returns all configured API keys and provider settings for backup purposes.",
+        "operationId": "exportAPIKeys",
+        "responses": {
+          "200": {
+            "description": "Exported API keys",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/update": {
+      "post": {
+        "tags": ["Utilities"],
+        "summary": "Check for application updates",
+        "description": "Checks if a newer version of the application is available.",
+        "operationId": "checkUpdates",
+        "responses": {
+          "200": {
+            "description": "Update information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "updateAvailable": {
+                      "type": "boolean"
+                    },
+                    "latestVersion": {
+                      "type": "string"
+                    },
+                    "currentVersion": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/github-template": {
+      "get": {
+        "tags": ["Utilities"],
+        "summary": "Fetch GitHub repository template files",
+        "description": "Retrieves template files from a GitHub repository for project initialization.",
+        "operationId": "fetchGitHubTemplate",
+        "parameters": [
+          {
+            "name": "repo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "GitHub repository in format 'owner/repo'"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Template files",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "files": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/git-proxy/{path}": {
+      "get": {
+        "tags": ["Proxy"],
+        "summary": "Git proxy for CORS-enabled requests",
+        "description": "CORS-enabled proxy for isomorphic-git operations.",
+        "operationId": "gitProxy",
+        "parameters": [
+          {
+            "name": "path",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Git repository path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Proxied git response",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChatRequest": {
+        "type": "object",
+        "required": ["messages"],
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "files": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "promptId": {
+            "type": "string",
+            "description": "Optional prompt template ID"
+          },
+          "contextOptimization": {
+            "type": "boolean",
+            "description": "Enable smart context optimization",
+            "default": false
+          },
+          "designScheme": {
+            "type": "object",
+            "description": "UI design scheme configuration"
+          },
+          "supabase": {
+            "type": "object",
+            "description": "Supabase integration configuration"
+          },
+          "enableMCPTools": {
+            "type": "boolean",
+            "description": "Enable Model Context Protocol tools",
+            "default": false
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "required": ["id", "role", "content"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["user", "assistant", "system"]
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "LLMCallRequest": {
+        "type": "object",
+        "required": ["messages", "provider", "model"],
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "provider": {
+            "type": "string",
+            "description": "LLM provider name"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model identifier"
+          },
+          "stream": {
+            "type": "boolean",
+            "description": "Enable streaming response",
+            "default": false
+          }
+        }
+      },
+      "LLMCallResponse": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "string"
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "promptTokens": {
+                "type": "integer"
+              },
+              "completionTokens": {
+                "type": "integer"
+              },
+              "totalTokens": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "ModelInfo": {
+        "type": "object",
+        "required": ["name", "label", "provider", "maxTokenAllowed"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Model identifier"
+          },
+          "label": {
+            "type": "string",
+            "description": "Display name"
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider name"
+          },
+          "maxTokenAllowed": {
+            "type": "integer",
+            "description": "Maximum context tokens"
+          },
+          "maxCompletionTokens": {
+            "type": "integer",
+            "description": "Maximum completion tokens"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Icon identifier"
+          }
+        }
+      },
+      "ProviderInfo": {
+        "type": "object",
+        "required": ["name", "staticModels"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "staticModels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelInfo"
+            }
+          },
+          "getApiKeyLink": {
+            "type": "string",
+            "format": "uri"
+          },
+          "labelForGetApiKey": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "NetlifyDeployRequest": {
+        "type": "object",
+        "required": ["files"],
+        "properties": {
+          "files": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "File paths mapped to content with SHA1 hashes"
+          },
+          "siteId": {
+            "type": "string",
+            "description": "Existing site ID for updates"
+          },
+          "siteName": {
+            "type": "string",
+            "description": "Site name for new deployments"
+          }
+        }
+      },
+      "VercelDeployRequest": {
+        "type": "object",
+        "required": ["files", "projectName"],
+        "properties": {
+          "files": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "framework": {
+            "type": "string",
+            "description": "Framework identifier (e.g., nextjs, react)"
+          }
+        }
+      },
+      "DeploymentResponse": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Deployment URL"
+          },
+          "deploymentId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["success", "failed", "pending"]
+          }
+        }
+      },
+      "SupabaseQueryRequest": {
+        "type": "object",
+        "required": ["url", "apiKey", "query"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Supabase project URL"
+          },
+          "apiKey": {
+            "type": "string",
+            "description": "Supabase API key"
+          },
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          }
+        }
+      },
+      "AppInfo": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "dependencies": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "buildInfo": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "commit": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "MemoryInfo": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "Total memory in bytes"
+          },
+          "free": {
+            "type": "integer",
+            "description": "Free memory in bytes"
+          },
+          "used": {
+            "type": "integer",
+            "description": "Used memory in bytes"
+          },
+          "swapTotal": {
+            "type": "integer",
+            "description": "Total swap in bytes"
+          },
+          "swapFree": {
+            "type": "integer",
+            "description": "Free swap in bytes"
+          }
+        }
+      },
+      "DiskInfo": {
+        "type": "object",
+        "properties": {
+          "filesystems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "filesystem": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                },
+                "used": {
+                  "type": "integer"
+                },
+                "available": {
+                  "type": "integer"
+                },
+                "capacity": {
+                  "type": "string"
+                },
+                "mountPoint": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProcessInfo": {
+        "type": "object",
+        "properties": {
+          "processes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "cpu": {
+                  "type": "number",
+                  "description": "CPU usage percentage"
+                },
+                "memory": {
+                  "type": "integer",
+                  "description": "Memory usage in bytes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GitInfo": {
+        "type": "object",
+        "properties": {
+          "local": {
+            "type": "object",
+            "properties": {
+              "branch": {
+                "type": "string"
+              },
+              "commit": {
+                "type": "string"
+              }
+            }
+          },
+          "github": {
+            "type": "object",
+            "properties": {
+              "repos": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "organizations": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "MCPConfigUpdate": {
+        "type": "object",
+        "required": ["servers"],
+        "properties": {
+          "servers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MCPServerConfig"
+            }
+          }
+        }
+      },
+      "MCPServerConfig": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["stdio", "sse", "streamable-http"]
+          },
+          "command": {
+            "type": "string",
+            "description": "Command for stdio type"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL for sse/http types"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "cwd": {
+            "type": "string",
+            "description": "Working directory"
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Environment variables"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": ["type", "message"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "validation_error",
+              "auth_error",
+              "rate_limit",
+              "model_not_found",
+              "context_too_large",
+              "timeout",
+              "stream_error",
+              "mcp_tool_error",
+              "provider_error"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "responses": {
+      "ValidationError": {
+        "description": "Invalid request parameters",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "validation_error",
+              "message": "Invalid request parameters"
+            }
+          }
+        }
+      },
+      "AuthError": {
+        "description": "Authentication failed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "auth_error",
+              "message": "API key not configured"
+            }
+          }
+        }
+      },
+      "RateLimitError": {
+        "description": "Rate limit exceeded",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "rate_limit",
+              "message": "Too many requests"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "model_not_found",
+              "message": "The requested resource was not found"
+            }
+          }
+        }
+      },
+      "ContextTooLarge": {
+        "description": "Request context exceeds maximum size",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "context_too_large",
+              "message": "Request context exceeds model limits"
+            }
+          }
+        }
+      },
+      "TimeoutError": {
+        "description": "Request timeout",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "type": "timeout",
+              "message": "Request exceeded 5 minute timeout"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "cookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "apiKeys",
+        "description": "Cookie-based authentication storing API keys and provider settings"
+      }
+    }
+  },
+  "security": [
+    {
+      "cookieAuth": []
+    }
+  ]
+}
