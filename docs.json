@@ -3,9 +3,9 @@
   "theme": "aspen",
   "name": "Docs",
   "colors": {
-    "primary": "#1D4ED8",
+    "primary": "#3B82F6",
     "light": "#F8FAFC",
-    "dark": "#CBD5E1"
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.ico",
   "navigation": {
