@@ -19,7 +19,7 @@
         {
           "anchor": "Releases",
           "icon": "tag",
-          "href": "https://github.com/Gerome-Elassaad/codinit-app/releases"
+          "href": "https://github.com/codinit-dev/codinit-dev/releases"
         }
       ]
     },
@@ -201,7 +201,7 @@
     "links": [
       {
         "label": "Issues",
-        "href": "https://github.com/Gerome-Elassaad/codinit-app"
+        "href": "https://github.com/codinit-dev/codinit-dev"
       }
     ],
     "primary": {

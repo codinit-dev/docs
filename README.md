@@ -34,11 +34,13 @@ This documentation site is built with [Mintlify](https://mintlify.com) and cover
 > **Important**: If you have a package named `mint` and a package named `mintlify` installed, you should uninstall `mintlify`.
 >
 > 1. Uninstall the old package:
+>
 >    ```bash
 >    npm uninstall -g mintlify
 >    ```
 >
 > 2. Clear your npm cache:
+>
 >    ```bash
 >    npm cache clean --force
 >    ```
@@ -51,12 +53,14 @@ This documentation site is built with [Mintlify](https://mintlify.com) and cover
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/codinit-dev/docs.git
    cd docs
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Using pnpm (recommended)
    pnpm install
@@ -69,6 +73,7 @@ This documentation site is built with [Mintlify](https://mintlify.com) and cover
    ```
 
 3. **Start the development server**
+
    ```bash
    # Using pnpm
    pnpm dev
@@ -146,12 +151,12 @@ This documentation is part of the CodinIT project. See the main project [LICENSE
 
 - **CodinIT App**: [codinit.dev](https://codinit.dev)
 - **Documentation**: [codinit.dev/docs](https://codinit.dev/docs)
-- **GitHub Repository**: [github.com/Gerome-Elassaad/codinit-app](https://github.com/Gerome-Elassaad/codinit-app)
+- **GitHub Repository**: [github.com/codinit-dev/codinit-dev](https://github.com/codinit-dev/codinit-dev)
 - **Download**: [codinit.dev/download](https://codinit.dev/download)
 - **Blog**: [codinit.dev/blog](https://codinit.dev/blog)
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/Gerome-Elassaad/codinit-app/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Gerome-Elassaad/codinit-app/discussions)
+- **Issues**: [GitHub Issues](https://github.com/codinit-dev/codinit-dev/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/codinit-dev/codinit-dev/discussions)
 - **Community**: Join our Discord community for real-time help
