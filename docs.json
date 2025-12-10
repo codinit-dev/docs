@@ -17,9 +17,9 @@
           "href": "https://codinit.dev/blog"
         },
         {
-          "anchor": "Releases",
-          "icon": "tag",
-          "href": "https://github.com/codinit-dev/codinit-dev/releases"
+          "anchor": "LinkedIn",
+          "icon": "linkedin",
+          "href": "https://www.linkedin.com/company/codinit-dev"
         },
         {
           "anchor": "Reddit",
@@ -229,9 +229,8 @@
   "footer": {
     "socials": {
       "github": "https://github.com/codinit-dev",
-      "x": "https://x.com/codinit_dev",
-      "discord": "https://discord.gg/codinit",
-      "reddit": "https://www.reddit.com/r/codinit_dev"
+      "reddit": "https://www.reddit.com/r/codinit_dev",
+      "linkedin": "https://www.linkedin.com/company/codinit-dev"
     },
     "links": [
       {
