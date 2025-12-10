@@ -1,587 +1,483 @@
 ---
-title: 'Customization & Settings'
-description: 'Customize CodinIT IDE, preferences, themes, and configuration to match your workflow'
+title: 'customization & settings'
+description: 'customize CodinIT with design palette, AI providers, and application preferences'
 ---
 
 ## Overview
 
-CodinIT is highly customizable to match your development workflow and preferences. From themes and keybindings to AI behavior and editor settings, you can tailor every aspect of the IDE.
+CodinIT is a web-based AI-powered development platform with extensive customization options. Personalize your color palette, configure AI providers, manage connections, and adjust application behavior through the Control Panel.
 
-## Accessing Settings
+### control panel
 
-<Tabs>
-  <Tab title="macOS" icon="/assets/frameworks/icons/apple.svg">
-    **Menu**: CodinIT → Preferences → Settings
+The Control Panel is your central hub for all customization:
 
-    **Keyboard**: `Cmd + ,`
-  </Tab>
-  <Tab title="Windows" icon="/assets/frameworks/icons/windows.svg">
-    **Menu**: File → Preferences → Settings
+1. Click your **profile avatar** in the top-right corner
+2. Select **Settings** from the dropdown menu
+3. Browse settings categories or use the search bar
 
-    **Keyboard**: `Ctrl + ,`
-  </Tab>
-  <Tab title="Linux" icon="/assets/frameworks/icons/linux.svg">
-    **Menu**: File → Preferences → Settings
+<Tip>
+The Control Panel has two modes: **User** (simplified) and **Developer** (advanced). Toggle between modes based on your needs.
+</Tip>
 
-    **Keyboard**: `Ctrl + ,`
-  </Tab>
-  <Tab title="Command Palette" icon="terminal">
-    Open Command Palette (`Cmd/Ctrl + Shift + P`) and type "Open Settings"
-  </Tab>
-</Tabs>
+### keyboard shortcuts
 
-## Theme Customization
+- **Toggle Theme**: `Cmd/Ctrl + Alt + Shift + D`
+- **Toggle Terminal**: `` Cmd/Ctrl + ` ``
 
-### Built-in Themes
+## design palette (experimental)
 
-CodinIT includes carefully crafted themes optimized for extended coding sessions:
+<Info>
+The Design Palette guides AI in creating designs that match your brand and aesthetic preferences. Customize colors, typography, and visual features for AI-generated interfaces.
+</Info>
+
+### accessing design palette
+
+Click the **palette icon** in the chat interface to open the Design System dialog.
+
+### color customization
+
+Control 11 color roles with separate light and dark mode palettes:
+
+<AccordionGroup>
+  <Accordion title="brand colors">
+    - **Primary**: Main brand color for primary buttons, active links, and key interactive elements
+    - **Secondary**: Supporting brand color for secondary buttons, inactive states, and complementary elements
+    - **Accent**: Highlight color for badges, notifications, focus states, and call-to-action elements
+  </Accordion>
+
+  <Accordion title="base colors">
+    - **Background**: Page backdrop for the main application/website background
+    - **Surface**: Elevated content areas for cards, modals, dropdowns, and panels
+    - **Text**: Primary text for headings, body text, and main readable content
+    - **Text Secondary**: Muted text for captions, placeholders, timestamps, and less important information
+    - **Border**: Separators for input borders, dividers, table lines, and element outlines
+  </Accordion>
+
+  <Accordion title="status colors">
+    - **Success**: Positive feedback for success messages, completed states, and positive indicators
+    - **Warning**: Caution alerts for warning messages, pending states, and attention-needed indicators
+    - **Error**: Error states for error messages, failed states, and destructive action indicators
+  </Accordion>
+</AccordionGroup>
+
+### typography options
+
+Choose from 9 professionally selected fonts:
+
+- **Inter** - Default, modern sans-serif
+- **Roboto** - Google's popular sans-serif
+- **Open Sans** - Friendly and readable
+- **Montserrat** - Geometric sans-serif
+- **Poppins** - Geometric with playful character
+- **Lato** - Humanist sans-serif
+- **JetBrains Mono** - Monospace for code
+- **Raleway** - Elegant display font
+- **Lora** - Serif for traditional look
+
+<Tip>
+Select multiple fonts for fallback support. The first font will be primary, with others serving as backups.
+</Tip>
+
+### design features
+
+Toggle visual design features to match your aesthetic:
 
 <CardGroup cols={2}>
-  <Card title="Dark Themes" icon="moon">
-    - **CodinIT Dark** (Default)
-    - **Midnight Blue**
-    - **Dracula Pro**
-    - **Nord Dark**
-    - **Tokyo Night**
+  <Card title="rounded corners" icon="circle">
+    Adds smooth, rounded corners to elements for a modern, friendly appearance
   </Card>
 
-  <Card title="Light Themes" icon="sun">
-    - **CodinIT Light**
-    - **GitHub Light**
-    - **Solarized Light**
-    - **Catppuccin Latte**
+  <Card title="subtle border" icon="square">
+    Adds refined borders to elements for clear visual separation
   </Card>
 
-  <Card title="High Contrast" icon="circle-half-stroke">
-    - **High Contrast Dark**
-    - **High Contrast Light**
+  <Card title="gradient accent" icon="palette">
+    Applies gradient effects to accent elements for visual depth
   </Card>
 
-  <Card title="Custom Themes" icon="palette">
-    - Import VSCode themes
-    - Create your own
-    - Share with community
+  <Card title="soft shadow" icon="cloud">
+    Adds subtle shadows for elevation and depth perception
+  </Card>
+
+  <Card title="frosted glass" icon="eye">
+    Creates translucent, blurred backgrounds for modern aesthetics
   </Card>
 </CardGroup>
 
-### Changing Your Theme
+### styling controls
 
-1. Open Settings (`Cmd/Ctrl + ,`)
-2. Navigate to **Appearance → Color Theme**
-3. Preview and select your preferred theme
-4. Theme changes apply instantly
+Fine-tune visual appearance:
 
-<Tip>
-Use `Cmd/Ctrl + K + T` to quickly preview and switch between themes without opening settings.
-</Tip>
+**border radius**
+- None (0px)
+- Small (0.25rem)
+- Medium (0.375rem) - Default
+- Large (0.5rem)
+- Extra Large (0.75rem)
+- Full (9999px) - Pill-shaped
 
-### Custom Theme Creation
+**shadow**
+- None
+- Small
+- Medium
+- Large
+- Extra Large
 
-Create your own color scheme:
+**spacing**
+- Tight (0.75rem)
+- Normal (1rem) - Default
+- Relaxed (1.25rem)
+- Loose (1.5rem)
 
-```json settings.json
-{
-  "workbench.colorCustomizations": {
-    "editor.background": "#1a1b26",
-    "editor.foreground": "#a9b1d6",
-    "activityBar.background": "#16161e",
-    "sideBar.background": "#1a1b26",
-    "statusBar.background": "#16161e"
-  },
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "keyword",
-        "settings": {
-          "foreground": "#bb9af7"
-        }
-      }
-    ]
-  }
-}
-```
+### live preview
 
-## Editor Settings
+The Design Palette includes real-time preview with:
 
-### Font Configuration
+- Hero sections with your color scheme
+- Button styles (primary and secondary variants)
+- Typography hierarchy
+- Pricing cards with features
+- FAQ sections
+- Stats displays
 
-Customize your code font for optimal readability:
-
-```json settings.json
-{
-  "editor.fontFamily": "JetBrains Mono, Fira Code, Menlo, Monaco, monospace",
-  "editor.fontSize": 14,
-  "editor.lineHeight": 1.6,
-  "editor.fontLigatures": true,
-  "editor.fontWeight": "400"
-}
-```
-
-<Info>
-Font ligatures combine characters like `=>`, `!=`, `>=` into single glyphs for better readability.
-</Info>
-
-### Popular Developer Fonts
-
-- **JetBrains Mono** - Modern, developer-focused
-- **Fira Code** - Open-source with ligatures
-- **Cascadia Code** - Microsoft's font with ligatures
-- **Monaspace** - GitHub's font superfamily
-- **Victor Mono** - Cursive italics for code
-
-### Editor Behavior
-
-```json settings.json
-{
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.wordWrap": "on",
-  "editor.minimap.enabled": true,
-  "editor.minimap.maxColumn": 120,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
-  }
-}
-```
-
-## AI Configuration
-
-### Default AI Provider
-
-Set your preferred AI provider globally:
-
-```json settings.json
-{
-  "codinit.ai.defaultProvider": "anthropic",
-  "codinit.ai.defaultModel": "claude-3-5-sonnet",
-  "codinit.ai.temperature": 0.7,
-  "codinit.ai.maxTokens": 4096
-}
-```
-
-### AI Behavior Settings
-
-<AccordionGroup>
-  <Accordion title="Auto-suggestions">
-    Configure when AI suggestions appear
-
-    ```json
-    {
-      "codinit.ai.inlineSuggestions": {
-        "enabled": true,
-        "delay": 300,
-        "triggerCharacters": [".", "(", "{", "["]
-      }
-    }
-    ```
-  </Accordion>
-
-  <Accordion title="Context Window">
-    Control how much code context AI can see
-
-    ```json
-    {
-      "codinit.ai.contextWindow": {
-        "includeOpenFiles": true,
-        "maxFiles": 10,
-        "includeGitChanges": true
-      }
-    }
-    ```
-  </Accordion>
-
-  <Accordion title="Custom Instructions">
-    Add project-specific AI instructions
-
-    ```json
-    {
-      "codinit.ai.customInstructions": [
-        "Always use TypeScript strict mode",
-        "Follow React best practices",
-        "Include error handling",
-        "Write comprehensive tests"
-      ]
-    }
-    ```
-  </Accordion>
-
-  <Accordion title="Code Review">
-    Configure automated code review
-
-    ```json
-    {
-      "codinit.ai.codeReview": {
-        "enabled": true,
-        "onSave": false,
-        "onCommit": true,
-        "checkFor": ["security", "performance", "style"]
-      }
-    }
-    ```
-  </Accordion>
-</AccordionGroup>
-
-## Keybindings
-
-### Default Keybindings
-
-<Tabs>
-  <Tab title="macOS" icon="/assets/frameworks/icons/apple.svg">
-    | Action | Shortcut |
-    |--------|----------|
-    | Open AI Chat | `Cmd + K` |
-    | Inline AI Edit | `Cmd + I` |
-    | Command Palette | `Cmd + Shift + P` |
-    | Quick File Open | `Cmd + P` |
-    | Terminal Toggle | `` Cmd + ` `` |
-    | Multi-cursor | `Cmd + D` |
-    | Find in Files | `Cmd + Shift + F` |
-    | Go to Definition | `F12` |
-    | Format Document | `Shift + Alt + F` |
-  </Tab>
-
-  <Tab title="Windows/Linux" icon="/assets/frameworks/icons/windows.svg">
-    | Action | Shortcut |
-    |--------|----------|
-    | Open AI Chat | `Ctrl + K` |
-    | Inline AI Edit | `Ctrl + I` |
-    | Command Palette | `Ctrl + Shift + P` |
-    | Quick File Open | `Ctrl + P` |
-    | Terminal Toggle | `` Ctrl + ` `` |
-    | Multi-cursor | `Ctrl + D` |
-    | Find in Files | `Ctrl + Shift + F` |
-    | Go to Definition | `F12` |
-    | Format Document | `Shift + Alt + F` |
-  </Tab>
-</Tabs>
-
-### Custom Keybindings
-
-Create your own shortcuts:
-
-```json keybindings.json
-[
-  {
-    "key": "cmd+shift+r",
-    "command": "codinit.refactorSelection",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+shift+t",
-    "command": "codinit.generateTests",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+shift+d",
-    "command": "codinit.generateDocs",
-    "when": "editorTextFocus"
-  }
-]
-```
-
-## Workspace Settings
-
-### Project-Specific Configuration
-
-Create `.codinit/settings.json` in your project root:
-
-```json .codinit/settings.json
-{
-  "codinit.ai.provider": "openai",
-  "codinit.ai.model": "GPT-5-turbo",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "eslint.enable": true,
-  "prettier.enable": true
-}
-```
+Changes reflect instantly for experimentation before saving.
 
 <Warning>
-Workspace settings override user settings. This is perfect for team consistency.
+The Design Palette is experimental. Preferences are stored locally and not synced across devices.
 </Warning>
 
-### Recommended Extensions
+### preset themes
 
-Configure suggested extensions for your project:
+11 preset design themes to jumpstart customization:
 
-```json .codinit/extensions.json
-{
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss",
-    "prisma.prisma"
-  ]
-}
-```
+- **Minimal** - Clean, distraction-free design
+- **Modern** - Contemporary with bold accents
+- **Carbon** - IBM Carbon-inspired system
+- **Material** - Google Material Design principles
+- **Flat** - Flat design with vibrant colors
+- **Neobrutalism** - Bold borders and stark contrasts
+- **Glassmorphism** - Frosted glass effects
+- **Claymorphism** - Soft, 3D clay-like elements
+- **Retro** - Nostalgic design patterns
+- **Neumorphism** - Soft UI with subtle shadows
+- **Cyberpunk** - Futuristic neon aesthetics
 
-## Language-Specific Settings
+## control panel settings
 
-### TypeScript/JavaScript
+### profile
 
-```json settings.json
-{
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.suggest.autoImports": true,
-  "javascript.suggest.autoImports": true
-}
-```
+Manage your account and personal information:
 
-### Python
+- Username and display name
+- Bio and avatar
+- Theme preference (Light/Dark/System)
+- Language and timezone
+- Notification preferences
 
-```json settings.json
-{
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
-  },
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.formatting.provider": "black"
-}
-```
+### features
 
-### Other Languages
+Toggle experimental features and new capabilities:
 
-<Tabs>
-  <Tab title="Go" icon="code">
-    ```json
-    {
-      "[go]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-          "source.organizeImports": true
-        }
-      }
-    }
-    ```
-  </Tab>
+- **Auto-select template**: Automatically select templates for new projects
+- **Context optimization**: Optimize AI context window usage
+- **Developer mode**: Enable advanced developer features and tools
+- **Event logs**: Enable detailed system event logging
 
-  <Tab title="Rust" icon="code">
-    ```json
-    {
-      "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer",
-        "editor.formatOnSave": true
-      }
-    }
-    ```
-  </Tab>
+<Info>
+Features marked as experimental may change or be removed in future versions.
+</Info>
 
-  <Tab title="Java" icon="code">
-    ```json
-    {
-      "[java]": {
-        "editor.defaultFormatter": "redhat.java",
-        "editor.formatOnSave": true
-      }
-    }
-    ```
-  </Tab>
-</Tabs>
+### cloud providers
 
-## Terminal Customization
+Configure cloud-based AI providers:
 
-### Terminal Appearance
+<CardGroup cols={3}>
+  <Card title="anthropic" icon="brain">
+    Claude models with extended thinking
+  </Card>
 
-```json settings.json
-{
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontFamily": "JetBrains Mono, Menlo, Monaco, monospace",
-  "terminal.integrated.lineHeight": 1.4,
-  "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
-}
-```
+  <Card title="openai" icon="sparkles">
+    GPT-4 and o1 reasoning models
+  </Card>
 
-### Shell Integration
+  <Card title="google" icon="robot">
+    Gemini Pro and Flash models
+  </Card>
 
-```json settings.json
-{
-  "terminal.integrated.shellIntegration.enabled": true,
-  "terminal.integrated.shellIntegration.showWelcome": false,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  }
-}
-```
+  <Card title="mistral ai" icon="zap">
+    Mistral and Codestral models
+  </Card>
 
-## Git Integration
+  <Card title="groq" icon="gauge">
+    Ultra-fast inference platform
+  </Card>
 
-### Git Configuration
+  <Card title="deepseek" icon="code">
+    DeepSeek reasoning models
+  </Card>
+</CardGroup>
 
-```json settings.json
-{
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.enableSmartCommit": true,
-  "git.autoStash": true,
-  "git.showProgress": true,
-  "git.suggestSmartCommit": true,
-  "gitlens.codeLens.enabled": true,
-  "gitlens.currentLine.enabled": true
-}
-```
+**Configuration per provider:**
+- Enable/disable provider
+- API key management
+- Base URL (for compatible providers)
+- Model selection
 
-## Performance Settings
+### local providers
 
-### Optimize for Large Projects
+Configure local AI inference:
 
-```json settings.json
-{
-  "files.exclude": {
-    "**/.git": true,
-    "**/node_modules": true,
-    "**/.DS_Store": true,
-    "**/dist": true,
-    "**/build": true
-  },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/.next": true
-  },
-  "files.watcherExclude": {
-    "**/node_modules/**": true,
-    "**/.git/objects/**": true
-  },
-  "typescript.tsserver.maxTsServerMemory": 4096
-}
-```
+- **Ollama**: Run models locally via Ollama
+- **LM Studio**: Desktop application for local models
+- **OpenAI-compatible**: Custom OpenAI-compatible endpoints
 
-## Sync Settings Across Devices
-
-### Settings Sync
-
-Enable settings sync to use your configuration across multiple machines:
-
-1. Open Command Palette (`Cmd/Ctrl + Shift + P`)
-2. Type "Settings Sync: Turn On"
-3. Sign in with GitHub or Microsoft account
-4. Select what to sync:
-   - Settings
-   - Keybindings
-   - Extensions
-   - UI State
-   - Snippets
+**Local provider settings:**
+- Custom base URL
+- Connection testing
+- Model discovery
+- Enable/disable toggle
 
 <Tip>
-Settings sync is encrypted and stored securely in the cloud.
+Local providers require the respective software running on your machine. Connection status is shown in real-time.
 </Tip>
 
-## Import/Export Settings
+### API keys
 
-### Export Your Configuration
+Centralized API key management for all AI providers:
 
-```bash
-# Export all settings
-codinit --export-settings ~/my-codinit-config.json
+- Add, edit, or remove API keys
+- Test key validity
+- Export keys for backup
+- Import keys from backup
 
-# Export specific workspace settings
-codinit --export-workspace ./.codinit
-```
+<Warning>
+API keys are stored in browser localStorage. Use browser profiles or incognito mode for additional security.
+</Warning>
 
-### Import Configuration
+### connections
 
-```bash
-# Import from file
-codinit --import-settings ~/my-codinit-config.json
+Manage integrations with external services:
 
-# Import from URL
-codinit --import-settings https://example.com/team-config.json
-```
+**github**
+- Authenticate with GitHub
+- Browse repositories
+- Clone templates
+- Push local projects
 
-## Team Settings
+**vercel**
+- Connect Vercel account
+- Deploy projects
+- View deployment status
 
-### Share Configuration with Your Team
+**netlify**
+- Connect Netlify account
+- Deploy sites
+- Manage domains
 
-Create a shared configuration repository:
+**cloudflare**
+- Configure Cloudflare Pages
+- Deploy applications
 
-```
-team-codinit-config/
-├── settings.json          # Shared editor settings
-├── keybindings.json       # Custom shortcuts
-├── extensions.json        # Required extensions
-├── ai-instructions.md     # AI coding guidelines
-└── README.md             # Setup instructions
-```
+**diagnostics**
+- Test connection status
+- View connection logs
+- Troubleshoot issues
 
-Team members can clone and import:
+### data management
 
-```bash
-git clone https://github.com/your-org/team-codinit-config
-codinit --import-settings ./team-codinit-config
-```
+Control how CodinIT handles your data:
 
-## Troubleshooting Settings
+- View storage usage
+- Export chat history
+- Clear conversation data
+- Download project files
+- Manage local storage
 
-### Reset to Defaults
+<Info>
+All data is stored locally in your browser. Clearing browser data will remove all CodinIT data.
+</Info>
 
-If something goes wrong, reset settings:
+### notifications
 
-1. **Backup current settings** (optional)
-2. Open Command Palette
-3. Type "Reset Settings to Default"
-4. Confirm reset
+Configure notification preferences:
 
-### Common Issues
+- System notifications
+- Deployment status updates
+- Error alerts
+- Feature announcements
 
-<AccordionGroup>
-  <Accordion title="Settings not applying">
-    - Check for syntax errors in settings.json
-    - Reload window: `Cmd/Ctrl + Shift + P` → "Reload Window"
-    - Check for conflicting extensions
-  </Accordion>
+### service status
 
-  <Accordion title="Keybindings not working">
-    - Check for conflicts in keybindings.json
-    - Ensure "when" conditions are correct
-    - Disable conflicting extensions temporarily
-  </Accordion>
+Monitor AI provider availability:
 
-  <Accordion title="AI not using custom instructions">
-    - Verify settings.json syntax
-    - Check that instructions are in correct format
-    - Restart CodinIT
-  </Accordion>
-</AccordionGroup>
+- Real-time service status for 19+ providers
+- Uptime monitoring
+- Incident reports
+- Historical data
 
-## Next Steps
+### event logs
+
+View detailed system events:
+
+- AI model interactions
+- WebContainer operations
+- File system changes
+- Network requests
+- Error tracking
+
+<Tip>
+Enable event logs in Features settings for detailed debugging information.
+</Tip>
+
+### debug
+
+Advanced debugging tools:
+
+- System diagnostics
+- Memory usage
+- Browser information
+- WebContainer status
+- Console logs
+- Performance metrics
+
+### updates
+
+Check for CodinIT updates:
+
+- Current version information
+- Available updates
+- Release notes
+- Auto-update configuration
+
+### task manager
+
+Monitor system resources:
+
+- CPU usage
+- Memory consumption
+- Active processes
+- WebContainer status
+- Terminal sessions
+
+### tab management
+
+Customize Control Panel tabs:
+
+- Show/hide tabs
+- Reorder tabs
+- Reset to defaults
+- Separate User and Developer modes
+
+<Tip>
+Drag and drop tabs to reorder them. Changes save automatically.
+</Tip>
+
+### light and dark modes
+
+CodinIT supports three theme modes:
+
+- **Light**: Optimized for bright environments
+- **Dark**: Reduces eye strain in low light (Default)
+- **System**: Follows operating system preference
+
+**Change theme:**
+1. Open Control Panel → Profile
+2. Select theme preference
+3. Or use keyboard shortcut: `Cmd/Ctrl + Alt + Shift + D`
+
+### theme persistence
+
+Theme preference is stored in browser localStorage and persists across sessions.
+
+## keyboard shortcuts
+
+CodinIT has minimal keyboard shortcuts by design:
+
+| Action | Shortcut |
+|--------|----------|
+| Toggle theme | `Cmd/Ctrl + Alt + Shift + D` |
+| Toggle terminal | `` Cmd/Ctrl + ` `` |
+
+<Info>
+More keyboard shortcuts are planned for future releases based on user feedback.
+</Info>
+
+## browser storage
+
+All CodinIT customization is stored in browser localStorage:
+
+**Stored data:**
+- Design palette preferences
+- Provider configurations
+- API keys
+- Theme preference
+- Feature toggles
+- Tab configuration
+- Connection tokens
+
+<Warning>
+Clearing browser data or using incognito mode will reset all settings. Export important data before clearing browser storage.
+</Warning>
+
+## developer mode
+
+Enable advanced features for power users:
+
+**Enabled features:**
+- Additional debug tabs
+- Extended event logging
+- System diagnostics
+- Memory monitoring
+- WebContainer controls
+
+**Enable developer mode:**
+1. Open Control Panel → Features
+2. Toggle "Developer mode"
+3. Additional tabs appear in Developer window
+
+## troubleshooting
+
+### settings not saving
+
+- Check browser localStorage permissions
+- Disable browser extensions that block storage
+- Try a different browser
+- Clear cache and reload
+
+### theme not applying
+
+- Check browser theme preference
+- Try toggling theme manually
+- Clear browser cache
+- Refresh the page
+
+### API keys not working
+
+- Verify key validity in API Keys tab
+- Test connection in Cloud Providers tab
+- Check provider status in Service Status
+- Review event logs for errors
+
+### design palette changes not visible
+
+- Click "Save Changes" after customization
+- Refresh the page
+- Clear browser cache
+- Check that Design Palette is enabled
+
+## next steps
 
 <CardGroup cols={2}>
-  <Card title="AI Chat & Commands" icon="robot" href="/essentials/ai-chat-commands">
-    Master AI-powered development
+  <Card title="ai chat & commands" icon="robot" href="/essentials/ai-chat-commands">
+    Master development
   </Card>
-  <Card title="Select Your Model" icon="brain" href="/getting-started/select-your-model">
+  <Card title="select your model" icon="brain" href="/getting-started/select-your-model">
     Choose the best AI provider
   </Card>
-  <Card title="Integrations" icon="plug" href="/integrations/git">
+  <Card title="integrations" icon="plug" href="/integrations/git">
     Connect external services
   </Card>
-  <Card title="Troubleshooting" icon="wrench" href="/support/troubleshooting">
+  <Card title="troubleshooting" icon="wrench" href="/support/troubleshooting">
     Fix common issues
   </Card>
 </CardGroup>
