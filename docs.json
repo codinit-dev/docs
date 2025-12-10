@@ -20,6 +20,11 @@
           "anchor": "Releases",
           "icon": "tag",
           "href": "https://github.com/codinit-dev/codinit-dev/releases"
+        },
+        {
+          "anchor": "Reddit",
+          "icon": "reddit",
+          "href": "https://www.reddit.com/r/codinit_dev"
         }
       ]
     },
@@ -176,7 +181,7 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase"]
+            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
           }
         ]
       },
@@ -197,6 +202,7 @@
       }
     ]
   },
+  "redirects": [],
   "logo": {
     "light": "/logo/logo.svg",
     "dark": "/logo/logo.png"
@@ -214,18 +220,67 @@
       "href": "https://codinit.dev/download"
     }
   },
+  "search": {
+    "prompt": "Search Docs..."
+  },
   "contextual": {
     "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/codinit-dev"
-    }
+      "github": "https://github.com/codinit-dev",
+      "x": "https://x.com/codinit_dev",
+      "discord": "https://discord.gg/codinit",
+      "reddit": "https://www.reddit.com/r/codinit_dev"
+    },
+    "links": [
+      {
+        "header": "Resources",
+        "items": [
+          {
+            "label": "Documentation",
+            "href": "https://codinit.dev/docs"
+          },
+          {
+            "label": "Changelog",
+            "href": "https://github.com/codinit-dev/codinit-dev/releases"
+          },
+          {
+            "label": "Blog",
+            "href": "https://codinit.dev/blog"
+          }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "About",
+            "href": "https://codinit.dev/about"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "https://codinit.dev/privacy"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "https://codinit.dev/terms"
+          }
+        ]
+      }
+    ]
   },
   "seo": {
     "metatags": {
-      "canonical": "https://codinit.dev/docs"
-    }
+      "canonical": "https://codinit.dev/docs",
+      "og:site_name": "CodinIT.dev Documentation",
+      "og:type": "website",
+      "og:image": "https://codinit.dev/og-image.png",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@codinit_dev",
+      "twitter:creator": "@codinit_dev"
+    },
+    "indexing": "navigable"
   },
   "styling": {
     "eyebrows": "breadcrumbs",
@@ -239,6 +294,9 @@
   "integrations": {
     "telemetry": {
       "enabled": true
+    },
+    "ga4": {
+      "measurementId": "G-8NNCCEN53X"
     }
   },
   "appearance": {
@@ -247,6 +305,9 @@
   },
   "interaction": {
     "drilldown": false
+  },
+  "metadata": {
+    "timestamp": false
   },
   "fonts": {
     "heading": {
