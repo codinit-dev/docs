@@ -16,7 +16,7 @@ CLAUDE.md
 
 # production
 /build
-
+*.csv
 # misc
 .DS_Store
 *.pem
