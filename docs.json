@@ -20,11 +20,6 @@
           "anchor": "LinkedIn",
           "icon": "linkedin",
           "href": "https://www.linkedin.com/company/codinit-dev"
-        },
-        {
-          "anchor": "Reddit",
-          "icon": "reddit",
-          "href": "https://www.reddit.com/r/codinit_dev"
         }
       ]
     },
@@ -229,7 +224,6 @@
   "footer": {
     "socials": {
       "github": "https://github.com/codinit-dev",
-      "reddit": "https://www.reddit.com/r/codinit_dev",
       "linkedin": "https://www.linkedin.com/company/codinit-dev"
     },
     "links": [
