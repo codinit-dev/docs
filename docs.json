@@ -137,17 +137,13 @@
             "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
           },
           {
-            "group": "Local Providers",
-            "expanded": false,
-            "pages": ["providers/lmstudio", "providers/ollama"]
-          },
-          {
             "group": "Running Models Locally",
             "icon": "cpu",
             "expanded": false,
             "pages": [
-              "running-models-locally/lm-studio",
-              "running-models-locally/local-model-setup"
+              "running-models-locally/local-model-setup",
+              "providers/lmstudio",
+              "providers/ollama"
             ]
           }
         ]
