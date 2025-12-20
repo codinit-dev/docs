@@ -63,13 +63,51 @@ LM Studio downloads and runs AI models locally using your computer's resources. 
 ## Setup Instructions
 
 <Steps>
-  <Step title="Download LM Studio">Visit [LM Studio website](https://lmstudio.ai/) and download the application</Step>
-  <Step title="Install and Launch">Install LM Studio and launch the application</Step>
-  <Step title="Download Models">Browse the model library and download models you want to use</Step>
-  <Step title="Start Local Server">Click "Start Server" in LM Studio to begin the local API server</Step>
-  <Step title="Configure in Codinit">Set the server URL (usually http://localhost:1234) in Codinit settings</Step>
-  <Step title="Test Connection">Verify the connection and start using local AI models</Step>
+  <Step title="Download LM Studio">
+    Visit [lmstudio.ai](https://lmstudio.ai) and download the application for your operating system.
+    
+    ![LM Studio download page](/assets/images/lmstudio.webp)
+  </Step>
+  <Step title="Install and Launch">
+    Install LM Studio and launch the application. You'll see four tabs on the left:
+    - **Chat**: Interactive chat interface
+    - **Developer**: Where you will start the server
+    - **My Models**: Your downloaded models storage
+    - **Discover**: Browse and add new models
+  </Step>
+  <Step title="Download a Model">
+    Navigate to the "Discover" tab, browse available models, and download your preferred model. Wait for the download to complete.
+    
+    **Recommended**: Use **Qwen3 Coder 30B A3B Instruct** for the best experience with CodinIT. This model delivers strong coding performance and reliable tool use.
+  </Step>
+  <Step title="Start the Server">
+    Navigate to the "Developer" tab and toggle the server switch to "Running". The server will run at `http://localhost:51732`.
+    
+    ![Starting the LM Studio server](/assets/images/lmstudio.webp)
+  </Step>
+  <Step title="Configure Model Settings">
+    After loading your model in the Developer tab, configure these critical settings:
+    - **Context Length**: Set to 262,144 (the model's maximum)
+    - **KV Cache Quantization**: Leave unchecked (critical for consistent performance)
+    - **Flash Attention**: Enable if available (improves performance)
+  </Step>
+  <Step title="Configure in CodinIT">
+    Set the server URL in CodinIT settings and verify the connection to start using local AI models.
+  </Step>
 </Steps>
+
+### Quantization Guide
+
+Choose quantization based on your available RAM:
+
+- **32GB RAM**: Use 4-bit quantization (~17GB download)
+- **64GB RAM**: Use 8-bit quantization (~32GB download) for better quality
+- **128GB+ RAM**: Consider full precision or larger models
+
+### Model Format
+
+- **Mac (Apple Silicon)**: Use MLX format for optimized performance
+- **Windows/Linux**: Use GGUF format
 
 ## Key Features
 
