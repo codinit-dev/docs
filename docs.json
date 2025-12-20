@@ -66,6 +66,14 @@
                   "features/development/webcontainer",
                   "features/development/workbench"
                 ]
+              },
+              {
+                "group": "AI Features",
+                "expanded": false,
+                "pages": [
+                  "essentials/ai-chat-commands",
+                  "essentials/project-templates"
+                ]
               }
             ]
           },
