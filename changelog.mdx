@@ -744,78 +744,73 @@ New releases and improvements
   * Removed legacy update check implementation
 </Update>
 
-## v1.0.6
-2025-11-11
+<Update label="November 11, 2025" tags={["Improvements"]} rss={{ title: "Workbench layout fixes and typing animation improvements" }}>
+  ## Bug fixes
 
+  * Fixed workbench layout issues
+  * Updated typing animations for better UX
+</Update>
 
-**Fixed**
-- Workbench layout issues
-- Updated typing animations for better UX
+<Update label="November 8, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Major styling overhaul and icon optimization" }}>
+  ## New features
 
-## v1.0.5
-2025-11-08
+  * Style assets for documentation:
+    * chatstyle.png (387KB) - chat interface screenshot
+    * homestyle.png (1.28MB) - home page screenshot
+  * Enhanced background rays styling (52 line additions in styles.module.scss)
+    * Better visual effects
+    * Improved animations
+    * Enhanced theming
 
+  ## Improvements
 
-**Added**
-- Style assets for documentation:
-  - chatstyle.png (387KB) - chat interface screenshot
-  - homestyle.png (1.28MB) - home page screenshot
-- Enhanced background rays styling (52 line additions in styles.module.scss)
-  - Better visual effects
-  - Improved animations
-  - Enhanced theming
+  * Major styling overhaul:
+    * BaseChat module styles (332 lines added) for better chat layout
+    * Editor styles optimization (166 line reduction)
+    * Index styles restructuring (59 line changes)
+    * Variables system major update (209 line changes)
+    * UnoCSS configuration improvements (139 line changes)
+  * Updated application icons across all platforms:
+    * macOS icon (icon.icns): 166KB → 9KB (optimized)
+    * Windows icon (icon.ico): 4KB → 9KB (enhanced quality)
+    * PNG icon: 14KB → 16KB (better resolution)
+  * Enhanced BackgroundRays component (15 line changes)
+    * Better rendering
+    * Improved performance
+  * Workbench client improvements (27 line changes)
+    * Better layout handling
+    * Enhanced state management
+  * Icon file organization:
+    * Moved icon.icns from /public to /assets/icons
+    * Updated icon.ico in /public (32KB version)
+    * Updated icon.png in /public (16KB version)
+  * README.md updates (39 line changes)
+    * Added new screenshots
+    * Better project description
+    * Improved setup instructions
 
+  ## Bug fixes
 
-**Changed**
-- Major styling overhaul:
-  - BaseChat module styles (332 lines added) for better chat layout
-  - Editor styles optimization (166 line reduction)
-  - Index styles restructuring (59 line changes)
-  - Variables system major update (209 line changes)
-  - UnoCSS configuration improvements (139 line changes)
-- Updated application icons across all platforms:
-  - macOS icon (icon.icns): 166KB → 9KB (optimized)
-  - Windows icon (icon.ico): 4KB → 9KB (enhanced quality)
-  - PNG icon: 14KB → 16KB (better resolution)
-- Enhanced BackgroundRays component (15 line changes)
-  - Better rendering
-  - Improved performance
-- Workbench client improvements (27 line changes)
-  - Better layout handling
-  - Enhanced state management
-- Icon file organization:
-  - Moved icon.icns from /public to /assets/icons
-  - Updated icon.ico in /public (32KB version)
-  - Updated icon.png in /public (16KB version)
-- README.md updates (39 line changes)
-  - Added new screenshots
-  - Better project description
-  - Improved setup instructions
+  * Fixed Electron build configuration (2 line fixes)
+    * Better icon references
+    * Improved packaging
+  * Fixed Electron main process (2 line fixes)
+    * Icon path corrections
+  * Fixed Windows icon display issues
+    * Proper .ico format
+    * Better resolution support
+  * Fixed ChatAlert component (2 line fixes)
+  * Fixed Chatbox component (2 line fixes)
+  * Fixed ImportErrorModal (4 line fixes)
+  * Fixed Slider component (6 line fixes)
+  * Fixed Pre-start script (2 line fixes)
 
+  ## Cleanup
 
-**Fixed**
-- Electron build configuration (2 line fixes)
-  - Better icon references
-  - Improved packaging
-- Electron main process (2 line fixes)
-  - Icon path corrections
-- Windows icon display issues
-  - Proper .ico format
-  - Better resolution support
-- ChatAlert component (2 line fixes)
-- Chatbox component (2 line fixes)
-- ImportErrorModal (4 line fixes)
-- Slider component (6 line fixes)
-- Pre-start script (2 line fixes)
-
-
-**Removed**
-- readme_assets/readme.png (385KB, replaced with better screenshots)
-- Duplicate icon files from /public root
-
-
-**Changed (Package)**
-- Package.json version bump (2 line changes)
+  * Removed readme_assets/readme.png (385KB, replaced with better screenshots)
+  * Removed duplicate icon files from /public root
+  * Package.json version bump (2 line changes)
+</Update>
 
 ## v1.0.4
 2025-11-07
