@@ -1548,59 +1548,58 @@ New releases and improvements
   * Improved error handling to prevent information leakage
 </Update>
 
-## v0.9.1
-2025-10-14
+<Update label="October 14, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP integration components and chat system enhancements" }}>
+  ## New features
 
+  * Complete MCP integration components (PR #16):
+    * MCPTemplateConfigDialog component for template configuration
+    * MCPServerCard component for server display
+    * MCPMarketplace component for discovering MCP servers
+    * MCPIntegrationPanel component with comprehensive styling
+    * AddMcpServerDialog component for adding MCP servers
+  * MCP integration across chat system:
+    * Chat.client.tsx with full MCP integration
+    * ChatBox.tsx with MCP tool handling
+    * GitCloneButton component updates
+    * MCPTools component for tool management
+    * Messages.client.tsx with MCP tool display
+    * GitUrlImport.client.tsx enhancements
 
-**Added**
-- Complete MCP integration components (PR #16):
-  - MCPTemplateConfigDialog component for template configuration
-  - MCPServerCard component for server display
-  - MCPMarketplace component for discovering MCP servers
-  - MCPIntegrationPanel component with comprehensive styling
-  - AddMcpServerDialog component for adding MCP servers
-- MCP integration across chat system:
-  - Chat.client.tsx with full MCP integration
-  - ChatBox.tsx with MCP tool handling
-  - GitCloneButton component updates
-  - MCPTools component for tool management
-  - Messages.client.tsx with MCP tool display
-  - GitUrlImport.client.tsx enhancements
+  ## Improvements
 
+  * Enhanced MCP support in core systems:
+    * api.chat.ts with MCP integration
+    * message-parser.ts with MCP artifact parsing
+    * enhanced-message-parser.ts updates
+    * action-runner.ts with MCP action support
+    * stream-text.ts with MCP tool handling
+  * Updated prompts and libraries:
+    * prompts.ts with MCP awareness
+    * prompt-library.ts with MCP support
+    * useMessageParser hook with MCP handling
+  * Utility updates for MCP:
+    * selectStarterTemplate.ts improvements
+    * projectCommands.ts updates
+    * folderImport.ts enhancements
+    * fileUtils.ts modifications
+    * constants.ts additions
+  * Actions types extended for MCP operations
+  * Package dependencies updated for MCP support
+  * pnpm-lock.yaml updated with new dependencies
 
-**Changed**
-- Enhanced MCP support in core systems:
-  - api.chat.ts with MCP integration
-  - message-parser.ts with MCP artifact parsing
-  - enhanced-message-parser.ts updates
-  - action-runner.ts with MCP action support
-  - stream-text.ts with MCP tool handling
-- Updated prompts and libraries:
-  - prompts.ts with MCP awareness
-  - prompt-library.ts with MCP support
-  - useMessageParser hook with MCP handling
-- Utility updates for MCP:
-  - selectStarterTemplate.ts improvements
-  - projectCommands.ts updates
-  - folderImport.ts enhancements
-  - fileUtils.ts modifications
-  - constants.ts additions
-- Actions types extended for MCP operations
-- Package dependencies updated for MCP support
-- pnpm-lock.yaml updated with new dependencies
+  ## Bug fixes
 
-
-**Fixed**
-- GitHub import functionality issues
-  - Better error handling
-  - Improved import process
-  - Enhanced validation
-- setMcpOpen error in state management
-  - Fixed state synchronization
-  - Improved error handling
-- Message parser issues with MCP artifacts
-  - Better artifact detection
-  - Enhanced parsing logic
+  * Fixed GitHub import functionality issues
+    * Better error handling
+    * Improved import process
+    * Enhanced validation
+  * Fixed setMcpOpen error in state management
+    * Fixed state synchronization
+    * Improved error handling
+  * Fixed message parser issues with MCP artifacts
+    * Better artifact detection
+    * Enhanced parsing logic
+</Update>
 
 <Update label="October 13, 2025" tags={["New releases", "Improvements"]} rss={{ title: "GitHub monorepo support and artifact detection fixes" }}>
   ## New features
