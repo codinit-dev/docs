@@ -1072,73 +1072,72 @@ New releases and improvements
     * Cleaned up build configuration
 </Update>
 
-## v0.9.6
-2025-10-22
+<Update label="October 22, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Theme context support and chat history improvements" }}>
+  ## New features
 
+  * Theme context support for header logo
+    * Dynamic logo switching based on theme
+    * Light/dark mode logo variants
+    * Better visual consistency
 
-**Added**
-- Theme context support for header logo
-  - Dynamic logo switching based on theme
-  - Light/dark mode logo variants
-  - Better visual consistency
+  ## Improvements
 
+  * Enhanced Chat.client.tsx (175 line overhaul)
+    * Better chat history handling
+    * Improved message error handling
+    * Enhanced state management
+    * Better error recovery
+  * useMessageParser hook improvements (60 line changes)
+    * Better message parsing logic
+    * Improved artifact extraction
+    * Enhanced error handling
+  * useChatHistory hook enhancements (116 line changes)
+    * Better chat persistence
+    * Improved history management
+    * Enhanced data handling
+  * Workbench store updates (27 line additions)
+    * Better state management
+    * Improved file handling
+  * Action runner improvements (12 line changes)
+    * Better action execution
+    * Enhanced error handling
+  * Dockerfile optimization (106 line changes)
+    * Better build process
+    * Improved caching
+    * Enhanced production readiness
+  * Header component updates (4 line changes)
+    * Theme-aware logo support
+    * Better styling
+  * Vite configuration improvements (17 line changes)
+    * Better build optimization
+    * Enhanced development experience
+  * Package dependencies update (9 line changes in package.json)
+  * pnpm-lock.yaml major update (809 line additions)
+    * Updated dependencies
+    * Security patches
+    * Performance improvements
 
-**Changed**
-- Enhanced Chat.client.tsx (175 line overhaul)
-  - Better chat history handling
-  - Improved message error handling
-  - Enhanced state management
-  - Better error recovery
-- useMessageParser hook improvements (60 line changes)
-  - Better message parsing logic
-  - Improved artifact extraction
-  - Enhanced error handling
-- useChatHistory hook enhancements (116 line changes)
-  - Better chat persistence
-  - Improved history management
-  - Enhanced data handling
-- Workbench store updates (27 line additions)
-  - Better state management
-  - Improved file handling
-- Action runner improvements (12 line changes)
-  - Better action execution
-  - Enhanced error handling
-- Dockerfile optimization (106 line changes)
-  - Better build process
-  - Improved caching
-  - Enhanced production readiness
-- Header component updates (4 line changes)
-  - Theme-aware logo support
-  - Better styling
-- Vite configuration improvements (17 line changes)
-  - Better build optimization
-  - Enhanced development experience
-- Package dependencies update (9 line changes in package.json)
-- pnpm-lock.yaml major update (809 line additions)
-  - Updated dependencies
-  - Security patches
-  - Performance improvements
+  ## Bug fixes
 
+  * Fixed chat history errors and data inconsistencies
+  * Fixed message parsing errors and edge cases
+  * Fixed workbench state management issues
+  * Fixed Docker build errors and optimization
+  * Fixed path calculation logic to handle both path formats
+  * Fixed build errors in production mode
 
-**Fixed**
-- Chat history errors and data inconsistencies
-- Message parsing errors and edge cases
-- Workbench state management issues
-- Docker build errors and optimization
-- Path calculation logic to handle both path formats
-- Build errors in production mode
+  ## Cleanup
 
+  * Removed .claude/settings.local.json (7 lines, local configuration)
+  * Removed Codinit-dev package verification workflow (100 lines, moved)
+  * Removed Cloudflare Pages build example script fix (2 line change)
 
-**Removed**
-- .claude/settings.local.json (7 lines, local configuration)
-- Codinit-dev package verification workflow (100 lines, moved)
-- Cloudflare Pages build example script fix (2 line change)
+  ## Security
 
-
-**Security**
-- Vite security update from 5.4.20 to 5.4.21 (dependency update via Dependabot)
-  - Fixed known security vulnerabilities
-  - Improved build security
+  * Vite security update from 5.4.20 to 5.4.21 (dependency update via Dependabot)
+    * Fixed known security vulnerabilities
+    * Improved build security
+</Update>
 
 ## v0.9.5
 2025-10-20
