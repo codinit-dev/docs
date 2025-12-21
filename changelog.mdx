@@ -3,7 +3,7 @@ title: "Changelog"
 description: "Track all notable changes and updates to the CodinIT.dev platform"
 ---
 
-# Product updates
+## Product updates
 
 > New releases and improvements
 
@@ -640,119 +640,99 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   * Removed GitHub provider models (5 line removal, consolidated)
 </Update>
 
-## v1.0.7
-2025-11-16
+<Update label="November 16, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP integration with tool execution and analytics suite" }}>
+  ## MCP (Model Context Protocol) integration
 
+  * Complete MCP integration with tool execution
+    * MCPExecutionHistory component (350 lines) for tracking tool usage
+    * MCPToolApproval component (263 lines) for user consent management
+    * MCPToolRegistry component (292 lines) for tool discovery and registration
+    * MCPTools component (45 lines) for tool interface
+    * Enhanced MCPIntegrationPanel (177 line additions) with real-time status updates
+    * MCP server selection via slash commands
+    * Tool execution with real-time feedback
+    * Server connection status monitoring
 
-**Added**
-- Complete MCP (Model Context Protocol) integration with tool execution
-  - MCPExecutionHistory component (350 lines) for tracking tool usage
-  - MCPToolApproval component (263 lines) for user consent management
-  - MCPToolRegistry component (292 lines) for tool discovery and registration
-  - MCPTools component (45 lines) for tool interface
-  - Enhanced MCPIntegrationPanel (177 line additions) with real-time status updates
-  - MCP server selection via slash commands
-  - Tool execution with real-time feedback
-  - Server connection status monitoring
-- Thinking artifacts feature (106 lines in ThinkingArtifact.tsx)
-  - Visual representation of AI reasoning process
-  - Step-by-step thought display
-  - Enhanced transparency for complex tasks
-- Analytics integration suite:
-  - Google Tag Manager integration (60 lines in GTMProvider.tsx)
-  - Google Analytics tracking with complete event system
-  - Amplitude analytics with session replay (17 lines in AmplitudeProvider.tsx)
-  - Replaced CDN-based Amplitude with proper npm package
-- Command menu system (142 lines in Command.tsx component)
-  - Quick access to application features
-  - Keyboard shortcuts support
-  - Searchable command palette
-- Settings infrastructure overhaul:
-  - SearchInput component (85 lines) for settings search
-  - SearchInterface component (207 lines) for unified search UX
-  - SearchResults component (67 lines) for displaying results
-  - SettingResultItem component (183 lines) for individual result cards
-  - SettingsCard component (112 lines) for consistent setting display
-  - SettingsPanel component (183 lines) for panel layout
-  - Settings search utility (295 lines in settingsSearch.ts)
-- WorkspaceModal component (246 lines) for workspace management
-- App notification system for update alerts and status messages
-- AGENTS.md documentation (47 lines) with build commands and code style guidelines
-- Animation system (259 lines in animations.scss)
-- Comprehensive variable system additions (42 lines in variables.scss)
+  ## New features
 
+  * Thinking artifacts feature (106 lines in ThinkingArtifact.tsx)
+    * Visual representation of AI reasoning process
+    * Step-by-step thought display
+    * Enhanced transparency for complex tasks
+  * Analytics integration suite:
+    * Google Tag Manager integration (60 lines in GTMProvider.tsx)
+    * Google Analytics tracking with complete event system
+    * Amplitude analytics with session replay (17 lines in AmplitudeProvider.tsx)
+    * Replaced CDN-based Amplitude with proper npm package
+  * Command menu system (142 lines in Command.tsx component)
+    * Quick access to application features
+    * Keyboard shortcuts support
+    * Searchable command palette
+  * Settings infrastructure overhaul:
+    * SearchInput component (85 lines) for settings search
+    * SearchInterface component (207 lines) for unified search UX
+    * SearchResults component (67 lines) for displaying results
+    * SettingResultItem component (183 lines) for individual result cards
+    * SettingsCard component (112 lines) for consistent setting display
+    * SettingsPanel component (183 lines) for panel layout
+    * Settings search utility (295 lines in settingsSearch.ts)
+  * WorkspaceModal component (246 lines) for workspace management
+  * App notification system for update alerts and status messages
+  * AGENTS.md documentation (47 lines) with build commands and code style guidelines
+  * Animation system (259 lines in animations.scss)
+  * Comprehensive variable system additions (42 lines in variables.scss)
 
-**Changed**
-- Major ControlPanel redesign (317 line changes)
-  - Improved layout and organization
-  - Better navigation structure
-  - Enhanced visual hierarchy
-- Settings tabs restructuring:
-  - FeaturesTab: 328 line overhaul for better UX
-  - SettingsTab: 278 line redesign for improved organization
-  - UpdateTab: 444 line reduction through simplification
-- Enhanced TabTile component (109 line changes) with better styling
-- MCP integration improvements:
-  - Enhanced MCPIntegrationPanel styling (20 line changes in SCSS)
-  - Updated MCPMarketplace with 30 line improvements
-  - Enhanced MCPServerCard with 24 line changes
-  - Improved MCPTemplateConfigDialog with 78 line additions
-  - Updated McpServerForm with better validation
-- Chat and messaging enhancements:
-  - Enhanced Chat.client.tsx with 41 line additions for better state management
-  - Improved Markdown rendering with 42 line changes
-  - Updated Chatbox with 6 line improvements
-- LLM streaming improvements (34 line additions in stream-text.ts)
-- Message parsing enhancements (168 line additions in message-parser.ts)
-  - Better artifact detection
-  - Improved code extraction
-  - Enhanced error handling
-- MCP service major upgrade (97 line additions)
-  - Improved server lifecycle management
-  - Better error recovery
-  - Enhanced logging
-- Workbench store improvements (50 line additions)
-  - Better state management
-  - Improved file handling
-  - Enhanced preview control
-- Updated auto-update system (58 line changes)
-- Enhanced update check hook (98 line additions)
-  - Better version comparison
-  - Improved error handling
-  - Rate limiting support
-- LLM manager improvements (115 line additions)
-  - Better provider management
-  - Enhanced error handling
-  - Improved model selection
-- Editor and workbench updates:
-  - EditorPanel: 11 line improvements
-  - FileTree: 18 line enhancements
-  - Workbench.client: 6 line updates
-  - CodeMirror editor: 2 line fixes
-- Updated CodeMirror theme to match GitHub's dark theme
-- Enhanced slider icons with colors and larger size
-- Improved Dialog component (55 line reduction)
-- Updated BuiltWithCodinitBadge with 4 line improvements
+  ## Major improvements
 
+  * Major ControlPanel redesign (317 line changes)
+  * Settings tabs restructuring:
+    * FeaturesTab: 328 line overhaul for better UX
+    * SettingsTab: 278 line redesign for improved organization
+    * UpdateTab: 444 line reduction through simplification
+  * Enhanced TabTile component (109 line changes) with better styling
+  * MCP integration improvements:
+    * Enhanced MCPIntegrationPanel styling (20 line changes in SCSS)
+    * Updated MCPMarketplace with 30 line improvements
+    * Enhanced MCPServerCard with 24 line changes
+    * Improved MCPTemplateConfigDialog with 78 line additions
+    * Updated McpServerForm with better validation
+  * Chat and messaging enhancements:
+    * Enhanced Chat.client.tsx with 41 line additions for better state management
+    * Improved Markdown rendering with 42 line changes
+    * Updated Chatbox with 6 line improvements
+  * LLM streaming improvements (34 line additions in stream-text.ts)
+  * Message parsing enhancements (168 line additions in message-parser.ts)
+  * MCP service major upgrade (97 line additions)
+  * Workbench store improvements (50 line additions)
+  * Updated auto-update system (58 line changes)
+  * Enhanced update check hook (98 line additions)
+  * LLM manager improvements (115 line additions)
+  * Editor and workbench updates (EditorPanel, FileTree, Workbench.client, CodeMirror editor)
+  * Updated CodeMirror theme to match GitHub's dark theme
+  * Enhanced slider icons with colors and larger size
+  * Improved Dialog component (55 line reduction)
+  * Updated BuiltWithCodinitBadge with 4 line improvements
 
-**Fixed**
-- MCP component dark mode compatibility issues
-- MCP component styling and layout problems
-- Repetitive MCP service availability debug logs
-- DialogPortal usage in CommandDialog by removing nested DialogContent
-- Chatbox text placeholder display
-- Update check linting errors
-- Editor color scheme for better readability
-- Resize handle colors for neutral theme
-- Toast styling for theme compatibility
+  ## Bug fixes
 
+  * Fixed MCP component dark mode compatibility issues
+  * Fixed MCP component styling and layout problems
+  * Fixed repetitive MCP service availability debug logs
+  * Fixed DialogPortal usage in CommandDialog by removing nested DialogContent
+  * Fixed chatbox text placeholder display
+  * Fixed update check linting errors
+  * Fixed editor color scheme for better readability
+  * Fixed resize handle colors for neutral theme
+  * Fixed toast styling for theme compatibility
 
-**Removed**
-- MCP secrets tab (security concern)
-- MCP tools tab from integration panel (consolidated)
-- Command search tools from ControlPanel (replaced with new command menu)
-- MCPTools component from chat directory (moved to mcp directory)
-- Legacy update check implementation
+  ## Cleanup
+
+  * Removed MCP secrets tab (security concern)
+  * Removed MCP tools tab from integration panel (consolidated)
+  * Removed command search tools from ControlPanel (replaced with new command menu)
+  * Removed MCPTools component from chat directory (moved to mcp directory)
+  * Removed legacy update check implementation
+</Update>
 
 ## v1.0.6
 2025-11-11
