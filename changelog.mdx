@@ -1,78 +1,90 @@
 ---
-title: "Changelog"
-description: "Track all notable changes and updates to the CodinIT.dev platform"
+title: "Product updates"
+description: "New releases and improvements"
 ---
 
-## Product updates
+# Product updates
 
-> New releases and improvements
+New releases and improvements
 
-<Update label="December 20, 2025" tags={["Improvements"]} rss={{ title: "Provider error handling and Docker compatibility improvements" }}>
-  ## Bug fixes
+## December 20, 2025
 
-  * Fixed LMStudio provider error handling and Docker host mapping
-  * Fixed LMStudio baseUrl configuration retrieval from provider settings
-  * Fixed Ollama provider error handling and Docker compatibility
-  * Fixed ESLint issues in LMStudio provider
-  * Fixed Electron build configuration improvements
+<Update tags={["Improvements"]}>
 
-  ## Improvements
+### Bug fixes
 
-  * Improved provider error messages for better debugging
-  * Enhanced Docker compatibility for local model providers
+- Fixed LMStudio provider error handling and Docker host mapping
+- Fixed LMStudio baseUrl configuration retrieval from provider settings
+- Fixed Ollama provider error handling and Docker compatibility
+- Fixed ESLint issues in LMStudio provider
+- Fixed Electron build configuration improvements
+
+### Improvements
+
+- Improved provider error messages for better debugging
+- Enhanced Docker compatibility for local model providers
+
 </Update>
 
-<Update label="December 19, 2025" tags={["Improvements"]} rss={{ title: "Stability improvements and provider configuration enhancements" }}>
-  ## Improvements
+## December 19, 2025
 
-  * Version bump with stability improvements
-  * Provider configuration enhancements
+<Update tags={["Improvements"]}>
+
+### Improvements
+
+- Version bump with stability improvements
+- Provider configuration enhancements
+
 </Update>
 
-<Update label="December 14, 2025" tags={["New releases", "Improvements"]} rss={{ title: "GPT-5 and Claude Opus 4.5 model support, Electron standardization, and bundle optimization" }}>
-  ## New AI models
+## December 14, 2025
 
-  * Added GPT-5.1, GPT-5 Mini, and GPT-5 Nano models to OpenAI provider
-    * GPT-5.1: 128k context, 16k output limit (optimized for coding and agentic tasks)
-    * GPT-5 Mini: 128k context, 8k output limit (faster, cheaper alternative)
-    * GPT-5 Nano: 128k context, 4k output limit (fastest, most cost-effective)
-  * Added GPT-5.2 Pro, GPT-5.2 Thinking, and GPT-5.2 Instant models to OpenRouter provider
-  * Added Claude Opus 4.5 model to Anthropic provider with enhanced capabilities
-  * Added Claude 4.5 models (Opus, Sonnet, Haiku) to Amazon Bedrock provider
+<Update tags={["New releases", "Improvements"]}>
 
-  ## UI and branding improvements
+### New AI models
 
-  * Added Fazier badge to header with theme-aware variants (dark and light modes)
-  * Added local SVG assets for Fazier badge (embed_image_dark.svg, embed_image_light.svg)
-  * Standardized Electron app name to "codinit-dev" across all platforms (macOS, Windows, Linux)
-  * Updated README with improved content structure and Fazier badge
-  * Replaced Product Hunt header badge with Fazier badge
-  * Updated default model configuration to leverage new GPT-5 series
+- Added GPT-5.1, GPT-5 Mini, and GPT-5 Nano models to OpenAI provider
+  - GPT-5.1: 128k context, 16k output limit (optimized for coding and agentic tasks)
+  - GPT-5 Mini: 128k context, 8k output limit (faster, cheaper alternative)
+  - GPT-5 Nano: 128k context, 4k output limit (fastest, most cost-effective)
+- Added GPT-5.2 Pro, GPT-5.2 Thinking, and GPT-5.2 Instant models to OpenRouter provider
+- Added Claude Opus 4.5 model to Anthropic provider with enhanced capabilities
+- Added Claude 4.5 models (Opus, Sonnet, Haiku) to Amazon Bedrock provider
 
-  ## Bug fixes
+### UI and branding improvements
 
-  * Fixed Fazier badge styling to prevent alt text display issues
-  * Fixed badge width constraints to fit header layout properly
-  * Fixed mixed static/dynamic import warning for CodeMirrorEditor component
-  * Fixed Vite configuration flags (v3_singleFetch) for better compatibility
+- Added Fazier badge to header with theme-aware variants (dark and light modes)
+- Added local SVG assets for Fazier badge (embed_image_dark.svg, embed_image_light.svg)
+- Standardized Electron app name to "codinit-dev" across all platforms (macOS, Windows, Linux)
+- Updated README with improved content structure and Fazier badge
+- Replaced Product Hunt header badge with Fazier badge
+- Updated default model configuration to leverage new GPT-5 series
 
-  ## Bundle optimization
+### Bug fixes
 
-  * Removed unused UI components to reduce bundle size:
-    * TypingAnimation component
-    * WorkspaceModal component
-    * GradientCard component
-    * Slider component
-    * Separator component
-    * SearchResultItem component
-    * UI CodeBlock component (duplicate)
-    * ElectronWindowControls component (unused)
-    * CustomTitleBar component (unused)
-    * CreateBranchDialog component (unused)
-  * Removed duplicate service-status directory and components
-  * Removed duplicate TextShimmer.tsx and demo.tsx files
-  * Removed social preview image (social_preview_index.png)
-  * Removed unnecessary component exports from ui/index.ts
+- Fixed Fazier badge styling to prevent alt text display issues
+- Fixed badge width constraints to fit header layout properly
+- Fixed mixed static/dynamic import warning for CodeMirrorEditor component
+- Fixed Vite configuration flags (v3_singleFetch) for better compatibility
+
+### Bundle optimization
+
+- Removed unused UI components to reduce bundle size:
+  - TypingAnimation component
+  - WorkspaceModal component
+  - GradientCard component
+  - Slider component
+  - Separator component
+  - SearchResultItem component
+  - UI CodeBlock component (duplicate)
+  - ElectronWindowControls component (unused)
+  - CustomTitleBar component (unused)
+  - CreateBranchDialog component (unused)
+- Removed duplicate service-status directory and components
+- Removed duplicate TextShimmer.tsx and demo.tsx files
+- Removed social preview image (social_preview_index.png)
+- Removed unnecessary component exports from ui/index.ts
+
 </Update>
 
 <Update label="December 9, 2025" tags={["Improvements"]} rss={{ title: "Error handling and release workflow improvements" }}>
