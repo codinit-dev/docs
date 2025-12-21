@@ -974,69 +974,71 @@ New releases and improvements
   * Bug fixes and improvements
 </Update>
 
-## v1.0.0
-2025-10-10
+<Update label="October 10, 2025" tags={["New releases", "Improvements"]} rss={{ title: "v1.0.0 - Major Release - Production Ready" }}>
+  <Note>
+  This release marks the official stable release of CodinIT.dev as a production-ready AI app builder.
+  </Note>
 
+  ## New features
 
-**Major Release - Production Ready**
+  * Complete settings system redesign with new tabbed interface
+    * New `ConnectionsTab` for unified service integrations
+    * New `DebugTab` with comprehensive debugging utilities
+    * New `ServiceStatusTab` with provider health monitoring
+    * New `TaskManagerTab` for task visualization
+    * New `UpdateTab` for version management
+  * Comprehensive `ServiceStatusTab` with 14 provider status monitors:
+    * Amazon Bedrock, Anthropic, Cohere, DeepSeek, Google, Groq
+    * HuggingFace, Hyperbolic, Mistral, OpenAI, OpenRouter
+    * Perplexity, Together, xAI
+  * New provider factory pattern for scalable provider management
+  * Enhanced GitHub integration:
+    * New `GithubConnection` component (990+ lines)
+    * New `RepositorySelectionDialog` component (1011 lines)
+    * New `RepositoryCard` and `RepositoryList` components
+    * New `ConnectionDiagnostics` component (610 lines)
+    * Enhanced GitHub API integration with stats and branch management
+  * New system diagnostics endpoints:
+    * `api.system.app-info` endpoint
+    * `api.system.memory-info` endpoint
+    * `api.system.process-info` endpoint
 
-This release marks the official stable release of CodinIT.dev as a production-ready AI app builder.
+  ## Improvements
 
-v1.Added
-- Complete settings system redesign with new tabbed interface
-  - New `ConnectionsTab` for unified service integrations
-  - New `DebugTab` with comprehensive debugging utilities
-  - New `ServiceStatusTab` with provider health monitoring
-  - New `TaskManagerTab` for task visualization
-  - New `UpdateTab` for version management
-- Comprehensive `ServiceStatusTab` with 14 provider status monitors:
-  - Amazon Bedrock, Anthropic, Cohere, DeepSeek, Google, Groq
-  - HuggingFace, Hyperbolic, Mistral, OpenAI, OpenRouter
-  - Perplexity, Together, xAI
-- New provider factory pattern for scalable provider management
-- Enhanced GitHub integration:
-  - New `GithubConnection` component (990+ lines)
-  - New `RepositorySelectionDialog` component (1011 lines)
-  - New `RepositoryCard` and `RepositoryList` components
-  - New `ConnectionDiagnostics` component (610 lines)
-  - Enhanced GitHub API integration with stats and branch management
-- New system diagnostics endpoints:
-  - `api.system.app-info` endpoint
-  - `api.system.memory-info` endpoint
-  - `api.system.process-info` endpoint
+  * Complete refactor of GitHub Actions CI/CD workflows
+  * Restructured deployment pipelines for multiple platforms (Web, Electron, Docker)
+  * Enhanced Docker configuration with improved repository naming conventions
+  * Updated Electron main process and window management
+  * Improved `Markdown` component with better rendering
+  * Enhanced `AssistantMessage` component
+  * `BaseChat` completely refactored (384 lines)
+  * `Chat.client` enhanced with better state management
+  * `ModelSelector` redesigned (451 lines)
+  * Improved workbench components
+  * Better terminal integration
+  * Enhanced file tree and preview handling
+  * Updated OpenAI provider with improved error handling
+  * Enhanced Anthropic provider integration
+  * Improved provider registration and discovery
+  * Better context optimization
+  * Refactored Supabase integration
+  * Enhanced data operations hooks
+  * Better file state management
 
-v1.Changed
-- Complete refactor of GitHub Actions CI/CD workflows
-- Restructured deployment pipelines for multiple platforms (Web, Electron, Docker)
-- Enhanced Docker configuration with improved repository naming conventions
-- Updated Electron main process and window management
-- Improved `Markdown` component with better rendering
-- Enhanced `AssistantMessage` component
-- `BaseChat` completely refactored (384 lines)
-- `Chat.client` enhanced with better state management
-- `ModelSelector` redesigned (451 lines)
-- Improved workbench components
-- Better terminal integration
-- Enhanced file tree and preview handling
-- Updated OpenAI provider with improved error handling
-- Enhanced Anthropic provider integration
-- Improved provider registration and discovery
-- Better context optimization
-- Refactored Supabase integration
-- Enhanced data operations hooks
-- Better file state management
+  ## Cleanup
 
-v1.Removed
-- Legacy GitHub and GitLab tabs (consolidated into Connections)
-- Legacy Supabase and Netlify specific tabs
-- Deprecated `CLAUDE.md` and `PROJECT.md` from root
+  * Removed legacy GitHub and GitLab tabs (consolidated into Connections)
+  * Removed legacy Supabase and Netlify specific tabs
+  * Removed deprecated `CLAUDE.md` and `PROJECT.md` from root
 
-v1.Fixed
-- Docker repository naming case issues
-- Crypto module resolution for SSR builds
-- Electron build with Node.js v20.15.1
-- Deprecated electron-builder properties
-- Improved error handling across providers
+  ## Bug fixes
+
+  * Fixed Docker repository naming case issues
+  * Fixed crypto module resolution for SSR builds
+  * Fixed Electron build with Node.js v20.15.1
+  * Fixed deprecated electron-builder properties
+  * Improved error handling across providers
+</Update>
 
 ## v0.9.7
 2025-10-24
