@@ -1323,285 +1323,283 @@ New releases and improvements
     * Improved debugging experience
 </Update>
 
-## v0.9.2
-2025-10-20
+<Update label="October 20, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP integration and comprehensive template system" }}>
+  ## New features
 
+  * Complete MCP (Model Context Protocol) integration system:
+    * AddMcpServerDialog component for server configuration
+    * MCPIntegrationPanel component (92 lines) with comprehensive styling
+    * MCPMarketplace component for discovering MCP servers
+    * MCPServerCard component for server display
+    * MCPTemplateConfigDialog component for template setup
+    * McpServerForm component for server form handling
+    * MCP service integration in chat API
+    * MCP tool handling in stream-text utility
+    * MCP integration hooks in useMessageParser
+    * Enhanced prompt library with MCP support
+    * GitCloneButton component updates for MCP
+    * Messages.client.tsx with MCP tool display
+    * MCPTools component for tool management
+    * Chatbox with MCP tool handling
+    * Chat.client.tsx with complete MCP integration
+  * Folder import feature for loading local projects
+    * Complete folder structure import
+    * File parsing and validation
+    * Project detection and setup
+  * Comprehensive starter template system with 14 templates:
+    * Angular template
+    * Astro Shadcn template
+    * Codinit Expo template
+    * Codinit Qwik template
+    * Codinit Remotion template
+    * Codinit Vite React TypeScript template
+    * GraphQL template
+    * Next.js template
+    * Next.js Shadcn template
+    * Slidev template
+    * SvelteKit template
+    * Test template
+    * Vite Shadcn template
+    * Vue template
+  * GitHub integration enhancements:
+    * Standalone template repositories for Remix, SvelteKit, and Vanilla Vite
+    * GitHub starters repository detection for template imports
+    * Automatic command detection for GitHub template imports
+    * Template selection system with visual indicators
+    * Auto-select default template functionality
+  * Bug reporting system integration:
+    * Complete bug report API endpoint (254 lines)
+    * Integration with issue tracking
+    * Automated error collection
+  * GitLab API service (508 lines in gitlabApiService.ts)
+    * Complete GitLab integration
+    * Project management
+    * Branch operations
+    * Authentication handling
+  * GitHub API enhancements:
+    * GitHub branches API endpoint (166 lines)
+    * GitHub stats API endpoint (198 lines)
+    * GitHub user API endpoint (287 lines)
+    * Enhanced GitHub template API (480 line overhaul)
+  * GitLab endpoints:
+    * GitLab branches API (143 lines)
+    * GitLab projects API (105 lines)
+  * Service integration components:
+    * ConnectionForm component (193 lines)
+    * ConnectionTestIndicator component (60 lines)
+    * ErrorState component (102 lines)
+    * LoadingState component (94 lines)
+    * ServiceHeader component (72 lines)
+  * Project initialization service (358 lines in projectInit.ts)
+    * Intelligent file loading detection for Git imports
+    * Automatic project setup
+    * Dependency detection
+    * Command inference
+  * Security utilities (245 lines in security.ts)
+    * Enhanced security checks
+    * Input validation
+    * Sanitization helpers
+  * Local template system:
+    * Local template loader API (134 lines)
+    * Template validation and loading
+    * React + Vite default template
+  * Build verification system:
+    * BuildInfo component with comprehensive documentation
+    * GitHub Actions workflow for build verification
+    * Build provenance system
+    * Verification scripts with ESLint integration
+  * Scripts directory with utility scripts
+  * Package-lock synchronization script (110 lines)
+  * Preview workflow for GitHub Actions (196 lines)
 
-**Added**
-- Complete MCP (Model Context Protocol) integration system:
-  - AddMcpServerDialog component for server configuration
-  - MCPIntegrationPanel component (92 lines) with comprehensive styling
-  - MCPMarketplace component for discovering MCP servers
-  - MCPServerCard component for server display
-  - MCPTemplateConfigDialog component for template setup
-  - McpServerForm component for server form handling
-  - MCP service integration in chat API
-  - MCP tool handling in stream-text utility
-  - MCP integration hooks in useMessageParser
-  - Enhanced prompt library with MCP support
-  - GitCloneButton component updates for MCP
-  - Messages.client.tsx with MCP tool display
-  - MCPTools component for tool management
-  - Chatbox with MCP tool handling
-  - Chat.client.tsx with complete MCP integration
-- Folder import feature for loading local projects
-  - Complete folder structure import
-  - File parsing and validation
-  - Project detection and setup
-- Comprehensive starter template system with 14 templates:
-  - Angular template
-  - Astro Shadcn template
-  - Codinit Expo template
-  - Codinit Qwik template
-  - Codinit Remotion template
-  - Codinit Vite React TypeScript template
-  - GraphQL template
-  - Next.js template
-  - Next.js Shadcn template
-  - Slidev template
-  - SvelteKit template
-  - Test template
-  - Vite Shadcn template
-  - Vue template
-- GitHub integration enhancements:
-  - Standalone template repositories for Remix, SvelteKit, and Vanilla Vite
-  - GitHub starters repository detection for template imports
-  - Automatic command detection for GitHub template imports
-  - Template selection system with visual indicators
-  - Auto-select default template functionality
-- Bug reporting system integration:
-  - Complete bug report API endpoint (254 lines)
-  - Integration with issue tracking
-  - Automated error collection
-- GitLab API service (508 lines in gitlabApiService.ts)
-  - Complete GitLab integration
-  - Project management
-  - Branch operations
-  - Authentication handling
-- GitHub API enhancements:
-  - GitHub branches API endpoint (166 lines)
-  - GitHub stats API endpoint (198 lines)
-  - GitHub user API endpoint (287 lines)
-  - Enhanced GitHub template API (480 line overhaul)
-- GitLab endpoints:
-  - GitLab branches API (143 lines)
-  - GitLab projects API (105 lines)
-- Service integration components:
-  - ConnectionForm component (193 lines)
-  - ConnectionTestIndicator component (60 lines)
-  - ErrorState component (102 lines)
-  - LoadingState component (94 lines)
-  - ServiceHeader component (72 lines)
-- Project initialization service (358 lines in projectInit.ts)
-  - Intelligent file loading detection for Git imports
-  - Automatic project setup
-  - Dependency detection
-  - Command inference
-- Security utilities (245 lines in security.ts)
-  - Enhanced security checks
-  - Input validation
-  - Sanitization helpers
-- Local template system:
-  - Local template loader API (134 lines)
-  - Template validation and loading
-  - React + Vite default template
-- Build verification system:
-  - BuildInfo component with comprehensive documentation
-  - GitHub Actions workflow for build verification
-  - Build provenance system
-  - Verification scripts with ESLint integration
-- Scripts directory with utility scripts
-- Package-lock synchronization script (110 lines)
-- Preview workflow for GitHub Actions (196 lines)
+  ## Improvements
 
+  * Major artifact system refactor (201 line changes in Artifact.tsx)
+    * Better artifact handling
+    * Improved rendering
+    * Enhanced state management
+  * Enhanced Chat.client.tsx (238 line additions)
+    * Better MCP integration
+    * Improved state management
+    * Enhanced error handling
+  * Comprehensive prompt system updates:
+    * new-prompt.ts: 883 line reduction through optimization
+    * prompts.ts: 687 line reduction for better performance
+    * Optimized prompts: 52 line changes
+    * Enhanced prompt library: 14 line improvements
+    * Updated discuss-prompt: 10 line changes
+  * Workbench major refactor (434 line changes)
+    * Improved file handling
+    * Better state management
+    * Enhanced preview integration
+  * LLM provider updates across all providers:
+    * Anthropic: 117 line changes
+    * Cohere: 22 line additions
+    * DeepSeek: 3 line improvements
+    * GitHub: 117 line changes
+    * Google: 116 line changes
+    * Groq: 49 line changes
+    * Mistral: 9 line additions
+    * Moonshot: 72 lines (new provider)
+    * OpenRouter: 79 line changes
+    * OpenAI-like: 120 line changes
+    * OpenAI: 93 line changes
+    * Perplexity: 12 line changes
+    * Together: 21 line changes
+    * xAI: 23 line changes
+    * Amazon Bedrock: 1 line addition
+  * Enhanced stream-text utility (199 line additions)
+    * Better MCP tool handling
+    * Improved streaming logic
+    * Enhanced error recovery
+  * Action runner improvements (38 line additions)
+    * Better action execution
+    * Improved error handling
+    * Enhanced logging
+  * Message parser enhancements (129 line additions)
+    * Better artifact parsing
+    * Improved code extraction
+    * Enhanced validation
+  * GitUrlImport refactor (242 line changes)
+    * Better import handling
+    * Improved error messages
+    * Enhanced validation
+  * DiffView improvements (98 line changes)
+    * Better diff rendering
+    * Improved performance
+    * Enhanced UX
+  * Preview component updates (157 line changes)
+    * Better preview handling
+    * Improved iframe management
+    * Enhanced error states
+  * Workbench.client redesign (231 line changes)
+    * Better layout management
+    * Improved state handling
+    * Enhanced integration
+  * README overhaul (481 line reduction)
+    * Simplified and focused content
+    * Better organization
+    * Improved readability
+  * Enhanced connection tabs:
+    * NetlifyConnection: 202 line refactor
+    * VercelConnection: 35 line improvements
+    * GitHubAuthDialog: 5 line updates
+  * Updated feature API (129 line changes)
+    * Better feature flag handling
+    * Improved configuration
+    * Enhanced validation
+  * LLM constants updates (46 line changes)
+    * Better model definitions
+    * Improved token limits
+    * Enhanced configuration
 
-**Changed**
-- Major artifact system refactor (201 line changes in Artifact.tsx)
-  - Better artifact handling
-  - Improved rendering
-  - Enhanced state management
-- Enhanced Chat.client.tsx (238 line additions)
-  - Better MCP integration
-  - Improved state management
-  - Enhanced error handling
-- Comprehensive prompt system updates:
-  - new-prompt.ts: 883 line reduction through optimization
-  - prompts.ts: 687 line reduction for better performance
-  - Optimized prompts: 52 line changes
-  - Enhanced prompt library: 14 line improvements
-  - Updated discuss-prompt: 10 line changes
-- Workbench major refactor (434 line changes)
-  - Improved file handling
-  - Better state management
-  - Enhanced preview integration
-- LLM provider updates across all providers:
-  - Anthropic: 117 line changes
-  - Cohere: 22 line additions
-  - DeepSeek: 3 line improvements
-  - GitHub: 117 line changes
-  - Google: 116 line changes
-  - Groq: 49 line changes
-  - Mistral: 9 line additions
-  - Moonshot: 72 lines (new provider)
-  - OpenRouter: 79 line changes
-  - OpenAI-like: 120 line changes
-  - OpenAI: 93 line changes
-  - Perplexity: 12 line changes
-  - Together: 21 line changes
-  - xAI: 23 line changes
-  - Amazon Bedrock: 1 line addition
-- Enhanced stream-text utility (199 line additions)
-  - Better MCP tool handling
-  - Improved streaming logic
-  - Enhanced error recovery
-- Action runner improvements (38 line additions)
-  - Better action execution
-  - Improved error handling
-  - Enhanced logging
-- Message parser enhancements (129 line additions)
-  - Better artifact parsing
-  - Improved code extraction
-  - Enhanced validation
-- GitUrlImport refactor (242 line changes)
-  - Better import handling
-  - Improved error messages
-  - Enhanced validation
-- DiffView improvements (98 line changes)
-  - Better diff rendering
-  - Improved performance
-  - Enhanced UX
-- Preview component updates (157 line changes)
-  - Better preview handling
-  - Improved iframe management
-  - Enhanced error states
-- Workbench.client redesign (231 line changes)
-  - Better layout management
-  - Improved state handling
-  - Enhanced integration
-- README overhaul (481 line reduction)
-  - Simplified and focused content
-  - Better organization
-  - Improved readability
-- Enhanced connection tabs:
-  - NetlifyConnection: 202 line refactor
-  - VercelConnection: 35 line improvements
-  - GitHubAuthDialog: 5 line updates
-- Updated feature API (129 line changes)
-  - Better feature flag handling
-  - Improved configuration
-  - Enhanced validation
-- LLM constants updates (46 line changes)
-  - Better model definitions
-  - Improved token limits
-  - Enhanced configuration
+  ## Bug fixes
 
+  * Fixed GitHub repository import 500 error
+    * Corrected API authentication header format
+    * Added fallback to Contents API when releases unavailable
+    * Fixed GitHub template URL parsing
+  * Fixed GitHub repository path issues in starter templates
+    * Corrected directory paths to match repository structure
+    * Added proper documentation
+    * Fixed constants and context for subdirectory paths
+  * Fixed template system issues:
+    * Fixed deprecated baseUrl warning in Astro Shadcn template
+    * Fixed starter template directory paths
+    * Restored missing selectedTemplate prop to BaseChat
+    * Fixed chatbox showing no response by using original content fallback
+  * Fixed TypeScript and linting issues:
+    * Replaced any types with proper TypeScript types across multiple files
+    * Fixed Biome linting errors in root.tsx
+    * Fixed lint errors in VercelConnection, NetlifyConnection, ConnectionsTab
+    * Fixed TypeScript errors in api.chat.ts, api.enhancer.ts, api.configured-providers.ts
+    * Fixed lint errors in api.check-env-key.ts, api.bug-report.ts
+    * Fixed TypeScript lint errors in api.system.diagnostics.ts, api.supabase.query.ts
+  * Fixed Import.meta.hot optional chaining issues:
+    * Fixed in Artifact component
+    * Fixed in ToolInvocations component
+    * Fixed in workbench store
+    * Fixed in terminal store
+    * Fixed in editor store
+    * Fixed in files store
+    * Fixed in webcontainer module
+  * Fixed Vitest configuration for proper test execution
+    * Configured test projects with proper plugins and root directory
+    * Fixed Vitest browser test configuration path
+  * Fixed chat functionality fixes:
+    * Restored chat functionality from working state
+    * Fixed artifact lint parsing issues
+    * Fixed template selection without breaking chat
 
-**Fixed**
-- GitHub repository import 500 error
-  - Corrected API authentication header format
-  - Added fallback to Contents API when releases unavailable
-  - Fixed GitHub template URL parsing
-- GitHub repository path issues in starter templates
-  - Corrected directory paths to match repository structure
-  - Added proper documentation
-  - Fixed constants and context for subdirectory paths
-- Template system issues:
-  - Fixed deprecated baseUrl warning in Astro Shadcn template
-  - Fixed starter template directory paths
-  - Restored missing selectedTemplate prop to BaseChat
-  - Fixed chatbox showing no response by using original content fallback
-- TypeScript and linting issues:
-  - Replaced any types with proper TypeScript types across multiple files
-  - Fixed Biome linting errors in root.tsx
-  - Fixed lint errors in VercelConnection, NetlifyConnection, ConnectionsTab
-  - Fixed TypeScript errors in api.chat.ts, api.enhancer.ts, api.configured-providers.ts
-  - Fixed lint errors in api.check-env-key.ts, api.bug-report.ts
-  - Fixed TypeScript lint errors in api.system.diagnostics.ts, api.supabase.query.ts
-- Import.meta.hot optional chaining issues:
-  - Fixed in Artifact component
-  - Fixed in ToolInvocations component
-  - Fixed in workbench store
-  - Fixed in terminal store
-  - Fixed in editor store
-  - Fixed in files store
-  - Fixed in webcontainer module
-- Vitest configuration for proper test execution
-  - Configured test projects with proper plugins and root directory
-  - Fixed Vitest browser test configuration path
-- Chat functionality fixes:
-  - Restored chat functionality from working state
-  - Fixed artifact lint parsing issues
-  - Fixed template selection without breaking chat
+  ## Cleanup
 
+  * Removed FAQ.md documentation (105 lines, content integrated elsewhere)
+  * Removed local template files in favor of GitHub repository
+  * Removed non-existent next-shadcn template from starter templates
+  * Removed GitHub workflow for package-lock.json validation
+  * Removed unused import.meta.hot calls replaced with optional chaining
+  * Removed duplicate and unused test files
 
-**Removed**
-- FAQ.md documentation (105 lines, content integrated elsewhere)
-- Local template files in favor of GitHub repository
-- Non-existent next-shadcn template from starter templates
-- GitHub workflow for package-lock.json validation
-- Unused import.meta.hot calls replaced with optional chaining
-- Duplicate and unused test files
+  ## Security
 
+  * Fixed security dependencies and vulnerabilities
+  * Added comprehensive security utility system
+  * Enhanced input validation across all endpoints
+  * Improved error handling to prevent information leakage
+</Update>
 
-**Security**
-- Fixed security dependencies and vulnerabilities
-- Added comprehensive security utility system
-- Enhanced input validation across all endpoints
-- Improved error handling to prevent information leakage
+<Update label="October 14, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP integration components and chat system enhancements" }}>
+  ## New features
 
-## v0.9.1
-2025-10-14
+  * Complete MCP integration components (PR #16):
+    * MCPTemplateConfigDialog component for template configuration
+    * MCPServerCard component for server display
+    * MCPMarketplace component for discovering MCP servers
+    * MCPIntegrationPanel component with comprehensive styling
+    * AddMcpServerDialog component for adding MCP servers
+  * MCP integration across chat system:
+    * Chat.client.tsx with full MCP integration
+    * ChatBox.tsx with MCP tool handling
+    * GitCloneButton component updates
+    * MCPTools component for tool management
+    * Messages.client.tsx with MCP tool display
+    * GitUrlImport.client.tsx enhancements
 
+  ## Improvements
 
-**Added**
-- Complete MCP integration components (PR #16):
-  - MCPTemplateConfigDialog component for template configuration
-  - MCPServerCard component for server display
-  - MCPMarketplace component for discovering MCP servers
-  - MCPIntegrationPanel component with comprehensive styling
-  - AddMcpServerDialog component for adding MCP servers
-- MCP integration across chat system:
-  - Chat.client.tsx with full MCP integration
-  - ChatBox.tsx with MCP tool handling
-  - GitCloneButton component updates
-  - MCPTools component for tool management
-  - Messages.client.tsx with MCP tool display
-  - GitUrlImport.client.tsx enhancements
+  * Enhanced MCP support in core systems:
+    * api.chat.ts with MCP integration
+    * message-parser.ts with MCP artifact parsing
+    * enhanced-message-parser.ts updates
+    * action-runner.ts with MCP action support
+    * stream-text.ts with MCP tool handling
+  * Updated prompts and libraries:
+    * prompts.ts with MCP awareness
+    * prompt-library.ts with MCP support
+    * useMessageParser hook with MCP handling
+  * Utility updates for MCP:
+    * selectStarterTemplate.ts improvements
+    * projectCommands.ts updates
+    * folderImport.ts enhancements
+    * fileUtils.ts modifications
+    * constants.ts additions
+  * Actions types extended for MCP operations
+  * Package dependencies updated for MCP support
+  * pnpm-lock.yaml updated with new dependencies
 
+  ## Bug fixes
 
-**Changed**
-- Enhanced MCP support in core systems:
-  - api.chat.ts with MCP integration
-  - message-parser.ts with MCP artifact parsing
-  - enhanced-message-parser.ts updates
-  - action-runner.ts with MCP action support
-  - stream-text.ts with MCP tool handling
-- Updated prompts and libraries:
-  - prompts.ts with MCP awareness
-  - prompt-library.ts with MCP support
-  - useMessageParser hook with MCP handling
-- Utility updates for MCP:
-  - selectStarterTemplate.ts improvements
-  - projectCommands.ts updates
-  - folderImport.ts enhancements
-  - fileUtils.ts modifications
-  - constants.ts additions
-- Actions types extended for MCP operations
-- Package dependencies updated for MCP support
-- pnpm-lock.yaml updated with new dependencies
-
-
-**Fixed**
-- GitHub import functionality issues
-  - Better error handling
-  - Improved import process
-  - Enhanced validation
-- setMcpOpen error in state management
-  - Fixed state synchronization
-  - Improved error handling
-- Message parser issues with MCP artifacts
-  - Better artifact detection
-  - Enhanced parsing logic
+  * Fixed GitHub import functionality issues
+    * Better error handling
+    * Improved import process
+    * Enhanced validation
+  * Fixed setMcpOpen error in state management
+    * Fixed state synchronization
+    * Improved error handling
+  * Fixed message parser issues with MCP artifacts
+    * Better artifact detection
+    * Enhanced parsing logic
+</Update>
 
 <Update label="October 13, 2025" tags={["New releases", "Improvements"]} rss={{ title: "GitHub monorepo support and artifact detection fixes" }}>
   ## New features
@@ -1709,207 +1707,205 @@ New releases and improvements
     * Better scaling on different displays
 </Update>
 
-## v0.5.0
-2025-10-11
+<Update label="October 11, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP foundation and chat system refactor" }}>
+  ## New features
 
+  * Complete MCP (Model Context Protocol) foundation:
+    * MCP service (457 lines in mcpService.ts) for server lifecycle management
+    * MCP store (115 lines in mcp.ts) for state management
+    * MCP server list component (102 lines in McpServerList.tsx)
+    * MCP server list item component (70 lines in McpServerListItem.tsx)
+    * MCP status badge component (37 lines in McpStatusBadge.tsx)
+    * MCP settings components for server configuration
+    * MCP API endpoints:
+      * api.mcp-check.ts (16 lines) for health checks
+      * api.mcp-update-config.ts (23 lines) for configuration updates
+  * Inspector component (126 lines) for debugging and inspection
+  * LLMApiAlert component (109 lines) for API key warnings
+  * MCPTools component (129 lines) for MCP tool management in chat
+  * Stream recovery system (92 lines in stream-recovery.ts) for handling connection failures
+  * Discuss mode component (27 lines in DiscussMode.tsx) for discussion-focused interactions
+  * ChatBox component (316 lines) extracted from Chat.client.tsx
+  * Discuss prompt system (235 lines in discuss-prompt.ts)
+  * SolidJS icon asset (30 lines SVG)
+  * Common prompt library (63 lines) for shared prompts
+  * Common prompt system (709 lines in prompt.ts)
+  * Context types (8 lines) for better type safety
 
-**Added**
-- Complete MCP (Model Context Protocol) foundation:
-  - MCP service (457 lines in mcpService.ts) for server lifecycle management
-  - MCP store (115 lines in mcp.ts) for state management
-  - MCP server list component (102 lines in McpServerList.tsx)
-  - MCP server list item component (70 lines in McpServerListItem.tsx)
-  - MCP status badge component (37 lines in McpStatusBadge.tsx)
-  - MCP settings components for server configuration
-  - MCP API endpoints:
-    - api.mcp-check.ts (16 lines) for health checks
-    - api.mcp-update-config.ts (23 lines) for configuration updates
-- Inspector component (126 lines) for debugging and inspection
-- LLMApiAlert component (109 lines) for API key warnings
-- MCPTools component (129 lines) for MCP tool management in chat
-- Stream recovery system (92 lines in stream-recovery.ts) for handling connection failures
-- Discuss mode component (27 lines in DiscussMode.tsx) for discussion-focused interactions
-- ChatBox component (316 lines) extracted from Chat.client.tsx
-- Discuss prompt system (235 lines in discuss-prompt.ts)
-- SolidJS icon asset (30 lines SVG)
-- Common prompt library (63 lines) for shared prompts
-- Common prompt system (709 lines in prompt.ts)
-- Context types (8 lines) for better type safety
+  ## Improvements
 
+  * Major Chat.client.tsx refactor (689 line reduction)
+    * Extracted ChatBox to separate component
+    * Improved code organization
+    * Better state management
+    * Enhanced maintainability
+  * BaseChat component simplification (363 line reduction)
+    * Removed redundant code
+    * Better component separation
+    * Improved performance
+  * Enhanced StarterTemplates (84 line additions)
+    * Better template display
+    * Improved selection UX
+    * Enhanced visual design
+  * Action runner major expansion (228 line additions)
+    * MCP tool execution support
+    * Better action handling
+    * Enhanced error recovery
+    * Improved logging
+  * Chat API extensive updates (132 line additions)
+    * MCP integration
+    * Better streaming support
+    * Enhanced error handling
+    * Improved response processing
+  * Prompt system updates:
+    * new-prompt.ts: 40 line changes for better prompts
+    * optimized.ts: 50 line changes for optimization
+    * prompts.ts: 58 line changes for improvements
+    * prompt-library.ts: 20 line changes for better organization
+  * Enhanced Anthropic provider (53 line changes)
+    * Better model support
+    * Improved error handling
+  * GitHub template API improvements (18 line changes)
+    * Better template fetching
+    * Enhanced error messages
+  * Constants file expansion (93 line additions)
+    * New MCP-related constants
+    * Better organization
+  * Utility updates:
+    * fileUtils.ts: 4 line changes
+    * folderImport.ts: 4 line changes
+    * projectCommands.ts: 10 line changes
+    * selectStarterTemplate.ts: 9 line changes
+  * Message parser updates (16 line changes)
+    * MCP artifact support
+    * Better parsing logic
+  * Workbench improvements (28 line changes)
+    * Better integration with MCP
+    * Enhanced state management
+  * ExamplePrompts refinement (9 line changes)
+  * GitCloneButton updates (4 line changes)
+  * GitUrlImport.client improvements (4 line changes)
+  * Messages.client enhancements (7 line additions)
+  * Actions types expansion (16 line additions)
+  * Runtime and persistence improvements:
+    * create-summary.ts: 4 line changes
+    * select-context.ts: 4 line changes
+    * stream-text.ts: 2 line changes
+    * utils.ts: 8 line changes
+    * useChatHistory.ts: 4 line changes
+  * Vite configuration updates (18 line changes)
+    * Better build optimization
+    * Enhanced development experience
+  * Package.json updates (2 line changes)
+  * Various hook updates:
+    * StickToBottom.tsx: 2 line changes
+    * useStickToBottom.tsx: 2 line changes
+    * Hook index: 1 line addition
 
-**Changed**
-- Major Chat.client.tsx refactor (689 line reduction)
-  - Extracted ChatBox to separate component
-  - Improved code organization
-  - Better state management
-  - Enhanced maintainability
-- BaseChat component simplification (363 line reduction)
-  - Removed redundant code
-  - Better component separation
-  - Improved performance
-- Enhanced StarterTemplates (84 line additions)
-  - Better template display
-  - Improved selection UX
-  - Enhanced visual design
-- Action runner major expansion (228 line additions)
-  - MCP tool execution support
-  - Better action handling
-  - Enhanced error recovery
-  - Improved logging
-- Chat API extensive updates (132 line additions)
-  - MCP integration
-  - Better streaming support
-  - Enhanced error handling
-  - Improved response processing
-- Prompt system updates:
-  - new-prompt.ts: 40 line changes for better prompts
-  - optimized.ts: 50 line changes for optimization
-  - prompts.ts: 58 line changes for improvements
-  - prompt-library.ts: 20 line changes for better organization
-- Enhanced Anthropic provider (53 line changes)
-  - Better model support
-  - Improved error handling
-- GitHub template API improvements (18 line changes)
-  - Better template fetching
-  - Enhanced error messages
-- Constants file expansion (93 line additions)
-  - New MCP-related constants
-  - Better organization
-- Utility updates:
-  - fileUtils.ts: 4 line changes
-  - folderImport.ts: 4 line changes
-  - projectCommands.ts: 10 line changes
-  - selectStarterTemplate.ts: 9 line changes
-- Message parser updates (16 line changes)
-  - MCP artifact support
-  - Better parsing logic
-- Workbench improvements (28 line changes)
-  - Better integration with MCP
-  - Enhanced state management
-- ExamplePrompts refinement (9 line changes)
-- GitCloneButton updates (4 line changes)
-- GitUrlImport.client improvements (4 line changes)
-- Messages.client enhancements (7 line additions)
-- Actions types expansion (16 line additions)
-- Runtime and persistence improvements:
-  - create-summary.ts: 4 line changes
-  - select-context.ts: 4 line changes
-  - stream-text.ts: 2 line changes
-  - utils.ts: 8 line changes
-  - useChatHistory.ts: 4 line changes
-- Vite configuration updates (18 line changes)
-  - Better build optimization
-  - Enhanced development experience
-- Package.json updates (2 line changes)
-- Various hook updates:
-  - StickToBottom.tsx: 2 line changes
-  - useStickToBottom.tsx: 2 line changes
-  - Hook index: 1 line addition
+  ## Bug fixes
 
+  * Fixed message parser spec tests (8 line changes)
+  * Fixed OpenAI-like provider configuration (2 line changes)
+  * Fixed Together provider settings (2 line changes)
+  * Fixed Amazon Bedrock provider configuration (1 line addition)
+  * Fixed route configurations:
+    * _index.tsx: 4 line fixes
+    * git.tsx: 8 line fixes
+    * webcontainer.connect.$id.tsx: 2 line fixes
 
-**Fixed**
-- Message parser spec tests (8 line changes)
-- OpenAI-like provider configuration (2 line changes)
-- Together provider settings (2 line changes)
-- Amazon Bedrock provider configuration (1 line addition)
-- Route configurations:
-  - _index.tsx: 4 line fixes
-  - git.tsx: 8 line fixes
-  - webcontainer.connect.$id.tsx: 2 line fixes
+  ## Cleanup
 
+  * Removed Semantic PR workflow (32 lines, simplified CI/CD)
+  * Removed Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
 
-**Removed**
-- Semantic PR workflow (32 lines, simplified CI/CD)
-- Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
+  ## Documentation
 
+  * Docs workflow improvements (6 line changes)
+  * Electron workflow updates (2 line changes)
+</Update>
 
-**Changed (Documentation)**
-- Docs workflow improvements (6 line changes)
-- Electron workflow updates (2 line changes)
+<Update label="October 10, 2025" tags={["New releases", "Improvements"]} rss={{ title: "LLM provider icon migration and dependency management" }}>
+  ## New features
 
-## v0.4.0
-2025-10-10
+  * pnpm-lock.yaml file for dependency locking
+    * Ensures consistent dependency versions
+    * Improves build reproducibility
+    * Better security through locked versions
 
+  ## Improvements
 
-**Added**
-- pnpm-lock.yaml file for dependency locking
-  - Ensures consistent dependency versions
-  - Improves build reproducibility
-  - Better security through locked versions
+  * Complete LLM provider icon migration:
+    * Moved all provider icons from `/public/icons/` to provider files
+    * Each provider now includes its icon inline (1 line addition per provider):
+      * Anthropic, Cohere, DeepSeek, GitHub, Google, Groq
+      * HuggingFace, Hyperbolic, Mistral, OpenAI, OpenAI-like
+      * OpenRouter, Perplexity, Together, xAI
+    * Better icon management and loading
+    * Improved bundling and performance
+  * Enhanced ModelSelector (12 line changes)
+    * Better provider icon display
+    * Improved layout
+  * Electron build configuration (5 line changes in electron-builder.yml)
+    * Better build settings
+    * Improved packaging
+  * Electron main process updates (9 line changes)
+    * Better initialization
+    * Improved error handling
+  * WebContainer improvements (22 line additions)
+    * Better container management
+    * Enhanced error handling
+  * Workbench store enhancements (6 line additions)
+    * Better state management
+  * Build configuration updates:
+    * build.d.ts: 8 line changes for better types
+    * vite.config.ts: 15 line additions for optimization
+    * uno.config.ts: 26 line changes for better styling
+  * Electron serve utility (2 line changes)
+  * Pre-start script (2 line changes)
+  * Cloudflare functions (2 line additions)
+  * Package.json updates (43 line changes)
+    * Updated dependencies
+    * Better scripts
+    * Enhanced configuration
+  * Styling improvements:
+    * index.scss: 6 line changes
+    * Better theme support
 
+  ## Bug fixes
 
-**Changed**
-- Complete LLM provider icon migration:
-  - Moved all provider icons from `/public/icons/` to provider files
-  - Each provider now includes its icon inline (1 line addition per provider):
-    - Anthropic, Cohere, DeepSeek, GitHub, Google, Groq
-    - HuggingFace, Hyperbolic, Mistral, OpenAI, OpenAI-like
-    - OpenRouter, Perplexity, Together, xAI
-  - Better icon management and loading
-  - Improved bundling and performance
-- Enhanced ModelSelector (12 line changes)
-  - Better provider icon display
-  - Improved layout
-- Electron build configuration (5 line changes in electron-builder.yml)
-  - Better build settings
-  - Improved packaging
-- Electron main process updates (9 line changes)
-  - Better initialization
-  - Improved error handling
-- WebContainer improvements (22 line additions)
-  - Better container management
-  - Enhanced error handling
-- Workbench store enhancements (6 line additions)
-  - Better state management
-- Build configuration updates:
-  - build.d.ts: 8 line changes for better types
-  - vite.config.ts: 15 line additions for optimization
-  - uno.config.ts: 26 line changes for better styling
-- Electron serve utility (2 line changes)
-- Pre-start script (2 line changes)
-- Cloudflare functions (2 line additions)
-- Package.json updates (43 line changes)
-  - Updated dependencies
-  - Better scripts
-  - Enhanced configuration
-- Styling improvements:
-  - index.scss: 6 line changes
-  - Better theme support
+  * Fixed LMStudio provider icon path (2 line changes)
+  * Fixed Ollama provider icon path (2 line changes)
+  * Fixed ConnectionDiagnostics component (10 line changes)
+  * Fixed DataTab component (2 line changes)
 
+  ## Cleanup
 
-**Fixed**
-- LMStudio provider icon path (2 line changes)
-- Ollama provider icon path (2 line changes)
-- ConnectionDiagnostics component (10 line changes)
-- DataTab component (2 line changes)
+  * Removed all public provider icon SVG files (18 files removed):
+    * AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
+    * Default.svg, Google.svg, Groq.svg, HuggingFace.svg
+    * Hyperbolic.svg, LMStudio.svg, Mistral.svg, Ollama.svg
+    * OpenAI.svg, OpenAILike.svg, OpenRouter.svg, Perplexity.svg
+    * Together.svg, xAI.svg
+  * Removed unused UI component directives:
+    * Badge.tsx: 2 line removal
+    * Collapsible.tsx: 2 line removal
+    * ScrollArea.tsx: 2 line removal
+  * Removed Amazon Bedrock provider icon reference (1 line removal)
 
+  ## Build & Dependencies
 
-**Removed**
-- All public provider icon SVG files (18 files removed):
-  - AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
-  - Default.svg, Google.svg, Groq.svg, HuggingFace.svg
-  - Hyperbolic.svg, LMStudio.svg, Mistral.svg, Ollama.svg
-  - OpenAI.svg, OpenAILike.svg, OpenRouter.svg, Perplexity.svg
-  - Together.svg, xAI.svg
-- Unused UI component directives:
-  - Badge.tsx: 2 line removal
-  - Collapsible.tsx: 2 line removal
-  - ScrollArea.tsx: 2 line removal
-- Amazon Bedrock provider icon reference (1 line removal)
-
-
-**Changed (Build & Dependencies)**
-- pnpm-lock.yaml major cleanup (153 line reduction)
-  - Removed unused dependencies
-  - Optimized dependency tree
-  - Better version management
-- Docker compose configuration (2 line changes)
-- MkDocs configuration (4 line changes)
-- GitHub Actions updates:
-  - Issue template config: 7 line changes
-  - Setup and build action: 5 line changes
-  - Electron workflow: 4 line changes
-- README.md updates (3 line changes)
+  * pnpm-lock.yaml major cleanup (153 line reduction)
+    * Removed unused dependencies
+    * Optimized dependency tree
+    * Better version management
+  * Docker compose configuration (2 line changes)
+  * MkDocs configuration (4 line changes)
+  * GitHub Actions updates:
+    * Issue template config: 7 line changes
+    * Setup and build action: 5 line changes
+    * Electron workflow: 4 line changes
+  * README.md updates (3 line changes)
+</Update>
 
 <Update label="October 9, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Application foundation and comprehensive settings system" }}>
   ## New features
