@@ -1227,102 +1227,101 @@ New releases and improvements
   * Metadata collection for build traceability
 </Update>
 
-## v0.9.3
-2025-10-20
+<Update label="October 20, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete token configuration system" }}>
+  ## New features
 
+  * Complete token configuration system:
+    * TokenConfigSelector component (334 lines) with dropdown and custom modal
+    * Token configuration store (162 lines in tokenConfig.ts) with presets and custom options
+    * Predefined token presets:
+      * Balanced: 8,192 tokens (default)
+      * Extended: 16,384 tokens
+      * Maximum: 32,768 tokens
+      * Minimal: 2,048 tokens
+    * Custom token configuration with slider controls
+    * Temperature and top-p parameter controls
+  * CLAUDE.md documentation (330 lines)
+    * Project-specific AI assistant guidelines
+    * Development workflows
+    * Code standards and conventions
+    * Architecture documentation
 
-**Added**
-- Complete token configuration system:
-  - TokenConfigSelector component (334 lines) with dropdown and custom modal
-  - Token configuration store (162 lines in tokenConfig.ts) with presets and custom options
-  - Predefined token presets:
-    - Balanced: 8,192 tokens (default)
-    - Extended: 16,384 tokens
-    - Maximum: 32,768 tokens
-    - Minimal: 2,048 tokens
-  - Custom token configuration with slider controls
-  - Temperature and top-p parameter controls
-- CLAUDE.md documentation (330 lines)
-  - Project-specific AI assistant guidelines
-  - Development workflows
-  - Code standards and conventions
-  - Architecture documentation
+  ## Improvements
 
+  * Enhanced Chatbox component (38 line refactor)
+    * Integrated TokenConfigSelector
+    * More sleek design with reduced spacing and padding
+    * Better visual hierarchy
+    * Improved layout
+  * Chat API endpoint improvements (18 line changes)
+    * Token config support
+    * Better parameter handling
+    * Enhanced flexibility
+  * Updated ChatBox component name and structure
+    * Better component organization
+    * Improved code clarity
+  * Workbench store enhancements (13 line changes)
+    * Better state management
+    * Improved integration
+  * Action runner updates (6 line changes)
+    * Fixed ActionType to include start and build action types
+    * Better type safety
+    * Enhanced validation
+  * Constants optimization (50 line changes in utils/constants.ts)
+    * Better organization
+    * Reduced redundancy
+    * Improved maintainability
+  * BaseChat improvements (2 line changes)
+    * Better chat flow
+    * Minor optimizations
+  * APIKeyManager updates (4 line changes)
+    * Better key management
+    * Improved UX
+  * ChatAlert improvements (2 line changes)
+    * Better error display
+  * Actions type definition updates (2 line changes)
+    * Added missing action types
+    * Better type coverage
+  * Moved token config selector to icon toolbar
+    * Converted to compact icon dropdown
+    * More accessible placement
+    * Better space utilization
+  * Integrated token config from chat client to API
+    * Full token control pipeline
+    * Better configuration flow
 
-**Changed**
-- Enhanced Chatbox component (38 line refactor)
-  - Integrated TokenConfigSelector
-  - More sleek design with reduced spacing and padding
-  - Better visual hierarchy
-  - Improved layout
-- Chat API endpoint improvements (18 line changes)
-  - Token config support
-  - Better parameter handling
-  - Enhanced flexibility
-- Updated ChatBox component name and structure
-  - Better component organization
-  - Improved code clarity
-- Workbench store enhancements (13 line changes)
-  - Better state management
-  - Improved integration
-- Action runner updates (6 line changes)
-  - Fixed ActionType to include start and build action types
-  - Better type safety
-  - Enhanced validation
-- Constants optimization (50 line changes in utils/constants.ts)
-  - Better organization
-  - Reduced redundancy
-  - Improved maintainability
-- BaseChat improvements (2 line changes)
-  - Better chat flow
-  - Minor optimizations
-- APIKeyManager updates (4 line changes)
-  - Better key management
-  - Improved UX
-- ChatAlert improvements (2 line changes)
-  - Better error display
-- Actions type definition updates (2 line changes)
-  - Added missing action types
-  - Better type coverage
-- Moved token config selector to icon toolbar
-  - Converted to compact icon dropdown
-  - More accessible placement
-  - Better space utilization
-- Integrated token config from chat client to API
-  - Full token control pipeline
-  - Better configuration flow
+  ## Bug fixes
 
+  * Fixed default chat alerts functionality
+    * Better alert display
+    * Improved timing
+    * Enhanced UX
+  * Fixed default API configuration
+    * Better default values
+    * Improved reliability
+  * Fixed default template selection
+    * Auto-selection working correctly
+    * Better initial state
+  * Fixed model settings bar now collapsed by default
+    * Cleaner initial UI
+    * More screen space
+    * Better UX
+  * Fixed token config icon size and hard-coded colors removed
+    * Theme-compatible icon
+    * Better visual consistency
+  * Fixed token config dropdown direction changed to open downwards
+    * Better placement
+    * Improved UX
 
-**Fixed**
-- Default chat alerts functionality
-  - Better alert display
-  - Improved timing
-  - Enhanced UX
-- Default API configuration
-  - Better default values
-  - Improved reliability
-- Default template selection
-  - Auto-selection working correctly
-  - Better initial state
-- Model settings bar now collapsed by default
-  - Cleaner initial UI
-  - More screen space
-  - Better UX
-- Token config icon size and hard-coded colors removed
-  - Theme-compatible icon
-  - Better visual consistency
-- Token config dropdown direction changed to open downwards
-  - Better placement
-  - Improved UX
+  ## Cleanup
 
-
-**Removed**
-- Debug console.log statements from workbench
-  - Cleaner console output
-  - Better production readiness
-- Debug console.log statements from action-runner
-  - Reduced noise
-  - Improved debugging experience
+  * Removed debug console.log statements from workbench
+    * Cleaner console output
+    * Better production readiness
+  * Removed debug console.log statements from action-runner
+    * Reduced noise
+    * Improved debugging experience
+</Update>
 
 ## v0.9.2
 2025-10-20
