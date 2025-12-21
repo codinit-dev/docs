@@ -3,34 +3,36 @@ title: "Changelog"
 description: "Track all notable changes and updates to the CodinIT.dev platform"
 ---
 
-# Changelog
-
 <Info>
   This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 </Info>
 
 ## [1.1.26] - 2025-12-20
 
-### Fixed
+
+**Fixed**
 - LMStudio provider error handling and Docker host mapping
 - LMStudio baseUrl configuration retrieval from provider settings
 - Ollama provider error handling and Docker compatibility
 - ESLint issues in LMStudio provider
 - Electron build configuration improvements
 
-### Changed
+
+**Changed**
 - Improved provider error messages for better debugging
 - Enhanced Docker compatibility for local model providers
 
 ## [1.1.25] - 2025-12-19
 
-### Changed
+
+**Changed**
 - Version bump with stability improvements
 - Provider configuration enhancements
 
 ## [1.1.24] - 2025-12-14
 
-### Added
+
+**Added**
 - GPT-5.1, GPT-5 Mini, and GPT-5 Nano models to OpenAI provider
   - GPT-5.1: 128k context, 16k output limit (optimized for coding and agentic tasks)
   - GPT-5 Mini: 128k context, 8k output limit (faster, cheaper alternative)
@@ -41,19 +43,22 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Fazier badge to header with theme-aware variants (dark and light modes)
 - Local SVG assets for Fazier badge (embed_image_dark.svg, embed_image_light.svg)
 
-### Changed
+
+**Changed**
 - Standardized Electron app name to "codinit-dev" across all platforms (macOS, Windows, Linux)
 - Updated README with improved content structure and Fazier badge
 - Replaced Product Hunt header badge with Fazier badge
 - Updated default model configuration to leverage new GPT-5 series
 
-### Fixed
+
+**Fixed**
 - Fazier badge styling to prevent alt text display issues
 - Badge width constraints to fit header layout properly
 - Mixed static/dynamic import warning for CodeMirrorEditor component
 - Vite configuration flags (v3_singleFetch) for better compatibility
 
-### Removed
+
+**Removed**
 - Unused UI components to reduce bundle size:
   - TypingAnimation component
   - WorkspaceModal component
@@ -72,13 +77,15 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 
 ## [1.1.23] - 2025-12-09
 
-### Fixed
+
+**Fixed**
 - Error handling improvements across providers
 - Release workflow updates
 
 ## [1.1.22] - 2025-12-08
 
-### Added
+
+**Added**
 - Diff Approval Workflow with new `DiffApprovalDialog` component
 - Live Action Console with `LiveActionAlert` component
 - Inline diff comparison display for file changes
@@ -87,26 +94,30 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - New action status: "awaiting-approval"
 - Fourth stream for live action monitoring
 
-### Changed
+
+**Changed**
 - Enhanced `ActionRunner` with live output monitoring
 - Extended `ContextAnnotation` with file categorization
 - Refactored event logs and task manager tabs
 - Improved settings organization
 - Better visual feedback for user interactions
 
-### Removed
+
+**Removed**
 - Legacy event logs from ControlPanel
 - Old task manager tab implementation
 
 ## [1.1.20] - 2025-12-09
 
-### Changed
+
+**Changed**
 - Version update with bug fixes
 - API update improvements
 
 ## [1.1.19] - 2025-12-09
 
-### Added
+
+**Added**
 - Tool mention autocomplete system with @ command functionality
   - Type `@` in chatbox to trigger autocomplete for MCP tools and files
   - Fuzzy search powered by Fuse.js for intelligent suggestions
@@ -126,7 +137,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - API Keys and Updates tabs to settings panel
 - Unit test infrastructure for runtime, server, and utility modules
 
-### Changed
+
+**Changed**
 - Migrated repository from Gerome-Elassaad/codinit-app to codinit-dev/codinit-dev organization
 - Updated all repository references and links across documentation
 - Refactored CodeMirror editor with enhanced functionality and better TypeScript support
@@ -141,7 +153,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Enhanced switchable stream utility for better LLM response handling
 - Improved ProgressIndicator component with better visual feedback
 
-### Fixed
+
+**Fixed**
 - Docker container name compatibility (changed wrangler.toml to lowercase)
 - Model selection and provider dropdown functionality issues
 - Preview header dropdown menu buttons and reload button
@@ -151,7 +164,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Context indicator accuracy for file categorization
 - Message parsing for better artifact extraction
 
-### Removed
+
+**Removed**
 - Walkthrough video file (walkthrough.mp4) to reduce repository size
 - Unused 21st.jpeg image file
 - Mock feature flags from ControlPanel
@@ -159,7 +173,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 
 ## [1.1.18] - 2025-12-04
 
-### Added
+
+**Added**
 - Universal framework-agnostic system prompt for supporting all frameworks
   - Removed framework restrictions (previously limited to React, Vue, etc.)
   - Added comprehensive base prompt with universal coding standards
@@ -183,7 +198,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Setup script for LangSmith tracing
   - Comprehensive LangSmith documentation
 
-### Changed
+
+**Changed**
 - Complete design system overhaul for dark/light mode compatibility
   - Fixed dark mode depth contrast and dropdown visibility
   - Updated SCSS files for proper theme support
@@ -206,7 +222,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Enhanced Markdown rendering with additional features
 - Improved EditorPanel with better preview integration (49 additions)
 
-### Fixed
+
+**Fixed**
 - Dark/light mode compatibility issues across entire application
   - Fixed SCSS variable usage for theme-aware colors
   - Corrected CSS custom properties for proper inheritance
@@ -222,7 +239,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Package.json rules to support both new and existing projects
 - Styling tab layout with inline styles replacing dynamic classes
 
-### Removed
+
+**Removed**
 - React Email package (no longer needed)
 - Cohere provider from LLM registry
 - Framework restrictions from AI prompts
@@ -231,7 +249,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 
 ## [1.1.17] - 2025-11-30
 
-### Added
+
+**Added**
 - VSCode-style title bar for Electron desktop application
   - ElectronTitleBar component (174 lines) with native window controls
   - ElectronWindowControls component (134 lines) for minimize/maximize/close
@@ -241,7 +260,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Automated Electron development workflow
   - Hot reload support for faster development
 
-### Changed
+
+**Changed**
 - Refactored all headers to match browser layout with seamless window controls
   - Updated Header component for Electron integration
   - Modified ChatHeader for unified header system
@@ -250,14 +270,16 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Updated settings constants to include Electron-specific options
 - Improved BaseChat integration with Electron environment
 
-### Fixed
+
+**Fixed**
 - Header alignment in Electron desktop builds
 - Window controls positioning and functionality
 - Title bar display across different platforms
 
 ## [1.1.16] - 2025-11-29
 
-### Added
+
+**Added**
 - Custom VSCode-style title bar for Electron desktop application
   - CustomTitleBar component (159 lines) with native window controls
   - Seamless window management matching VSCode design
@@ -268,7 +290,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Automatic tagging based on package.json version
 - Debug logging to Electron build workflow for better troubleshooting
 
-### Changed
+
+**Changed**
 - Updated Electron window management and cookie bridge (10 additions)
   - Enhanced electron cookie synchronization
   - Improved IPC communication
@@ -284,14 +307,16 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Updated main process IPC handlers (41 line changes in electron/main/index.ts)
 - Enhanced Chat.client.tsx with 14 line improvements
 
-### Fixed
+
+**Fixed**
 - ESLint consistent-return error in CustomTitleBar component
 - Electron build compatibility issues
 - GitHub Actions release workflow artifact collection
 - Provider selection and error handling issues
 - Title bar display across different platforms
 
-### Removed
+
+**Removed**
 - Clerk authentication integration (complete rollback)
   - Removed all Clerk-related components and configuration
   - Removed user service (124 lines)
@@ -309,50 +334,58 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Amplitude and GTM provider wrapper overhead (4 lines combined)
 - AGENTS.md file (55 lines, moved to different location)
 
-### Security
+
+**Security**
 - Removed authentication-related security utilities as part of Clerk rollback
 - Simplified security model for desktop application
 
 ## [1.1.15] - 2025-11-28
 
-### Changed
+
+**Changed**
 - Removed Windows code signing config for unsigned distribution
 - Simplified build process for easier distribution
 
 ## [1.1.14] - 2025-11-23
 
-### Fixed
+
+**Fixed**
 - Reverted to static OS matrix to resolve workflow failure
 - CI/CD pipeline improvements
 
 ## [1.1.13] - 2025-11-23
 
-### Fixed
+
+**Fixed**
 - Broken Electron build process
 - Build configuration issues
 
 ## [1.1.12] - 2025-11-23
 
-### Added
+
+**Added**
 - Feature updates via pull request merge
 - Enhanced functionality
 
 ## [1.1.11] - 2025-11-22
 
-### Changed
+
+**Changed**
 - Updated application icons
 - Fixed Electron model loading issues
 - Improved desktop app stability
 
 ## [1.1.10] - 2025-11-22
 
-### Changed
+
+**Changed**
 - Version bump with improvements
 - Enhanced features
 
 ## [1.0.10] - 2025-11-22
 
-### Added
+
+**Added**
 - Unified header system for seamless chat and workbench integration
   - New ChatHeader component (31 lines) with consistent layout
   - Unified header container aligning chat and workbench
@@ -375,7 +408,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Full provider implementation with model support
   - Enhanced provider registration logging
 
-### Changed
+
+**Changed**
 - Complete dark theme redesign with neutral gray palette
   - Removed blue undertone for pure neutral gray
   - Updated all CSS variables in variables.scss (109 line changes)
@@ -424,7 +458,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Enhanced icon assets with updated SVG styling:
   - Angular, Astro, Expo, Netlify, Nuxt, Qwik, React, Remix, Vite icons updated
 
-### Fixed
+
+**Fixed**
 - MCP service functionality and reliability issues
 - Provider selection in chatbox
 - Null provider error in Chat.client.tsx
@@ -434,7 +469,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Header alignment and layout issues
 - Switch button color states in dark mode
 
-### Removed
+
+**Removed**
 - MCP integration panel (411 lines, replaced with new architecture)
 - MCPToolApproval component (263 lines, moved to new location)
 - MCPToolRegistry component (292 lines, moved to new location)
@@ -448,7 +484,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 
 ## [1.0.9] - 2025-11-19
 
-### Added
+
+**Added**
 - Cloudflare Pages deployment integration (complete system)
   - CloudflareDeploy.client.tsx component (193 lines) for deployment interface
   - CloudflareDeploymentLink.client.tsx component (116 lines) for deployment status
@@ -477,7 +514,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Dialog styling system (45 lines in dialog.scss)
 - changelog.md file (35 lines) for tracking changes
 
-### Changed
+
+**Changed**
 - Major PreviewHeader redesign (226 line changes)
   - Simplified left-side button layout
   - Unified button styling and sizing
@@ -522,7 +560,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - AGENTS.md updates (14 line changes)
 - Package updates (4 line changes in package.json)
 
-### Fixed
+
+**Fixed**
 - Client-side update check to handle 429 rate limiting gracefully
 - Linting error in useUpdateCheck hook
 - API route 429 rate limiting status code handling
@@ -533,14 +572,16 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Button styling consistency across workbench headers
 - Action runner type reference (2 line fix)
 
-### Removed
+
+**Removed**
 - Terminal button from CodeModeHeader (simplified interface)
 - Workbench client redundant code (5 line reduction)
 - EditorPanel unnecessary code (2 line reduction)
 
 ## [1.0.8] - 2025-11-17
 
-### Added
+
+**Added**
 - Comprehensive test infrastructure:
   - Test configuration setup (92 lines in __tests__/config/setup.ts)
   - Vitest configuration (52 lines in __tests__/config/vitest.config.ts)
@@ -579,7 +620,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Code style guidelines
   - Development best practices
 
-### Changed
+
+**Changed**
 - Major Workbench.client.tsx refactor (402 line additions)
   - Improved component organization
   - Better state management
@@ -624,7 +666,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Artifact component updates (4 line changes)
 - README.md updates (3 line changes)
 
-### Fixed
+
+**Fixed**
 - Electron app model dropdown issue
   - Fixed provider selection
   - Improved model list rendering
@@ -633,13 +676,15 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Workbench layout and integration issues
 - UI component export in index.ts (1 line addition)
 
-### Removed
+
+**Removed**
 - Package-lock synchronization script (110 lines, no longer needed)
 - GitHub provider models (5 line removal, consolidated)
 
 ## [1.0.7] - 2025-11-16
 
-### Added
+
+**Added**
 - Complete MCP (Model Context Protocol) integration with tool execution
   - MCPExecutionHistory component (350 lines) for tracking tool usage
   - MCPToolApproval component (263 lines) for user consent management
@@ -676,7 +721,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Animation system (259 lines in animations.scss)
 - Comprehensive variable system additions (42 lines in variables.scss)
 
-### Changed
+
+**Changed**
 - Major ControlPanel redesign (317 line changes)
   - Improved layout and organization
   - Better navigation structure
@@ -728,7 +774,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Improved Dialog component (55 line reduction)
 - Updated BuiltWithCodinitBadge with 4 line improvements
 
-### Fixed
+
+**Fixed**
 - MCP component dark mode compatibility issues
 - MCP component styling and layout problems
 - Repetitive MCP service availability debug logs
@@ -739,7 +786,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Resize handle colors for neutral theme
 - Toast styling for theme compatibility
 
-### Removed
+
+**Removed**
 - MCP secrets tab (security concern)
 - MCP tools tab from integration panel (consolidated)
 - Command search tools from ControlPanel (replaced with new command menu)
@@ -748,13 +796,15 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 
 ## [1.0.6] - 2025-11-11
 
-### Fixed
+
+**Fixed**
 - Workbench layout issues
 - Updated typing animations for better UX
 
 ## [1.0.5] - 2025-11-08
 
-### Added
+
+**Added**
 - Style assets for documentation:
   - chatstyle.png (387KB) - chat interface screenshot
   - homestyle.png (1.28MB) - home page screenshot
@@ -763,7 +813,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Improved animations
   - Enhanced theming
 
-### Changed
+
+**Changed**
 - Major styling overhaul:
   - BaseChat module styles (332 lines added) for better chat layout
   - Editor styles optimization (166 line reduction)
@@ -789,7 +840,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
   - Better project description
   - Improved setup instructions
 
-### Fixed
+
+**Fixed**
 - Electron build configuration (2 line fixes)
   - Better icon references
   - Improved packaging
@@ -804,16 +856,19 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Slider component (6 line fixes)
 - Pre-start script (2 line fixes)
 
-### Removed
+
+**Removed**
 - readme_assets/readme.png (385KB, replaced with better screenshots)
 - Duplicate icon files from /public root
 
-### Changed (Package)
+
+**Changed (Package)**
 - Package.json version bump (2 line changes)
 
 ## [1.0.4] - 2025-11-07
 
-### Added
+
+**Added**
 - CLAUDE.md documentation with comprehensive codebase documentation for AI assistants
 - CodinIT thinking artifacts feature:
   - Shows AI reasoning process
@@ -822,7 +877,8 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Enhanced ActionAlert interface with detailed error context fields
 - Vite-shadcn configured as default starter template
 
-### Changed
+
+**Changed**
 - Complete theme redesign to darker slate/charcoal with blue undertones:
   - Adjusted slate colors to neutral charcoal with reduced blue tint
   - Updated all CSS custom properties and variables
@@ -873,40 +929,47 @@ description: "Track all notable changes and updates to the CodinIT.dev platform"
 - Build paths and error messages improved in configuration
 - Constants and icon identifiers updated
 
-### Fixed
+
+**Fixed**
 - Biome linting errors in bindings.sh script
 - Deployment link functionality
 - Header button interactions
 - Git operations and integration
 - Test suite updates
 
-### Changed (Documentation)
+
+**Changed (Documentation)**
 - README.md improvements (6 line changes)
   - Better documentation structure
   - Improved clarity
 - TypingAnimation component updates
 
-### Changed (Configuration)
+
+**Changed (Configuration)**
 - .gitignore additions (2 line changes)
   - Better file exclusions
   - Cleaner repository
 
 ## [1.0.3] - 2025-10-29
 
-### Changed
+
+**Changed**
 - Package.json version bump from 1.0.1 to 1.0.2 (note: tag is v1.0.3)
   - Version synchronization between package.json and git tags
 
-### Note
+
+**Note**
 This release represents a version bump with internal improvements. The git tag is v1.0.3 while package.json shows 1.0.2, indicating a minor versioning discrepancy that was corrected in subsequent releases.
 
 ## [1.0.2] - 2025-10-29
 
-### Added
+
+**Added**
 - CODEOWNERS file for repository management
 - Enhanced error messages and build path configurations
 
-### Changed
+
+**Changed**
 - Major Dockerfile updates (51 line changes)
   - Improved build process
   - Better caching strategies
@@ -951,20 +1014,23 @@ This release represents a version bump with internal improvements. The git tag i
   - Chatbox: 35 line improvements
   - ColorSchemeDialog: 2 line updates
 
-### Fixed
+
+**Fixed**
 - Build errors and configuration issues
 - Electron dependency compatibility
 - Component import paths and references
 
 ## [1.0.1] - 2025-10-24
 
-### Changed
+
+**Changed**
 - First patch release after v1.0.0
 - Bug fixes and improvements
 
 ## [1.0.0] - 2025-10-10
 
-### Major Release - Production Ready
+
+**Major Release - Production Ready**
 
 This release marks the official stable release of CodinIT.dev as a production-ready AI app builder.
 
@@ -1026,7 +1092,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.7] - 2025-10-24
 
-### Fixed
+
+**Fixed**
 - Electron SSR build issues:
   - Added crypto module alias for SSR builds in both Vite configs
   - Fixed crypto module resolution for server-side rendering
@@ -1034,12 +1101,14 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Updated Node.js to v20.15.1 for better compatibility
   - Updated pnpm to v9.15.9 for improved package management
 
-### Removed
+
+**Removed**
 - Deprecated signDlls property from electron-builder config
   - Removed obsolete signing configuration
   - Cleaned up build configuration
 
-### Changed
+
+**Changed**
 - GitHub icon updated to use Phosphor icon library
   - Better icon consistency
   - Improved visual quality
@@ -1055,13 +1124,15 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.6] - 2025-10-22
 
-### Added
+
+**Added**
 - Theme context support for header logo
   - Dynamic logo switching based on theme
   - Light/dark mode logo variants
   - Better visual consistency
 
-### Changed
+
+**Changed**
 - Enhanced Chat.client.tsx (175 line overhaul)
   - Better chat history handling
   - Improved message error handling
@@ -1097,7 +1168,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Security patches
   - Performance improvements
 
-### Fixed
+
+**Fixed**
 - Chat history errors and data inconsistencies
 - Message parsing errors and edge cases
 - Workbench state management issues
@@ -1105,19 +1177,22 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Path calculation logic to handle both path formats
 - Build errors in production mode
 
-### Removed
+
+**Removed**
 - .claude/settings.local.json (7 lines, local configuration)
 - Codinit-dev package verification workflow (100 lines, moved)
 - Cloudflare Pages build example script fix (2 line change)
 
-### Security
+
+**Security**
 - Vite security update from 5.4.20 to 5.4.21 (dependency update via Dependabot)
   - Fixed known security vulnerabilities
   - Improved build security
 
 ## [0.9.5] - 2025-10-20
 
-### Fixed
+
+**Fixed**
 - Package.json configuration issues
   - Corrected dependencies
   - Fixed version specifications
@@ -1125,7 +1200,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.4] - 2025-10-20
 
-### Added
+
+**Added**
 - Complete build verification and provenance system:
   - BuildInfo component (112 lines) with comprehensive documentation
   - GitHub Actions workflow for build verification (100 lines)
@@ -1149,7 +1225,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - pnpm-lock.yaml for package (1192 lines)
 - .gitignore for verification package (20 lines)
 
-### Changed
+
+**Changed**
 - Enhanced GitHub template API (69 line changes in api.github-template.ts)
   - Better template handling
   - Improved error messages
@@ -1174,7 +1251,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - update.sh (2 line changes)
 - useChatHistory minor fix (2 line change)
 
-### Fixed
+
+**Fixed**
 - GitHub API authentication header format
   - Corrected authorization header
   - Improved API integration
@@ -1186,20 +1264,23 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Better error handling
 - Package.json configuration issues
 
-### Removed
+
+**Removed**
 - CLAUDE.md from root (330 lines, moved to project-specific location)
 - Non-existent next-shadcn template from starter templates
   - Cleaned up invalid template reference
   - Improved template list accuracy
 
-### Security
+
+**Security**
 - Added build provenance system for supply chain security
 - Build verification ensures integrity of distributed packages
 - Metadata collection for build traceability
 
 ## [0.9.3] - 2025-10-20
 
-### Added
+
+**Added**
 - Complete token configuration system:
   - TokenConfigSelector component (334 lines) with dropdown and custom modal
   - Token configuration store (162 lines in tokenConfig.ts) with presets and custom options
@@ -1216,7 +1297,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Code standards and conventions
   - Architecture documentation
 
-### Changed
+
+**Changed**
 - Enhanced Chatbox component (38 line refactor)
   - Integrated TokenConfigSelector
   - More sleek design with reduced spacing and padding
@@ -1259,7 +1341,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Full token control pipeline
   - Better configuration flow
 
-### Fixed
+
+**Fixed**
 - Default chat alerts functionality
   - Better alert display
   - Improved timing
@@ -1281,7 +1364,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Better placement
   - Improved UX
 
-### Removed
+
+**Removed**
 - Debug console.log statements from workbench
   - Cleaner console output
   - Better production readiness
@@ -1291,7 +1375,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.2] - 2025-10-20
 
-### Added
+
+**Added**
 - Complete MCP (Model Context Protocol) integration system:
   - AddMcpServerDialog component for server configuration
   - MCPIntegrationPanel component (92 lines) with comprehensive styling
@@ -1378,7 +1463,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Package-lock synchronization script (110 lines)
 - Preview workflow for GitHub Actions (196 lines)
 
-### Changed
+
+**Changed**
 - Major artifact system refactor (201 line changes in Artifact.tsx)
   - Better artifact handling
   - Improved rendering
@@ -1458,7 +1544,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Improved token limits
   - Enhanced configuration
 
-### Fixed
+
+**Fixed**
 - GitHub repository import 500 error
   - Corrected API authentication header format
   - Added fallback to Contents API when releases unavailable
@@ -1495,7 +1582,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Fixed artifact lint parsing issues
   - Fixed template selection without breaking chat
 
-### Removed
+
+**Removed**
 - FAQ.md documentation (105 lines, content integrated elsewhere)
 - Local template files in favor of GitHub repository
 - Non-existent next-shadcn template from starter templates
@@ -1503,7 +1591,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Unused import.meta.hot calls replaced with optional chaining
 - Duplicate and unused test files
 
-### Security
+
+**Security**
 - Fixed security dependencies and vulnerabilities
 - Added comprehensive security utility system
 - Enhanced input validation across all endpoints
@@ -1511,7 +1600,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.1] - 2025-10-14
 
-### Added
+
+**Added**
 - Complete MCP integration components (PR #16):
   - MCPTemplateConfigDialog component for template configuration
   - MCPServerCard component for server display
@@ -1526,7 +1616,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Messages.client.tsx with MCP tool display
   - GitUrlImport.client.tsx enhancements
 
-### Changed
+
+**Changed**
 - Enhanced MCP support in core systems:
   - api.chat.ts with MCP integration
   - message-parser.ts with MCP artifact parsing
@@ -1547,7 +1638,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Package dependencies updated for MCP support
 - pnpm-lock.yaml updated with new dependencies
 
-### Fixed
+
+**Fixed**
 - GitHub import functionality issues
   - Better error handling
   - Improved import process
@@ -1561,13 +1653,15 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.9.0] - 2025-10-13
 
-### Added
+
+**Added**
 - GitHub starter template monorepo subdirectory support
   - Templates can now reference subdirectories in monorepos
   - Better template organization
   - Enhanced flexibility
 
-### Fixed
+
+**Fixed**
 - Message parser artifact detection (PR #14)
   - Fixed message parsing logic
   - Improved artifact extraction
@@ -1581,7 +1675,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Improved template fetching
   - Better error messages
 
-### Changed
+
+**Changed**
 - Message parser improvements
   - Better artifact detection
   - Enhanced parsing logic
@@ -1589,7 +1684,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.8.0] - 2025-10-13
 
-### Fixed
+
+**Fixed**
 - Dropdown overlay z-index issues in ModelSelector
   - Fixed stacking context
   - Improved dropdown visibility
@@ -1606,13 +1702,15 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Improved connection error handling
   - Enhanced user feedback
 
-### Changed
+
+**Changed**
 - Simplified bug report template
   - Reduced complexity
   - Improved user experience
   - Better issue categorization
 
-### Security
+
+**Security**
 - Fixed security dependencies
   - Updated vulnerable packages
   - Applied security patches
@@ -1620,13 +1718,15 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.7.0] - 2025-10-13
 
-### Added
+
+**Added**
 - Image optimization via ImgBot
   - Automated image compression
   - Reduced asset sizes
   - Improved load times
 
-### Fixed
+
+**Fixed**
 - Model selection persistence issues (PR #9)
   - Model selection now persists across sessions
   - Fixed state management for selected model
@@ -1640,7 +1740,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Improved error handling
   - Better status reporting
 
-### Changed
+
+**Changed**
 - Documentation updates:
   - Updated README with better instructions
   - Improved documentation structure
@@ -1649,7 +1750,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.6.0] - 2025-10-11
 
-### Changed
+
+**Changed**
 - Updated icon sizing across the application
   - Standardized icon dimensions
   - Improved visual consistency
@@ -1657,7 +1759,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.5.0] - 2025-10-11
 
-### Added
+
+**Added**
 - Complete MCP (Model Context Protocol) foundation:
   - MCP service (457 lines in mcpService.ts) for server lifecycle management
   - MCP store (115 lines in mcp.ts) for state management
@@ -1680,7 +1783,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Common prompt system (709 lines in prompt.ts)
 - Context types (8 lines) for better type safety
 
-### Changed
+
+**Changed**
 - Major Chat.client.tsx refactor (689 line reduction)
   - Extracted ChatBox to separate component
   - Improved code organization
@@ -1749,7 +1853,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - useStickToBottom.tsx: 2 line changes
   - Hook index: 1 line addition
 
-### Fixed
+
+**Fixed**
 - Message parser spec tests (8 line changes)
 - OpenAI-like provider configuration (2 line changes)
 - Together provider settings (2 line changes)
@@ -1759,23 +1864,27 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - git.tsx: 8 line fixes
   - webcontainer.connect.$id.tsx: 2 line fixes
 
-### Removed
+
+**Removed**
 - Semantic PR workflow (32 lines, simplified CI/CD)
 - Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
 
-### Changed (Documentation)
+
+**Changed (Documentation)**
 - Docs workflow improvements (6 line changes)
 - Electron workflow updates (2 line changes)
 
 ## [0.4.0] - 2025-10-10
 
-### Added
+
+**Added**
 - pnpm-lock.yaml file for dependency locking
   - Ensures consistent dependency versions
   - Improves build reproducibility
   - Better security through locked versions
 
-### Changed
+
+**Changed**
 - Complete LLM provider icon migration:
   - Moved all provider icons from `/public/icons/` to provider files
   - Each provider now includes its icon inline (1 line addition per provider):
@@ -1813,13 +1922,15 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - index.scss: 6 line changes
   - Better theme support
 
-### Fixed
+
+**Fixed**
 - LMStudio provider icon path (2 line changes)
 - Ollama provider icon path (2 line changes)
 - ConnectionDiagnostics component (10 line changes)
 - DataTab component (2 line changes)
 
-### Removed
+
+**Removed**
 - All public provider icon SVG files (18 files removed):
   - AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
   - Default.svg, Google.svg, Groq.svg, HuggingFace.svg
@@ -1832,7 +1943,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - ScrollArea.tsx: 2 line removal
 - Amazon Bedrock provider icon reference (1 line removal)
 
-### Changed (Build & Dependencies)
+
+**Changed (Build & Dependencies)**
 - pnpm-lock.yaml major cleanup (153 line reduction)
   - Removed unused dependencies
   - Optimized dependency tree
@@ -1847,7 +1959,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 
 ## [0.2.0] - 2025-10-09
 
-### Added
+
+**Added**
 - Complete application foundation with initial codebase structure
 - Comprehensive settings system:
   - GithubConnection component (990 lines) for GitHub integration
@@ -1865,7 +1978,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - GitHub issue templates and workflows configuration
 - Complete documentation system
 
-### Changed
+
+**Changed**
 - Application renamed from "CodinIT Desktop" to "CodinIT.dev"
   - Updated branding across all files
   - Changed references in documentation
@@ -1904,7 +2018,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
 - Bug report template updates (4 line changes)
 - Issue config improvements (9 line changes)
 
-### Fixed
+
+**Fixed**
 - Docker repository name case issue
   - Changed to lowercase for compatibility
   - Added proper naming conventions
@@ -1915,7 +2030,8 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - Corrected build paths
   - Fixed configuration issues
 
-### Removed
+
+**Removed**
 - CODEOWNERS file (1 line)
 - CHANGES.md (92 lines, consolidated into CHANGELOG)
 - CLAUDE.md from root (238 lines, moved to project-specific location)
@@ -1934,14 +2050,16 @@ This release marks the official stable release of CodinIT.dev as a production-re
   - ServiceHeader.tsx (72 lines)
   - Service integration index (6 lines)
 
-### Changed (Documentation)
+
+**Changed (Documentation)**
 - MkDocs configuration updates for better documentation structure
 - README improvements for clarity and completeness
 - FAQ.md streamlined for better user experience
 
 ## [0.1.0] - 2025-10-06
 
-### Added - Initial Release
+
+**Added - Initial Release**
 
 This is the initial release of CodinIT.dev, establishing the foundation for an AI-powered application builder.
 
@@ -2034,7 +2152,8 @@ This is the initial release of CodinIT.dev, establishing the foundation for an A
 - File locks to prevent concurrent edits
 - Prompt enhancement system
 
-### Configuration Files Added
+
+**Configuration Files Added**
 - .env.example with all configuration options
 - TypeScript configuration (tsconfig.json)
 - Vite configuration for optimal builds
@@ -2046,13 +2165,15 @@ This is the initial release of CodinIT.dev, establishing the foundation for an A
 - Electron builder configuration
 - Package.json with all dependencies
 
-### Assets & Icons
+
+**Assets & Icons**
 - Application icons for all platforms
 - Provider logos and icons
 - UI component icons
 - Favicon and web app icons
 
-### Utilities & Helpers
+
+**Utilities & Helpers**
 - File system utilities
 - Git integration utilities
 - WebContainer helpers
