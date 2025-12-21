@@ -1323,96 +1323,94 @@ New releases and improvements
     * Improved debugging experience
 </Update>
 
-## v0.9.2
-2025-10-20
+<Update label="October 20, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP integration and comprehensive template system" }}>
+  ## New features
 
-
-**Added**
-- Complete MCP (Model Context Protocol) integration system:
-  - AddMcpServerDialog component for server configuration
-  - MCPIntegrationPanel component (92 lines) with comprehensive styling
-  - MCPMarketplace component for discovering MCP servers
-  - MCPServerCard component for server display
-  - MCPTemplateConfigDialog component for template setup
-  - McpServerForm component for server form handling
-  - MCP service integration in chat API
-  - MCP tool handling in stream-text utility
-  - MCP integration hooks in useMessageParser
-  - Enhanced prompt library with MCP support
-  - GitCloneButton component updates for MCP
-  - Messages.client.tsx with MCP tool display
-  - MCPTools component for tool management
-  - Chatbox with MCP tool handling
-  - Chat.client.tsx with complete MCP integration
-- Folder import feature for loading local projects
-  - Complete folder structure import
-  - File parsing and validation
-  - Project detection and setup
-- Comprehensive starter template system with 14 templates:
-  - Angular template
-  - Astro Shadcn template
-  - Codinit Expo template
-  - Codinit Qwik template
-  - Codinit Remotion template
-  - Codinit Vite React TypeScript template
-  - GraphQL template
-  - Next.js template
-  - Next.js Shadcn template
-  - Slidev template
-  - SvelteKit template
-  - Test template
-  - Vite Shadcn template
-  - Vue template
-- GitHub integration enhancements:
-  - Standalone template repositories for Remix, SvelteKit, and Vanilla Vite
-  - GitHub starters repository detection for template imports
-  - Automatic command detection for GitHub template imports
-  - Template selection system with visual indicators
-  - Auto-select default template functionality
-- Bug reporting system integration:
-  - Complete bug report API endpoint (254 lines)
-  - Integration with issue tracking
-  - Automated error collection
-- GitLab API service (508 lines in gitlabApiService.ts)
-  - Complete GitLab integration
-  - Project management
-  - Branch operations
-  - Authentication handling
-- GitHub API enhancements:
-  - GitHub branches API endpoint (166 lines)
-  - GitHub stats API endpoint (198 lines)
-  - GitHub user API endpoint (287 lines)
-  - Enhanced GitHub template API (480 line overhaul)
-- GitLab endpoints:
-  - GitLab branches API (143 lines)
-  - GitLab projects API (105 lines)
-- Service integration components:
-  - ConnectionForm component (193 lines)
-  - ConnectionTestIndicator component (60 lines)
-  - ErrorState component (102 lines)
-  - LoadingState component (94 lines)
-  - ServiceHeader component (72 lines)
-- Project initialization service (358 lines in projectInit.ts)
-  - Intelligent file loading detection for Git imports
-  - Automatic project setup
-  - Dependency detection
-  - Command inference
-- Security utilities (245 lines in security.ts)
-  - Enhanced security checks
-  - Input validation
-  - Sanitization helpers
-- Local template system:
-  - Local template loader API (134 lines)
-  - Template validation and loading
-  - React + Vite default template
-- Build verification system:
-  - BuildInfo component with comprehensive documentation
-  - GitHub Actions workflow for build verification
-  - Build provenance system
-  - Verification scripts with ESLint integration
-- Scripts directory with utility scripts
-- Package-lock synchronization script (110 lines)
-- Preview workflow for GitHub Actions (196 lines)
+  * Complete MCP (Model Context Protocol) integration system:
+    * AddMcpServerDialog component for server configuration
+    * MCPIntegrationPanel component (92 lines) with comprehensive styling
+    * MCPMarketplace component for discovering MCP servers
+    * MCPServerCard component for server display
+    * MCPTemplateConfigDialog component for template setup
+    * McpServerForm component for server form handling
+    * MCP service integration in chat API
+    * MCP tool handling in stream-text utility
+    * MCP integration hooks in useMessageParser
+    * Enhanced prompt library with MCP support
+    * GitCloneButton component updates for MCP
+    * Messages.client.tsx with MCP tool display
+    * MCPTools component for tool management
+    * Chatbox with MCP tool handling
+    * Chat.client.tsx with complete MCP integration
+  * Folder import feature for loading local projects
+    * Complete folder structure import
+    * File parsing and validation
+    * Project detection and setup
+  * Comprehensive starter template system with 14 templates:
+    * Angular template
+    * Astro Shadcn template
+    * Codinit Expo template
+    * Codinit Qwik template
+    * Codinit Remotion template
+    * Codinit Vite React TypeScript template
+    * GraphQL template
+    * Next.js template
+    * Next.js Shadcn template
+    * Slidev template
+    * SvelteKit template
+    * Test template
+    * Vite Shadcn template
+    * Vue template
+  * GitHub integration enhancements:
+    * Standalone template repositories for Remix, SvelteKit, and Vanilla Vite
+    * GitHub starters repository detection for template imports
+    * Automatic command detection for GitHub template imports
+    * Template selection system with visual indicators
+    * Auto-select default template functionality
+  * Bug reporting system integration:
+    * Complete bug report API endpoint (254 lines)
+    * Integration with issue tracking
+    * Automated error collection
+  * GitLab API service (508 lines in gitlabApiService.ts)
+    * Complete GitLab integration
+    * Project management
+    * Branch operations
+    * Authentication handling
+  * GitHub API enhancements:
+    * GitHub branches API endpoint (166 lines)
+    * GitHub stats API endpoint (198 lines)
+    * GitHub user API endpoint (287 lines)
+    * Enhanced GitHub template API (480 line overhaul)
+  * GitLab endpoints:
+    * GitLab branches API (143 lines)
+    * GitLab projects API (105 lines)
+  * Service integration components:
+    * ConnectionForm component (193 lines)
+    * ConnectionTestIndicator component (60 lines)
+    * ErrorState component (102 lines)
+    * LoadingState component (94 lines)
+    * ServiceHeader component (72 lines)
+  * Project initialization service (358 lines in projectInit.ts)
+    * Intelligent file loading detection for Git imports
+    * Automatic project setup
+    * Dependency detection
+    * Command inference
+  * Security utilities (245 lines in security.ts)
+    * Enhanced security checks
+    * Input validation
+    * Sanitization helpers
+  * Local template system:
+    * Local template loader API (134 lines)
+    * Template validation and loading
+    * React + Vite default template
+  * Build verification system:
+    * BuildInfo component with comprehensive documentation
+    * GitHub Actions workflow for build verification
+    * Build provenance system
+    * Verification scripts with ESLint integration
+  * Scripts directory with utility scripts
+  * Package-lock synchronization script (110 lines)
+  * Preview workflow for GitHub Actions (196 lines)
 
 
 **Changed**
