@@ -1040,38 +1040,37 @@ New releases and improvements
   * Improved error handling across providers
 </Update>
 
-## v0.9.7
-2025-10-24
+<Update label="October 24, 2025" tags={["Improvements"]} rss={{ title: "Electron build fixes and UI button redesign" }}>
+  ## Bug fixes
 
+  * Fixed Electron SSR build issues:
+    * Added crypto module alias for SSR builds in both Vite configs
+    * Fixed crypto module resolution for server-side rendering
+  * Fixed Electron build configuration:
+    * Updated Node.js to v20.15.1 for better compatibility
+    * Updated pnpm to v9.15.9 for improved package management
 
-**Fixed**
-- Electron SSR build issues:
-  - Added crypto module alias for SSR builds in both Vite configs
-  - Fixed crypto module resolution for server-side rendering
-- Electron build configuration:
-  - Updated Node.js to v20.15.1 for better compatibility
-  - Updated pnpm to v9.15.9 for improved package management
+  ## Improvements
 
+  * GitHub icon updated to use Phosphor icon library
+    * Better icon consistency
+    * Improved visual quality
+  * "Clone a Git Repo" button redesigned to pill shape with GitHub icon
+    * Enhanced visual design
+    * Better user experience
+  * "Import Folder" button updated to pill shape with icon and text
+    * Consistent button styling
+    * Improved accessibility
+  * "Import Chat" button redesigned to pill shape with icon and text
+    * Unified button design language
+    * Better visual hierarchy
 
-**Removed**
-- Deprecated signDlls property from electron-builder config
-  - Removed obsolete signing configuration
-  - Cleaned up build configuration
+  ## Cleanup
 
-
-**Changed**
-- GitHub icon updated to use Phosphor icon library
-  - Better icon consistency
-  - Improved visual quality
-- "Clone a Git Repo" button redesigned to pill shape with GitHub icon
-  - Enhanced visual design
-  - Better user experience
-- "Import Folder" button updated to pill shape with icon and text
-  - Consistent button styling
-  - Improved accessibility
-- "Import Chat" button redesigned to pill shape with icon and text
-  - Unified button design language
-  - Better visual hierarchy
+  * Removed deprecated signDlls property from electron-builder config
+    * Removed obsolete signing configuration
+    * Cleaned up build configuration
+</Update>
 
 ## v0.9.6
 2025-10-22
