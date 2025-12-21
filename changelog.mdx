@@ -1824,89 +1824,88 @@ New releases and improvements
   * Electron workflow updates (2 line changes)
 </Update>
 
-## v0.4.0
-2025-10-10
+<Update label="October 10, 2025" tags={["New releases", "Improvements"]} rss={{ title: "LLM provider icon migration and dependency management" }}>
+  ## New features
 
+  * pnpm-lock.yaml file for dependency locking
+    * Ensures consistent dependency versions
+    * Improves build reproducibility
+    * Better security through locked versions
 
-**Added**
-- pnpm-lock.yaml file for dependency locking
-  - Ensures consistent dependency versions
-  - Improves build reproducibility
-  - Better security through locked versions
+  ## Improvements
 
+  * Complete LLM provider icon migration:
+    * Moved all provider icons from `/public/icons/` to provider files
+    * Each provider now includes its icon inline (1 line addition per provider):
+      * Anthropic, Cohere, DeepSeek, GitHub, Google, Groq
+      * HuggingFace, Hyperbolic, Mistral, OpenAI, OpenAI-like
+      * OpenRouter, Perplexity, Together, xAI
+    * Better icon management and loading
+    * Improved bundling and performance
+  * Enhanced ModelSelector (12 line changes)
+    * Better provider icon display
+    * Improved layout
+  * Electron build configuration (5 line changes in electron-builder.yml)
+    * Better build settings
+    * Improved packaging
+  * Electron main process updates (9 line changes)
+    * Better initialization
+    * Improved error handling
+  * WebContainer improvements (22 line additions)
+    * Better container management
+    * Enhanced error handling
+  * Workbench store enhancements (6 line additions)
+    * Better state management
+  * Build configuration updates:
+    * build.d.ts: 8 line changes for better types
+    * vite.config.ts: 15 line additions for optimization
+    * uno.config.ts: 26 line changes for better styling
+  * Electron serve utility (2 line changes)
+  * Pre-start script (2 line changes)
+  * Cloudflare functions (2 line additions)
+  * Package.json updates (43 line changes)
+    * Updated dependencies
+    * Better scripts
+    * Enhanced configuration
+  * Styling improvements:
+    * index.scss: 6 line changes
+    * Better theme support
 
-**Changed**
-- Complete LLM provider icon migration:
-  - Moved all provider icons from `/public/icons/` to provider files
-  - Each provider now includes its icon inline (1 line addition per provider):
-    - Anthropic, Cohere, DeepSeek, GitHub, Google, Groq
-    - HuggingFace, Hyperbolic, Mistral, OpenAI, OpenAI-like
-    - OpenRouter, Perplexity, Together, xAI
-  - Better icon management and loading
-  - Improved bundling and performance
-- Enhanced ModelSelector (12 line changes)
-  - Better provider icon display
-  - Improved layout
-- Electron build configuration (5 line changes in electron-builder.yml)
-  - Better build settings
-  - Improved packaging
-- Electron main process updates (9 line changes)
-  - Better initialization
-  - Improved error handling
-- WebContainer improvements (22 line additions)
-  - Better container management
-  - Enhanced error handling
-- Workbench store enhancements (6 line additions)
-  - Better state management
-- Build configuration updates:
-  - build.d.ts: 8 line changes for better types
-  - vite.config.ts: 15 line additions for optimization
-  - uno.config.ts: 26 line changes for better styling
-- Electron serve utility (2 line changes)
-- Pre-start script (2 line changes)
-- Cloudflare functions (2 line additions)
-- Package.json updates (43 line changes)
-  - Updated dependencies
-  - Better scripts
-  - Enhanced configuration
-- Styling improvements:
-  - index.scss: 6 line changes
-  - Better theme support
+  ## Bug fixes
 
+  * Fixed LMStudio provider icon path (2 line changes)
+  * Fixed Ollama provider icon path (2 line changes)
+  * Fixed ConnectionDiagnostics component (10 line changes)
+  * Fixed DataTab component (2 line changes)
 
-**Fixed**
-- LMStudio provider icon path (2 line changes)
-- Ollama provider icon path (2 line changes)
-- ConnectionDiagnostics component (10 line changes)
-- DataTab component (2 line changes)
+  ## Cleanup
 
+  * Removed all public provider icon SVG files (18 files removed):
+    * AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
+    * Default.svg, Google.svg, Groq.svg, HuggingFace.svg
+    * Hyperbolic.svg, LMStudio.svg, Mistral.svg, Ollama.svg
+    * OpenAI.svg, OpenAILike.svg, OpenRouter.svg, Perplexity.svg
+    * Together.svg, xAI.svg
+  * Removed unused UI component directives:
+    * Badge.tsx: 2 line removal
+    * Collapsible.tsx: 2 line removal
+    * ScrollArea.tsx: 2 line removal
+  * Removed Amazon Bedrock provider icon reference (1 line removal)
 
-**Removed**
-- All public provider icon SVG files (18 files removed):
-  - AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
-  - Default.svg, Google.svg, Groq.svg, HuggingFace.svg
-  - Hyperbolic.svg, LMStudio.svg, Mistral.svg, Ollama.svg
-  - OpenAI.svg, OpenAILike.svg, OpenRouter.svg, Perplexity.svg
-  - Together.svg, xAI.svg
-- Unused UI component directives:
-  - Badge.tsx: 2 line removal
-  - Collapsible.tsx: 2 line removal
-  - ScrollArea.tsx: 2 line removal
-- Amazon Bedrock provider icon reference (1 line removal)
+  ## Build & Dependencies
 
-
-**Changed (Build & Dependencies)**
-- pnpm-lock.yaml major cleanup (153 line reduction)
-  - Removed unused dependencies
-  - Optimized dependency tree
-  - Better version management
-- Docker compose configuration (2 line changes)
-- MkDocs configuration (4 line changes)
-- GitHub Actions updates:
-  - Issue template config: 7 line changes
-  - Setup and build action: 5 line changes
-  - Electron workflow: 4 line changes
-- README.md updates (3 line changes)
+  * pnpm-lock.yaml major cleanup (153 line reduction)
+    * Removed unused dependencies
+    * Optimized dependency tree
+    * Better version management
+  * Docker compose configuration (2 line changes)
+  * MkDocs configuration (4 line changes)
+  * GitHub Actions updates:
+    * Issue template config: 7 line changes
+    * Setup and build action: 5 line changes
+    * Electron workflow: 4 line changes
+  * README.md updates (3 line changes)
+</Update>
 
 <Update label="October 9, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Application foundation and comprehensive settings system" }}>
   ## New features
