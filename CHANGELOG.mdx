@@ -1,0 +1,2108 @@
+---
+title: "Changelog"
+description: "Track all notable changes and updates to the CodinIT.dev platform"
+---
+
+# Changelog
+
+<Info>
+  This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+</Info>
+
+## [1.1.26] - 2025-12-20
+
+### Fixed
+- LMStudio provider error handling and Docker host mapping
+- LMStudio baseUrl configuration retrieval from provider settings
+- Ollama provider error handling and Docker compatibility
+- ESLint issues in LMStudio provider
+- Electron build configuration improvements
+
+### Changed
+- Improved provider error messages for better debugging
+- Enhanced Docker compatibility for local model providers
+
+## [1.1.25] - 2025-12-19
+
+### Changed
+- Version bump with stability improvements
+- Provider configuration enhancements
+
+## [1.1.24] - 2025-12-14
+
+### Added
+- GPT-5.1, GPT-5 Mini, and GPT-5 Nano models to OpenAI provider
+  - GPT-5.1: 128k context, 16k output limit (optimized for coding and agentic tasks)
+  - GPT-5 Mini: 128k context, 8k output limit (faster, cheaper alternative)
+  - GPT-5 Nano: 128k context, 4k output limit (fastest, most cost-effective)
+- GPT-5.2 Pro, GPT-5.2 Thinking, and GPT-5.2 Instant models to OpenRouter provider
+- Claude Opus 4.5 model to Anthropic provider with enhanced capabilities
+- Claude 4.5 models (Opus, Sonnet, Haiku) to Amazon Bedrock provider
+- Fazier badge to header with theme-aware variants (dark and light modes)
+- Local SVG assets for Fazier badge (embed_image_dark.svg, embed_image_light.svg)
+
+### Changed
+- Standardized Electron app name to "codinit-dev" across all platforms (macOS, Windows, Linux)
+- Updated README with improved content structure and Fazier badge
+- Replaced Product Hunt header badge with Fazier badge
+- Updated default model configuration to leverage new GPT-5 series
+
+### Fixed
+- Fazier badge styling to prevent alt text display issues
+- Badge width constraints to fit header layout properly
+- Mixed static/dynamic import warning for CodeMirrorEditor component
+- Vite configuration flags (v3_singleFetch) for better compatibility
+
+### Removed
+- Unused UI components to reduce bundle size:
+  - TypingAnimation component
+  - WorkspaceModal component
+  - GradientCard component
+  - Slider component
+  - Separator component
+  - SearchResultItem component
+  - UI CodeBlock component (duplicate)
+  - ElectronWindowControls component (unused)
+  - CustomTitleBar component (unused)
+  - CreateBranchDialog component (unused)
+- Duplicate service-status directory and components
+- Duplicate TextShimmer.tsx and demo.tsx files
+- Social preview image (social_preview_index.png)
+- Unnecessary component exports from ui/index.ts
+
+## [1.1.23] - 2025-12-09
+
+### Fixed
+- Error handling improvements across providers
+- Release workflow updates
+
+## [1.1.22] - 2025-12-08
+
+### Added
+- Diff Approval Workflow with new `DiffApprovalDialog` component
+- Live Action Console with `LiveActionAlert` component
+- Inline diff comparison display for file changes
+- Visual feedback for real-time action output
+- Live streaming of command execution output
+- New action status: "awaiting-approval"
+- Fourth stream for live action monitoring
+
+### Changed
+- Enhanced `ActionRunner` with live output monitoring
+- Extended `ContextAnnotation` with file categorization
+- Refactored event logs and task manager tabs
+- Improved settings organization
+- Better visual feedback for user interactions
+
+### Removed
+- Legacy event logs from ControlPanel
+- Old task manager tab implementation
+
+## [1.1.20] - 2025-12-09
+
+### Changed
+- Version update with bug fixes
+- API update improvements
+
+## [1.1.19] - 2025-12-09
+
+### Added
+- Tool mention autocomplete system with @ command functionality
+  - Type `@` in chatbox to trigger autocomplete for MCP tools and files
+  - Fuzzy search powered by Fuse.js for intelligent suggestions
+  - Support for both tool references (@tool-name) and file references (@file-path)
+  - Visual dropdown with descriptions and server information
+- Code validation system with comprehensive test coverage
+  - New code-validator.ts utility for validating AI-generated code
+  - Test suite with 247 test cases for code validation
+  - Test suite with 229 test cases for message parser
+  - Test suite with 270 test cases for LLM utilities
+  - Test suite with 159 test cases for tool mention parser
+- Product Hunt badge integration with theme-aware display
+- GitHub star badge with dark mode support in header
+- CONTRIBUTING.md with comprehensive contribution guidelines
+- CODE_OF_CONDUCT.md following Contributor Covenant standards
+- DiffView header component for improved diff visualization
+- API Keys and Updates tabs to settings panel
+- Unit test infrastructure for runtime, server, and utility modules
+
+### Changed
+- Migrated repository from Gerome-Elassaad/codinit-app to codinit-dev/codinit-dev organization
+- Updated all repository references and links across documentation
+- Refactored CodeMirror editor with enhanced functionality and better TypeScript support
+- Enhanced workbench headers with diff view icon button
+- Updated xAI provider with new Grok models and accurate token limits
+- Improved Groq provider configuration and model definitions
+- Updated provider icons to use actual brand logos instead of placeholders
+- Enhanced TabManagement component for better settings navigation
+- Improved file auto-save utility with more robust error handling
+- Refactored workbench store with extended functionality (236 lines of additions)
+- Updated Docker configuration to use lowercase repository names
+- Enhanced switchable stream utility for better LLM response handling
+- Improved ProgressIndicator component with better visual feedback
+
+### Fixed
+- Docker container name compatibility (changed wrangler.toml to lowercase)
+- Model selection and provider dropdown functionality issues
+- Preview header dropdown menu buttons and reload button
+- UpdateTab with manual refresh capability and improved UI structure
+- Live output callback wiring in workbench store
+- Security vulnerabilities in GitHub Actions workflows (security.yaml with 120 lines)
+- Context indicator accuracy for file categorization
+- Message parsing for better artifact extraction
+
+### Removed
+- Walkthrough video file (walkthrough.mp4) to reduce repository size
+- Unused 21st.jpeg image file
+- Mock feature flags from ControlPanel
+- Mock features hook and API files
+
+## [1.1.18] - 2025-12-04
+
+### Added
+- Universal framework-agnostic system prompt for supporting all frameworks
+  - Removed framework restrictions (previously limited to React, Vue, etc.)
+  - Added comprehensive base prompt with universal coding standards
+  - System prompt supports any framework or library
+  - Universal tools.json configuration (207 lines)
+- Chat validation system with typed error handling
+  - New chat-validation.ts module (186 lines) with Zod schemas
+  - Comprehensive validation for chat messages and requests
+  - Improved error messages with user-friendly guidance
+- Artifact version management system (215 lines in artifact-versions.ts)
+- File auto-save persistence with dual storage backup (238 lines)
+  - Automatic file persistence to prevent data loss
+  - Backup storage mechanism for reliability
+- Context indicator component (173 lines) for showing file categorization
+- Progress indicator component (187 lines) for better user feedback
+- Provider model selector component (294 lines) for streamlined model selection
+- Test artifact component (234 lines) for development testing
+- Prompt registry system (220 lines) for managing AI prompts
+- LangSmith tracing integration
+  - Configuration documentation in .env.example
+  - Setup script for LangSmith tracing
+  - Comprehensive LangSmith documentation
+
+### Changed
+- Complete design system overhaul for dark/light mode compatibility
+  - Fixed dark mode depth contrast and dropdown visibility
+  - Updated SCSS files for proper theme support
+  - Improved button contrast across all themes
+  - Enhanced tab button visibility in both modes
+- Workbench layout redesign
+  - Repositioned workbench below headers on chat page
+  - Restored original side-by-side layout (chat and workbench)
+  - Fixed chat/workbench component placement with responsive layout
+- Enhanced prompt engineering system
+  - Detects design schemes automatically
+  - Builds complete component specifications
+  - High-priority quality standards added to AI prompts
+- Improved context optimization in chat API (33 additions)
+- Updated ColorSchemeDialog with better theme compatibility
+- Enhanced Artifact component with better state management (54 modifications)
+- Improved AssistantMessage rendering (133 line reduction through optimization)
+- Refactored BaseChat for better performance and cleaner code
+- Updated Chatbox with improved model selection (119 additions)
+- Enhanced Markdown rendering with additional features
+- Improved EditorPanel with better preview integration (49 additions)
+
+### Fixed
+- Dark/light mode compatibility issues across entire application
+  - Fixed SCSS variable usage for theme-aware colors
+  - Corrected CSS custom properties for proper inheritance
+  - Updated component styles to respect theme context
+- Icon button styling for cross-theme compatibility
+- Vite dynamic import warnings by using static imports
+- Infinite message loop in AI artifact generation
+- React hooks violation in ProgressIndicator component
+- Z-index layering for dropdowns above Preview component
+- PortDropdown parent z-index stacking issue
+- GitHub push button functionality in PreviewHeader
+- Header z-index stacking issue in Electron builds
+- Package.json rules to support both new and existing projects
+- Styling tab layout with inline styles replacing dynamic classes
+
+### Removed
+- React Email package (no longer needed)
+- Cohere provider from LLM registry
+- Framework restrictions from AI prompts
+- Duplicate ArtifactsStore (consolidated artifact management)
+- Unused prompt template files (consolidated into TypeScript system)
+
+## [1.1.17] - 2025-11-30
+
+### Added
+- VSCode-style title bar for Electron desktop application
+  - ElectronTitleBar component (174 lines) with native window controls
+  - ElectronWindowControls component (134 lines) for minimize/maximize/close
+  - Custom title bar matching VSCode's sleek design
+  - Prominent window control buttons for better UX
+- Electron development script (electron-dev.mjs, 81 lines)
+  - Automated Electron development workflow
+  - Hot reload support for faster development
+
+### Changed
+- Refactored all headers to match browser layout with seamless window controls
+  - Updated Header component for Electron integration
+  - Modified ChatHeader for unified header system
+  - Enhanced header design for sleeker appearance
+- Removed header border for seamless workbench integration
+- Updated settings constants to include Electron-specific options
+- Improved BaseChat integration with Electron environment
+
+### Fixed
+- Header alignment in Electron desktop builds
+- Window controls positioning and functionality
+- Title bar display across different platforms
+
+## [1.1.16] - 2025-11-29
+
+### Added
+- Custom VSCode-style title bar for Electron desktop application
+  - CustomTitleBar component (159 lines) with native window controls
+  - Seamless window management matching VSCode design
+  - Platform-specific window control behavior
+- SearchInput UI component (14 lines) for improved search functionality
+- Demo component (25 lines) for UI development and testing
+- Automatic release notes generation in GitHub Actions workflow
+- Automatic tagging based on package.json version
+- Debug logging to Electron build workflow for better troubleshooting
+
+### Changed
+- Updated Electron window management and cookie bridge (10 additions)
+  - Enhanced electron cookie synchronization
+  - Improved IPC communication
+- Modified LLM provider configurations:
+  - Cohere provider updated with 107 line changes
+  - DeepSeek provider optimized (51 line reduction)
+  - Enhanced provider error handling across all providers
+- Improved MCP service with 86 line changes for better reliability
+- Enhanced design scheme store with 104 line changes for better theme management
+- Updated settings store with 41 line changes for improved configuration handling
+- Modernized Electron entitlements for macOS (10 line changes)
+- Improved GitHub Actions artifact collection across all platforms
+- Updated main process IPC handlers (41 line changes in electron/main/index.ts)
+- Enhanced Chat.client.tsx with 14 line improvements
+
+### Fixed
+- ESLint consistent-return error in CustomTitleBar component
+- Electron build compatibility issues
+- GitHub Actions release workflow artifact collection
+- Provider selection and error handling issues
+- Title bar display across different platforms
+
+### Removed
+- Clerk authentication integration (complete rollback)
+  - Removed all Clerk-related components and configuration
+  - Removed user service (124 lines)
+  - Removed user store (36 lines)
+  - Removed email verification route (55 lines)
+- Database migration components and utilities:
+  - Removed schema.ts (7 lines)
+  - Removed validation utilities (90 lines)
+  - Removed rate limiting utilities (147 lines)
+  - Removed CSRF protection utilities (83 lines)
+- MCP retry and validation API routes (72 total lines)
+- Comprehensive coding rules prompt (785 lines, consolidated elsewhere)
+- Provider validation test suite (160 lines)
+- changelog.md duplicate file (35 lines)
+- Amplitude and GTM provider wrapper overhead (4 lines combined)
+- AGENTS.md file (55 lines, moved to different location)
+
+### Security
+- Removed authentication-related security utilities as part of Clerk rollback
+- Simplified security model for desktop application
+
+## [1.1.15] - 2025-11-28
+
+### Changed
+- Removed Windows code signing config for unsigned distribution
+- Simplified build process for easier distribution
+
+## [1.1.14] - 2025-11-23
+
+### Fixed
+- Reverted to static OS matrix to resolve workflow failure
+- CI/CD pipeline improvements
+
+## [1.1.13] - 2025-11-23
+
+### Fixed
+- Broken Electron build process
+- Build configuration issues
+
+## [1.1.12] - 2025-11-23
+
+### Added
+- Feature updates via pull request merge
+- Enhanced functionality
+
+## [1.1.11] - 2025-11-22
+
+### Changed
+- Updated application icons
+- Fixed Electron model loading issues
+- Improved desktop app stability
+
+## [1.1.10] - 2025-11-22
+
+### Changed
+- Version bump with improvements
+- Enhanced features
+
+## [1.0.10] - 2025-11-22
+
+### Added
+- Unified header system for seamless chat and workbench integration
+  - New ChatHeader component (31 lines) with consistent layout
+  - Unified header container aligning chat and workbench
+  - Removed redundant header rendering from Workbench component
+- Complete MCP (Model Context Protocol) component redesign:
+  - MCPDialog component (73 lines) for modal interactions
+  - MCPContent component (92 lines) for content management
+  - MCPSidebar component (72 lines) for navigation
+  - MCPHistoryTab (44 lines) for tracking MCP operations
+  - MCPIntegrationsTab (265 lines) for server management
+  - MCPMarketplaceTab (68 lines) for discovering MCP servers
+  - Enhanced MCPServerCard with new styling module (148 lines)
+- Mocha dark theme for code editor (288 lines in mocha-dark.scss)
+- MCP types definition file (75 lines in app/types/mcp.ts)
+- Cloudflare deployment source type to deployment system
+- Python icon asset (265 lines SVG)
+- Theme-aware favicon support with dynamic switching
+- Theme-aware icon support for ChatHeader
+- Moonshot AI provider integration to LLM registry
+  - Full provider implementation with model support
+  - Enhanced provider registration logging
+
+### Changed
+- Complete dark theme redesign with neutral gray palette
+  - Removed blue undertone for pure neutral gray
+  - Updated all CSS variables in variables.scss (109 line changes)
+  - Applied neutral gray theme across all components:
+    - Markdown styling updated for neutral gray
+    - Chat components updated for neutral gray
+    - Code blocks updated for neutral gray
+    - Resize handles updated for neutral gray
+    - Toast notifications updated for neutral gray
+    - Dialog colors updated for neutral gray
+    - Editor theme updated for neutral gray
+- Enhanced dark mode with blue accents for interactive elements
+  - Blue accents added to settings sidebar
+  - Blue accents added to MCP buttons
+  - Switch button colors: blue for on, gray for off
+- Updated all platform icons for Electron builds
+  - macOS icon (icon.icns): 9428 bytes → 4423 bytes
+  - Windows icon (icon.ico): 15219 bytes → 6703 bytes
+  - PNG icon: 16299 bytes → 32785 bytes
+- Major MCP service overhaul (140 line additions)
+  - Improved error handling and logging
+  - Enhanced server connection management
+  - Better tool execution flow
+- Refactored BaseChat component (170 line additions)
+  - Improved chat state management
+  - Better message handling
+  - Enhanced UI responsiveness
+- Enhanced workbench client with cleanup (537 line reduction)
+  - Removed redundant code
+  - Improved performance
+  - Better organization
+- Optimized provider implementations (significant line reductions):
+  - Amazon Bedrock: 293 line reduction
+  - Anthropic: 63 line reduction
+  - Google: 105 line reduction
+  - Groq: 168 line reduction
+  - OpenRouter: 191 line reduction
+  - OpenAI: 119 line reduction
+  - Together: 144 line reduction
+  - Mistral: 44 line reduction
+- Updated provider environment variable handling
+  - Prioritize process.env in base provider for Electron compatibility
+  - Pass process.env to Remix context in Electron
+  - Enhanced error logging and diagnostics in LLMManager
+- Improved update check system with better API handling (39 line changes in lib/api/updates.ts)
+- Enhanced icon assets with updated SVG styling:
+  - Angular, Astro, Expo, Netlify, Nuxt, Qwik, React, Remix, Vite icons updated
+
+### Fixed
+- MCP service functionality and reliability issues
+- Provider selection in chatbox
+- Null provider error in Chat.client.tsx
+- Linting errors in BaseChat component
+- Electron environment variable handling
+- Model dropdown issues in Electron app
+- Header alignment and layout issues
+- Switch button color states in dark mode
+
+### Removed
+- MCP integration panel (411 lines, replaced with new architecture)
+- MCPToolApproval component (263 lines, moved to new location)
+- MCPToolRegistry component (292 lines, moved to new location)
+- MCPIntegrationPanel.module.scss (347 lines, redesigned)
+- Legacy MCP JSON configuration file
+- Test files (unit tests for base provider, manager, and diff utilities)
+- AGENTS.md from root (55 lines)
+- Cloudflare deploy API route (241 lines, consolidated)
+- Duplicate IPC handlers from Electron preload
+- Redundant await keywords from createWindow calls
+
+## [1.0.9] - 2025-11-19
+
+### Added
+- Cloudflare Pages deployment integration (complete system)
+  - CloudflareDeploy.client.tsx component (193 lines) for deployment interface
+  - CloudflareDeploymentLink.client.tsx component (116 lines) for deployment status
+  - CloudflareConnection.tsx component (282 lines) for account management
+  - Cloudflare store (114 lines in cloudflare.ts) for state management
+  - Cloudflare deploy API endpoint (241 lines in api.cloudflare-deploy.ts)
+  - Cloudflare types definition (24 lines)
+  - Cloudflare SVG icon asset
+- Enhanced deployment system:
+  - DeployDialog enhancements (112 line additions) supporting multiple platforms
+  - Vercel icon assets (dark and light variants)
+  - Settings dropdown functionality in PreviewHeader
+  - Deployment icon standardization across platforms
+- Control panel improvements:
+  - ControlPanelDialog component (71 lines) for modal display
+  - ControlPanelContent component (143 lines) for organized content
+  - ControlPanelSidebar component (74 lines) for navigation
+  - useControlPanelDialog hook (46 lines) for state management
+- Enhanced UI components:
+  - StatsDialog component updates (8 line changes)
+  - CreateBranchDialog component updates (3 line additions)
+- Design scheme enhancements (130 line additions in design-scheme.ts)
+  - Extended design scheme types
+  - Better color palette management
+  - Improved theme configuration
+- Dialog styling system (45 lines in dialog.scss)
+- changelog.md file (35 lines) for tracking changes
+
+### Changed
+- Major PreviewHeader redesign (226 line changes)
+  - Simplified left-side button layout
+  - Unified button styling and sizing
+  - Standardized all button sizes to w-8 h-8
+  - Improved deployment icon display
+  - Enhanced dropdown functionality
+- CodeModeHeader simplification (68 line reduction)
+  - Removed terminal button for cleaner interface
+  - Streamlined layout
+  - Improved consistency with PreviewHeader
+- Enhanced update check system:
+  - Update API improvements (39 line changes in lib/api/updates.ts)
+  - Update route enhancements (31 line additions in api.update.ts)
+  - useUpdateCheck hook improvements (17 line changes)
+  - Client-side update check with 429 rate limiting handling
+- ColorSchemeDialog expansion (159 line additions)
+  - Enhanced color scheme selection
+  - Improved preview functionality
+  - Better theme management UI
+- HeaderActionButtons enhancements (51 line additions)
+  - Better button organization
+  - Improved visual consistency
+  - Enhanced dropdown support
+- Updated deployment icons to use local SVG assets
+  - Cloudflare icon using local asset
+  - Vercel icons with theme variants
+  - Better icon consistency
+- IconButton improvements (5 line changes)
+  - Fixed border centering
+  - Better styling consistency
+- ControlPanel updates (4 line changes)
+  - Better integration with new dialog system
+- ConnectionsTab enhancements (4 line additions)
+  - Cloudflare connection support
+- GitHubAuthDialog improvements (8 line changes)
+- RepositorySelectionDialog refactor (79 line changes)
+  - Better repository selection UX
+  - Improved organization
+- UpdateTab improvements (28 line changes)
+  - Better update information display
+  - Enhanced version checking
+- AGENTS.md updates (14 line changes)
+- Package updates (4 line changes in package.json)
+
+### Fixed
+- Client-side update check to handle 429 rate limiting gracefully
+- Linting error in useUpdateCheck hook
+- API route 429 rate limiting status code handling
+- Dark mode color errors and inconsistencies
+- IconButton border centering issues
+- Settings icon button dropdown functionality
+- Deployment icon display in PreviewHeader and DeployDialog
+- Button styling consistency across workbench headers
+- Action runner type reference (2 line fix)
+
+### Removed
+- Terminal button from CodeModeHeader (simplified interface)
+- Workbench client redundant code (5 line reduction)
+- EditorPanel unnecessary code (2 line reduction)
+
+## [1.0.8] - 2025-11-17
+
+### Added
+- Comprehensive test infrastructure:
+  - Test configuration setup (92 lines in __tests__/config/setup.ts)
+  - Vitest configuration (52 lines in __tests__/config/vitest.config.ts)
+  - API response fixtures (188 lines in __tests__/fixtures/api-responses.ts)
+  - Test utilities and helpers (141 lines in __tests__/helpers/test-utils.tsx)
+  - Base provider test suite (189 lines)
+  - Manager test suite (177 lines)
+  - Diff utility test suite (43 lines)
+- New workbench header system:
+  - CodeModeHeader component (151 lines) for code editing mode
+  - PreviewHeader component (338 lines) for preview mode
+  - Enhanced header action buttons
+  - GitHub icon button integration
+- DeployDialog component (150 lines) for deployment management
+- Enhanced UI component library:
+  - actions-dropdown component (58 lines) for action menus
+  - animated-counter component (64 lines) for animated numbers
+  - slide-content component (34 lines) for sliding animations
+  - text-shimmer component (46 lines) for shimmer effects
+  - demo component (25 lines) for UI demonstrations
+- Electron cookie bridge system (209 lines in electronCookieBridge.ts)
+  - Cookie synchronization between Electron and renderer
+  - Improved state management for desktop app
+- Complete LLM provider model updates:
+  - **Amazon Bedrock**: 293 line additions with latest models
+  - **Anthropic**: 63 line additions with new Claude models
+  - **Google**: 103 line additions with updated Gemini models
+  - **Groq**: 168 line additions with all missing Groq models from official docs
+  - **Mistral**: 44 line additions with latest Mistral models
+  - **OpenAI**: 119 line additions with updated GPT models
+  - **OpenRouter**: 191 line additions with expanded model support
+  - **Perplexity**: 6 line additions including sonar-reasoning model
+  - **Together AI**: 144 line additions with latest Together models
+- AGENTS.md documentation (92 lines) with build commands and code style guidelines
+  - Comprehensive build instructions
+  - Code style guidelines
+  - Development best practices
+
+### Changed
+- Major Workbench.client.tsx refactor (402 line additions)
+  - Improved component organization
+  - Better state management
+  - Enhanced preview integration
+  - Cleaner code structure
+- Preview component optimization (512 line reduction)
+  - Extracted PreviewHeader to separate component
+  - Streamlined preview logic
+  - Reduced complexity
+- Enhanced Messages.client.tsx (40 line changes)
+  - Better message rendering
+  - Improved performance
+- Updated HeaderActionButtons (26 line changes)
+  - Better button organization
+  - Improved styling
+  - Enhanced functionality
+- Header component improvements (12 line changes)
+  - Removed borders from header action buttons
+  - Added GitHub icon button
+  - Better visual consistency
+- Enhanced base provider (15 line changes)
+  - Improved provider initialization
+  - Better error handling
+- Updated DeepSeek provider with V3.2-Exp models and correct token limits (17 line changes)
+- Enhanced Ollama provider (21 line changes)
+  - Better local model support
+  - Improved configuration
+- BaseChat improvements (24 line changes)
+  - Better chat flow
+  - Improved state management
+- DiffView enhancements (10 line changes)
+  - Better diff rendering
+  - Improved UX
+- EditorPanel updates (4 line changes)
+- FileBreadcrumb improvements (2 line changes)
+- LockManager updates (2 line changes)
+- TerminalTabs enhancements (4 line changes)
+- ChatAlert improvements (2 line changes)
+- DeployAlert updates (2 line changes)
+- ImportErrorModal fixes (2 line changes)
+- ProgressCompilation improvements (9 line changes)
+- Artifact component updates (4 line changes)
+- README.md updates (3 line changes)
+
+### Fixed
+- Electron app model dropdown issue
+  - Fixed provider selection
+  - Improved model list rendering
+  - Better state synchronization
+- Header button styling consistency
+- Workbench layout and integration issues
+- UI component export in index.ts (1 line addition)
+
+### Removed
+- Package-lock synchronization script (110 lines, no longer needed)
+- GitHub provider models (5 line removal, consolidated)
+
+## [1.0.7] - 2025-11-16
+
+### Added
+- Complete MCP (Model Context Protocol) integration with tool execution
+  - MCPExecutionHistory component (350 lines) for tracking tool usage
+  - MCPToolApproval component (263 lines) for user consent management
+  - MCPToolRegistry component (292 lines) for tool discovery and registration
+  - MCPTools component (45 lines) for tool interface
+  - Enhanced MCPIntegrationPanel (177 line additions) with real-time status updates
+  - MCP server selection via slash commands
+  - Tool execution with real-time feedback
+  - Server connection status monitoring
+- Thinking artifacts feature (106 lines in ThinkingArtifact.tsx)
+  - Visual representation of AI reasoning process
+  - Step-by-step thought display
+  - Enhanced transparency for complex tasks
+- Analytics integration suite:
+  - Google Tag Manager integration (60 lines in GTMProvider.tsx)
+  - Google Analytics tracking with complete event system
+  - Amplitude analytics with session replay (17 lines in AmplitudeProvider.tsx)
+  - Replaced CDN-based Amplitude with proper npm package
+- Command menu system (142 lines in Command.tsx component)
+  - Quick access to application features
+  - Keyboard shortcuts support
+  - Searchable command palette
+- Settings infrastructure overhaul:
+  - SearchInput component (85 lines) for settings search
+  - SearchInterface component (207 lines) for unified search UX
+  - SearchResults component (67 lines) for displaying results
+  - SettingResultItem component (183 lines) for individual result cards
+  - SettingsCard component (112 lines) for consistent setting display
+  - SettingsPanel component (183 lines) for panel layout
+  - Settings search utility (295 lines in settingsSearch.ts)
+- WorkspaceModal component (246 lines) for workspace management
+- App notification system for update alerts and status messages
+- AGENTS.md documentation (47 lines) with build commands and code style guidelines
+- Animation system (259 lines in animations.scss)
+- Comprehensive variable system additions (42 lines in variables.scss)
+
+### Changed
+- Major ControlPanel redesign (317 line changes)
+  - Improved layout and organization
+  - Better navigation structure
+  - Enhanced visual hierarchy
+- Settings tabs restructuring:
+  - FeaturesTab: 328 line overhaul for better UX
+  - SettingsTab: 278 line redesign for improved organization
+  - UpdateTab: 444 line reduction through simplification
+- Enhanced TabTile component (109 line changes) with better styling
+- MCP integration improvements:
+  - Enhanced MCPIntegrationPanel styling (20 line changes in SCSS)
+  - Updated MCPMarketplace with 30 line improvements
+  - Enhanced MCPServerCard with 24 line changes
+  - Improved MCPTemplateConfigDialog with 78 line additions
+  - Updated McpServerForm with better validation
+- Chat and messaging enhancements:
+  - Enhanced Chat.client.tsx with 41 line additions for better state management
+  - Improved Markdown rendering with 42 line changes
+  - Updated Chatbox with 6 line improvements
+- LLM streaming improvements (34 line additions in stream-text.ts)
+- Message parsing enhancements (168 line additions in message-parser.ts)
+  - Better artifact detection
+  - Improved code extraction
+  - Enhanced error handling
+- MCP service major upgrade (97 line additions)
+  - Improved server lifecycle management
+  - Better error recovery
+  - Enhanced logging
+- Workbench store improvements (50 line additions)
+  - Better state management
+  - Improved file handling
+  - Enhanced preview control
+- Updated auto-update system (58 line changes)
+- Enhanced update check hook (98 line additions)
+  - Better version comparison
+  - Improved error handling
+  - Rate limiting support
+- LLM manager improvements (115 line additions)
+  - Better provider management
+  - Enhanced error handling
+  - Improved model selection
+- Editor and workbench updates:
+  - EditorPanel: 11 line improvements
+  - FileTree: 18 line enhancements
+  - Workbench.client: 6 line updates
+  - CodeMirror editor: 2 line fixes
+- Updated CodeMirror theme to match GitHub's dark theme
+- Enhanced slider icons with colors and larger size
+- Improved Dialog component (55 line reduction)
+- Updated BuiltWithCodinitBadge with 4 line improvements
+
+### Fixed
+- MCP component dark mode compatibility issues
+- MCP component styling and layout problems
+- Repetitive MCP service availability debug logs
+- DialogPortal usage in CommandDialog by removing nested DialogContent
+- Chatbox text placeholder display
+- Update check linting errors
+- Editor color scheme for better readability
+- Resize handle colors for neutral theme
+- Toast styling for theme compatibility
+
+### Removed
+- MCP secrets tab (security concern)
+- MCP tools tab from integration panel (consolidated)
+- Command search tools from ControlPanel (replaced with new command menu)
+- MCPTools component from chat directory (moved to mcp directory)
+- Legacy update check implementation
+
+## [1.0.6] - 2025-11-11
+
+### Fixed
+- Workbench layout issues
+- Updated typing animations for better UX
+
+## [1.0.5] - 2025-11-08
+
+### Added
+- Style assets for documentation:
+  - chatstyle.png (387KB) - chat interface screenshot
+  - homestyle.png (1.28MB) - home page screenshot
+- Enhanced background rays styling (52 line additions in styles.module.scss)
+  - Better visual effects
+  - Improved animations
+  - Enhanced theming
+
+### Changed
+- Major styling overhaul:
+  - BaseChat module styles (332 lines added) for better chat layout
+  - Editor styles optimization (166 line reduction)
+  - Index styles restructuring (59 line changes)
+  - Variables system major update (209 line changes)
+  - UnoCSS configuration improvements (139 line changes)
+- Updated application icons across all platforms:
+  - macOS icon (icon.icns): 166KB → 9KB (optimized)
+  - Windows icon (icon.ico): 4KB → 9KB (enhanced quality)
+  - PNG icon: 14KB → 16KB (better resolution)
+- Enhanced BackgroundRays component (15 line changes)
+  - Better rendering
+  - Improved performance
+- Workbench client improvements (27 line changes)
+  - Better layout handling
+  - Enhanced state management
+- Icon file organization:
+  - Moved icon.icns from /public to /assets/icons
+  - Updated icon.ico in /public (32KB version)
+  - Updated icon.png in /public (16KB version)
+- README.md updates (39 line changes)
+  - Added new screenshots
+  - Better project description
+  - Improved setup instructions
+
+### Fixed
+- Electron build configuration (2 line fixes)
+  - Better icon references
+  - Improved packaging
+- Electron main process (2 line fixes)
+  - Icon path corrections
+- Windows icon display issues
+  - Proper .ico format
+  - Better resolution support
+- ChatAlert component (2 line fixes)
+- Chatbox component (2 line fixes)
+- ImportErrorModal (4 line fixes)
+- Slider component (6 line fixes)
+- Pre-start script (2 line fixes)
+
+### Removed
+- readme_assets/readme.png (385KB, replaced with better screenshots)
+- Duplicate icon files from /public root
+
+### Changed (Package)
+- Package.json version bump (2 line changes)
+
+## [1.0.4] - 2025-11-07
+
+### Added
+- CLAUDE.md documentation with comprehensive codebase documentation for AI assistants
+- CodinIT thinking artifacts feature:
+  - Shows AI reasoning process
+  - Blue color scheme for thinking components
+  - Enhanced transparency in AI decision-making
+- Enhanced ActionAlert interface with detailed error context fields
+- Vite-shadcn configured as default starter template
+
+### Changed
+- Complete theme redesign to darker slate/charcoal with blue undertones:
+  - Adjusted slate colors to neutral charcoal with reduced blue tint
+  - Updated all CSS custom properties and variables
+  - Theme classes updated across all components:
+    - Settings components theme updates
+    - Chat interface theme updates
+    - Workbench and terminal theme updates
+    - Header, editor, and deploy components theme updates
+    - Shared UI components theme updates
+- Replaced deploy dropdown with icon buttons in chat header
+  - Better space utilization
+  - Improved accessibility
+  - Cleaner interface
+- Changed thinking process component from purple to blue
+  - Better visual consistency
+  - Improved brand alignment
+- Major component refactoring across the application:
+  - Settings tabs: extensive updates to all tabs (300+ line changes in DebugTab alone)
+  - Connection components: refactored for better organization
+  - Data visualization improvements (38 line changes)
+  - Event logs enhancements (12 line changes)
+  - Features tab updates (30 line changes)
+  - Provider tabs improvements (cloud and local)
+  - Service status tab refinements (46 line changes)
+  - Task manager tab redesign (170 line changes)
+  - Update tab improvements (45 line changes)
+- Enhanced TabManagement component (46 line changes)
+  - Better tab organization
+  - Improved UX
+- Improved DraggableTabList (12 line changes)
+  - Better drag and drop
+  - Enhanced visual feedback
+- Connection management improvements:
+  - GithubConnection: 128 line refactor
+  - NetlifyConnection: 130 line refactor
+  - VercelConnection: 40 line improvements
+  - ConnectionForm: 18 line enhancements
+  - CreateBranchDialog: 19 line updates
+  - PushToGitHubDialog: 84 line changes
+  - RepositoryCard: 28 line improvements
+  - RepositoryList: 4 line updates
+  - RepositorySelectionDialog: 100 line refactor
+  - StatsDialog: 14 line changes
+  - ConnectionDiagnostics: 92 line updates
+  - ConnectionsTab: 50 line changes
+- Storage keys and class names updated throughout client library
+- API responses and metadata updates in routes
+- Build paths and error messages improved in configuration
+- Constants and icon identifiers updated
+
+### Fixed
+- Biome linting errors in bindings.sh script
+- Deployment link functionality
+- Header button interactions
+- Git operations and integration
+- Test suite updates
+
+### Changed (Documentation)
+- README.md improvements (6 line changes)
+  - Better documentation structure
+  - Improved clarity
+- TypingAnimation component updates
+
+### Changed (Configuration)
+- .gitignore additions (2 line changes)
+  - Better file exclusions
+  - Cleaner repository
+
+## [1.0.3] - 2025-10-29
+
+### Changed
+- Package.json version bump from 1.0.1 to 1.0.2 (note: tag is v1.0.3)
+  - Version synchronization between package.json and git tags
+
+### Note
+This release represents a version bump with internal improvements. The git tag is v1.0.3 while package.json shows 1.0.2, indicating a minor versioning discrepancy that was corrected in subsequent releases.
+
+## [1.0.2] - 2025-10-29
+
+### Added
+- CODEOWNERS file for repository management
+- Enhanced error messages and build path configurations
+
+### Changed
+- Major Dockerfile updates (51 line changes)
+  - Improved build process
+  - Better caching strategies
+  - Enhanced production configuration
+- README.md comprehensive overhaul (66 line changes)
+  - Better project description
+  - Improved setup instructions
+  - Enhanced documentation structure
+  - Updated examples and usage
+- Electron desktop app updates:
+  - Updated dependencies
+  - Improved configuration
+  - Better packaging
+- Component styling improvements across the application:
+  - AvatarDropdown: 26 line improvements
+  - ControlPanel: 16 line enhancements
+  - DraggableTabList: 4 line updates
+  - TabManagement: 26 line changes
+  - TabTile: 26 line improvements
+- Connection component refinements:
+  - ConnectionForm: 8 line updates
+  - CreateBranchDialog: 12 line changes
+  - GitHubAuthDialog: 8 line improvements
+  - PushToGitHubDialog: 26 line enhancements
+  - RepositoryCard: 8 line updates
+  - RepositorySelectionDialog: 22 line changes
+  - StatsDialog: 4 line improvements
+- Settings tab improvements:
+  - DebugTab: 62 line enhancements
+  - EventLogsTab: 30 line updates
+  - FeaturesTab: 10 line changes
+  - NotificationsTab: 18 line improvements
+  - ProfileTab: 14 line updates
+  - CloudProvidersTab: 14 line changes
+  - LocalProvidersTab: 30 line enhancements
+  - OllamaModelInstaller: 28 line improvements
+  - ServiceStatusTab: 8 line updates (both instances)
+  - SettingsTab: 10 line changes
+  - UpdateTab: 40 line enhancements
+- UI component updates:
+  - APIKeyManager: 2 line fixes
+  - Chatbox: 35 line improvements
+  - ColorSchemeDialog: 2 line updates
+
+### Fixed
+- Build errors and configuration issues
+- Electron dependency compatibility
+- Component import paths and references
+
+## [1.0.1] - 2025-10-24
+
+### Changed
+- First patch release after v1.0.0
+- Bug fixes and improvements
+
+## [1.0.0] - 2025-10-10
+
+### Major Release - Production Ready
+
+This release marks the official stable release of CodinIT.dev as a production-ready AI app builder.
+
+#### Added
+- Complete settings system redesign with new tabbed interface
+  - New `ConnectionsTab` for unified service integrations
+  - New `DebugTab` with comprehensive debugging utilities
+  - New `ServiceStatusTab` with provider health monitoring
+  - New `TaskManagerTab` for task visualization
+  - New `UpdateTab` for version management
+- Comprehensive `ServiceStatusTab` with 14 provider status monitors:
+  - Amazon Bedrock, Anthropic, Cohere, DeepSeek, Google, Groq
+  - HuggingFace, Hyperbolic, Mistral, OpenAI, OpenRouter
+  - Perplexity, Together, xAI
+- New provider factory pattern for scalable provider management
+- Enhanced GitHub integration:
+  - New `GithubConnection` component (990+ lines)
+  - New `RepositorySelectionDialog` component (1011 lines)
+  - New `RepositoryCard` and `RepositoryList` components
+  - New `ConnectionDiagnostics` component (610 lines)
+  - Enhanced GitHub API integration with stats and branch management
+- New system diagnostics endpoints:
+  - `api.system.app-info` endpoint
+  - `api.system.memory-info` endpoint
+  - `api.system.process-info` endpoint
+
+#### Changed
+- Complete refactor of GitHub Actions CI/CD workflows
+- Restructured deployment pipelines for multiple platforms (Web, Electron, Docker)
+- Enhanced Docker configuration with improved repository naming conventions
+- Updated Electron main process and window management
+- Improved `Markdown` component with better rendering
+- Enhanced `AssistantMessage` component
+- `BaseChat` completely refactored (384 lines)
+- `Chat.client` enhanced with better state management
+- `ModelSelector` redesigned (451 lines)
+- Improved workbench components
+- Better terminal integration
+- Enhanced file tree and preview handling
+- Updated OpenAI provider with improved error handling
+- Enhanced Anthropic provider integration
+- Improved provider registration and discovery
+- Better context optimization
+- Refactored Supabase integration
+- Enhanced data operations hooks
+- Better file state management
+
+#### Removed
+- Legacy GitHub and GitLab tabs (consolidated into Connections)
+- Legacy Supabase and Netlify specific tabs
+- Deprecated `CLAUDE.md` and `PROJECT.md` from root
+
+#### Fixed
+- Docker repository naming case issues
+- Crypto module resolution for SSR builds
+- Electron build with Node.js v20.15.1
+- Deprecated electron-builder properties
+- Improved error handling across providers
+
+## [0.9.7] - 2025-10-24
+
+### Fixed
+- Electron SSR build issues:
+  - Added crypto module alias for SSR builds in both Vite configs
+  - Fixed crypto module resolution for server-side rendering
+- Electron build configuration:
+  - Updated Node.js to v20.15.1 for better compatibility
+  - Updated pnpm to v9.15.9 for improved package management
+
+### Removed
+- Deprecated signDlls property from electron-builder config
+  - Removed obsolete signing configuration
+  - Cleaned up build configuration
+
+### Changed
+- GitHub icon updated to use Phosphor icon library
+  - Better icon consistency
+  - Improved visual quality
+- "Clone a Git Repo" button redesigned to pill shape with GitHub icon
+  - Enhanced visual design
+  - Better user experience
+- "Import Folder" button updated to pill shape with icon and text
+  - Consistent button styling
+  - Improved accessibility
+- "Import Chat" button redesigned to pill shape with icon and text
+  - Unified button design language
+  - Better visual hierarchy
+
+## [0.9.6] - 2025-10-22
+
+### Added
+- Theme context support for header logo
+  - Dynamic logo switching based on theme
+  - Light/dark mode logo variants
+  - Better visual consistency
+
+### Changed
+- Enhanced Chat.client.tsx (175 line overhaul)
+  - Better chat history handling
+  - Improved message error handling
+  - Enhanced state management
+  - Better error recovery
+- useMessageParser hook improvements (60 line changes)
+  - Better message parsing logic
+  - Improved artifact extraction
+  - Enhanced error handling
+- useChatHistory hook enhancements (116 line changes)
+  - Better chat persistence
+  - Improved history management
+  - Enhanced data handling
+- Workbench store updates (27 line additions)
+  - Better state management
+  - Improved file handling
+- Action runner improvements (12 line changes)
+  - Better action execution
+  - Enhanced error handling
+- Dockerfile optimization (106 line changes)
+  - Better build process
+  - Improved caching
+  - Enhanced production readiness
+- Header component updates (4 line changes)
+  - Theme-aware logo support
+  - Better styling
+- Vite configuration improvements (17 line changes)
+  - Better build optimization
+  - Enhanced development experience
+- Package dependencies update (9 line changes in package.json)
+- pnpm-lock.yaml major update (809 line additions)
+  - Updated dependencies
+  - Security patches
+  - Performance improvements
+
+### Fixed
+- Chat history errors and data inconsistencies
+- Message parsing errors and edge cases
+- Workbench state management issues
+- Docker build errors and optimization
+- Path calculation logic to handle both path formats
+- Build errors in production mode
+
+### Removed
+- .claude/settings.local.json (7 lines, local configuration)
+- Codinit-dev package verification workflow (100 lines, moved)
+- Cloudflare Pages build example script fix (2 line change)
+
+### Security
+- Vite security update from 5.4.20 to 5.4.21 (dependency update via Dependabot)
+  - Fixed known security vulnerabilities
+  - Improved build security
+
+## [0.9.5] - 2025-10-20
+
+### Fixed
+- Package.json configuration issues
+  - Corrected dependencies
+  - Fixed version specifications
+  - Improved package metadata
+
+## [0.9.4] - 2025-10-20
+
+### Added
+- Complete build verification and provenance system:
+  - BuildInfo component (112 lines) with comprehensive documentation
+  - GitHub Actions workflow for build verification (100 lines)
+  - Build verification script (50 lines in verify-build.js)
+  - Build metadata collection script (76 lines in collect-metadata.js)
+  - Build collector module (196 lines in src/collector.ts)
+  - Build verifier module (168 lines in src/verifier.ts)
+  - TypeScript types for verification (68 lines in src/types.ts)
+  - Index module for exports (54 lines in src/index.ts)
+  - Verification configuration (18 lines in tsconfig.json)
+- Build verification integration:
+  - collect-build-metadata.cjs script (95 lines)
+  - verify-build.cjs script (69 lines)
+  - GitLab CI example configuration (73 lines)
+  - Cloudflare Pages build example (32 lines)
+  - Package configuration for codinit-dev package (33 lines)
+- Package workspace configuration:
+  - pnpm-workspace.yaml (2 lines) for monorepo support
+  - codinit-dev package structure
+  - Package.json for verification package (33 lines)
+  - pnpm-lock.yaml for package (1192 lines)
+- .gitignore for verification package (20 lines)
+
+### Changed
+- Enhanced GitHub template API (69 line changes in api.github-template.ts)
+  - Better template handling
+  - Improved error messages
+  - Enhanced validation
+- Updated template types (3 line changes)
+  - Better type definitions
+  - Improved type safety
+- Optimized constants file (138 line reduction in utils/constants.ts)
+  - Removed redundant definitions
+  - Better organization
+  - Improved maintainability
+- Package.json updates (6 line changes)
+  - Added verification dependencies
+  - Updated scripts
+  - Enhanced configuration
+- pnpm-lock.yaml updates (252 line additions)
+  - New verification dependencies
+  - Updated packages
+  - Security patches
+- Updated build scripts:
+  - update-imports.sh (4 line changes)
+  - update.sh (2 line changes)
+- useChatHistory minor fix (2 line change)
+
+### Fixed
+- GitHub API authentication header format
+  - Corrected authorization header
+  - Improved API integration
+- GitHub template URL parsing issues
+  - Better URL validation
+  - Enhanced error handling
+- Build verification script ESLint errors
+  - Code quality improvements
+  - Better error handling
+- Package.json configuration issues
+
+### Removed
+- CLAUDE.md from root (330 lines, moved to project-specific location)
+- Non-existent next-shadcn template from starter templates
+  - Cleaned up invalid template reference
+  - Improved template list accuracy
+
+### Security
+- Added build provenance system for supply chain security
+- Build verification ensures integrity of distributed packages
+- Metadata collection for build traceability
+
+## [0.9.3] - 2025-10-20
+
+### Added
+- Complete token configuration system:
+  - TokenConfigSelector component (334 lines) with dropdown and custom modal
+  - Token configuration store (162 lines in tokenConfig.ts) with presets and custom options
+  - Predefined token presets:
+    - Balanced: 8,192 tokens (default)
+    - Extended: 16,384 tokens
+    - Maximum: 32,768 tokens
+    - Minimal: 2,048 tokens
+  - Custom token configuration with slider controls
+  - Temperature and top-p parameter controls
+- CLAUDE.md documentation (330 lines)
+  - Project-specific AI assistant guidelines
+  - Development workflows
+  - Code standards and conventions
+  - Architecture documentation
+
+### Changed
+- Enhanced Chatbox component (38 line refactor)
+  - Integrated TokenConfigSelector
+  - More sleek design with reduced spacing and padding
+  - Better visual hierarchy
+  - Improved layout
+- Chat API endpoint improvements (18 line changes)
+  - Token config support
+  - Better parameter handling
+  - Enhanced flexibility
+- Updated ChatBox component name and structure
+  - Better component organization
+  - Improved code clarity
+- Workbench store enhancements (13 line changes)
+  - Better state management
+  - Improved integration
+- Action runner updates (6 line changes)
+  - Fixed ActionType to include start and build action types
+  - Better type safety
+  - Enhanced validation
+- Constants optimization (50 line changes in utils/constants.ts)
+  - Better organization
+  - Reduced redundancy
+  - Improved maintainability
+- BaseChat improvements (2 line changes)
+  - Better chat flow
+  - Minor optimizations
+- APIKeyManager updates (4 line changes)
+  - Better key management
+  - Improved UX
+- ChatAlert improvements (2 line changes)
+  - Better error display
+- Actions type definition updates (2 line changes)
+  - Added missing action types
+  - Better type coverage
+- Moved token config selector to icon toolbar
+  - Converted to compact icon dropdown
+  - More accessible placement
+  - Better space utilization
+- Integrated token config from chat client to API
+  - Full token control pipeline
+  - Better configuration flow
+
+### Fixed
+- Default chat alerts functionality
+  - Better alert display
+  - Improved timing
+  - Enhanced UX
+- Default API configuration
+  - Better default values
+  - Improved reliability
+- Default template selection
+  - Auto-selection working correctly
+  - Better initial state
+- Model settings bar now collapsed by default
+  - Cleaner initial UI
+  - More screen space
+  - Better UX
+- Token config icon size and hard-coded colors removed
+  - Theme-compatible icon
+  - Better visual consistency
+- Token config dropdown direction changed to open downwards
+  - Better placement
+  - Improved UX
+
+### Removed
+- Debug console.log statements from workbench
+  - Cleaner console output
+  - Better production readiness
+- Debug console.log statements from action-runner
+  - Reduced noise
+  - Improved debugging experience
+
+## [0.9.2] - 2025-10-20
+
+### Added
+- Complete MCP (Model Context Protocol) integration system:
+  - AddMcpServerDialog component for server configuration
+  - MCPIntegrationPanel component (92 lines) with comprehensive styling
+  - MCPMarketplace component for discovering MCP servers
+  - MCPServerCard component for server display
+  - MCPTemplateConfigDialog component for template setup
+  - McpServerForm component for server form handling
+  - MCP service integration in chat API
+  - MCP tool handling in stream-text utility
+  - MCP integration hooks in useMessageParser
+  - Enhanced prompt library with MCP support
+  - GitCloneButton component updates for MCP
+  - Messages.client.tsx with MCP tool display
+  - MCPTools component for tool management
+  - Chatbox with MCP tool handling
+  - Chat.client.tsx with complete MCP integration
+- Folder import feature for loading local projects
+  - Complete folder structure import
+  - File parsing and validation
+  - Project detection and setup
+- Comprehensive starter template system with 14 templates:
+  - Angular template
+  - Astro Shadcn template
+  - Codinit Expo template
+  - Codinit Qwik template
+  - Codinit Remotion template
+  - Codinit Vite React TypeScript template
+  - GraphQL template
+  - Next.js template
+  - Next.js Shadcn template
+  - Slidev template
+  - SvelteKit template
+  - Test template
+  - Vite Shadcn template
+  - Vue template
+- GitHub integration enhancements:
+  - Standalone template repositories for Remix, SvelteKit, and Vanilla Vite
+  - GitHub starters repository detection for template imports
+  - Automatic command detection for GitHub template imports
+  - Template selection system with visual indicators
+  - Auto-select default template functionality
+- Bug reporting system integration:
+  - Complete bug report API endpoint (254 lines)
+  - Integration with issue tracking
+  - Automated error collection
+- GitLab API service (508 lines in gitlabApiService.ts)
+  - Complete GitLab integration
+  - Project management
+  - Branch operations
+  - Authentication handling
+- GitHub API enhancements:
+  - GitHub branches API endpoint (166 lines)
+  - GitHub stats API endpoint (198 lines)
+  - GitHub user API endpoint (287 lines)
+  - Enhanced GitHub template API (480 line overhaul)
+- GitLab endpoints:
+  - GitLab branches API (143 lines)
+  - GitLab projects API (105 lines)
+- Service integration components:
+  - ConnectionForm component (193 lines)
+  - ConnectionTestIndicator component (60 lines)
+  - ErrorState component (102 lines)
+  - LoadingState component (94 lines)
+  - ServiceHeader component (72 lines)
+- Project initialization service (358 lines in projectInit.ts)
+  - Intelligent file loading detection for Git imports
+  - Automatic project setup
+  - Dependency detection
+  - Command inference
+- Security utilities (245 lines in security.ts)
+  - Enhanced security checks
+  - Input validation
+  - Sanitization helpers
+- Local template system:
+  - Local template loader API (134 lines)
+  - Template validation and loading
+  - React + Vite default template
+- Build verification system:
+  - BuildInfo component with comprehensive documentation
+  - GitHub Actions workflow for build verification
+  - Build provenance system
+  - Verification scripts with ESLint integration
+- Scripts directory with utility scripts
+- Package-lock synchronization script (110 lines)
+- Preview workflow for GitHub Actions (196 lines)
+
+### Changed
+- Major artifact system refactor (201 line changes in Artifact.tsx)
+  - Better artifact handling
+  - Improved rendering
+  - Enhanced state management
+- Enhanced Chat.client.tsx (238 line additions)
+  - Better MCP integration
+  - Improved state management
+  - Enhanced error handling
+- Comprehensive prompt system updates:
+  - new-prompt.ts: 883 line reduction through optimization
+  - prompts.ts: 687 line reduction for better performance
+  - Optimized prompts: 52 line changes
+  - Enhanced prompt library: 14 line improvements
+  - Updated discuss-prompt: 10 line changes
+- Workbench major refactor (434 line changes)
+  - Improved file handling
+  - Better state management
+  - Enhanced preview integration
+- LLM provider updates across all providers:
+  - Anthropic: 117 line changes
+  - Cohere: 22 line additions
+  - DeepSeek: 3 line improvements
+  - GitHub: 117 line changes
+  - Google: 116 line changes
+  - Groq: 49 line changes
+  - Mistral: 9 line additions
+  - Moonshot: 72 lines (new provider)
+  - OpenRouter: 79 line changes
+  - OpenAI-like: 120 line changes
+  - OpenAI: 93 line changes
+  - Perplexity: 12 line changes
+  - Together: 21 line changes
+  - xAI: 23 line changes
+  - Amazon Bedrock: 1 line addition
+- Enhanced stream-text utility (199 line additions)
+  - Better MCP tool handling
+  - Improved streaming logic
+  - Enhanced error recovery
+- Action runner improvements (38 line additions)
+  - Better action execution
+  - Improved error handling
+  - Enhanced logging
+- Message parser enhancements (129 line additions)
+  - Better artifact parsing
+  - Improved code extraction
+  - Enhanced validation
+- GitUrlImport refactor (242 line changes)
+  - Better import handling
+  - Improved error messages
+  - Enhanced validation
+- DiffView improvements (98 line changes)
+  - Better diff rendering
+  - Improved performance
+  - Enhanced UX
+- Preview component updates (157 line changes)
+  - Better preview handling
+  - Improved iframe management
+  - Enhanced error states
+- Workbench.client redesign (231 line changes)
+  - Better layout management
+  - Improved state handling
+  - Enhanced integration
+- README overhaul (481 line reduction)
+  - Simplified and focused content
+  - Better organization
+  - Improved readability
+- Enhanced connection tabs:
+  - NetlifyConnection: 202 line refactor
+  - VercelConnection: 35 line improvements
+  - GitHubAuthDialog: 5 line updates
+- Updated feature API (129 line changes)
+  - Better feature flag handling
+  - Improved configuration
+  - Enhanced validation
+- LLM constants updates (46 line changes)
+  - Better model definitions
+  - Improved token limits
+  - Enhanced configuration
+
+### Fixed
+- GitHub repository import 500 error
+  - Corrected API authentication header format
+  - Added fallback to Contents API when releases unavailable
+  - Fixed GitHub template URL parsing
+- GitHub repository path issues in starter templates
+  - Corrected directory paths to match repository structure
+  - Added proper documentation
+  - Fixed constants and context for subdirectory paths
+- Template system issues:
+  - Fixed deprecated baseUrl warning in Astro Shadcn template
+  - Fixed starter template directory paths
+  - Restored missing selectedTemplate prop to BaseChat
+  - Fixed chatbox showing no response by using original content fallback
+- TypeScript and linting issues:
+  - Replaced any types with proper TypeScript types across multiple files
+  - Fixed Biome linting errors in root.tsx
+  - Fixed lint errors in VercelConnection, NetlifyConnection, ConnectionsTab
+  - Fixed TypeScript errors in api.chat.ts, api.enhancer.ts, api.configured-providers.ts
+  - Fixed lint errors in api.check-env-key.ts, api.bug-report.ts
+  - Fixed TypeScript lint errors in api.system.diagnostics.ts, api.supabase.query.ts
+- Import.meta.hot optional chaining issues:
+  - Fixed in Artifact component
+  - Fixed in ToolInvocations component
+  - Fixed in workbench store
+  - Fixed in terminal store
+  - Fixed in editor store
+  - Fixed in files store
+  - Fixed in webcontainer module
+- Vitest configuration for proper test execution
+  - Configured test projects with proper plugins and root directory
+  - Fixed Vitest browser test configuration path
+- Chat functionality fixes:
+  - Restored chat functionality from working state
+  - Fixed artifact lint parsing issues
+  - Fixed template selection without breaking chat
+
+### Removed
+- FAQ.md documentation (105 lines, content integrated elsewhere)
+- Local template files in favor of GitHub repository
+- Non-existent next-shadcn template from starter templates
+- GitHub workflow for package-lock.json validation
+- Unused import.meta.hot calls replaced with optional chaining
+- Duplicate and unused test files
+
+### Security
+- Fixed security dependencies and vulnerabilities
+- Added comprehensive security utility system
+- Enhanced input validation across all endpoints
+- Improved error handling to prevent information leakage
+
+## [0.9.1] - 2025-10-14
+
+### Added
+- Complete MCP integration components (PR #16):
+  - MCPTemplateConfigDialog component for template configuration
+  - MCPServerCard component for server display
+  - MCPMarketplace component for discovering MCP servers
+  - MCPIntegrationPanel component with comprehensive styling
+  - AddMcpServerDialog component for adding MCP servers
+- MCP integration across chat system:
+  - Chat.client.tsx with full MCP integration
+  - ChatBox.tsx with MCP tool handling
+  - GitCloneButton component updates
+  - MCPTools component for tool management
+  - Messages.client.tsx with MCP tool display
+  - GitUrlImport.client.tsx enhancements
+
+### Changed
+- Enhanced MCP support in core systems:
+  - api.chat.ts with MCP integration
+  - message-parser.ts with MCP artifact parsing
+  - enhanced-message-parser.ts updates
+  - action-runner.ts with MCP action support
+  - stream-text.ts with MCP tool handling
+- Updated prompts and libraries:
+  - prompts.ts with MCP awareness
+  - prompt-library.ts with MCP support
+  - useMessageParser hook with MCP handling
+- Utility updates for MCP:
+  - selectStarterTemplate.ts improvements
+  - projectCommands.ts updates
+  - folderImport.ts enhancements
+  - fileUtils.ts modifications
+  - constants.ts additions
+- Actions types extended for MCP operations
+- Package dependencies updated for MCP support
+- pnpm-lock.yaml updated with new dependencies
+
+### Fixed
+- GitHub import functionality issues
+  - Better error handling
+  - Improved import process
+  - Enhanced validation
+- setMcpOpen error in state management
+  - Fixed state synchronization
+  - Improved error handling
+- Message parser issues with MCP artifacts
+  - Better artifact detection
+  - Enhanced parsing logic
+
+## [0.9.0] - 2025-10-13
+
+### Added
+- GitHub starter template monorepo subdirectory support
+  - Templates can now reference subdirectories in monorepos
+  - Better template organization
+  - Enhanced flexibility
+
+### Fixed
+- Message parser artifact detection (PR #14)
+  - Fixed message parsing logic
+  - Improved artifact extraction
+  - Better error handling
+- Artifact naming consistency (PR #15)
+  - Changed from codinitArtifact to codinitArticact for consistency
+  - Updated all references
+  - Improved naming conventions
+- GitHub starter template integration
+  - Fixed subdirectory handling in monorepos
+  - Improved template fetching
+  - Better error messages
+
+### Changed
+- Message parser improvements
+  - Better artifact detection
+  - Enhanced parsing logic
+  - Improved error handling
+
+## [0.8.0] - 2025-10-13
+
+### Fixed
+- Dropdown overlay z-index issues in ModelSelector
+  - Fixed stacking context
+  - Improved dropdown visibility
+  - Better overlay handling
+- Dropdown overlay issues in ChatBox
+  - Corrected z-index layering
+  - Enhanced dropdown positioning
+- Missing API keys error handling
+  - Better error messages for missing API keys
+  - Improved user guidance
+  - Enhanced validation
+- Local provider error handling
+  - Better error messages for Ollama and LM Studio
+  - Improved connection error handling
+  - Enhanced user feedback
+
+### Changed
+- Simplified bug report template
+  - Reduced complexity
+  - Improved user experience
+  - Better issue categorization
+
+### Security
+- Fixed security dependencies
+  - Updated vulnerable packages
+  - Applied security patches
+  - Improved dependency security
+
+## [0.7.0] - 2025-10-13
+
+### Added
+- Image optimization via ImgBot
+  - Automated image compression
+  - Reduced asset sizes
+  - Improved load times
+
+### Fixed
+- Model selection persistence issues (PR #9)
+  - Model selection now persists across sessions
+  - Fixed state management for selected model
+  - Improved user experience
+- Chat UI improvements
+  - Better layout and responsiveness
+  - Enhanced visual design
+  - Improved user interactions
+- Git integration issues
+  - Fixed Git operations
+  - Improved error handling
+  - Better status reporting
+
+### Changed
+- Documentation updates:
+  - Updated README with better instructions
+  - Improved documentation structure
+  - Enhanced examples and guides
+- Bumped version to 0.7.0 for release
+
+## [0.6.0] - 2025-10-11
+
+### Changed
+- Updated icon sizing across the application
+  - Standardized icon dimensions
+  - Improved visual consistency
+  - Better scaling on different displays
+
+## [0.5.0] - 2025-10-11
+
+### Added
+- Complete MCP (Model Context Protocol) foundation:
+  - MCP service (457 lines in mcpService.ts) for server lifecycle management
+  - MCP store (115 lines in mcp.ts) for state management
+  - MCP server list component (102 lines in McpServerList.tsx)
+  - MCP server list item component (70 lines in McpServerListItem.tsx)
+  - MCP status badge component (37 lines in McpStatusBadge.tsx)
+  - MCP settings components for server configuration
+  - MCP API endpoints:
+    - api.mcp-check.ts (16 lines) for health checks
+    - api.mcp-update-config.ts (23 lines) for configuration updates
+- Inspector component (126 lines) for debugging and inspection
+- LLMApiAlert component (109 lines) for API key warnings
+- MCPTools component (129 lines) for MCP tool management in chat
+- Stream recovery system (92 lines in stream-recovery.ts) for handling connection failures
+- Discuss mode component (27 lines in DiscussMode.tsx) for discussion-focused interactions
+- ChatBox component (316 lines) extracted from Chat.client.tsx
+- Discuss prompt system (235 lines in discuss-prompt.ts)
+- SolidJS icon asset (30 lines SVG)
+- Common prompt library (63 lines) for shared prompts
+- Common prompt system (709 lines in prompt.ts)
+- Context types (8 lines) for better type safety
+
+### Changed
+- Major Chat.client.tsx refactor (689 line reduction)
+  - Extracted ChatBox to separate component
+  - Improved code organization
+  - Better state management
+  - Enhanced maintainability
+- BaseChat component simplification (363 line reduction)
+  - Removed redundant code
+  - Better component separation
+  - Improved performance
+- Enhanced StarterTemplates (84 line additions)
+  - Better template display
+  - Improved selection UX
+  - Enhanced visual design
+- Action runner major expansion (228 line additions)
+  - MCP tool execution support
+  - Better action handling
+  - Enhanced error recovery
+  - Improved logging
+- Chat API extensive updates (132 line additions)
+  - MCP integration
+  - Better streaming support
+  - Enhanced error handling
+  - Improved response processing
+- Prompt system updates:
+  - new-prompt.ts: 40 line changes for better prompts
+  - optimized.ts: 50 line changes for optimization
+  - prompts.ts: 58 line changes for improvements
+  - prompt-library.ts: 20 line changes for better organization
+- Enhanced Anthropic provider (53 line changes)
+  - Better model support
+  - Improved error handling
+- GitHub template API improvements (18 line changes)
+  - Better template fetching
+  - Enhanced error messages
+- Constants file expansion (93 line additions)
+  - New MCP-related constants
+  - Better organization
+- Utility updates:
+  - fileUtils.ts: 4 line changes
+  - folderImport.ts: 4 line changes
+  - projectCommands.ts: 10 line changes
+  - selectStarterTemplate.ts: 9 line changes
+- Message parser updates (16 line changes)
+  - MCP artifact support
+  - Better parsing logic
+- Workbench improvements (28 line changes)
+  - Better integration with MCP
+  - Enhanced state management
+- ExamplePrompts refinement (9 line changes)
+- GitCloneButton updates (4 line changes)
+- GitUrlImport.client improvements (4 line changes)
+- Messages.client enhancements (7 line additions)
+- Actions types expansion (16 line additions)
+- Runtime and persistence improvements:
+  - create-summary.ts: 4 line changes
+  - select-context.ts: 4 line changes
+  - stream-text.ts: 2 line changes
+  - utils.ts: 8 line changes
+  - useChatHistory.ts: 4 line changes
+- Vite configuration updates (18 line changes)
+  - Better build optimization
+  - Enhanced development experience
+- Package.json updates (2 line changes)
+- Various hook updates:
+  - StickToBottom.tsx: 2 line changes
+  - useStickToBottom.tsx: 2 line changes
+  - Hook index: 1 line addition
+
+### Fixed
+- Message parser spec tests (8 line changes)
+- OpenAI-like provider configuration (2 line changes)
+- Together provider settings (2 line changes)
+- Amazon Bedrock provider configuration (1 line addition)
+- Route configurations:
+  - _index.tsx: 4 line fixes
+  - git.tsx: 8 line fixes
+  - webcontainer.connect.$id.tsx: 2 line fixes
+
+### Removed
+- Semantic PR workflow (32 lines, simplified CI/CD)
+- Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
+
+### Changed (Documentation)
+- Docs workflow improvements (6 line changes)
+- Electron workflow updates (2 line changes)
+
+## [0.4.0] - 2025-10-10
+
+### Added
+- pnpm-lock.yaml file for dependency locking
+  - Ensures consistent dependency versions
+  - Improves build reproducibility
+  - Better security through locked versions
+
+### Changed
+- Complete LLM provider icon migration:
+  - Moved all provider icons from `/public/icons/` to provider files
+  - Each provider now includes its icon inline (1 line addition per provider):
+    - Anthropic, Cohere, DeepSeek, GitHub, Google, Groq
+    - HuggingFace, Hyperbolic, Mistral, OpenAI, OpenAI-like
+    - OpenRouter, Perplexity, Together, xAI
+  - Better icon management and loading
+  - Improved bundling and performance
+- Enhanced ModelSelector (12 line changes)
+  - Better provider icon display
+  - Improved layout
+- Electron build configuration (5 line changes in electron-builder.yml)
+  - Better build settings
+  - Improved packaging
+- Electron main process updates (9 line changes)
+  - Better initialization
+  - Improved error handling
+- WebContainer improvements (22 line additions)
+  - Better container management
+  - Enhanced error handling
+- Workbench store enhancements (6 line additions)
+  - Better state management
+- Build configuration updates:
+  - build.d.ts: 8 line changes for better types
+  - vite.config.ts: 15 line additions for optimization
+  - uno.config.ts: 26 line changes for better styling
+- Electron serve utility (2 line changes)
+- Pre-start script (2 line changes)
+- Cloudflare functions (2 line additions)
+- Package.json updates (43 line changes)
+  - Updated dependencies
+  - Better scripts
+  - Enhanced configuration
+- Styling improvements:
+  - index.scss: 6 line changes
+  - Better theme support
+
+### Fixed
+- LMStudio provider icon path (2 line changes)
+- Ollama provider icon path (2 line changes)
+- ConnectionDiagnostics component (10 line changes)
+- DataTab component (2 line changes)
+
+### Removed
+- All public provider icon SVG files (18 files removed):
+  - AmazonBedrock.svg, Anthropic.svg, Cohere.svg, Deepseek.svg
+  - Default.svg, Google.svg, Groq.svg, HuggingFace.svg
+  - Hyperbolic.svg, LMStudio.svg, Mistral.svg, Ollama.svg
+  - OpenAI.svg, OpenAILike.svg, OpenRouter.svg, Perplexity.svg
+  - Together.svg, xAI.svg
+- Unused UI component directives:
+  - Badge.tsx: 2 line removal
+  - Collapsible.tsx: 2 line removal
+  - ScrollArea.tsx: 2 line removal
+- Amazon Bedrock provider icon reference (1 line removal)
+
+### Changed (Build & Dependencies)
+- pnpm-lock.yaml major cleanup (153 line reduction)
+  - Removed unused dependencies
+  - Optimized dependency tree
+  - Better version management
+- Docker compose configuration (2 line changes)
+- MkDocs configuration (4 line changes)
+- GitHub Actions updates:
+  - Issue template config: 7 line changes
+  - Setup and build action: 5 line changes
+  - Electron workflow: 4 line changes
+- README.md updates (3 line changes)
+
+## [0.2.0] - 2025-10-09
+
+### Added
+- Complete application foundation with initial codebase structure
+- Comprehensive settings system:
+  - GithubConnection component (990 lines) for GitHub integration
+  - ConnectionDiagnostics component (610 lines) for testing connections
+  - ConnectionsTab (184 lines) for managing integrations
+  - TabManagement component (380 lines) for tab organization
+  - DraggableTabList component (163 lines) for customizable tab layout
+  - ConnectionForm component (188 lines) for service connections
+  - CreateBranchDialog component (153 lines) for Git branch creation
+  - GitHubAuthDialog component (190 lines) for GitHub authentication
+  - PushToGitHubDialog component for repository operations
+  - RepositoryCard component (146 lines) for repository display
+  - Multiple additional connection components for NetlifyConnection and VercelConnection
+- Settings infrastructure components (10+ files)
+- GitHub issue templates and workflows configuration
+- Complete documentation system
+
+### Changed
+- Application renamed from "CodinIT Desktop" to "CodinIT.dev"
+  - Updated branding across all files
+  - Changed references in documentation
+  - Updated README and configuration files
+- Enhanced Docker configuration (110 line changes)
+  - Better build process
+  - Improved caching
+  - Production optimizations
+- README.md major overhaul (67 line changes)
+  - Better project description
+  - Improved setup instructions
+  - Enhanced documentation
+- Settings components redesign:
+  - ControlPanel: 378 line changes for better organization
+  - TabTile: 190 line changes for improved UX
+  - NetlifyConnection: 267 line changes for better integration
+  - VercelConnection: 141 line changes for enhanced functionality
+- AvatarDropdown improvements (49 line changes)
+  - Better user menu
+  - Improved styling
+- Component type definitions (40 line changes in types.ts)
+- FAQ.md updates (30 line reduction for clarity)
+- GitHub workflows reorganization:
+  - Added ci.yaml workflow (27 lines)
+  - Added pr-release-validation.yaml (31 lines)
+  - Added update-stable.yml (127 lines)
+  - Added semantic-pr.yaml (32 lines)
+- Docker workflow enhancements (15 line changes)
+- Docs workflow improvements (6 line changes)
+- Electron workflow updates (14 line changes)
+- Lighthouse configuration (10 line changes)
+- Build scripts and actions updates:
+  - setup-and-build action: 8 line changes
+  - generate-changelog.sh: 2 line changes
+- .env.example additions (4 line additions)
+- Bug report template updates (4 line changes)
+- Issue config improvements (9 line changes)
+
+### Fixed
+- Docker repository name case issue
+  - Changed to lowercase for compatibility
+  - Added proper naming conventions
+- Prettier formatting errors across codebase
+  - Applied consistent code formatting
+  - Fixed linting issues
+- Build errors in production mode
+  - Corrected build paths
+  - Fixed configuration issues
+
+### Removed
+- CODEOWNERS file (1 line)
+- CHANGES.md (92 lines, consolidated into CHANGELOG)
+- CLAUDE.md from root (238 lines, moved to project-specific location)
+- CONTRIBUTING.md (242 lines, consolidated)
+- PROJECT.md (54 lines, information integrated elsewhere)
+- Deprecated GitHub workflows:
+  - preview.yaml (199 lines)
+  - quality.yaml (181 lines)
+  - security.yaml (121 lines)
+  - test-workflows.yaml (247 lines)
+- Service integration component files (consolidated):
+  - ConnectionForm.tsx (193 lines, replaced)
+  - ConnectionTestIndicator.tsx (60 lines)
+  - ErrorState.tsx (102 lines)
+  - LoadingState.tsx (94 lines)
+  - ServiceHeader.tsx (72 lines)
+  - Service integration index (6 lines)
+
+### Changed (Documentation)
+- MkDocs configuration updates for better documentation structure
+- README improvements for clarity and completeness
+- FAQ.md streamlined for better user experience
+
+## [0.1.0] - 2025-10-06
+
+### Added - Initial Release
+
+This is the initial release of CodinIT.dev, establishing the foundation for an AI-powered application builder.
+
+#### Core Application Structure
+- Complete Remix-based application architecture
+- React frontend with TypeScript
+- Vite build system with optimized configuration
+- UnoCSS for utility-first styling
+- WebContainer integration for in-browser development
+
+#### LLM Integration (19+ Providers)
+- Multi-provider LLM system supporting:
+  - OpenAI (GPT-4, GPT-3.5)
+  - Anthropic (Claude models)
+  - Google (Gemini models)
+  - Amazon Bedrock
+  - Groq, xAI, DeepSeek, Cohere, Mistral
+  - Together AI, Perplexity, HuggingFace
+  - OpenRouter for unified access
+  - Ollama and LM Studio for local models
+  - Custom OpenAI-compatible endpoints
+- Provider management and registration system
+- Dynamic model selection
+- API key management
+
+#### Chat Interface
+- AI-powered chat with streaming responses
+- Message history and persistence
+- Artifact generation and rendering
+- Code block syntax highlighting
+- Markdown rendering with GitHub flavored markdown
+- Model and provider selection in chat
+
+#### Workbench & Development Environment
+- WebContainer-based in-browser development
+- File tree with full CRUD operations
+- Code editor with syntax highlighting
+- Terminal integration for command execution
+- Live preview with hot reloading
+- Diff view for code changes
+
+#### Deployment Integrations
+- Netlify deployment integration
+- Vercel deployment integration
+- GitHub repository operations
+- Git operations (commit, push, pull)
+
+#### Electron Desktop Application
+- Cross-platform desktop app support (macOS, Windows, Linux)
+- Native window controls
+- Auto-updater integration
+- IPC communication system
+- Cookie synchronization
+
+#### Settings & Configuration
+- Comprehensive settings panel
+- Provider configuration
+- API key management
+- Theme customization (dark/light modes)
+- Feature flags system
+
+#### GitHub Actions & CI/CD
+- Automated builds for web and desktop
+- Docker image building and publishing
+- Documentation deployment
+- Release automation
+- Code quality checks
+
+#### Documentation
+- Complete documentation site with MkDocs
+- API documentation
+- Setup guides
+- Architecture documentation
+- Contributing guidelines
+
+#### Docker Support
+- Development and production Docker configurations
+- Docker Compose setup
+- Multi-stage builds for optimization
+- Environment-based configuration
+
+#### Initial Feature Set
+- Project templates and starters
+- GitHub repository import
+- Folder import for local projects
+- Chat export and import
+- Screenshot capture
+- Supabase database integration
+- Context optimization for long conversations
+- File locks to prevent concurrent edits
+- Prompt enhancement system
+
+### Configuration Files Added
+- .env.example with all configuration options
+- TypeScript configuration (tsconfig.json)
+- Vite configuration for optimal builds
+- UnoCSS configuration for styling
+- ESLint and Prettier for code quality
+- Git hooks with Husky
+- GitHub issue and PR templates
+- Docker and Docker Compose configurations
+- Electron builder configuration
+- Package.json with all dependencies
+
+### Assets & Icons
+- Application icons for all platforms
+- Provider logos and icons
+- UI component icons
+- Favicon and web app icons
+
+### Utilities & Helpers
+- File system utilities
+- Git integration utilities
+- WebContainer helpers
+- Diff utilities
+- Import/export services
+- Constants and type definitions
+
+---
+
+## Version Links
+
+[1.1.26]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.25...v1.1.26
+[1.1.25]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.24...v1.1.25
+[1.1.24]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.23...v1.1.24
+[1.1.23]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.22...v1.1.23
+[1.1.22]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.20...v1.1.22
+[1.1.20]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.19...v1.1.20
+[1.1.19]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.18...v1.1.19
+[1.1.18]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.17...v1.1.18
+[1.1.17]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.16...v1.1.17
+[1.1.16]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.15...v1.1.16
+[1.1.15]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.14...v1.1.15
+[1.1.14]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.13...v1.1.14
+[1.1.13]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.12...v1.1.13
+[1.1.12]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.11...v1.1.12
+[1.1.11]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.1.10...v1.1.11
+[1.1.10]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.10...v1.1.10
+[1.0.10]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.9...v1.0.10
+[1.0.9]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.8...v1.0.9
+[1.0.8]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.7...v1.0.8
+[1.0.7]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.6...v1.0.7
+[1.0.6]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.5...v1.0.6
+[1.0.5]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.4...v1.0.5
+[1.0.4]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.7...v1.0.0
+[0.9.7]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.6...v0.9.7
+[0.9.6]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.5...v0.9.6
+[0.9.5]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.4...v0.9.5
+[0.9.4]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.3...v0.9.4
+[0.9.3]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.2...v0.9.3
+[0.9.2]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.1...v0.9.2
+[0.9.1]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.9.0...v0.9.1
+[0.9.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.8.0...v0.9.0
+[0.8.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.7.0...v0.8.0
+[0.7.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.2.0...v0.4.0
+[0.2.0]: https://github.com/Gerome-Elassaad/codinit-dev/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/Gerome-Elassaad/codinit-dev/releases/tag/v0.1.0
