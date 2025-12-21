@@ -1148,85 +1148,84 @@ New releases and improvements
     * Improved package metadata
 </Update>
 
-## v0.9.4
-2025-10-20
+<Update label="October 20, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete build verification and provenance system" }}>
+  ## New features
 
+  * Complete build verification and provenance system:
+    * BuildInfo component (112 lines) with comprehensive documentation
+    * GitHub Actions workflow for build verification (100 lines)
+    * Build verification script (50 lines in verify-build.js)
+    * Build metadata collection script (76 lines in collect-metadata.js)
+    * Build collector module (196 lines in src/collector.ts)
+    * Build verifier module (168 lines in src/verifier.ts)
+    * TypeScript types for verification (68 lines in src/types.ts)
+    * Index module for exports (54 lines in src/index.ts)
+    * Verification configuration (18 lines in tsconfig.json)
+  * Build verification integration:
+    * collect-build-metadata.cjs script (95 lines)
+    * verify-build.cjs script (69 lines)
+    * GitLab CI example configuration (73 lines)
+    * Cloudflare Pages build example (32 lines)
+    * Package configuration for codinit-dev package (33 lines)
+  * Package workspace configuration:
+    * pnpm-workspace.yaml (2 lines) for monorepo support
+    * codinit-dev package structure
+    * Package.json for verification package (33 lines)
+    * pnpm-lock.yaml for package (1192 lines)
+  * .gitignore for verification package (20 lines)
 
-**Added**
-- Complete build verification and provenance system:
-  - BuildInfo component (112 lines) with comprehensive documentation
-  - GitHub Actions workflow for build verification (100 lines)
-  - Build verification script (50 lines in verify-build.js)
-  - Build metadata collection script (76 lines in collect-metadata.js)
-  - Build collector module (196 lines in src/collector.ts)
-  - Build verifier module (168 lines in src/verifier.ts)
-  - TypeScript types for verification (68 lines in src/types.ts)
-  - Index module for exports (54 lines in src/index.ts)
-  - Verification configuration (18 lines in tsconfig.json)
-- Build verification integration:
-  - collect-build-metadata.cjs script (95 lines)
-  - verify-build.cjs script (69 lines)
-  - GitLab CI example configuration (73 lines)
-  - Cloudflare Pages build example (32 lines)
-  - Package configuration for codinit-dev package (33 lines)
-- Package workspace configuration:
-  - pnpm-workspace.yaml (2 lines) for monorepo support
-  - codinit-dev package structure
-  - Package.json for verification package (33 lines)
-  - pnpm-lock.yaml for package (1192 lines)
-- .gitignore for verification package (20 lines)
+  ## Improvements
 
+  * Enhanced GitHub template API (69 line changes in api.github-template.ts)
+    * Better template handling
+    * Improved error messages
+    * Enhanced validation
+  * Updated template types (3 line changes)
+    * Better type definitions
+    * Improved type safety
+  * Optimized constants file (138 line reduction in utils/constants.ts)
+    * Removed redundant definitions
+    * Better organization
+    * Improved maintainability
+  * Package.json updates (6 line changes)
+    * Added verification dependencies
+    * Updated scripts
+    * Enhanced configuration
+  * pnpm-lock.yaml updates (252 line additions)
+    * New verification dependencies
+    * Updated packages
+    * Security patches
+  * Updated build scripts:
+    * update-imports.sh (4 line changes)
+    * update.sh (2 line changes)
+  * useChatHistory minor fix (2 line change)
 
-**Changed**
-- Enhanced GitHub template API (69 line changes in api.github-template.ts)
-  - Better template handling
-  - Improved error messages
-  - Enhanced validation
-- Updated template types (3 line changes)
-  - Better type definitions
-  - Improved type safety
-- Optimized constants file (138 line reduction in utils/constants.ts)
-  - Removed redundant definitions
-  - Better organization
-  - Improved maintainability
-- Package.json updates (6 line changes)
-  - Added verification dependencies
-  - Updated scripts
-  - Enhanced configuration
-- pnpm-lock.yaml updates (252 line additions)
-  - New verification dependencies
-  - Updated packages
-  - Security patches
-- Updated build scripts:
-  - update-imports.sh (4 line changes)
-  - update.sh (2 line changes)
-- useChatHistory minor fix (2 line change)
+  ## Bug fixes
 
+  * Fixed GitHub API authentication header format
+    * Corrected authorization header
+    * Improved API integration
+  * Fixed GitHub template URL parsing issues
+    * Better URL validation
+    * Enhanced error handling
+  * Fixed build verification script ESLint errors
+    * Code quality improvements
+    * Better error handling
+  * Fixed package.json configuration issues
 
-**Fixed**
-- GitHub API authentication header format
-  - Corrected authorization header
-  - Improved API integration
-- GitHub template URL parsing issues
-  - Better URL validation
-  - Enhanced error handling
-- Build verification script ESLint errors
-  - Code quality improvements
-  - Better error handling
-- Package.json configuration issues
+  ## Cleanup
 
+  * Removed CLAUDE.md from root (330 lines, moved to project-specific location)
+  * Removed non-existent next-shadcn template from starter templates
+    * Cleaned up invalid template reference
+    * Improved template list accuracy
 
-**Removed**
-- CLAUDE.md from root (330 lines, moved to project-specific location)
-- Non-existent next-shadcn template from starter templates
-  - Cleaned up invalid template reference
-  - Improved template list accuracy
+  ## Security
 
-
-**Security**
-- Added build provenance system for supply chain security
-- Build verification ensures integrity of distributed packages
-- Metadata collection for build traceability
+  * Added build provenance system for supply chain security
+  * Build verification ensures integrity of distributed packages
+  * Metadata collection for build traceability
+</Update>
 
 ## v0.9.3
 2025-10-20
