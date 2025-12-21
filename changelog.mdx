@@ -812,91 +812,90 @@ New releases and improvements
   * Package.json version bump (2 line changes)
 </Update>
 
-## v1.0.4
-2025-11-07
+<Update label="November 7, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete theme redesign and thinking artifacts feature" }}>
+  ## New features
 
+  * CLAUDE.md documentation with comprehensive codebase documentation for AI assistants
+  * CodinIT thinking artifacts feature:
+    * Shows AI reasoning process
+    * Blue color scheme for thinking components
+    * Enhanced transparency in AI decision-making
+  * Enhanced ActionAlert interface with detailed error context fields
+  * Vite-shadcn configured as default starter template
 
-**Added**
-- CLAUDE.md documentation with comprehensive codebase documentation for AI assistants
-- CodinIT thinking artifacts feature:
-  - Shows AI reasoning process
-  - Blue color scheme for thinking components
-  - Enhanced transparency in AI decision-making
-- Enhanced ActionAlert interface with detailed error context fields
-- Vite-shadcn configured as default starter template
+  ## Improvements
 
+  * Complete theme redesign to darker slate/charcoal with blue undertones:
+    * Adjusted slate colors to neutral charcoal with reduced blue tint
+    * Updated all CSS custom properties and variables
+    * Theme classes updated across all components:
+      * Settings components theme updates
+      * Chat interface theme updates
+      * Workbench and terminal theme updates
+      * Header, editor, and deploy components theme updates
+      * Shared UI components theme updates
+  * Replaced deploy dropdown with icon buttons in chat header
+    * Better space utilization
+    * Improved accessibility
+    * Cleaner interface
+  * Changed thinking process component from purple to blue
+    * Better visual consistency
+    * Improved brand alignment
+  * Major component refactoring across the application:
+    * Settings tabs: extensive updates to all tabs (300+ line changes in DebugTab alone)
+    * Connection components: refactored for better organization
+    * Data visualization improvements (38 line changes)
+    * Event logs enhancements (12 line changes)
+    * Features tab updates (30 line changes)
+    * Provider tabs improvements (cloud and local)
+    * Service status tab refinements (46 line changes)
+    * Task manager tab redesign (170 line changes)
+    * Update tab improvements (45 line changes)
+  * Enhanced TabManagement component (46 line changes)
+    * Better tab organization
+    * Improved UX
+  * Improved DraggableTabList (12 line changes)
+    * Better drag and drop
+    * Enhanced visual feedback
+  * Connection management improvements:
+    * GithubConnection: 128 line refactor
+    * NetlifyConnection: 130 line refactor
+    * VercelConnection: 40 line improvements
+    * ConnectionForm: 18 line enhancements
+    * CreateBranchDialog: 19 line updates
+    * PushToGitHubDialog: 84 line changes
+    * RepositoryCard: 28 line improvements
+    * RepositoryList: 4 line updates
+    * RepositorySelectionDialog: 100 line refactor
+    * StatsDialog: 14 line changes
+    * ConnectionDiagnostics: 92 line updates
+    * ConnectionsTab: 50 line changes
+  * Storage keys and class names updated throughout client library
+  * API responses and metadata updates in routes
+  * Build paths and error messages improved in configuration
+  * Constants and icon identifiers updated
 
-**Changed**
-- Complete theme redesign to darker slate/charcoal with blue undertones:
-  - Adjusted slate colors to neutral charcoal with reduced blue tint
-  - Updated all CSS custom properties and variables
-  - Theme classes updated across all components:
-    - Settings components theme updates
-    - Chat interface theme updates
-    - Workbench and terminal theme updates
-    - Header, editor, and deploy components theme updates
-    - Shared UI components theme updates
-- Replaced deploy dropdown with icon buttons in chat header
-  - Better space utilization
-  - Improved accessibility
-  - Cleaner interface
-- Changed thinking process component from purple to blue
-  - Better visual consistency
-  - Improved brand alignment
-- Major component refactoring across the application:
-  - Settings tabs: extensive updates to all tabs (300+ line changes in DebugTab alone)
-  - Connection components: refactored for better organization
-  - Data visualization improvements (38 line changes)
-  - Event logs enhancements (12 line changes)
-  - Features tab updates (30 line changes)
-  - Provider tabs improvements (cloud and local)
-  - Service status tab refinements (46 line changes)
-  - Task manager tab redesign (170 line changes)
-  - Update tab improvements (45 line changes)
-- Enhanced TabManagement component (46 line changes)
-  - Better tab organization
-  - Improved UX
-- Improved DraggableTabList (12 line changes)
-  - Better drag and drop
-  - Enhanced visual feedback
-- Connection management improvements:
-  - GithubConnection: 128 line refactor
-  - NetlifyConnection: 130 line refactor
-  - VercelConnection: 40 line improvements
-  - ConnectionForm: 18 line enhancements
-  - CreateBranchDialog: 19 line updates
-  - PushToGitHubDialog: 84 line changes
-  - RepositoryCard: 28 line improvements
-  - RepositoryList: 4 line updates
-  - RepositorySelectionDialog: 100 line refactor
-  - StatsDialog: 14 line changes
-  - ConnectionDiagnostics: 92 line updates
-  - ConnectionsTab: 50 line changes
-- Storage keys and class names updated throughout client library
-- API responses and metadata updates in routes
-- Build paths and error messages improved in configuration
-- Constants and icon identifiers updated
+  ## Bug fixes
 
+  * Fixed Biome linting errors in bindings.sh script
+  * Fixed deployment link functionality
+  * Fixed header button interactions
+  * Fixed Git operations and integration
+  * Fixed test suite updates
 
-**Fixed**
-- Biome linting errors in bindings.sh script
-- Deployment link functionality
-- Header button interactions
-- Git operations and integration
-- Test suite updates
+  ## Documentation
 
+  * README.md improvements (6 line changes)
+    * Better documentation structure
+    * Improved clarity
+  * TypingAnimation component updates
 
-**Changed (Documentation)**
-- README.md improvements (6 line changes)
-  - Better documentation structure
-  - Improved clarity
-- TypingAnimation component updates
+  ## Configuration
 
-
-**Changed (Configuration)**
-- .gitignore additions (2 line changes)
-  - Better file exclusions
-  - Cleaner repository
+  * .gitignore additions (2 line changes)
+    * Better file exclusions
+    * Cleaner repository
+</Update>
 
 ## v1.0.3
 2025-10-29
