@@ -1911,105 +1911,104 @@ New releases and improvements
   - Electron workflow: 4 line changes
 - README.md updates (3 line changes)
 
-## v0.2.0
-2025-10-09
+<Update label="October 9, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Application foundation and comprehensive settings system" }}>
+  ## New features
 
+  * Complete application foundation with initial codebase structure
+  * Comprehensive settings system:
+    * GithubConnection component (990 lines) for GitHub integration
+    * ConnectionDiagnostics component (610 lines) for testing connections
+    * ConnectionsTab (184 lines) for managing integrations
+    * TabManagement component (380 lines) for tab organization
+    * DraggableTabList component (163 lines) for customizable tab layout
+    * ConnectionForm component (188 lines) for service connections
+    * CreateBranchDialog component (153 lines) for Git branch creation
+    * GitHubAuthDialog component (190 lines) for GitHub authentication
+    * PushToGitHubDialog component for repository operations
+    * RepositoryCard component (146 lines) for repository display
+    * Multiple additional connection components for NetlifyConnection and VercelConnection
+  * Settings infrastructure components (10+ files)
+  * GitHub issue templates and workflows configuration
+  * Complete documentation system
 
-**Added**
-- Complete application foundation with initial codebase structure
-- Comprehensive settings system:
-  - GithubConnection component (990 lines) for GitHub integration
-  - ConnectionDiagnostics component (610 lines) for testing connections
-  - ConnectionsTab (184 lines) for managing integrations
-  - TabManagement component (380 lines) for tab organization
-  - DraggableTabList component (163 lines) for customizable tab layout
-  - ConnectionForm component (188 lines) for service connections
-  - CreateBranchDialog component (153 lines) for Git branch creation
-  - GitHubAuthDialog component (190 lines) for GitHub authentication
-  - PushToGitHubDialog component for repository operations
-  - RepositoryCard component (146 lines) for repository display
-  - Multiple additional connection components for NetlifyConnection and VercelConnection
-- Settings infrastructure components (10+ files)
-- GitHub issue templates and workflows configuration
-- Complete documentation system
+  ## Improvements
 
+  * Application renamed from "CodinIT Desktop" to "CodinIT.dev"
+    * Updated branding across all files
+    * Changed references in documentation
+    * Updated README and configuration files
+  * Enhanced Docker configuration (110 line changes)
+    * Better build process
+    * Improved caching
+    * Production optimizations
+  * README.md major overhaul (67 line changes)
+    * Better project description
+    * Improved setup instructions
+    * Enhanced documentation
+  * Settings components redesign:
+    * ControlPanel: 378 line changes for better organization
+    * TabTile: 190 line changes for improved UX
+    * NetlifyConnection: 267 line changes for better integration
+    * VercelConnection: 141 line changes for enhanced functionality
+  * AvatarDropdown improvements (49 line changes)
+    * Better user menu
+    * Improved styling
+  * Component type definitions (40 line changes in types.ts)
+  * FAQ.md updates (30 line reduction for clarity)
+  * GitHub workflows reorganization:
+    * Added ci.yaml workflow (27 lines)
+    * Added pr-release-validation.yaml (31 lines)
+    * Added update-stable.yml (127 lines)
+    * Added semantic-pr.yaml (32 lines)
+  * Docker workflow enhancements (15 line changes)
+  * Docs workflow improvements (6 line changes)
+  * Electron workflow updates (14 line changes)
+  * Lighthouse configuration (10 line changes)
+  * Build scripts and actions updates:
+    * setup-and-build action: 8 line changes
+    * generate-changelog.sh: 2 line changes
+  * .env.example additions (4 line additions)
+  * Bug report template updates (4 line changes)
+  * Issue config improvements (9 line changes)
 
-**Changed**
-- Application renamed from "CodinIT Desktop" to "CodinIT.dev"
-  - Updated branding across all files
-  - Changed references in documentation
-  - Updated README and configuration files
-- Enhanced Docker configuration (110 line changes)
-  - Better build process
-  - Improved caching
-  - Production optimizations
-- README.md major overhaul (67 line changes)
-  - Better project description
-  - Improved setup instructions
-  - Enhanced documentation
-- Settings components redesign:
-  - ControlPanel: 378 line changes for better organization
-  - TabTile: 190 line changes for improved UX
-  - NetlifyConnection: 267 line changes for better integration
-  - VercelConnection: 141 line changes for enhanced functionality
-- AvatarDropdown improvements (49 line changes)
-  - Better user menu
-  - Improved styling
-- Component type definitions (40 line changes in types.ts)
-- FAQ.md updates (30 line reduction for clarity)
-- GitHub workflows reorganization:
-  - Added ci.yaml workflow (27 lines)
-  - Added pr-release-validation.yaml (31 lines)
-  - Added update-stable.yml (127 lines)
-  - Added semantic-pr.yaml (32 lines)
-- Docker workflow enhancements (15 line changes)
-- Docs workflow improvements (6 line changes)
-- Electron workflow updates (14 line changes)
-- Lighthouse configuration (10 line changes)
-- Build scripts and actions updates:
-  - setup-and-build action: 8 line changes
-  - generate-changelog.sh: 2 line changes
-- .env.example additions (4 line additions)
-- Bug report template updates (4 line changes)
-- Issue config improvements (9 line changes)
+  ## Bug fixes
 
+  * Fixed Docker repository name case issue
+    * Changed to lowercase for compatibility
+    * Added proper naming conventions
+  * Fixed Prettier formatting errors across codebase
+    * Applied consistent code formatting
+    * Fixed linting issues
+  * Fixed build errors in production mode
+    * Corrected build paths
+    * Fixed configuration issues
 
-**Fixed**
-- Docker repository name case issue
-  - Changed to lowercase for compatibility
-  - Added proper naming conventions
-- Prettier formatting errors across codebase
-  - Applied consistent code formatting
-  - Fixed linting issues
-- Build errors in production mode
-  - Corrected build paths
-  - Fixed configuration issues
+  ## Cleanup
 
+  * Removed CODEOWNERS file (1 line)
+  * Removed CHANGES.md (92 lines, consolidated into CHANGELOG)
+  * Removed CLAUDE.md from root (238 lines, moved to project-specific location)
+  * Removed CONTRIBUTING.md (242 lines, consolidated)
+  * Removed PROJECT.md (54 lines, information integrated elsewhere)
+  * Removed deprecated GitHub workflows:
+    * preview.yaml (199 lines)
+    * quality.yaml (181 lines)
+    * security.yaml (121 lines)
+    * test-workflows.yaml (247 lines)
+  * Removed service integration component files (consolidated):
+    * ConnectionForm.tsx (193 lines, replaced)
+    * ConnectionTestIndicator.tsx (60 lines)
+    * ErrorState.tsx (102 lines)
+    * LoadingState.tsx (94 lines)
+    * ServiceHeader.tsx (72 lines)
+    * Service integration index (6 lines)
 
-**Removed**
-- CODEOWNERS file (1 line)
-- CHANGES.md (92 lines, consolidated into CHANGELOG)
-- CLAUDE.md from root (238 lines, moved to project-specific location)
-- CONTRIBUTING.md (242 lines, consolidated)
-- PROJECT.md (54 lines, information integrated elsewhere)
-- Deprecated GitHub workflows:
-  - preview.yaml (199 lines)
-  - quality.yaml (181 lines)
-  - security.yaml (121 lines)
-  - test-workflows.yaml (247 lines)
-- Service integration component files (consolidated):
-  - ConnectionForm.tsx (193 lines, replaced)
-  - ConnectionTestIndicator.tsx (60 lines)
-  - ErrorState.tsx (102 lines)
-  - LoadingState.tsx (94 lines)
-  - ServiceHeader.tsx (72 lines)
-  - Service integration index (6 lines)
+  ## Documentation
 
-
-**Changed (Documentation)**
-- MkDocs configuration updates for better documentation structure
-- README improvements for clarity and completeness
-- FAQ.md streamlined for better user experience
+  * MkDocs configuration updates for better documentation structure
+  * README improvements for clarity and completeness
+  * FAQ.md streamlined for better user experience
+</Update>
 
 ## v0.1.0
 2025-10-06
