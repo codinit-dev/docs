@@ -1732,96 +1732,97 @@ New releases and improvements
   * Common prompt system (709 lines in prompt.ts)
   * Context types (8 lines) for better type safety
 
+  ## Improvements
 
-**Changed**
-- Major Chat.client.tsx refactor (689 line reduction)
-  - Extracted ChatBox to separate component
-  - Improved code organization
-  - Better state management
-  - Enhanced maintainability
-- BaseChat component simplification (363 line reduction)
-  - Removed redundant code
-  - Better component separation
-  - Improved performance
-- Enhanced StarterTemplates (84 line additions)
-  - Better template display
-  - Improved selection UX
-  - Enhanced visual design
-- Action runner major expansion (228 line additions)
-  - MCP tool execution support
-  - Better action handling
-  - Enhanced error recovery
-  - Improved logging
-- Chat API extensive updates (132 line additions)
-  - MCP integration
-  - Better streaming support
-  - Enhanced error handling
-  - Improved response processing
-- Prompt system updates:
-  - new-prompt.ts: 40 line changes for better prompts
-  - optimized.ts: 50 line changes for optimization
-  - prompts.ts: 58 line changes for improvements
-  - prompt-library.ts: 20 line changes for better organization
-- Enhanced Anthropic provider (53 line changes)
-  - Better model support
-  - Improved error handling
-- GitHub template API improvements (18 line changes)
-  - Better template fetching
-  - Enhanced error messages
-- Constants file expansion (93 line additions)
-  - New MCP-related constants
-  - Better organization
-- Utility updates:
-  - fileUtils.ts: 4 line changes
-  - folderImport.ts: 4 line changes
-  - projectCommands.ts: 10 line changes
-  - selectStarterTemplate.ts: 9 line changes
-- Message parser updates (16 line changes)
-  - MCP artifact support
-  - Better parsing logic
-- Workbench improvements (28 line changes)
-  - Better integration with MCP
-  - Enhanced state management
-- ExamplePrompts refinement (9 line changes)
-- GitCloneButton updates (4 line changes)
-- GitUrlImport.client improvements (4 line changes)
-- Messages.client enhancements (7 line additions)
-- Actions types expansion (16 line additions)
-- Runtime and persistence improvements:
-  - create-summary.ts: 4 line changes
-  - select-context.ts: 4 line changes
-  - stream-text.ts: 2 line changes
-  - utils.ts: 8 line changes
-  - useChatHistory.ts: 4 line changes
-- Vite configuration updates (18 line changes)
-  - Better build optimization
-  - Enhanced development experience
-- Package.json updates (2 line changes)
-- Various hook updates:
-  - StickToBottom.tsx: 2 line changes
-  - useStickToBottom.tsx: 2 line changes
-  - Hook index: 1 line addition
+  * Major Chat.client.tsx refactor (689 line reduction)
+    * Extracted ChatBox to separate component
+    * Improved code organization
+    * Better state management
+    * Enhanced maintainability
+  * BaseChat component simplification (363 line reduction)
+    * Removed redundant code
+    * Better component separation
+    * Improved performance
+  * Enhanced StarterTemplates (84 line additions)
+    * Better template display
+    * Improved selection UX
+    * Enhanced visual design
+  * Action runner major expansion (228 line additions)
+    * MCP tool execution support
+    * Better action handling
+    * Enhanced error recovery
+    * Improved logging
+  * Chat API extensive updates (132 line additions)
+    * MCP integration
+    * Better streaming support
+    * Enhanced error handling
+    * Improved response processing
+  * Prompt system updates:
+    * new-prompt.ts: 40 line changes for better prompts
+    * optimized.ts: 50 line changes for optimization
+    * prompts.ts: 58 line changes for improvements
+    * prompt-library.ts: 20 line changes for better organization
+  * Enhanced Anthropic provider (53 line changes)
+    * Better model support
+    * Improved error handling
+  * GitHub template API improvements (18 line changes)
+    * Better template fetching
+    * Enhanced error messages
+  * Constants file expansion (93 line additions)
+    * New MCP-related constants
+    * Better organization
+  * Utility updates:
+    * fileUtils.ts: 4 line changes
+    * folderImport.ts: 4 line changes
+    * projectCommands.ts: 10 line changes
+    * selectStarterTemplate.ts: 9 line changes
+  * Message parser updates (16 line changes)
+    * MCP artifact support
+    * Better parsing logic
+  * Workbench improvements (28 line changes)
+    * Better integration with MCP
+    * Enhanced state management
+  * ExamplePrompts refinement (9 line changes)
+  * GitCloneButton updates (4 line changes)
+  * GitUrlImport.client improvements (4 line changes)
+  * Messages.client enhancements (7 line additions)
+  * Actions types expansion (16 line additions)
+  * Runtime and persistence improvements:
+    * create-summary.ts: 4 line changes
+    * select-context.ts: 4 line changes
+    * stream-text.ts: 2 line changes
+    * utils.ts: 8 line changes
+    * useChatHistory.ts: 4 line changes
+  * Vite configuration updates (18 line changes)
+    * Better build optimization
+    * Enhanced development experience
+  * Package.json updates (2 line changes)
+  * Various hook updates:
+    * StickToBottom.tsx: 2 line changes
+    * useStickToBottom.tsx: 2 line changes
+    * Hook index: 1 line addition
 
+  ## Bug fixes
 
-**Fixed**
-- Message parser spec tests (8 line changes)
-- OpenAI-like provider configuration (2 line changes)
-- Together provider settings (2 line changes)
-- Amazon Bedrock provider configuration (1 line addition)
-- Route configurations:
-  - _index.tsx: 4 line fixes
-  - git.tsx: 8 line fixes
-  - webcontainer.connect.$id.tsx: 2 line fixes
+  * Fixed message parser spec tests (8 line changes)
+  * Fixed OpenAI-like provider configuration (2 line changes)
+  * Fixed Together provider settings (2 line changes)
+  * Fixed Amazon Bedrock provider configuration (1 line addition)
+  * Fixed route configurations:
+    * _index.tsx: 4 line fixes
+    * git.tsx: 8 line fixes
+    * webcontainer.connect.$id.tsx: 2 line fixes
 
+  ## Cleanup
 
-**Removed**
-- Semantic PR workflow (32 lines, simplified CI/CD)
-- Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
+  * Removed Semantic PR workflow (32 lines, simplified CI/CD)
+  * Removed Logo SVG files (logo-text.svg and logo.svg) replaced with updated assets
 
+  ## Documentation
 
-**Changed (Documentation)**
-- Docs workflow improvements (6 line changes)
-- Electron workflow updates (2 line changes)
+  * Docs workflow improvements (6 line changes)
+  * Electron workflow updates (2 line changes)
+</Update>
 
 ## v0.4.0
 2025-10-10
