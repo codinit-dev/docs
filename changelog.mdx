@@ -1412,140 +1412,141 @@ New releases and improvements
   * Package-lock synchronization script (110 lines)
   * Preview workflow for GitHub Actions (196 lines)
 
+  ## Improvements
 
-**Changed**
-- Major artifact system refactor (201 line changes in Artifact.tsx)
-  - Better artifact handling
-  - Improved rendering
-  - Enhanced state management
-- Enhanced Chat.client.tsx (238 line additions)
-  - Better MCP integration
-  - Improved state management
-  - Enhanced error handling
-- Comprehensive prompt system updates:
-  - new-prompt.ts: 883 line reduction through optimization
-  - prompts.ts: 687 line reduction for better performance
-  - Optimized prompts: 52 line changes
-  - Enhanced prompt library: 14 line improvements
-  - Updated discuss-prompt: 10 line changes
-- Workbench major refactor (434 line changes)
-  - Improved file handling
-  - Better state management
-  - Enhanced preview integration
-- LLM provider updates across all providers:
-  - Anthropic: 117 line changes
-  - Cohere: 22 line additions
-  - DeepSeek: 3 line improvements
-  - GitHub: 117 line changes
-  - Google: 116 line changes
-  - Groq: 49 line changes
-  - Mistral: 9 line additions
-  - Moonshot: 72 lines (new provider)
-  - OpenRouter: 79 line changes
-  - OpenAI-like: 120 line changes
-  - OpenAI: 93 line changes
-  - Perplexity: 12 line changes
-  - Together: 21 line changes
-  - xAI: 23 line changes
-  - Amazon Bedrock: 1 line addition
-- Enhanced stream-text utility (199 line additions)
-  - Better MCP tool handling
-  - Improved streaming logic
-  - Enhanced error recovery
-- Action runner improvements (38 line additions)
-  - Better action execution
-  - Improved error handling
-  - Enhanced logging
-- Message parser enhancements (129 line additions)
-  - Better artifact parsing
-  - Improved code extraction
-  - Enhanced validation
-- GitUrlImport refactor (242 line changes)
-  - Better import handling
-  - Improved error messages
-  - Enhanced validation
-- DiffView improvements (98 line changes)
-  - Better diff rendering
-  - Improved performance
-  - Enhanced UX
-- Preview component updates (157 line changes)
-  - Better preview handling
-  - Improved iframe management
-  - Enhanced error states
-- Workbench.client redesign (231 line changes)
-  - Better layout management
-  - Improved state handling
-  - Enhanced integration
-- README overhaul (481 line reduction)
-  - Simplified and focused content
-  - Better organization
-  - Improved readability
-- Enhanced connection tabs:
-  - NetlifyConnection: 202 line refactor
-  - VercelConnection: 35 line improvements
-  - GitHubAuthDialog: 5 line updates
-- Updated feature API (129 line changes)
-  - Better feature flag handling
-  - Improved configuration
-  - Enhanced validation
-- LLM constants updates (46 line changes)
-  - Better model definitions
-  - Improved token limits
-  - Enhanced configuration
+  * Major artifact system refactor (201 line changes in Artifact.tsx)
+    * Better artifact handling
+    * Improved rendering
+    * Enhanced state management
+  * Enhanced Chat.client.tsx (238 line additions)
+    * Better MCP integration
+    * Improved state management
+    * Enhanced error handling
+  * Comprehensive prompt system updates:
+    * new-prompt.ts: 883 line reduction through optimization
+    * prompts.ts: 687 line reduction for better performance
+    * Optimized prompts: 52 line changes
+    * Enhanced prompt library: 14 line improvements
+    * Updated discuss-prompt: 10 line changes
+  * Workbench major refactor (434 line changes)
+    * Improved file handling
+    * Better state management
+    * Enhanced preview integration
+  * LLM provider updates across all providers:
+    * Anthropic: 117 line changes
+    * Cohere: 22 line additions
+    * DeepSeek: 3 line improvements
+    * GitHub: 117 line changes
+    * Google: 116 line changes
+    * Groq: 49 line changes
+    * Mistral: 9 line additions
+    * Moonshot: 72 lines (new provider)
+    * OpenRouter: 79 line changes
+    * OpenAI-like: 120 line changes
+    * OpenAI: 93 line changes
+    * Perplexity: 12 line changes
+    * Together: 21 line changes
+    * xAI: 23 line changes
+    * Amazon Bedrock: 1 line addition
+  * Enhanced stream-text utility (199 line additions)
+    * Better MCP tool handling
+    * Improved streaming logic
+    * Enhanced error recovery
+  * Action runner improvements (38 line additions)
+    * Better action execution
+    * Improved error handling
+    * Enhanced logging
+  * Message parser enhancements (129 line additions)
+    * Better artifact parsing
+    * Improved code extraction
+    * Enhanced validation
+  * GitUrlImport refactor (242 line changes)
+    * Better import handling
+    * Improved error messages
+    * Enhanced validation
+  * DiffView improvements (98 line changes)
+    * Better diff rendering
+    * Improved performance
+    * Enhanced UX
+  * Preview component updates (157 line changes)
+    * Better preview handling
+    * Improved iframe management
+    * Enhanced error states
+  * Workbench.client redesign (231 line changes)
+    * Better layout management
+    * Improved state handling
+    * Enhanced integration
+  * README overhaul (481 line reduction)
+    * Simplified and focused content
+    * Better organization
+    * Improved readability
+  * Enhanced connection tabs:
+    * NetlifyConnection: 202 line refactor
+    * VercelConnection: 35 line improvements
+    * GitHubAuthDialog: 5 line updates
+  * Updated feature API (129 line changes)
+    * Better feature flag handling
+    * Improved configuration
+    * Enhanced validation
+  * LLM constants updates (46 line changes)
+    * Better model definitions
+    * Improved token limits
+    * Enhanced configuration
 
+  ## Bug fixes
 
-**Fixed**
-- GitHub repository import 500 error
-  - Corrected API authentication header format
-  - Added fallback to Contents API when releases unavailable
-  - Fixed GitHub template URL parsing
-- GitHub repository path issues in starter templates
-  - Corrected directory paths to match repository structure
-  - Added proper documentation
-  - Fixed constants and context for subdirectory paths
-- Template system issues:
-  - Fixed deprecated baseUrl warning in Astro Shadcn template
-  - Fixed starter template directory paths
-  - Restored missing selectedTemplate prop to BaseChat
-  - Fixed chatbox showing no response by using original content fallback
-- TypeScript and linting issues:
-  - Replaced any types with proper TypeScript types across multiple files
-  - Fixed Biome linting errors in root.tsx
-  - Fixed lint errors in VercelConnection, NetlifyConnection, ConnectionsTab
-  - Fixed TypeScript errors in api.chat.ts, api.enhancer.ts, api.configured-providers.ts
-  - Fixed lint errors in api.check-env-key.ts, api.bug-report.ts
-  - Fixed TypeScript lint errors in api.system.diagnostics.ts, api.supabase.query.ts
-- Import.meta.hot optional chaining issues:
-  - Fixed in Artifact component
-  - Fixed in ToolInvocations component
-  - Fixed in workbench store
-  - Fixed in terminal store
-  - Fixed in editor store
-  - Fixed in files store
-  - Fixed in webcontainer module
-- Vitest configuration for proper test execution
-  - Configured test projects with proper plugins and root directory
-  - Fixed Vitest browser test configuration path
-- Chat functionality fixes:
-  - Restored chat functionality from working state
-  - Fixed artifact lint parsing issues
-  - Fixed template selection without breaking chat
+  * Fixed GitHub repository import 500 error
+    * Corrected API authentication header format
+    * Added fallback to Contents API when releases unavailable
+    * Fixed GitHub template URL parsing
+  * Fixed GitHub repository path issues in starter templates
+    * Corrected directory paths to match repository structure
+    * Added proper documentation
+    * Fixed constants and context for subdirectory paths
+  * Fixed template system issues:
+    * Fixed deprecated baseUrl warning in Astro Shadcn template
+    * Fixed starter template directory paths
+    * Restored missing selectedTemplate prop to BaseChat
+    * Fixed chatbox showing no response by using original content fallback
+  * Fixed TypeScript and linting issues:
+    * Replaced any types with proper TypeScript types across multiple files
+    * Fixed Biome linting errors in root.tsx
+    * Fixed lint errors in VercelConnection, NetlifyConnection, ConnectionsTab
+    * Fixed TypeScript errors in api.chat.ts, api.enhancer.ts, api.configured-providers.ts
+    * Fixed lint errors in api.check-env-key.ts, api.bug-report.ts
+    * Fixed TypeScript lint errors in api.system.diagnostics.ts, api.supabase.query.ts
+  * Fixed Import.meta.hot optional chaining issues:
+    * Fixed in Artifact component
+    * Fixed in ToolInvocations component
+    * Fixed in workbench store
+    * Fixed in terminal store
+    * Fixed in editor store
+    * Fixed in files store
+    * Fixed in webcontainer module
+  * Fixed Vitest configuration for proper test execution
+    * Configured test projects with proper plugins and root directory
+    * Fixed Vitest browser test configuration path
+  * Fixed chat functionality fixes:
+    * Restored chat functionality from working state
+    * Fixed artifact lint parsing issues
+    * Fixed template selection without breaking chat
 
+  ## Cleanup
 
-**Removed**
-- FAQ.md documentation (105 lines, content integrated elsewhere)
-- Local template files in favor of GitHub repository
-- Non-existent next-shadcn template from starter templates
-- GitHub workflow for package-lock.json validation
-- Unused import.meta.hot calls replaced with optional chaining
-- Duplicate and unused test files
+  * Removed FAQ.md documentation (105 lines, content integrated elsewhere)
+  * Removed local template files in favor of GitHub repository
+  * Removed non-existent next-shadcn template from starter templates
+  * Removed GitHub workflow for package-lock.json validation
+  * Removed unused import.meta.hot calls replaced with optional chaining
+  * Removed duplicate and unused test files
 
+  ## Security
 
-**Security**
-- Fixed security dependencies and vulnerabilities
-- Added comprehensive security utility system
-- Enhanced input validation across all endpoints
-- Improved error handling to prevent information leakage
+  * Fixed security dependencies and vulnerabilities
+  * Added comprehensive security utility system
+  * Enhanced input validation across all endpoints
+  * Improved error handling to prevent information leakage
+</Update>
 
 ## v0.9.1
 2025-10-14
