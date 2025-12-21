@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "CodinIT Docs",
+  "name": "Docs",
   "colors": {
     "primary": "#3B82F6",
     "light": "#F8FAFC",
