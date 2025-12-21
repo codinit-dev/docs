@@ -7,9 +7,44 @@ description: "Get CodinIT up and running in your favorite IDE with these simple 
 **Ready to get started?** Installation takes less than 2 minutes! Choose your preferred platform below and follow the simple steps.
 </Note>
 
-## Before You Begin
+## Download from Website (Recommended)
 
-Clone the CodinIT repository from GitHub to your local machine:
+The easiest way to get started is to download the installer for your platform:
+
+<Tabs>
+  <Tab title="macOS">
+    1. Download the `.dmg` file from [codinit.dev/download](https://codinit.dev/download)
+    2. Open the downloaded `.dmg` file
+    3. Drag CodinIT to your Applications folder
+    4. Launch CodinIT from your Applications
+  </Tab>
+
+  <Tab title="Windows">
+    1. Download the `.exe` installer from [codinit.dev/download](https://codinit.dev/download)
+    2. Run the installer
+    3. Follow the installation wizard
+    4. Launch CodinIT from the Start menu or desktop shortcut
+  </Tab>
+
+  <Tab title="Linux">
+    1. Download the `.AppImage` file from [codinit.dev/download](https://codinit.dev/download)
+    2. Make it executable: `chmod +x CodinIT-*.AppImage`
+    3. Run the AppImage: `./CodinIT-*.AppImage`
+
+    Or install via package manager (if available):
+    ```bash
+    # Debian/Ubuntu
+    sudo dpkg -i codinit_*.deb
+
+    # Fedora/RHEL
+    sudo rpm -i codinit-*.rpm
+    ```
+  </Tab>
+</Tabs>
+
+## Install from Source (For Developers)
+
+If you prefer to build from source or contribute to development:
 
 ### Local Version (Web Containers)
 
