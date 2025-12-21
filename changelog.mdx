@@ -1707,32 +1707,30 @@ New releases and improvements
     * Better scaling on different displays
 </Update>
 
-## v0.5.0
-2025-10-11
+<Update label="October 11, 2025" tags={["New releases", "Improvements"]} rss={{ title: "Complete MCP foundation and chat system refactor" }}>
+  ## New features
 
-
-**Added**
-- Complete MCP (Model Context Protocol) foundation:
-  - MCP service (457 lines in mcpService.ts) for server lifecycle management
-  - MCP store (115 lines in mcp.ts) for state management
-  - MCP server list component (102 lines in McpServerList.tsx)
-  - MCP server list item component (70 lines in McpServerListItem.tsx)
-  - MCP status badge component (37 lines in McpStatusBadge.tsx)
-  - MCP settings components for server configuration
-  - MCP API endpoints:
-    - api.mcp-check.ts (16 lines) for health checks
-    - api.mcp-update-config.ts (23 lines) for configuration updates
-- Inspector component (126 lines) for debugging and inspection
-- LLMApiAlert component (109 lines) for API key warnings
-- MCPTools component (129 lines) for MCP tool management in chat
-- Stream recovery system (92 lines in stream-recovery.ts) for handling connection failures
-- Discuss mode component (27 lines in DiscussMode.tsx) for discussion-focused interactions
-- ChatBox component (316 lines) extracted from Chat.client.tsx
-- Discuss prompt system (235 lines in discuss-prompt.ts)
-- SolidJS icon asset (30 lines SVG)
-- Common prompt library (63 lines) for shared prompts
-- Common prompt system (709 lines in prompt.ts)
-- Context types (8 lines) for better type safety
+  * Complete MCP (Model Context Protocol) foundation:
+    * MCP service (457 lines in mcpService.ts) for server lifecycle management
+    * MCP store (115 lines in mcp.ts) for state management
+    * MCP server list component (102 lines in McpServerList.tsx)
+    * MCP server list item component (70 lines in McpServerListItem.tsx)
+    * MCP status badge component (37 lines in McpStatusBadge.tsx)
+    * MCP settings components for server configuration
+    * MCP API endpoints:
+      * api.mcp-check.ts (16 lines) for health checks
+      * api.mcp-update-config.ts (23 lines) for configuration updates
+  * Inspector component (126 lines) for debugging and inspection
+  * LLMApiAlert component (109 lines) for API key warnings
+  * MCPTools component (129 lines) for MCP tool management in chat
+  * Stream recovery system (92 lines in stream-recovery.ts) for handling connection failures
+  * Discuss mode component (27 lines in DiscussMode.tsx) for discussion-focused interactions
+  * ChatBox component (316 lines) extracted from Chat.client.tsx
+  * Discuss prompt system (235 lines in discuss-prompt.ts)
+  * SolidJS icon asset (30 lines SVG)
+  * Common prompt library (63 lines) for shared prompts
+  * Common prompt system (709 lines in prompt.ts)
+  * Context types (8 lines) for better type safety
 
 
 **Changed**
