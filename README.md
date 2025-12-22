@@ -1,162 +1,43 @@
-# CodinIT.dev Docs
+# Mintlify Starter Kit
 
-This repository contains the official documentation for **CodinIT**, an AI-powered full-stack development platform that revolutionizes how developers build applications with local and cloud AI models.
+Use the starter kit to get your docs deployed and ready to customize.
 
-## 🚀 What is CodinIT?
+Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
 
-CodinIT is a comprehensive development environment that integrates AI assistance throughout the entire development workflow. It supports 19+ AI providers including OpenAI, Anthropic, Google, DeepSeek, and more, offering:
+- Guide pages
+- Navigation
+- Customizations
+- API reference pages
+- Use of popular components
 
-- **Smart Code Generation**: AI-powered code completion and generation
-- **Full-Stack Development**: Built for Node.js full-stack applications
-- **Multiple AI Providers**: Connect with your preferred AI models
-- **Integrated Tools**: Terminal, file management, and deployment
-- **Local Model Support**: Run AI models locally with Ollama and LM Studio
-- **Enterprise Security**: Bank-level security and compliance
+**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
 
-## 📚 Documentation Structure
+## Development
 
-This documentation site is built with [Mintlify](https://mintlify.com) and covers:
-
-- **Getting Started**: Quickstart guides and installation
-- **Features**: Development tools, AI integration, and workflows
-- **Providers**: Configuration for 19+ AI providers
-- **Integrations**: Vercel, Netlify, Supabase, and Git
-- **MCP Protocol**: Extending capabilities with custom tools
-- **Comparisons**: How CodinIT compares to other platforms
-
-## 🛠️ Development Setup
-
-### Prerequisites
-
-- Node.js 18+
-- pnpm, npm, or yarn
-
-> **Important**: If you have a package named `mint` and a package named `mintlify` installed, you should uninstall `mintlify`.
->
-> 1. Uninstall the old package:
->
->    ```bash
->    npm uninstall -g mintlify
->    ```
->
-> 2. Clear your npm cache:
->
->    ```bash
->    npm cache clean --force
->    ```
->
-> 3. Reinstall the new package:
->    ```bash
->    npm i -g mint
->    ```
-
-### Local Development
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/codinit-dev/docs.git
-   cd docs
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   # Using pnpm (recommended)
-   pnpm install
-
-   # Or using npm
-   npm install
-
-   # Or using yarn
-   yarn install
-   ```
-
-3. **Start the development server**
-
-   ```bash
-   # Using pnpm
-   pnpm dev
-
-   # Or using npm
-   npm run dev
-
-   # Or using yarn
-   yarn dev
-   ```
-
-4. **Open your browser** to `http://localhost:3000`
-
-### Building for Production
-
-```bash
-# Build the documentation site
-pnpm build
-
-# Preview the production build
-pnpm preview
-```
-
-## 📝 Contributing
-
-We welcome contributions to improve the documentation! Here's how you can help:
-
-### Content Contributions
-
-1. **Fork** this repository
-2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
-3. **Make your changes** to the MDX files in the appropriate directories
-4. **Test your changes** locally with `pnpm dev`
-5. **Commit your changes** following conventional commit format
-6. **Push to your fork** and create a **Pull Request**
-
-### Documentation Guidelines
-
-- Use clear, concise language
-- Include code examples where helpful
-- Follow the existing MDX structure and component usage
-- Test all links and ensure they're working
-- Use proper heading hierarchy (H1 → H2 → H3)
-
-### File Structure
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
 
 ```
-docs/
-├── index.mdx                 # Homepage
-├── quickstart.mdx           # Getting started guide
-├── features/                # Feature documentation
-├── providers/               # AI provider guides
-├── integrations/            # Third-party integrations
-├── essentials/              # Core functionality
-├── mcp/                     # MCP protocol docs
-├── comparisons/             # Platform comparisons
-├── running-models-locally/  # Local AI setup
-└── assets/                  # Images, icons, and media
+npm i -g mint
 ```
 
-## 🔧 Configuration
+Run the following command at the root of your documentation, where your `docs.json` is located:
 
-The documentation is configured through `docs.json`:
+```
+mint dev
+```
 
-- **Theme**: Aspen theme with custom colors
-- **Navigation**: Organized into logical tabs and groups
-- **SEO**: Optimized for search engines
-- **Integrations**: Telemetry and analytics enabled
+View your local preview at `http://localhost:3000`.
 
-## 📄 License
+## Publishing changes
 
-This documentation is part of the CodinIT project. See the main project [LICENSE](LICENSE) for details.
+Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
 
-## 🌐 Links
+## Need help?
 
-- **CodinIT App**: [codinit.dev](https://codinit.dev)
-- **Documentation**: [codinit.dev/docs](https://codinit.dev/docs)
-- **GitHub Repository**: [github.com/codinit-dev/codinit-dev](https://github.com/codinit-dev/codinit-dev)
-- **Download**: [codinit.dev/download](https://codinit.dev/download)
-- **Blog**: [codinit.dev/blog](https://codinit.dev/blog)
+### Troubleshooting
 
-## 📞 Support
+- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
+- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
 
-- **Issues**: [GitHub Issues](https://github.com/codinit-dev/codinit-dev/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/codinit-dev/codinit-dev/discussions)
-- **Community**: Join our Discord community for real-time help
+### Resources
+- [Mintlify documentation](https://mintlify.com/docs)
