@@ -1,196 +1,38 @@
 ---
 title: Moonshot
-description: Access advanced Chinese AI models including Kimi series through Moonshot's platform with excellent multilingual and reasoning capabilities.
+description: Configure Moonshot's Kimi series models for Chinese language and multilingual tasks.
 ---
 
-Moonshot provides access to advanced Chinese AI models, including the popular Kimi series, offering strong performance in both Chinese and English languages with competitive pricing.
+**Website:** [https://platform.moonshot.ai/](https://platform.moonshot.ai/)
 
-## Overview
+## Getting an API Key
 
-Moonshot specializes in Chinese language AI models while maintaining strong English capabilities. Their platform offers a range of models from lightweight options to powerful enterprise-grade solutions, with particular strength in Chinese language processing and cultural understanding.
+1. Go to [Moonshot Platform](https://platform.moonshot.ai/) and sign in
+2. Navigate to API console
+3. Create a new API key
+4. Copy the key immediately
 
-<CardGroup cols={3}>
-  <Card title="Chinese Language" icon="language">
-    Specialized models for Chinese language processing
-  </Card>
-  <Card title="Kimi Series" icon="sparkle">
-    Popular conversational AI models
-  </Card>
-  <Card title="Multilingual Support" icon="globe">
-    Strong performance in both Chinese and English
-  </Card>
-</CardGroup>
+## Configuration
 
-## Available Models
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "Moonshot" as the API Provider
+3. Paste your API key
+4. Choose your model
 
-<AccordionGroup>
-  <Accordion title="Kimi Series" icon="message-circle">
-    ### Kimi Conversational Models
-    Moonshot's flagship conversational AI models, known for natural interactions.
+## Supported Models
 
-    - **Kimi Latest**: Most advanced conversational model
-    - **Kimi K2 Preview**: Advanced reasoning and analysis
-    - **Kimi K2 Turbo**: Fast and efficient for quick tasks
-    - **Kimi Thinking**: Enhanced reasoning capabilities
+- **Kimi series:** Kimi Latest, K2 Preview, K2 Turbo, Kimi Thinking
+- **Moonshot v1:** 8K, 32K, 128K context variants
+- **Vision models:** Moonshot v1 Vision (8K, 32K, 128K)
 
-  </Accordion>
+## Features
 
-  <Accordion title="Moonshot v1 Series" icon="brain">
-    ### Moonshot Vision Models
-    Multimodal models with vision capabilities and large context windows.
+- **Chinese language:** Specialized for Chinese text processing
+- **Multimodal:** Vision and text understanding
+- **Large context:** Up to 128K tokens
+- **Cultural intelligence:** Chinese cultural context understanding
 
-    - **Moonshot v1 8K**: Basic model with 8K context
-    - **Moonshot v1 32K**: Extended context for longer conversations
-    - **Moonshot v1 128K**: Large context for complex tasks
-    - **Moonshot v1 Auto**: Adaptive model selection
+## Notes
 
-  </Accordion>
-
-  <Accordion title="Vision Models" icon="eye">
-    ### Multimodal Vision Series
-    Models capable of understanding both text and images.
-
-    - **Moonshot v1 8K Vision**: Basic multimodal capabilities
-    - **Moonshot v1 32K Vision**: Extended context with vision
-    - **Moonshot v1 128K Vision**: Large context multimodal model
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Create Account">Visit [Moonshot Platform](https://platform.moonshot.ai/) and create an account</Step>
-  <Step title="Access Console">Navigate to the API console in your dashboard</Step>
-  <Step title="Generate API Key">Create a new API key for accessing the models</Step>
-  <Step title="Configure in Codinit">Add your Moonshot API key to the provider settings</Step>
-  <Step title="Test Models">Try different models to find the best fit for your needs</Step>
-</Steps>
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Chinese Language</Badge>
-  <Badge variant="secondary">Multimodal</Badge>
-  <Badge variant="secondary">Large Context</Badge>
-  <Badge variant="secondary">Conversational AI</Badge>
-  <Badge variant="secondary">Cultural Understanding</Badge>
-</BadgeGroup>
-
-### Platform Advantages
-
-- **Chinese Language Excellence**: Superior performance in Chinese text processing
-- **Multimodal Capabilities**: Vision and text understanding combined
-- **Large Context Windows**: Handle complex, lengthy conversations
-- **Cultural Intelligence**: Better understanding of Chinese cultural context
-- **Competitive Pricing**: Cost-effective for Chinese language AI
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Chinese Content" icon="file-text">
-    ### Chinese Language Applications
-    Perfect for Chinese language content creation and processing.
-
-    - Chinese content generation and translation
-    - Cultural content creation
-    - Chinese business communication
-    - Educational content in Chinese
-
-  </Accordion>
-
-  <Accordion title="Conversational AI" icon="message-square">
-    ### Chat and Interaction
-    Excellent for natural conversational interfaces.
-
-    - Customer service chatbots
-    - Personal assistants
-    - Interactive learning systems
-    - Social conversation applications
-
-  </Accordion>
-
-  <Accordion title="Multimodal Tasks" icon="image">
-    ### Vision and Text
-    Combine image understanding with text processing.
-
-    - Image description and analysis
-    - Visual content creation
-    - Document processing with images
-    - Multimodal content generation
-
-  </Accordion>
-
-  <Accordion title="Business Applications" icon="building">
-    ### Enterprise Use
-    Suitable for business applications requiring Chinese language support.
-
-    - Chinese market analysis
-    - International business communication
-    - Cross-cultural content creation
-    - Multilingual customer support
-
-  </Accordion>
-</AccordionGroup>
-
-## Pricing Information
-
-Moonshot offers flexible pricing based on model usage and context length:
-
-<TokenPricing>
-  <TokenPricingItem model="Kimi Models" input="$0.0008" output="$0.002" />
-  <TokenPricingItem model="Moonshot v1 8K" input="$0.001" output="$0.002" />
-  <TokenPricingItem model="Moonshot v1 32K" input="$0.002" output="$0.004" />
-  <TokenPricingItem model="Moonshot v1 128K" input="$0.008" output="$0.016" />
-</TokenPricing>
-
-<Callout type="info">
-  **Context Pricing**: Pricing scales with context window size. Larger context models cost more per token.
-</Callout>
-
-<Callout type="tip">
-  **Model Selection**: Use Kimi models for conversational tasks and Moonshot v1 models for complex reasoning or
-  multimodal work.
-</Callout>
-
-<Callout type="warning">
-  **Language Optimization**: While Moonshot models excel at Chinese, they also perform well in English for general
-  tasks.
-</Callout>
-
-## Model Capabilities
-
-<AccordionGroup>
-  <Accordion title="Language Support" icon="languages">
-    ### Multilingual Performance
-    Strong capabilities across multiple languages with Chinese specialization.
-
-    - **Primary Language**: Chinese (Mandarin, simplified/traditional)
-    - **Secondary Languages**: English, Japanese, Korean
-    - **Cultural Context**: Deep understanding of Chinese culture and context
-    - **Code Switching**: Natural switching between languages
-
-  </Accordion>
-
-  <Accordion title="Context Understanding" icon="brain">
-    ### Context Window Management
-    Different models offer varying context window sizes for different needs.
-
-    - **Short Context (8K)**: Quick interactions, simple tasks
-    - **Medium Context (32K)**: Complex conversations, document analysis
-    - **Long Context (128K)**: Large documents, extended conversations
-    - **Adaptive Models**: Automatic context optimization
-
-  </Accordion>
-
-  <Accordion title="Specialized Features" icon="star">
-    ### Advanced Capabilities
-    Unique features that set Moonshot models apart.
-
-    - **Cultural Intelligence**: Understanding of Chinese cultural nuances
-    - **Vision Integration**: Image understanding and description
-    - **Reasoning Enhancement**: Improved logical reasoning in Chinese contexts
-    - **Conversational Memory**: Better context retention in conversations
-
-  </Accordion>
-</AccordionGroup>
+- **Pricing:** Scales with context window size
+- **Languages:** Excellent for Chinese, strong English support

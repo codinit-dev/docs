@@ -1,60 +1,43 @@
 ---
 title: "Anthropic"
-description: "Learn how to configure and use Anthropic Claude models with CodinIT. Covers API key setup, model selection, and advanced features like prompt caching."
+description: "Configure Anthropic Claude models with CodinIT for advanced reasoning and code generation."
 ---
 
 **Website:** [https://www.anthropic.com/](https://www.anthropic.com/)
 
-### Getting an API Key
+## Getting an API Key
 
-1.  **Sign Up/Sign In:** Go to the [Anthropic Console](https://console.anthropic.com/). Create an account or sign in.
-2.  **Navigate to API Keys:** Go to the [API keys](https://console.anthropic.com/settings/keys) section.
-3.  **Create a Key:** Click "Create Key". Give your key a descriptive name (e.g., "CodinIT").
-4.  **Copy the Key:** **Important:** Copy the API key _immediately_. You will not be able to see it again. Store it securely.
+1. Go to [Anthropic Console](https://console.anthropic.com/) and sign in
+2. Navigate to [API keys](https://console.anthropic.com/settings/keys)
+3. Click "Create Key" and name it (e.g., "CodinIT")
+4. Copy the key immediately - you won't see it again
 
-### Supported Models
+## Configuration
 
-CodinIT supports the following Anthropic Claude models:
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "Anthropic" as the API Provider
+3. Paste your API key
+4. Choose your model
 
--   `claude-haiku-4-5-20251001`
--   `claude-opus-4-1-20250805`
--   `claude-opus-4-20250514`
--   `anthropic/claude-sonnet-4.5` (Recommended)
--   `claude-3-7-sonnet-20250219`
--   `claude-3-5-sonnet-20241022`
--   `claude-3-5-haiku-20241022`
--   `claude-3-opus-20240229`
--   `claude-3-haiku-20240307`
+## Supported Models
 
-See [Anthropic's Model Documentation](https://docs.anthropic.com/en/about-claude/models) for more details on each model's capabilities.
+- `anthropic/claude-sonnet-4.5` (Recommended)
+- `claude-opus-4-1-20250805`
+- `claude-3-7-sonnet-20250219`
+- `claude-3-5-sonnet-20241022`
+- `claude-3-5-haiku-20241022`
 
-### Configuration in CodinIT
+See [Anthropic's documentation](https://docs.anthropic.com/en/about-claude/models) for full model details.
 
-1.  **Open CodinIT Settings:** Click the settings icon (⚙️) in the CodinIT panel.
-2.  **Select Provider:** Choose "Anthropic" from the "API Provider" dropdown.
-3.  **Enter API Key:** Paste your Anthropic API key into the "Anthropic API Key" field.
-4.  **Select Model:** Choose your desired Claude model from the "Model" dropdown.
-5.  **(Optional) Custom Base URL:** If you need to use a custom base URL for the Anthropic API, check "Use custom base URL" and enter the URL. Most users won't need to adjust this setting.
+## Extended Thinking
 
-### Extended Thinking
+Enable enhanced reasoning for complex tasks by checking "Enable Extended Thinking" in CodinIT settings. Available for Claude Opus 4, Sonnet 4.5, and Sonnet 3.7.
 
-Anthropic models offer an "Extended Thinking" feature, designed to give them enhanced reasoning capabilities for complex tasks. This feature allows the model to output its step-by-step thought process before delivering a final answer, providing transparency and enabling more thorough analysis for challenging prompts.
+Learn more in the [Extended Thinking documentation](https://docs.anthropic.com/en/build-with-claude/extended-thinking).
 
-When extended thinking is in CodinIT, the model generates `thinking` content blocks that detail its internal reasoning. These insights are then incorporated into its final response.
-CodinIT users can leverage this by checking the `Enable Extended Thinking` box below the model selection menu after selecting a Claude Model from any provider.
+## Notes
 
-**Key Aspects of Extended Thinking:**
-
--   **Supported Models:** This feature is available for select models, including Claude Opus 4, Claude Sonnet 4.5, and Claude Sonnet 3.7.
--   **Summarized Thinking (Claude 4):** For Claude 4 and 4.5 models, the API returns a summary of the full thinking process to balance insight with efficiency and prevent misuse. You are billed for the full thinking tokens, not just the summary.
--   **Streaming:** Extended thinking responses, including the `thinking` blocks, can be streamed.
--   **Tool Use & Prompt Caching:** Extended thinking interacts with tool use (requiring thinking blocks to be passed back) and prompt caching (with specific behaviors around cache invalidation and context).
-
-For comprehensive details on how extended thinking works, including API examples, interaction with tool use, prompt caching, and pricing, please refer to the [official Anthropic documentation on Extended Thinking](https://docs.anthropic.com/en/build-with-claude/extended-thinking).
-
-### Tips and Notes
-
--   **Prompt Caching:** Claude 3 models support [prompt caching](https://docs.anthropic.com/en/build-with-claude/prompt-caching), which can significantly reduce costs and latency for repeated prompts.
--   **Context Window:** Claude models have large context windows (200,000 tokens), allowing you to include a significant amount of code and context in your prompts.
--   **Pricing:** Refer to the [Anthropic Pricing](https://www.anthropic.com/pricing) page for the latest pricing information.
--   **Rate Limits:** Anthropic has strict rate limits based on [usage tiers](https://docs.anthropic.com/en/api/rate-limits#requirements-to-advance-tier). If you're repeatedly hitting rate limits, consider contacting Anthropic sales or accessing Claude through a different provider like [OpenRouter](/providers/openrouter) or [Requesty](/providers/openrouter).
+- **Context Window:** 200,000 tokens
+- **Prompt Caching:** Reduces costs for repeated prompts
+- **Rate Limits:** Based on [usage tiers](https://docs.anthropic.com/en/api/rate-limits). Consider [OpenRouter](/providers/openrouter) if hitting limits
+- **Pricing:** See [Anthropic Pricing](https://www.anthropic.com/pricing)

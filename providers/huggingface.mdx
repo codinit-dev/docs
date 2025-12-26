@@ -1,206 +1,41 @@
 ---
 title: Hugging Face
-description: Access thousands of open-source AI models including Qwen, Llama, and CodeLlama through Hugging Face's cost-effective inference API.
+description: Access thousands of open-source AI models through Hugging Face's inference API.
 ---
 
-## Overview
+**Website:** [https://huggingface.co/](https://huggingface.co/)
 
-Hugging Face democratizes AI by providing easy access to cutting-edge models. Their platform hosts models for text generation, code completion, analysis, and more, all accessible through a simple API interface.
+## Getting an API Key
 
-<CardGroup cols={3}>
-  <Card title="Open Source Models" icon="unlock">
-    Access to thousands of community models
-  </Card>
-  <Card title="Research Models" icon="microscope">
-    Latest models from top AI research labs
-  </Card>
-  <Card title="Cost Effective" icon="dollar-sign">
-    Affordable pricing for open-source models
-  </Card>
-</CardGroup>
+1. Go to [Hugging Face](https://huggingface.co/) and sign in
+2. Navigate to [Settings > Access Tokens](https://huggingface.co/settings/tokens)
+3. Create a new token with "Read" permissions
+4. Copy the token immediately
 
-## Available Models
+## Configuration
 
-<AccordionGroup>
-  <Accordion title="Qwen Models" icon="code">
-    ### Qwen Series
-    High-quality models from Alibaba Cloud, excellent for coding and general tasks.
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "Hugging Face" as the API Provider
+3. Paste your token
+4. Choose your model
 
-    - **Qwen2.5-Coder-32B**: Specialized for code generation
-    - **Qwen2.5-72B**: General purpose large model
-    - **Best for**: Code completion, technical writing, analysis
+## Supported Models
 
-  </Accordion>
+- **Qwen series:** Qwen2.5-Coder-32B, Qwen2.5-72B
+- **Llama series:** Llama-3.1-70B, Llama-3.1-405B
+- **CodeLlama:** CodeLlama-34B
+- **Yi series:** Yi-1.5-34B
+- **Hermes series:** Hermes-3-Llama-3.1-8B
 
-  <Accordion title="Llama Models" icon="brain">
-    ### Meta Llama Series
-    Industry-leading open-source models from Meta.
+## Features
 
-    - **Llama-3.1-70B**: Powerful general-purpose model
-    - **Llama-3.1-405B**: Massive model for complex tasks
-    - **Best for**: Advanced reasoning, creative tasks
+- **Open source:** All models openly available
+- **Community driven:** Constantly updated
+- **Research access:** Latest models from top labs
+- **Cost effective:** Affordable pricing
+- **Free tier:** Available for testing
 
-  </Accordion>
+## Notes
 
-  <Accordion title="CodeLlama" icon="terminal">
-    ### CodeLlama Series
-    Specialized models for programming and code-related tasks.
-
-    - **CodeLlama-34B**: Large coding model
-    - **Best for**: Code generation, debugging, technical analysis
-
-  </Accordion>
-
-  <Accordion title="Yi Models" icon="sparkle">
-    ### Yi Series
-    High-performance models from 01.AI.
-
-    - **Yi-1.5-34B**: Balanced performance and capability
-    - **Best for**: General AI tasks, analysis, writing
-
-  </Accordion>
-
-  <Accordion title="Hermes Models" icon="wand">
-    ### Hermes Series
-    Fine-tuned models optimized for helpfulness and reasoning.
-
-    - **Hermes-3-Llama-3.1-8B**: Efficient and capable
-    - **Best for**: Conversational AI, helpful responses
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Create Hugging Face Account">
-    Visit [Hugging Face](https://huggingface.co/) and create a free account
-  </Step>
-  <Step title="Generate API Token">
-    Go to [Settings > Access Tokens](https://huggingface.co/settings/tokens) and create a new token
-  </Step>
-  <Step title="Configure Token Permissions">Ensure your token has "Read" permissions for model inference</Step>
-  <Step title="Add to Codinit">Enter your Hugging Face token in the provider settings</Step>
-  <Step title="Test Models">Try different models to find the best fit for your needs</Step>
-</Steps>
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Open Source</Badge>
-  <Badge variant="secondary">Community Driven</Badge>
-  <Badge variant="secondary">Research Models</Badge>
-  <Badge variant="secondary">Cost Effective</Badge>
-  <Badge variant="secondary">Diverse Models</Badge>
-</BadgeGroup>
-
-### Platform Advantages
-
-- **Open Source**: All models are openly available and auditable
-- **Community Driven**: Constantly updated by global AI community
-- **Research Access**: Latest models from top research institutions
-- **Flexible Pricing**: Pay only for what you use
-- **Wide Selection**: Models for every use case and skill level
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Code Development" icon="code">
-    ### Programming Tasks
-    Specialized models for software development and coding assistance.
-
-    - Code generation and completion
-    - Code review and analysis
-    - Debugging assistance
-    - Technical documentation
-
-  </Accordion>
-
-  <Accordion title="Research & Analysis" icon="search">
-    ### Academic Research
-    Powerful models for research, analysis, and academic work.
-
-    - Scientific paper analysis
-    - Research summarization
-    - Data interpretation
-    - Academic writing assistance
-
-  </Accordion>
-
-  <Accordion title="Content Creation" icon="edit">
-    ### Creative Writing
-    Models for content creation and creative tasks.
-
-    - Creative writing
-    - Content generation
-    - Language translation
-    - Educational content
-
-  </Accordion>
-
-  <Accordion title="Business Applications" icon="building">
-    ### Enterprise Use
-    Suitable for business and productivity applications.
-
-    - Business analysis
-    - Report generation
-    - Customer communication
-    - Process automation
-
-  </Accordion>
-</AccordionGroup>
-
-## Pricing Information
-
-Hugging Face offers flexible pricing based on model size and usage:
-
-<TokenPricing>
-  <TokenPricingItem model="Small Models (<7B)" input="$0.0001" output="$0.0002" />
-  <TokenPricingItem model="Medium Models (7-20B)" input="$0.0002" output="$0.0004" />
-  <TokenPricingItem model="Large Models (20-40B)" input="$0.0004" output="$0.0008" />
-  <TokenPricingItem model="XL Models (40B+)" input="$0.0008" output="$0.0016" />
-</TokenPricing>
-
-<Callout type="info">**Free Tier**: Hugging Face offers a generous free tier for testing and light usage.</Callout>
-
-<Callout type="tip">
-  **Model Selection**: Start with smaller models for testing, then scale up to larger models for production use.
-</Callout>
-
-<Callout type="warning">
-  **Rate Limits**: Free tier has usage limits. Paid plans offer higher rate limits and priority access.
-</Callout>
-
-## Model Performance Notes
-
-<AccordionGroup>
-  <Accordion title="Inference Speed" icon="zap">
-    ### Speed Considerations
-    Model size affects response time and resource usage.
-
-    - **Small models**: Fast responses, lower resource usage
-    - **Large models**: Slower responses, higher resource usage
-    - **Consider trade-offs**: Speed vs. quality based on your needs
-
-  </Accordion>
-
-  <Accordion title="Context Limits" icon="file-text">
-    ### Token Limits
-    Different models have varying context window sizes.
-
-    - **Most models**: 4K-8K token context windows
-    - **Specialized models**: May have different limits
-    - **Check documentation**: Verify limits for your chosen model
-
-  </Accordion>
-
-  <Accordion title="Model Updates" icon="refresh">
-    ### Staying Current
-    Hugging Face models are frequently updated by the community.
-
-    - **Regular updates**: New model versions released frequently
-    - **Version pinning**: Specify exact model versions for consistency
-    - **Community contributions**: New models added regularly
-
-  </Accordion>
-</AccordionGroup>
+- **Pricing:** Based on model size and usage
+- **Rate limits:** Free tier has usage limits

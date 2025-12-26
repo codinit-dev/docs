@@ -1,160 +1,37 @@
 ---
 title: GitHub Models
-description: Access OpenAI GPT-4, o1, and other advanced AI models through GitHub's secure platform with seamless integration and enterprise features.
+description: Access OpenAI GPT-4, o1, and other AI models through GitHub's platform.
 ---
 
-GitHub Models provides access to leading AI models through GitHub's infrastructure, offering a convenient way to use OpenAI's GPT series, o1 models, and other advanced AI systems directly within the GitHub ecosystem.
+Access leading AI models through GitHub's infrastructure with seamless integration.
 
-## Overview
+**Website:** [https://github.com/marketplace/models](https://github.com/marketplace/models)
 
-GitHub Models serves as a gateway to premium AI models, allowing developers to access cutting-edge AI capabilities without managing complex API integrations. It's particularly useful for teams already using GitHub and wanting seamless AI integration.
+## Setup
 
-<CardGroup cols={3}>
-  <Card title="OpenAI Integration" icon="openai">
-    Direct access to GPT-4, GPT-4o, and o1 models
-  </Card>
-  <Card title="GitHub Native" icon="github">
-    Seamless integration with GitHub workflows
-  </Card>
-  <Card title="Enterprise Ready" icon="building">
-    Suitable for teams and enterprise use
-  </Card>
-</CardGroup>
+1. **GitHub account:** Ensure you have appropriate permissions
+2. **Create token:** Go to [GitHub Settings > Personal Access Tokens](https://github.com/settings/personal-access-tokens)
+3. **Configure permissions:** Enable Models API access
+4. **Add to CodinIT:** Enter token in GitHub provider settings
+5. **Test models:** Verify connection
 
 ## Available Models
 
-<AccordionGroup>
-  <Accordion title="GPT-4o Series" icon="sparkle">
-    ### GPT-4o Models
-    OpenAI's latest multimodal models with enhanced reasoning and creativity.
+- **GPT-4o series:** GPT-4o, GPT-4o Mini (128K context)
+- **o1 series:** o1, o1-preview, o1-mini (200K context)
+- **GPT-4.1 series:** GPT-4.1, GPT-4.1-mini (1M+ context)
+- **DeepSeek:** DeepSeek-R1 (reasoning)
 
-    - **GPT-4o**: Most advanced model with 128K context
-    - **GPT-4o Mini**: Faster, cost-effective version
-    - **Best for**: Complex reasoning, creative tasks, analysis
+## Features
 
-  </Accordion>
+- **Large context:** Up to 1M+ tokens
+- **Multimodal:** Text and image support
+- **Advanced reasoning:** Specialized o1 models
+- **GitHub integration:** Native GitHub workflows
+- **Enterprise security:** GitHub's security features
 
-  <Accordion title="o1 Reasoning Models" icon="brain">
-    ### o1 Series
-    OpenAI's specialized reasoning models for complex problem-solving.
+## Notes
 
-    - **o1**: Advanced reasoning with 200K context window
-    - **o1-preview**: Preview version of o1 capabilities
-    - **o1-mini**: Efficient reasoning for technical tasks
-    - **Best for**: Mathematics, coding, scientific reasoning
-
-  </Accordion>
-
-  <Accordion title="GPT-4.1 Series" icon="trending-up">
-    ### GPT-4.1 Models
-    Latest generation with massive context windows.
-
-    - **GPT-4.1**: 1M+ context window for large documents
-    - **GPT-4.1-mini**: Efficient version with large context
-    - **Best for**: Document analysis, long-form content
-
-  </Accordion>
-
-  <Accordion title="DeepSeek Models" icon="search">
-    ### DeepSeek-R1
-    Advanced reasoning model from DeepSeek.
-
-    - **DeepSeek-R1**: Specialized reasoning capabilities
-    - **Best for**: Technical analysis, research tasks
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="GitHub Account">Ensure you have a GitHub account with appropriate permissions</Step>
-  <Step title="Create Personal Access Token">
-    Go to [GitHub Settings > Personal Access Tokens](https://github.com/settings/personal-access-tokens) and create a
-    new token
-  </Step>
-  <Step title="Configure Token Permissions">Enable the necessary permissions for Models API access</Step>
-  <Step title="Add to Codinit">Enter your GitHub token in the GitHub provider settings</Step>
-  <Step title="Test Models">Verify connection by testing different available models</Step>
-</Steps>
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Large Context Windows</Badge>
-  <Badge variant="secondary">Multimodal Support</Badge>
-  <Badge variant="secondary">Reasoning Models</Badge>
-  <Badge variant="secondary">GitHub Integration</Badge>
-  <Badge variant="secondary">Enterprise Security</Badge>
-</BadgeGroup>
-
-### Advanced Capabilities
-
-- **Massive Context**: Up to 1M+ tokens for large documents
-- **Multimodal Input**: Text, images, and other media types
-- **Advanced Reasoning**: Specialized models for complex problem-solving
-- **Enterprise Security**: GitHub's security and compliance features
-- **API Compatibility**: Standard OpenAI API format
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Code Development" icon="code">
-    ### Software Development
-    Perfect for coding assistance and technical problem-solving.
-
-    - Code generation and completion
-    - Debugging and error analysis
-    - Architecture design
-    - Technical documentation
-
-  </Accordion>
-
-  <Accordion title="Research & Analysis" icon="search">
-    ### Research Tasks
-    Excellent for complex analysis and research work.
-
-    - Document analysis and summarization
-    - Research paper review
-    - Data interpretation
-    - Scientific reasoning
-
-  </Accordion>
-
-  <Accordion title="Enterprise Applications" icon="building">
-    ### Business Use Cases
-    Suitable for enterprise-grade AI applications.
-
-    - Business analysis and reporting
-    - Customer service automation
-    - Content generation
-    - Process optimization
-
-  </Accordion>
-</AccordionGroup>
-
-## Pricing Information
-
-GitHub Models pricing is based on token usage:
-
-<TokenPricing>
-  <TokenPricingItem model="GPT-4o" input="$0.0025" output="$0.010" />
-  <TokenPricingItem model="GPT-4o Mini" input="$0.00015" output="$0.0006" />
-  <TokenPricingItem model="o1" input="$0.015" output="$0.060" />
-  <TokenPricingItem model="o1-mini" input="$0.003" output="$0.012" />
-  <TokenPricingItem model="o1-preview" input="$0.015" output="$0.060" />
-</TokenPricing>
-
-<Callout type="info">
-  **Billing**: Usage is billed through your GitHub account. Monitor usage in GitHub's billing section.
-</Callout>
-
-<Callout type="tip">
-  **Model Selection**: Choose GPT-4o for most tasks, o1 models for complex reasoning, and GPT-4o Mini for cost-effective
-  general use.
-</Callout>
-
-<Callout type="warning">
-  **Token Limits**: Be aware of context window limits. GPT-4.1 supports up to 1M tokens, while others have smaller
-  limits.
-</Callout>
+- **Pricing:** Token-based, billed through GitHub account
+- **Context windows:** Vary by model (128K to 1M+ tokens)
+- **Use cases:** Code development, research, business applications

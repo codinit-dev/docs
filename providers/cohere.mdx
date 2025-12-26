@@ -1,185 +1,40 @@
 ---
 title: Cohere
-description: Access Cohere's powerful Command R series language models for advanced reasoning, code generation, and multilingual text analysis.
+description: Configure Cohere's Command R series models for reasoning, code generation, and multilingual tasks.
 ---
 
-Cohere provides advanced language models that excel at understanding context, generating human-like text, and performing complex reasoning tasks. Their models are particularly strong in areas like code generation, analysis, and multilingual capabilities.
+**Website:** [https://cohere.com/](https://cohere.com/)
 
-## Overview
+## Getting an API Key
 
-Cohere's AI models are designed to be helpful, truthful, and scalable. They offer a range of models from lightweight options to powerful enterprise-grade solutions, making them suitable for everything from quick prototyping to production applications.
+1. Go to [Cohere Dashboard](https://dashboard.cohere.com/) and sign in
+2. Navigate to API Keys section
+3. Create a new API key
+4. Copy the key immediately
 
-<CardGroup cols={3}>
-  <Card title="Command R Series" icon="brain">
-    Latest generation models with enhanced reasoning capabilities
-  </Card>
-  <Card title="Multilingual Support" icon="globe">
-    Strong performance across multiple languages
-  </Card>
-  <Card title="Code Intelligence" icon="code">
-    Specialized models for programming and code analysis
-  </Card>
-</CardGroup>
+## Configuration
 
-## Available Models
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "Cohere" as the API Provider
+3. Paste your API key
+4. Choose your model
 
-<AccordionGroup>
-  <Accordion title="Command R Plus (Latest)" icon="star">
-    ### Command R Plus Latest
-    The most advanced model in Cohere's lineup, offering superior reasoning and code generation capabilities.
+## Supported Models
 
-    - **Context Window**: 128,000 tokens
-    - **Best for**: Complex reasoning, code generation, analysis
-    - **Pricing**: Higher cost, premium performance
+- `command-r-plus` (Latest) - 128K context
+- `command-r` (Latest) - 128K context
+- `command` - 4K context
+- `command-light` - 4K context
+- `aya-expanse` - Multilingual, 8K context
 
-  </Accordion>
+## Features
 
-  <Accordion title="Command R (Latest)" icon="zap">
-    ### Command R Latest
-    Balanced performance with excellent reasoning capabilities for most use cases.
+- **Tool calling:** External tools and APIs
+- **RAG support:** Retrieval augmented generation
+- **Multilingual:** Strong multi-language performance
+- **Code intelligence:** Programming specialized
 
-    - **Context Window**: 128,000 tokens
-    - **Best for**: General AI tasks, analysis, writing
-    - **Pricing**: Moderate cost, good performance balance
+## Notes
 
-  </Accordion>
-
-  <Accordion title="Command R Plus" icon="trending-up">
-    ### Command R Plus
-    Enterprise-grade model with enhanced capabilities for complex tasks.
-
-    - **Context Window**: 128,000 tokens
-    - **Best for**: Advanced reasoning, technical writing
-    - **Pricing**: Premium tier
-
-  </Accordion>
-
-  <Accordion title="Command R" icon="target">
-    ### Command R
-    Reliable workhorse model for most AI applications.
-
-    - **Context Window**: 128,000 tokens
-    - **Best for**: General purpose AI tasks
-    - **Pricing**: Standard tier
-
-  </Accordion>
-
-  <Accordion title="Command (Legacy)" icon="clock">
-    ### Command
-    Earlier generation model, still powerful for many tasks.
-
-    - **Context Window**: 4,096 tokens
-    - **Best for**: Basic text generation, simpler tasks
-    - **Pricing**: Lower cost option
-
-  </Accordion>
-
-  <Accordion title="Lightweight Models" icon="feather">
-    ### Command Light Series
-    Faster, more efficient models for simpler tasks and cost optimization.
-
-    - **Context Window**: 4,096 tokens
-    - **Best for**: Quick responses, basic analysis
-    - **Pricing**: Most affordable option
-
-  </Accordion>
-
-  <Accordion title="Multilingual Models" icon="languages">
-    ### Aya Expanse Series
-    Specialized multilingual models for global applications.
-
-    - **Context Window**: 8,000 tokens
-    - **Best for**: Multilingual content, global applications
-    - **Pricing**: Moderate cost
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Create Account">Visit [Cohere Dashboard](https://dashboard.cohere.com/) and create an account</Step>
-  <Step title="Generate API Key">Navigate to API Keys section and create a new API key</Step>
-  <Step title="Configure in Codinit">Add your API key to the Cohere provider settings in Codinit</Step>
-  <Step title="Test Connection">Select a Cohere model and test it with a simple prompt</Step>
-</Steps>
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Advanced Reasoning</Badge>
-  <Badge variant="secondary">Code Generation</Badge>
-  <Badge variant="secondary">Multilingual</Badge>
-  <Badge variant="secondary">Tool Calling</Badge>
-  <Badge variant="secondary">RAG Support</Badge>
-</BadgeGroup>
-
-### Advanced Capabilities
-
-- **Tool Calling**: Can use external tools and APIs
-- **Retrieval Augmented Generation**: Enhanced with external knowledge
-- **Multilingual Support**: Strong performance in multiple languages
-- **Code Intelligence**: Specialized for programming tasks
-- **Reasoning**: Advanced logical reasoning capabilities
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Code Development" icon="code">
-    ### Programming Assistance
-    Perfect for code generation, debugging, and technical documentation.
-
-    - Generate complete functions and classes
-    - Debug existing code
-    - Write technical documentation
-    - Code review and analysis
-
-  </Accordion>
-
-  <Accordion title="Content Creation" icon="edit">
-    ### Writing and Analysis
-    Excellent for content creation and analytical tasks.
-
-    - Technical writing
-    - Business analysis
-    - Research summaries
-    - Creative content generation
-
-  </Accordion>
-
-  <Accordion title="Multilingual Applications" icon="globe">
-    ### Global Applications
-    Strong performance for international and multilingual use cases.
-
-    - Translation assistance
-    - Multilingual content creation
-    - Cross-cultural communication
-    - Global business applications
-
-  </Accordion>
-</AccordionGroup>
-
-## Pricing Information
-
-Cohere offers flexible pricing based on usage:
-
-- **Free Tier**: Limited usage for testing
-- **Pay-as-you-go**: Based on tokens processed
-- **Enterprise**: Custom pricing for high-volume usage
-
-<TokenPricing>
-  <TokenPricingItem model="Command R Plus" input="~$0.0015" output="~$0.006" />
-  <TokenPricingItem model="Command R" input="~$0.0015" output="~$0.0045" />
-  <TokenPricingItem model="Command" input="~$0.001" output="~$0.002" />
-  <TokenPricingItem model="Command Light" input="~$0.0003" output="~$0.0006" />
-</TokenPricing>
-
-<Callout type="info">
-  **Rate Limits**: Cohere implements rate limits based on your account tier. Free accounts have lower limits than paid
-  accounts.
-</Callout>
-
-<Callout type="tip">
-  **Best Practices**: Start with Command R models for most applications. Use Command Light for simple tasks where speed
-  is prioritized over quality.
-</Callout>
+- **Pricing:** See [Cohere Pricing](https://cohere.com/pricing)
+- **Free tier:** Available for testing
