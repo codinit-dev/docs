@@ -1,265 +1,73 @@
 ---
 title: LM Studio
-description: Run AI models locally with LM Studio's user-friendly interface for privacy, speed, and offline development capabilities.
+description: Run AI models locally with LM Studio's user-friendly interface for privacy and offline development.
 ---
 
-LM Studio provides a user-friendly way to run large language models locally on your computer, offering privacy, speed, and offline capabilities without requiring an internet connection.
+LM Studio provides a user-friendly way to run AI models locally with privacy, speed, and offline capabilities.
 
-## Overview
+**Website:** [https://lmstudio.ai](https://lmstudio.ai)
 
-LM Studio bridges the gap between powerful AI models and local computing, allowing you to run advanced AI models directly on your machine. It's perfect for users who want privacy, speed, and control over their AI interactions.
+## Setup
 
-<CardGroup cols={3}>
-  <Card title="Local Execution" icon="computer">
-    Run AI models directly on your computer
-  </Card>
-  <Card title="Privacy First" icon="shield">
-    Keep conversations and data completely private
-  </Card>
-  <Card title="Offline Capable" icon="wifi-off">
-    Work without internet connectivity
-  </Card>
-</CardGroup>
+1. **Download:** Visit [lmstudio.ai](https://lmstudio.ai) and download for your OS
+2. **Install and launch:** Open LM Studio
+3. **Download a model:** Go to "Discover" tab and download a model
+   - **Recommended:** Qwen3 Coder 30B A3B Instruct for best CodinIT experience
+4. **Start server:** Go to "Developer" tab and toggle server to "Running" (runs at `http://localhost:51732`)
+5. **Configure model settings:**
+   - **Context Length:** Set to 262,144 (maximum)
+   - **KV Cache Quantization:** Leave unchecked (critical for performance)
+   - **Flash Attention:** Enable if available
 
-## How It Works
+## Configuration in CodinIT
 
-LM Studio downloads and runs AI models locally using your computer's resources. It provides a simple interface to manage models, start local servers, and connect to various applications including Codinit.
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "LM Studio" as the API Provider
+3. Set server URL to `http://localhost:51732`
+4. Choose your model
 
-<AccordionGroup>
-  <Accordion title="Model Management" icon="download">
-    ### Downloading Models
-    Choose from thousands of available models in various sizes and capabilities.
+## Quantization Guide
 
-    - **Model Library**: Browse and download models from Hugging Face
-    - **Size Options**: From small 1GB models to large 100GB+ models
-    - **Format Support**: GGUF, SafeTensor, and other formats
-    - **Automatic Updates**: Stay current with latest model versions
+Choose based on available RAM:
+- **32GB RAM:** 4-bit quantization (~17GB download)
+- **64GB RAM:** 8-bit quantization (~32GB download)
+- **128GB+ RAM:** Full precision or larger models
 
-  </Accordion>
+## Model Format
 
-  <Accordion title="Local Server" icon="server">
-    ### Running AI Locally
-    Start a local API server that applications can connect to.
+- **Mac (Apple Silicon):** Use MLX format
+- **Windows/Linux:** Use GGUF format
 
-    - **One-Click Setup**: Start local server with single button
-    - **API Compatibility**: OpenAI-compatible API endpoints
-    - **Multi-Platform**: Windows, macOS, and Linux support
-    - **Resource Management**: Monitor CPU/GPU usage and memory
+## Features
 
-  </Accordion>
-
-  <Accordion title="Performance Tuning" icon="settings">
-    ### Optimization Settings
-    Fine-tune performance based on your hardware capabilities.
-
-    - **GPU Acceleration**: Utilize NVIDIA/AMD GPUs when available
-    - **CPU Optimization**: Efficient CPU inference for all systems
-    - **Memory Management**: Control RAM usage and model loading
-    - **Quantization**: Balance speed vs. quality with different precisions
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Download LM Studio">
-    Visit [lmstudio.ai](https://lmstudio.ai) and download the application for your operating system.
-    
-    ![LM Studio download page](/assets/images/lmstudio.webp)
-  </Step>
-  <Step title="Install and Launch">
-    Install LM Studio and launch the application. You'll see four tabs on the left:
-    - **Chat**: Interactive chat interface
-    - **Developer**: Where you will start the server
-    - **My Models**: Your downloaded models storage
-    - **Discover**: Browse and add new models
-  </Step>
-  <Step title="Download a Model">
-    Navigate to the "Discover" tab, browse available models, and download your preferred model. Wait for the download to complete.
-    
-    **Recommended**: Use **Qwen3 Coder 30B A3B Instruct** for the best experience with CodinIT. This model delivers strong coding performance and reliable tool use.
-  </Step>
-  <Step title="Start the Server">
-    Navigate to the "Developer" tab and toggle the server switch to "Running". The server will run at `http://localhost:51732`.
-    
-    ![Starting the LM Studio server](/assets/images/lmstudio.webp)
-  </Step>
-  <Step title="Configure Model Settings">
-    After loading your model in the Developer tab, configure these critical settings:
-    - **Context Length**: Set to 262,144 (the model's maximum)
-    - **KV Cache Quantization**: Leave unchecked (critical for consistent performance)
-    - **Flash Attention**: Enable if available (improves performance)
-  </Step>
-  <Step title="Configure in CodinIT">
-    Set the server URL in CodinIT settings and verify the connection to start using local AI models.
-  </Step>
-</Steps>
-
-### Quantization Guide
-
-Choose quantization based on your available RAM:
-
-- **32GB RAM**: Use 4-bit quantization (~17GB download)
-- **64GB RAM**: Use 8-bit quantization (~32GB download) for better quality
-- **128GB+ RAM**: Consider full precision or larger models
-
-### Model Format
-
-- **Mac (Apple Silicon)**: Use MLX format for optimized performance
-- **Windows/Linux**: Use GGUF format
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Local Execution</Badge>
-  <Badge variant="secondary">Privacy Focused</Badge>
-  <Badge variant="secondary">Offline Capable</Badge>
-  <Badge variant="secondary">Cost Free</Badge>
-  <Badge variant="secondary">Customizable</Badge>
-</BadgeGroup>
-
-### Platform Advantages
-
-- **Complete Privacy**: All conversations stay on your device
-- **No API Costs**: Run unlimited AI interactions for free
-- **Offline Operation**: Work without internet connectivity
-- **Hardware Flexibility**: Run on any modern computer
-- **Model Variety**: Access thousands of different AI models
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Private Development" icon="lock">
-    ### Secure Development
-    Perfect for sensitive development work and private projects.
-
-    - Code review without sharing code externally
-    - Private documentation and analysis
-    - Secure brainstorming and planning
-    - Confidential business applications
-
-  </Accordion>
-
-  <Accordion title="Offline Work" icon="plane">
-    ### Offline Productivity
-    Continue working with AI assistance even without internet.
-
-    - Travel and remote work scenarios
-    - Limited connectivity environments
-    - Data-sensitive offline processing
-    - Emergency backup AI capabilities
-
-  </Accordion>
-
-  <Accordion title="Cost Optimization" icon="dollar-sign">
-    ### Budget-Friendly AI
-    Access advanced AI capabilities without ongoing costs.
-
-    - Unlimited usage without API fees
-    - No per-token or per-request charges
-    - One-time setup, ongoing free usage
-    - Cost-effective for heavy AI users
-
-  </Accordion>
-
-  <Accordion title="Learning & Experimentation" icon="graduation-cap">
-    ### Educational Use
-    Learn about AI and experiment with different models.
-
-    - Study different model architectures
-    - Compare model performance and capabilities
-    - Learn prompt engineering techniques
-    - Understand AI model behaviors
-
-  </Accordion>
-</AccordionGroup>
+- **Complete privacy:** All data stays on your device
+- **No API costs:** Unlimited free usage
+- **Offline operation:** Works without internet
+- **Hardware flexibility:** Runs on any modern computer
 
 ## System Requirements
 
-<AccordionGroup>
-  <Accordion title="Minimum Requirements" icon="check-circle">
-    ### Basic Setup
-    Requirements for running small to medium models.
+**Minimum:**
+- 8GB RAM (16GB recommended)
+- 10GB free storage
+- Modern multi-core CPU
 
-    - **RAM**: 8GB minimum, 16GB recommended
-    - **Storage**: 10GB free space for models and application
-    - **OS**: Windows 10+, macOS 10.15+, Ubuntu 18.04+
-    - **CPU**: Modern multi-core processor
-
-  </Accordion>
-
-  <Accordion title="Recommended Setup" icon="star">
-    ### Optimal Performance
-    Recommended specifications for large models and best performance.
-
-    - **RAM**: 32GB or more for large models
-    - **GPU**: NVIDIA GPU with 8GB+ VRAM (optional but recommended)
-    - **Storage**: SSD with 50GB+ free space
-    - **CPU**: Multi-core processor with AVX2 support
-
-  </Accordion>
-
-  <Accordion title="GPU Support" icon="gpu">
-    ### Hardware Acceleration
-    Utilize GPU acceleration for faster inference speeds.
-
-    - **NVIDIA GPUs**: CUDA support for maximum performance
-    - **AMD GPUs**: ROCm support on Linux
-    - **Apple Silicon**: Native acceleration on M1/M2/M3 Macs
-    - **CPU Fallback**: Automatic fallback to CPU when GPU unavailable
-
-  </Accordion>
-</AccordionGroup>
-
-## Model Selection Guide
-
-<AccordionGroup>
-  <Accordion title="Model Sizes" icon="scale">
-    ### Choosing Model Size
-    Balance between performance and resource requirements.
-
-    - **Small Models (1-3GB)**: Fast, basic capabilities, good for simple tasks
-    - **Medium Models (3-7GB)**: Balanced performance, good for most applications
-    - **Large Models (7-20GB)**: High quality, slower but more capable
-    - **XL Models (20GB+)**: Maximum quality, requires powerful hardware
-
-  </Accordion>
-
-  <Accordion title="Use Case Models" icon="target">
-    ### Specialized Models
-    Choose models based on your specific needs.
-
-    - **Code Models**: Code generation, debugging, technical writing
-    - **General Chat**: Conversation, analysis, creative writing
-    - **Math/Science**: Mathematical reasoning, scientific analysis
-    - **Multilingual**: Support for multiple languages and cultures
-
-  </Accordion>
-</AccordionGroup>
-
-<Callout type="info">**Free Forever**: LM Studio is completely free to use. No subscriptions or hidden costs.</Callout>
-
-<Callout type="tip">
-  **Start Small**: Begin with smaller models to test your setup, then upgrade to larger models as needed.
-</Callout>
-
-<Callout type="warning">
-  **Resource Intensive**: Large models require significant RAM and may run slowly on lower-end hardware.
-</Callout>
+**Recommended:**
+- 32GB+ RAM for large models
+- NVIDIA GPU with 8GB+ VRAM (optional)
+- SSD with 50GB+ free space
 
 ## Troubleshooting
 
-If CodinIT can't connect to LM Studio:
-
-1. Verify LM Studio server is running (check Developer tab)
+If CodinIT can't connect:
+1. Verify LM Studio server is running
 2. Ensure a model is loaded
-3. Check your system meets hardware requirements
-4. Confirm the server URL matches in CodinIT settings
+3. Check system meets hardware requirements
+4. Confirm server URL matches in CodinIT settings
 
-## Important Notes
+## Notes
 
 - Start LM Studio before using with CodinIT
 - Keep LM Studio running in background
-- First model download may take several minutes depending on size
+- First model download may take several minutes
 - Models are stored locally after download
