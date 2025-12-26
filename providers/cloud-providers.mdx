@@ -3,227 +3,133 @@ title: 'Providers'
 description: 'Connect CodinIT with 19+ AI providers including cloud models, local inference, and specialized services.'
 ---
 
-### Enterprise & Research Models
+## Enterprise & Research Models
 
 <CardGroup cols={2}>
   <Card title="Anthropic" icon="/assets/ai-icons/anthropic.svg" href="/providers/anthropic">
-    Claude models with advanced reasoning capabilities
+    Claude models with advanced reasoning
   </Card>
-
-<Card title="OpenAI" icon="/assets/ai-icons/openai.svg" href="/providers/openai">
-  GPT-5 and GPT-4 models for versatile AI assistance
-</Card>
-
-<Card title="Google" icon="/assets/ai-icons/google.svg" href="/providers/google">
-  Gemini models with multimodal capabilities
-</Card>
-
+  <Card title="OpenAI" icon="/assets/ai-icons/openai.svg" href="/providers/openai">
+    GPT-5 and o-series models
+  </Card>
+  <Card title="Google" icon="/assets/ai-icons/google.svg" href="/providers/google">
+    Gemini models via GCP Vertex AI
+  </Card>
   <Card title="DeepSeek" icon="/assets/ai-icons/deepseek.svg" href="/providers/deepseek">
-    Advanced reasoning models for complex tasks
+    Advanced reasoning models
   </Card>
 </CardGroup>
 
-### Specialized & Fast Inference
+## Fast Inference & Specialized
 
 <CardGroup cols={3}>
   <Card title="Groq" icon="/assets/ai-icons/groq.svg" href="/providers/groq">
-    Ultra-fast inference with LPU technology
+    Ultra-fast LPU inference
   </Card>
-
-<Card title="Together AI" icon="/assets/ai-icons/togetherai.svg" href="/providers/togetherai">
-  Access to 50+ open-source models
-</Card>
-
-<Card title="Hyperbolic" icon="/assets/ai-icons/hyperbolic.svg" href="/providers/hyperbolic">
-  Optimized inference for open-source models
-</Card>
-
-<Card title="Perplexity" icon="/assets/ai-icons/perplexity-color.svg" href="/providers/perplexity">
-  AI models with integrated web search
-</Card>
-
+  <Card title="Together AI" icon="/assets/ai-icons/togetherai.svg" href="/providers/togetherai">
+    50+ open-source models
+  </Card>
+  <Card title="Hyperbolic" icon="/assets/ai-icons/hyperbolic.svg" href="/providers/hyperbolic">
+    Optimized open-source inference
+  </Card>
+  <Card title="Perplexity" icon="/assets/ai-icons/perplexity-color.svg" href="/providers/perplexity">
+    AI with integrated web search
+  </Card>
   <Card title="XAI Grok" icon="/assets/ai-icons/xai.svg" href="/providers/xai-grok">
-    X.AI's Grok models with real-time knowledge
+    Grok models with large context
+  </Card>
+  <Card title="Fireworks" icon="/assets/ai-icons/fireworks.svg" href="/providers/fireworks">
+    Fast inference, 40+ models
   </Card>
 </CardGroup>
 
-### Open Source & Community
+## Open Source & Community
 
 <CardGroup cols={3}>
   <Card title="Cohere" icon="/assets/ai-icons/cohere.svg" href="/providers/cohere">
-    Command R series models for coding and analysis
+    Command R series models
   </Card>
-
-<Card title="HuggingFace" icon="/assets/ai-icons/huggingface.svg" href="/providers/huggingface">
-  Open-source model hub with community models
-</Card>
-
-<Card title="Mistral AI" icon="/assets/ai-icons/mistral.svg" href="/providers/mistral-ai">
-  Open-source and commercial Mistral models
-</Card>
-
+  <Card title="HuggingFace" icon="/assets/ai-icons/huggingface.svg" href="/providers/huggingface">
+    Thousands of community models
+  </Card>
+  <Card title="Mistral AI" icon="/assets/ai-icons/mistral.svg" href="/providers/mistral-ai">
+    Mistral and Codestral models
+  </Card>
   <Card title="Moonshot" icon="/assets/ai-icons/moonshot.svg" href="/providers/moonshot">
-    Chinese language models with Kimi series
+    Kimi series, Chinese language
   </Card>
 </CardGroup>
 
-### Unified & Routing
+## Unified & Routing
 
 <CardGroup cols={2}>
   <Card title="OpenRouter" icon="/assets/ai-icons/openrouter.svg" href="/providers/openrouter">
-    Access multiple models through a unified API
+    Multiple models, unified API
   </Card>
-
   <Card title="OpenAI Compatible" icon="/assets/ai-icons/openai.svg" href="/providers/openai-like">
-    Connect to any OpenAI-compatible API endpoint
+    Any OpenAI-compatible endpoint
   </Card>
 </CardGroup>
 
-### Cloud & Enterprise
+## Cloud & Enterprise
 
 <CardGroup cols={2}>
   <Card title="AWS Bedrock" icon="/assets/ai-icons/bedrock.svg" href="/providers/aws-bedrock">
-    Enterprise-grade AI models through AWS infrastructure
+    Enterprise AI via AWS
   </Card>
-
   <Card title="GitHub Models" icon="/assets/ai-icons/github.svg" href="/providers/github">
-    Access OpenAI and other models through GitHub
+    Models through GitHub platform
   </Card>
 </CardGroup>
 
-### Local & Private
+## Local & Private
 
 <CardGroup cols={2}>
   <Card title="Ollama" icon="/assets/ai-icons/ollama.svg" href="/providers/ollama">
-    Run open-source models locally with Ollama
+    Run models locally with Ollama
   </Card>
-
   <Card title="LM Studio" icon="/assets/ai-icons/lmstudio.svg" href="/providers/lmstudio">
-    Desktop app for running models locally
+    Desktop app for local models
   </Card>
 </CardGroup>
 
-## Choosing the Right Provider
+## Choosing a Provider
 
-With 19+ AI providers available, selecting the right model depends on your specific needs. Consider these key factors:
+**Performance & Speed:**
+- Ultra-fast: Groq, Together AI, Fireworks
+- Best reasoning: Anthropic Claude, DeepSeek, OpenAI o1
+- Balanced: OpenAI GPT-4, Google Gemini, Cohere
 
-<AccordionGroup>
-  <Accordion title="Performance & Speed">
-    * **Ultra-fast inference**: Groq (LPU technology), Together AI
-    * **Best reasoning**: Anthropic Claude, DeepSeek, OpenAI o1
-    * **Balanced performance**: OpenAI GPT-4, Google Gemini, Cohere
-    * **Local speed**: Ollama, LM Studio (no network latency)
-  </Accordion>
+**Cost:**
+- Free/Low-cost: Local models (Ollama, LM Studio), OpenRouter
+- Budget-friendly: Together AI, HuggingFace, Hyperbolic
+- Premium: Anthropic, OpenAI, Google
 
-<Accordion title="Cost Considerations">
-  * **Free/Low-cost**: Local models (Ollama, LM Studio), OpenRouter * **Budget-friendly**: Together AI, HuggingFace,
-  Hyperbolic * **Premium**: Anthropic, OpenAI, Google (higher quality) * **Enterprise**: AWS Bedrock, GitHub Models
-  (included benefits)
-</Accordion>
+**Privacy:**
+- Maximum privacy: Local models (Ollama, LM Studio)
+- Enterprise-grade: AWS Bedrock, Anthropic
+- Cloud security: OpenAI, Google, Cohere
 
-<Accordion title="Privacy & Security">
-  * **Maximum privacy**: Local models (Ollama, LM Studio) - data never leaves your device * **Enterprise-grade**: AWS
-  Bedrock, Anthropic (SOC 2 compliant) * **Cloud security**: OpenAI, Google, Cohere (encrypted transmission) *
-  **Specialized**: Perplexity (search integration with privacy considerations)
-</Accordion>
-
-<Accordion title="Model Capabilities">
-  * **Code generation**: All providers support coding, specialized: Cohere, Together AI, GitHub * **Multimodal**: Google
-  Gemini, OpenAI GPT-4 Vision, Moonshot * **Long context**: Claude (200K+), Gemini (1M+), GPT-4 (128K) * **Function
-  calling**: OpenAI, Anthropic, Google, Cohere * **Search integration**: Perplexity (real-time web search) *
-  **Multilingual**: Cohere, Google, Moonshot (Chinese), Mistral
-</Accordion>
-
-  <Accordion title="Use Case Optimization">
-    * **Rapid prototyping**: Groq, Together AI (fast iteration)
-    * **Production applications**: Anthropic, OpenAI, AWS Bedrock
-    * **Research & analysis**: DeepSeek, Perplexity, Cohere
-    * **Offline development**: Ollama, LM Studio
-    * **Enterprise integration**: AWS Bedrock, GitHub Models
-    * **Cost optimization**: Hyperbolic, HuggingFace, OpenRouter
-  </Accordion>
-</AccordionGroup>
+**Capabilities:**
+- Code generation: All providers, specialized: Cohere, Together AI
+- Multimodal: Google Gemini, OpenAI GPT-4 Vision, Moonshot
+- Long context: Claude (200K+), Gemini (1M+), GPT-4 (128K)
+- Search integration: Perplexity
+- Multilingual: Cohere, Google, Moonshot (Chinese)
 
 ## Quick Start
 
 <Steps>
-  <Step title="Choose Your Provider">
-    Select from 19+ providers based on your needs: speed, cost, capabilities, or privacy requirements
-  </Step>
-
-<Step title="Get API Credentials">
-  For cloud providers: Sign up and get API keys. For local providers: Download and install the software
-</Step>
-
-<Step title="Configure in CodinIT">
-  Add your credentials in CodinIT's settings under AI Providers or use provider-specific setup prompts
-</Step>
-
-<Step title="Select Your Model">
-  Choose from available models within your selected provider, considering context limits and capabilities
-</Step>
-
-  <Step title="Start Building">
-    Begin using AI assistance in your development workflow with the configured provider
-  </Step>
+  <Step title="Choose Provider">Select based on needs: speed, cost, capabilities, or privacy</Step>
+  <Step title="Get Credentials">Sign up and get API keys (cloud) or install software (local)</Step>
+  <Step title="Configure CodinIT">Add credentials in CodinIT settings</Step>
+  <Step title="Select Model">Choose from available models</Step>
+  <Step title="Start Building">Begin using AI in your workflow</Step>
 </Steps>
 
-## Configuration Tips
+## Notes
 
-<Tip>
-  **Multi-Provider Setup**: Configure multiple providers simultaneously and switch between them based on task
-  requirements, cost considerations, or performance needs.
-</Tip>
-
-<Info>
-  **API Key Security**: Your API keys are stored locally and never transmitted to CodinIT servers. They are only used to
-  communicate directly with your chosen AI provider.
-</Info>
-
-<Warning>
-  **Rate Limits**: Each provider has different rate limits and usage quotas. Monitor your usage and consider provider
-  switching for high-volume workloads.
-</Warning>
-
-<Callout type="tip">
-  **Provider Switching**: Easily switch between providers mid-project. CodinIT maintains separate contexts for different
-  providers, allowing you to leverage specialized capabilities as needed.
-</Callout>
-
-<Callout type="info">
-  **Local vs Cloud**: Local providers (Ollama, LM Studio) offer maximum privacy but require hardware resources. Cloud
-  providers offer convenience and advanced features but involve data transmission.
-</Callout>
-
-## Next Steps
-
-<CardGroup cols={3}>
-  <Card title="Model Configuration" icon="sliders" href="/model-config/context-windows">
-    Learn about context windows and model parameters
-  </Card>
-
-<Card title="Compare Models" icon="chart-line" href="/model-config/model-comparison">
-  Compare different models and their capabilities
-</Card>
-
-<Card title="Run Models Locally" icon="server" href="/running-models-locally/local-model-setup">
-  Set up local models for complete privacy
-</Card>
-
-<Card title="Prompt Engineering" icon="book" href="/prompting/prompt-engineering-guide">
-  Optimize your prompts for better results
-</Card>
-
-<Card title="Token Efficiency" icon="zap" href="/prompting/maximize-token-efficiency">
-  Optimize costs and performance across providers
-</Card>
-
-  <Card title="Integration Guides" icon="plug" href="/integrations/supabase">
-    Connect with databases, deployments, and APIs
-  </Card>
-</CardGroup>
-
-<Callout type="success">
-  **Provider Ecosystem**: With 19+ AI providers, you can choose the perfect model for every task - from rapid
-  prototyping to production deployment, from cost optimization to maximum privacy.
-</Callout>
+- **Multi-provider:** Configure multiple providers and switch between them
+- **API security:** Keys stored locally, never transmitted to CodinIT servers
+- **Rate limits:** Each provider has different limits
+- **Local vs Cloud:** Local offers privacy but requires hardware; cloud offers convenience and advanced features
