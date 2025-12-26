@@ -1,251 +1,41 @@
 ---
 title: Together AI
-description: Access hundreds of open-source AI models including Llama, Mistral, and Qwen through Together's optimized inference platform.
+description: Access hundreds of open-source AI models through Together's optimized platform.
 ---
 
+**Website:** [https://api.together.xyz/](https://api.together.xyz/)
 
-Together AI provides access to a comprehensive collection of open-source AI models from leading research organizations, offering high-performance inference with competitive pricing and extensive model variety.
+## Getting an API Key
 
-## Overview
+1. Go to [Together AI](https://api.together.xyz/) and sign in
+2. Navigate to Settings > API Keys
+3. Create a new API key
+4. Copy the key immediately
 
-Together AI serves as a marketplace for open-source AI models, providing access to cutting-edge models from Meta, Mistral, Google, and other leading AI research labs. Their platform offers both static model access and dynamic model discovery.
+## Configuration
 
-<CardGroup cols={3}>
-  <Card title="Model Variety" icon="layers">
-    Access to hundreds of open-source models
-  </Card>
-  <Card title="High Performance" icon="zap">
-    Optimized infrastructure for fast inference
-  </Card>
-  <Card title="Research Models" icon="microscope">
-    Latest models from top AI research labs
-  </Card>
-</CardGroup>
+1. Click the settings icon (⚙️) in CodinIT
+2. Select "Together AI" as the API Provider
+3. Paste your API key
+4. Choose your model
 
 ## Popular Models
 
-<AccordionGroup>
-  <Accordion title="Meta Llama Series" icon="brain">
-    ### Llama Models
-    Industry-leading open-source models from Meta.
+- **Llama series:** Llama 3.1 70B, Llama 3.2 90B Vision
+- **Mistral series:** Mixtral 8x7B, Devstral Small, Magistral Small
+- **Google series:** Gemma 3 (27B, 12B, 4B, 1B)
+- **Coding models:** Qwen3-Coder 480B, Arcee AI Coder
+- **Reasoning models:** Kimi K2 Thinking, DeepSeek-V3.2-Exp, Cogito V1
 
-    - **Llama 3.1 70B**: Powerful general-purpose model
-    - **Llama 3.2 90B Vision**: Multimodal model with vision capabilities
-    - **Best for**: Advanced reasoning, creative tasks, multimodal applications
+## Features
 
-  </Accordion>
+- **Model variety:** Hundreds of open-source models
+- **Research access:** Latest models from top labs
+- **High performance:** Optimized inference infrastructure
+- **Dynamic discovery:** Automatic model catalog updates
+- **Cost effective:** Flexible usage-based pricing
 
-  <Accordion title="Mistral Models" icon="wind">
-    ### Mistral AI Series
-    Efficient and capable models from Mistral AI.
+## Notes
 
-    - **Mixtral 8x7B**: High-performance mixture-of-experts model
-    - **Devstral Small**: Specialized coding model
-    - **Magistral Small**: Advanced reasoning model
-    - **Best for**: Efficient inference, specialized tasks
-
-  </Accordion>
-
-  <Accordion title="Google Models" icon="search">
-    ### Google/Gemma Series
-    Lightweight and capable models from Google.
-
-    - **Gemma 3 27B**: Advanced general-purpose model
-    - **Gemma 3 12B/4B/1B**: Range of model sizes for different needs
-    - **Best for**: Balanced performance, research applications
-
-  </Accordion>
-
-  <Accordion title="Coding Models" icon="code">
-    ### Specialized Coding
-    Models optimized for programming and technical tasks.
-
-    - **Qwen3-Coder 480B**: Massive coding model
-    - **Arcee AI Coder**: Specialized coding assistant
-    - **Best for**: Code generation, debugging, technical writing
-
-  </Accordion>
-
-  <Accordion title="Reasoning Models" icon="lightbulb">
-    ### Advanced Reasoning
-    Models with enhanced reasoning and thinking capabilities.
-
-    - **Kimi K2 Thinking**: Advanced thinking model
-    - **DeepSeek-V3.2-Exp**: Experimental reasoning model
-    - **Cogito V1 Preview**: Best-in-class reasoning
-    - **Best for**: Complex problem-solving, analysis
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Create Account">Visit [Together AI](https://api.together.xyz/) and create an account</Step>
-  <Step title="Access API Keys">Navigate to Settings > API Keys in your dashboard</Step>
-  <Step title="Generate API Key">Create a new API key for model access</Step>
-  <Step title="Configure in Codinit">Add your Together API key to the provider settings</Step>
-  <Step title="Explore Models">Browse available models and test different options</Step>
-</Steps>
-
-## Key Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Open Source</Badge>
-  <Badge variant="secondary">Model Variety</Badge>
-  <Badge variant="secondary">High Performance</Badge>
-  <Badge variant="secondary">Dynamic Discovery</Badge>
-  <Badge variant="secondary">Cost Effective</Badge>
-</BadgeGroup>
-
-### Platform Advantages
-
-- **Extensive Catalog**: Access to hundreds of open-source models
-- **Research Access**: Latest models from top AI research institutions
-- **Performance Optimized**: Fast inference with optimized infrastructure
-- **Flexible Pricing**: Pay only for what you use
-- **Regular Updates**: New models added frequently
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Research & Experimentation" icon="flask">
-    ### AI Research
-    Perfect for researchers and developers exploring different models.
-
-    - Model comparison and evaluation
-    - Research prototyping
-    - Algorithm testing
-    - Performance benchmarking
-
-  </Accordion>
-
-  <Accordion title="Development Tasks" icon="code">
-    ### Software Development
-    Excellent for coding and technical development work.
-
-    - Code generation and completion
-    - Technical documentation
-    - API development
-    - Debugging assistance
-
-  </Accordion>
-
-  <Accordion title="Content Creation" icon="edit">
-    ### Creative Applications
-    Suitable for content creation and creative tasks.
-
-    - Creative writing and ideation
-    - Content generation
-    - Marketing copy
-    - Educational materials
-
-  </Accordion>
-
-  <Accordion title="Business Applications" icon="building">
-    ### Enterprise Use
-    Reliable for business and productivity applications.
-
-    - Business analysis
-    - Customer service automation
-    - Process optimization
-    - Data analysis
-
-  </Accordion>
-</AccordionGroup>
-
-## Pricing Information
-
-Together AI offers flexible pricing based on model size and usage:
-
-<TokenPricing>
-  <TokenPricingItem model="Small Models (<10B)" input="$0.001" output="$0.001" />
-  <TokenPricingItem model="Medium Models (10-50B)" input="$0.002" output="$0.002" />
-  <TokenPricingItem model="Large Models (50B+)" input="$0.003" output="$0.003" />
-  <TokenPricingItem model="XL Models (100B+)" input="$0.005" output="$0.005" />
-</TokenPricing>
-
-<Callout type="info">**Dynamic Pricing**: Actual prices may vary based on current model popularity and demand.</Callout>
-
-<Callout type="tip">
-  **Model Selection**: Start with smaller models for testing, then scale up to larger models for production use.
-</Callout>
-
-<Callout type="warning">
-  **Model Availability**: Some models may have limited availability or higher costs during peak usage.
-</Callout>
-
-## Model Management
-
-<AccordionGroup>
-  <Accordion title="Dynamic Model Discovery" icon="search">
-    ### Model Catalog
-    How Together AI provides access to available models.
-
-    - **API Integration**: Automatic model discovery through API
-    - **Real-time Updates**: New models added as they become available
-    - **Pricing Information**: Cost details included in model listings
-    - **Performance Metrics**: Context window and capability information
-
-  </Accordion>
-
-  <Accordion title="Model Categories" icon="tags">
-    ### Model Organization
-    Understanding the different types of models available.
-
-    - **Text Generation**: General-purpose language models
-    - **Code Models**: Specialized for programming tasks
-    - **Vision Models**: Multimodal models with image understanding
-    - **Reasoning Models**: Enhanced logical reasoning capabilities
-    - **Experimental Models**: Cutting-edge research models
-
-  </Accordion>
-
-  <Accordion title="Performance Optimization" icon="gauge">
-    ### Optimization Features
-    Features to improve model performance and cost efficiency.
-
-    - **Context Management**: Efficient handling of large context windows
-    - **Caching**: Request caching for repeated queries
-    - **Load Balancing**: Automatic distribution across available resources
-    - **Cost Optimization**: Suggestions for cost-effective model selection
-
-  </Accordion>
-</AccordionGroup>
-
-## Best Practices
-
-<AccordionGroup>
-  <Accordion title="Model Selection" icon="target">
-    ### Choosing the Right Model
-    Guidelines for selecting appropriate models for your use case.
-
-    - **Task Matching**: Choose models specialized for your specific task
-    - **Cost Consideration**: Balance performance needs with budget constraints
-    - **Context Requirements**: Ensure model context window meets your needs
-    - **Testing Phase**: Test multiple models before committing to one
-
-  </Accordion>
-
-  <Accordion title="Usage Optimization" icon="settings">
-    ### Optimizing Performance
-    Tips for getting the best performance from Together AI models.
-
-    - **Prompt Engineering**: Craft clear, specific prompts
-    - **Context Management**: Keep context focused and relevant
-    - **Batch Processing**: Group similar requests when possible
-    - **Caching Strategy**: Cache frequent queries to reduce costs
-
-  </Accordion>
-
-  <Accordion title="Cost Management" icon="dollar-sign">
-    ### Managing Costs
-    Strategies for controlling and optimizing usage costs.
-
-    - **Usage Monitoring**: Track usage patterns and costs
-    - **Model Switching**: Use smaller models for simpler tasks
-    - **Caching**: Implement caching to reduce API calls
-    - **Bulk Operations**: Combine multiple operations when feasible
-
-  </Accordion>
-</AccordionGroup>
+- **Pricing:** Based on model size and usage
+- **Model updates:** New models added frequently
