@@ -1,279 +1,55 @@
 ---
 title: OpenAI Compatible
-description: Connect to any OpenAI-compatible API endpoint including custom deployments, self-hosted models, and alternative AI services.
+description: Connect to any OpenAI-compatible API endpoint including custom deployments and self-hosted models.
 ---
 
-The OpenAI Compatible provider allows you to connect to any service that implements the OpenAI API specification, including custom deployments, alternative providers, and self-hosted models that maintain API compatibility.
+Connect to any service that implements the OpenAI API specification.
 
-## Overview
+## Configuration
 
-This flexible provider enables integration with any OpenAI-compatible API, making it easy to use custom AI deployments, alternative hosting services, or self-hosted models that follow the OpenAI API standard.
+Set these environment variables:
+- `OPENAI_LIKE_API_BASE_URL` - Your API endpoint URL
+- `OPENAI_LIKE_API_KEY` - Authentication token
+- `OPENAI_LIKE_API_MODELS` (optional) - Manual model list in format: `model1:limit;model2:limit`
 
-<CardGroup cols={3}>
-  <Card title="API Compatibility" icon="plug">
-    Works with any OpenAI-compatible API
-  </Card>
-  <Card title="Custom Deployments" icon="server">
-    Connect to self-hosted or custom AI services
-  </Card>
-  <Card title="Flexible Configuration" icon="settings">
-    Highly customizable connection settings
-  </Card>
-</CardGroup>
+## Setup
 
-## How It Works
-
-<AccordionGroup>
-  <Accordion title="API Compatibility" icon="check-circle">
-    ### OpenAI Standard
-    Connects to services that implement the OpenAI API specification.
-
-    - **Standard Endpoints**: Uses familiar `/chat/completions` and `/models` endpoints
-    - **Compatible Formats**: Supports standard OpenAI request/response formats
-    - **Authentication**: Uses Bearer token authentication like OpenAI
-    - **Streaming Support**: Compatible with streaming responses
-
-  </Accordion>
-
-  <Accordion title="Configuration Options" icon="cog">
-    ### Setup Flexibility
-    Highly configurable to work with different API providers.
-
-    - **Custom Base URL**: Specify any API endpoint URL
-    - **API Key**: Configure authentication tokens
-    - **Model List**: Define available models manually or auto-discover
-    - **Environment Variables**: Support for different deployment environments
-
-  </Accordion>
-
-  <Accordion title="Model Discovery" icon="search">
-    ### Dynamic Model Loading
-    Automatically discovers available models from compatible APIs.
-
-    - **API Query**: Fetches model list from `/models` endpoint
-    - **Fallback Configuration**: Manual model specification if API discovery fails
-    - **Model Parsing**: Intelligent model name and capability detection
-    - **Real-time Updates**: Reflects current API capabilities
-
-  </Accordion>
-</AccordionGroup>
-
-## Setup Instructions
-
-<Steps>
-  <Step title="Identify API Endpoint">Determine the base URL of your OpenAI-compatible API service</Step>
-  <Step title="Obtain API Key">Get the authentication token or API key for the service</Step>
-  <Step title="Configure Environment">Set the required environment variables in your deployment</Step>
-  <Step title="Test Connection">Verify the API endpoint and authentication work correctly</Step>
-  <Step title="Configure Models">Set up model list either through API discovery or manual configuration</Step>
-</Steps>
-
-## Configuration Options
-
-<AccordionGroup>
-  <Accordion title="Environment Variables" icon="variable">
-    ### Required Settings
-    Environment variables needed for OpenAI-compatible provider setup.
-
-    - **OPENAI_LIKE_API_BASE_URL**: The base URL of your API service
-    - **OPENAI_LIKE_API_KEY**: Authentication token for API access
-    - **OPENAI_LIKE_API_MODELS** (optional): Manual model specification
-
-  </Accordion>
-
-  <Accordion title="Manual Model Configuration" icon="list">
-    ### Model Specification
-    How to manually specify models when API discovery is not available.
-
-    - **Format**: `model1:limit;model2:limit;model3:limit`
-    - **Example**: `gpt-4:8000;claude-3:4000;llama-2:2000`
-    - **Token Limits**: Specify context window limits per model
-    - **Naming**: Use clear, descriptive model names
-
-  </Accordion>
-
-  <Accordion title="Docker Considerations" icon="container">
-    ### Container Deployment
-    Special considerations for Docker and containerized deployments.
-
-    - **Network Access**: Ensure API endpoints are accessible from containers
-    - **Environment Variables**: Pass configuration through Docker environment
-    - **Volume Mounting**: Mount configuration files if needed
-    - **Service Discovery**: Use container networking for service communication
-
-  </Accordion>
-</AccordionGroup>
-
-## Use Cases
-
-<AccordionGroup>
-  <Accordion title="Self-Hosted Models" icon="home">
-    ### Local AI Deployment
-    Connect to locally hosted AI models and services.
-
-    - Local LLM deployments (Ollama, LM Studio, etc.)
-    - Custom model servers
-    - Private AI infrastructure
-    - Development environments
-
-  </Accordion>
-
-  <Accordion title="Alternative Providers" icon="shuffle">
-    ### Third-Party Services
-    Integrate with alternative AI providers using OpenAI compatibility.
-
-    - Alternative hosting services
-    - Specialized AI providers
-    - Regional AI services
-    - Custom AI platforms
-
-  </Accordion>
-
-  <Accordion title="Enterprise Deployments" icon="building">
-    ### Corporate AI
-    Connect to enterprise AI deployments and private clouds.
-
-    - Corporate AI infrastructure
-    - Private cloud deployments
-    - On-premises AI services
-    - Hybrid cloud setups
-
-  </Accordion>
-
-  <Accordion title="Development Testing" icon="flask">
-    ### Development and Testing
-    Useful for development, testing, and prototyping scenarios.
-
-    - Local development servers
-    - Staging environment testing
-    - API compatibility testing
-    - Mock AI services for development
-
-  </Accordion>
-</AccordionGroup>
+1. Identify your OpenAI-compatible API endpoint
+2. Obtain the API key or authentication token
+3. Set environment variables in your deployment
+4. Test the connection
+5. Configure available models
 
 ## Compatible Services
 
-<AccordionGroup>
-  <Accordion title="Local AI Tools" icon="computer">
-    ### Desktop Applications
-    Popular local AI tools that provide OpenAI-compatible APIs.
+**Local AI Tools:**
+- LM Studio
+- Ollama
+- LocalAI
+- Text Generation WebUI
 
-    - **LM Studio**: Local model server with web UI
-    - **Ollama**: Command-line tool for running models locally
-    - **LocalAI**: Self-hosted OpenAI-compatible API
-    - **Text Generation WebUI**: Local web interface for models
+**Cloud Alternatives:**
+- Together AI
+- Replicate
+- Modal
+- Custom deployments
 
-  </Accordion>
+**Self-Hosted:**
+- vLLM
+- TGI (Text Generation Inference)
+- FastChat
+- Custom model servers
 
-  <Accordion title="Cloud Alternatives" icon="cloud">
-    ### Alternative Cloud Providers
-    Cloud services that offer OpenAI-compatible APIs.
+## Use Cases
 
-    - **Together AI**: Open-source model hosting
-    - **Replicate**: Model deployment platform
-    - **Modal**: Serverless model inference
-    - **Anthropic-compatible services**: Alternative Claude hosting
+- Self-hosted models and services
+- Alternative AI providers
+- Enterprise private deployments
+- Development and testing environments
 
-  </Accordion>
+## Notes
 
-  <Accordion title="Custom Deployments" icon="wrench">
-    ### Custom AI Services
-    Self-hosted or custom AI service deployments.
-
-    - **vLLM**: High-performance LLM serving
-    - **TGI (Text Generation Inference)**: Optimized text generation
-    - **FastChat**: Open-source chat platform
-    - **Custom model servers**: Your own AI service implementations
-
-  </Accordion>
-</AccordionGroup>
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Connection Issues" icon="wifi-off">
-    ### API Connectivity
-    Common connection and authentication problems.
-
-    - **Network Access**: Verify API endpoint is reachable
-    - **Authentication**: Check API key validity and format
-    - **CORS Issues**: Ensure proper cross-origin headers
-    - **SSL/TLS**: Verify certificate validity for HTTPS endpoints
-
-  </Accordion>
-
-  <Accordion title="Model Discovery" icon="search-off">
-    ### Model Loading Issues
-    Problems with model list retrieval and configuration.
-
-    - **API Endpoint**: Verify `/models` endpoint exists and works
-    - **Authentication**: Ensure proper API key for model discovery
-    - **Manual Configuration**: Use environment variable fallback
-    - **Model Format**: Check model ID format and naming conventions
-
-  </Accordion>
-
-  <Accordion title="Performance Issues" icon="gauge">
-    ### Speed and Reliability
-    Addressing performance and reliability concerns.
-
-    - **Response Times**: Check network latency to API endpoint
-    - **Rate Limits**: Monitor API rate limiting and quotas
-    - **Model Size**: Consider model size vs. available resources
-    - **Caching**: Implement response caching for repeated queries
-
-  </Accordion>
-</AccordionGroup>
-
-<Callout type="info">
-  **Compatibility Check**: Always verify that your target service implements the OpenAI API specification correctly,
-  including proper request/response formats and authentication.
-</Callout>
-
-<Callout type="tip">
-  **Testing Strategy**: Start with simple requests to verify connectivity, then test model discovery, and finally test
-  actual model inference before full deployment.
-</Callout>
-
-<Callout type="warning">
-  **Security Considerations**: Ensure your API keys are properly secured and that the API endpoint uses HTTPS for secure
-  communication.
-</Callout>
-
-## Advanced Configuration
-
-<AccordionGroup>
-  <Accordion title="Custom Headers" icon="header">
-    ### Additional Headers
-    Configure custom headers for special API requirements.
-
-    - **Authorization Variants**: Different authentication header formats
-    - **API Version Headers**: Specify API version requirements
-    - **Custom Metadata**: Service-specific header requirements
-    - **Rate Limiting**: Custom rate limit headers
-
-  </Accordion>
-
-  <Accordion title="Proxy Configuration" icon="route">
-    ### Network Proxies
-    Configure proxy settings for restricted network environments.
-
-    - **HTTP Proxies**: Route API calls through proxy servers
-    - **Corporate Networks**: Work within enterprise network restrictions
-    - **VPN Requirements**: Handle VPN-dependent API access
-    - **Load Balancing**: Distribute requests across multiple endpoints
-
-  </Accordion>
-
-  <Accordion title="Monitoring Integration" icon="activity">
-    ### Observability
-    Integrate with monitoring and logging systems.
-
-    - **Request Logging**: Track API usage and performance
-    - **Error Monitoring**: Capture and analyze API errors
-    - **Usage Analytics**: Monitor token consumption and costs
-    - **Health Checks**: Implement API endpoint health monitoring
-
-  </Accordion>
-</AccordionGroup>
+- Verify API implements OpenAI specification correctly
+- Ensure HTTPS for secure communication
+- Test with simple requests first
+- Use manual model configuration if auto-discovery fails
