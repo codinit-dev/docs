@@ -294,6 +294,9 @@
     },
     "ga4": {
       "measurementId": "G-8NNCCEN53X"
+    },
+    "amplitude": {
+      "apiKey": "XUGBJhd1AGBmq-CUnMJCELx6i_aKEHB6"
     }
   },
   "appearance": {
