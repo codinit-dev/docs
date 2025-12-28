@@ -198,7 +198,7 @@
             "group": "Support",
             "icon": "life-buoy",
             "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting", "changelog"]
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
           }
         ]
       },
