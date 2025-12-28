@@ -80,16 +80,34 @@
             "icon": "star",
             "expanded": false,
             "pages": [
-              "features/overview",
+              {
+                "page": "features/overview",
+                "sidebarTitle": "Overview"
+              },
               {
                 "group": "Development",
                 "expanded": false,
                 "pages": [
-                  "features/development/code-editor",
-                  "features/development/developers",
-                  "features/development/terminal",
-                  "features/development/webcontainer",
-                  "features/development/workbench"
+                  {
+                    "page": "features/development/code-editor",
+                    "sidebarTitle": "Code editor"
+                  },
+                  {
+                    "page": "features/development/developers",
+                    "sidebarTitle": "Developers"
+                  },
+                  {
+                    "page": "features/development/terminal",
+                    "sidebarTitle": "Terminal"
+                  },
+                  {
+                    "page": "features/development/webcontainer",
+                    "sidebarTitle": "WebContainer"
+                  },
+                  {
+                    "page": "features/development/workbench",
+                    "sidebarTitle": "Workbench"
+                  }
                 ]
               },
               {
