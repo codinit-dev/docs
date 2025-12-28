@@ -131,29 +131,86 @@
             "icon": "cloud",
             "expanded": false,
             "pages": [
-              "providers/cloud-providers",
+              {
+                "page": "providers/cloud-providers",
+                "sidebarTitle": "Overview"
+              },
               {
                 "group": "Cloud Providers",
                 "expanded": false,
                 "pages": [
-                  "providers/anthropic",
-                  "providers/aws-bedrock",
-                  "providers/cohere",
-                  "providers/deepseek",
-                  "providers/fireworks",
-                  "providers/github",
-                  "providers/google",
-                  "providers/groq",
-                  "providers/huggingface",
-                  "providers/hyperbolic",
-                  "providers/mistral-ai",
-                  "providers/moonshot",
-                  "providers/openai",
-                  "providers/openai-like",
-                  "providers/openrouter",
-                  "providers/perplexity",
-                  "providers/togetherai",
-                  "providers/xai-grok"
+                  {
+                    "page": "providers/anthropic",
+                    "sidebarTitle": "Anthropic"
+                  },
+                  {
+                    "page": "providers/aws-bedrock",
+                    "sidebarTitle": "AWS Bedrock"
+                  },
+                  {
+                    "page": "providers/cohere",
+                    "sidebarTitle": "Cohere"
+                  },
+                  {
+                    "page": "providers/deepseek",
+                    "sidebarTitle": "DeepSeek"
+                  },
+                  {
+                    "page": "providers/fireworks",
+                    "sidebarTitle": "Fireworks"
+                  },
+                  {
+                    "page": "providers/github",
+                    "sidebarTitle": "GitHub"
+                  },
+                  {
+                    "page": "providers/google",
+                    "sidebarTitle": "Google"
+                  },
+                  {
+                    "page": "providers/groq",
+                    "sidebarTitle": "Groq"
+                  },
+                  {
+                    "page": "providers/huggingface",
+                    "sidebarTitle": "HuggingFace"
+                  },
+                  {
+                    "page": "providers/hyperbolic",
+                    "sidebarTitle": "Hyperbolic"
+                  },
+                  {
+                    "page": "providers/mistral-ai",
+                    "sidebarTitle": "Mistral AI"
+                  },
+                  {
+                    "page": "providers/moonshot",
+                    "sidebarTitle": "Moonshot"
+                  },
+                  {
+                    "page": "providers/openai",
+                    "sidebarTitle": "OpenAI"
+                  },
+                  {
+                    "page": "providers/openai-like",
+                    "sidebarTitle": "OpenAI-like"
+                  },
+                  {
+                    "page": "providers/openrouter",
+                    "sidebarTitle": "OpenRouter"
+                  },
+                  {
+                    "page": "providers/perplexity",
+                    "sidebarTitle": "Perplexity"
+                  },
+                  {
+                    "page": "providers/togetherai",
+                    "sidebarTitle": "Together AI"
+                  },
+                  {
+                    "page": "providers/xai-grok",
+                    "sidebarTitle": "xAI Grok"
+                  }
                 ]
               }
             ]
