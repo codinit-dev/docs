@@ -233,7 +233,15 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
+            "pages": [
+              {
+                "page": "integrations/deployments",
+                "label": "Hosting"
+              },
+              "integrations/git",
+              "integrations/supabase",
+              "mcp/mcp-overview"
+            ]
           }
         ]
       },
