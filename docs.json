@@ -238,12 +238,34 @@
               {
                 "group": "Techniques",
                 "expanded": false,
-                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
+                "pages": [
+                  {
+                    "page": "prompting/discussion-mode",
+                    "sidebarTitle": "Discussion mode"
+                  },
+                  {
+                    "page": "prompting/prompt-engineering-guide",
+                    "sidebarTitle": "Prompt engineering"
+                  },
+                  {
+                    "page": "prompting/prompting-effectively",
+                    "sidebarTitle": "Prompting effectively"
+                  }
+                ]
               },
               {
                 "group": "Optimization",
                 "expanded": false,
-                "pages": ["prompting/maximize-token-efficiency", "prompting/plan-your-app"]
+                "pages": [
+                  {
+                    "page": "prompting/maximize-token-efficiency",
+                    "sidebarTitle": "Token efficiency"
+                  },
+                  {
+                    "page": "prompting/plan-your-app",
+                    "sidebarTitle": "Plan your app"
+                  }
+                ]
               }
             ]
           },
