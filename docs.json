@@ -195,7 +195,14 @@
             "group": "Hosting",
             "icon": "globe",
             "expanded": false,
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
+            "pages": [
+              {
+                "page": "integrations/vercel",
+                "label": "Vercel"
+              },
+              "integrations/netlify",
+              "integrations/cloudflare"
+            ]
           },
           {
             "group": "Running Models Locally",
