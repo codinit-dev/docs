@@ -114,8 +114,14 @@
                 "group": "AI Features",
                 "expanded": false,
                 "pages": [
-                  "essentials/ai-chat-commands",
-                  "essentials/project-templates"
+                  {
+                    "page": "essentials/ai-chat-commands",
+                    "sidebarTitle": "AI chat commands"
+                  },
+                  {
+                    "page": "essentials/project-templates",
+                    "sidebarTitle": "Project templates"
+                  }
                 ]
               }
             ]
