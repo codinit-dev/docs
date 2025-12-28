@@ -38,7 +38,16 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": ["/", "introduction/welcome"]
+            "pages": [
+              {
+                "page": "/",
+                "sidebarTitle": "Home"
+              },
+              {
+                "page": "introduction/welcome",
+                "sidebarTitle": "Welcome"
+              }
+            ]
           },
           {
             "group": "Getting Started",
@@ -48,12 +57,30 @@
               {
                 "group": "Setup",
                 "expanded": false,
-                "pages": ["quickstart", "getting-started/installation"]
+                "pages": [
+                  {
+                    "page": "quickstart",
+                    "sidebarTitle": "Quickstart"
+                  },
+                  {
+                    "page": "getting-started/installation",
+                    "sidebarTitle": "Installation"
+                  }
+                ]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["getting-started/select-your-model", "getting-started/your-first-project"]
+                "pages": [
+                  {
+                    "page": "getting-started/select-your-model",
+                    "sidebarTitle": "Select your model"
+                  },
+                  {
+                    "page": "getting-started/your-first-project",
+                    "sidebarTitle": "Your first project"
+                  }
+                ]
               }
             ]
           },
@@ -62,24 +89,48 @@
             "icon": "star",
             "expanded": false,
             "pages": [
-              "features/overview",
+              {
+                "page": "features/overview",
+                "sidebarTitle": "Overview"
+              },
               {
                 "group": "Development",
                 "expanded": false,
                 "pages": [
-                  "features/development/code-editor",
-                  "features/development/developers",
-                  "features/development/terminal",
-                  "features/development/webcontainer",
-                  "features/development/workbench"
+                  {
+                    "page": "features/development/code-editor",
+                    "sidebarTitle": "Code editor"
+                  },
+                  {
+                    "page": "features/development/developers",
+                    "sidebarTitle": "Developers"
+                  },
+                  {
+                    "page": "features/development/terminal",
+                    "sidebarTitle": "Terminal"
+                  },
+                  {
+                    "page": "features/development/webcontainer",
+                    "sidebarTitle": "WebContainer"
+                  },
+                  {
+                    "page": "features/development/workbench",
+                    "sidebarTitle": "Workbench"
+                  }
                 ]
               },
               {
                 "group": "AI Features",
                 "expanded": false,
                 "pages": [
-                  "essentials/ai-chat-commands",
-                  "essentials/project-templates"
+                  {
+                    "page": "essentials/ai-chat-commands",
+                    "sidebarTitle": "AI chat commands"
+                  },
+                  {
+                    "page": "essentials/project-templates",
+                    "sidebarTitle": "Project templates"
+                  }
                 ]
               }
             ]
@@ -89,29 +140,86 @@
             "icon": "cloud",
             "expanded": false,
             "pages": [
-              "providers/cloud-providers",
+              {
+                "page": "providers/cloud-providers",
+                "sidebarTitle": "Overview"
+              },
               {
                 "group": "Cloud Providers",
                 "expanded": false,
                 "pages": [
-                  "providers/anthropic",
-                  "providers/aws-bedrock",
-                  "providers/cohere",
-                  "providers/deepseek",
-                  "providers/fireworks",
-                  "providers/github",
-                  "providers/google",
-                  "providers/groq",
-                  "providers/huggingface",
-                  "providers/hyperbolic",
-                  "providers/mistral-ai",
-                  "providers/moonshot",
-                  "providers/openai",
-                  "providers/openai-like",
-                  "providers/openrouter",
-                  "providers/perplexity",
-                  "providers/togetherai",
-                  "providers/xai-grok"
+                  {
+                    "page": "providers/anthropic",
+                    "sidebarTitle": "Anthropic"
+                  },
+                  {
+                    "page": "providers/aws-bedrock",
+                    "sidebarTitle": "AWS Bedrock"
+                  },
+                  {
+                    "page": "providers/cohere",
+                    "sidebarTitle": "Cohere"
+                  },
+                  {
+                    "page": "providers/deepseek",
+                    "sidebarTitle": "DeepSeek"
+                  },
+                  {
+                    "page": "providers/fireworks",
+                    "sidebarTitle": "Fireworks"
+                  },
+                  {
+                    "page": "providers/github",
+                    "sidebarTitle": "GitHub"
+                  },
+                  {
+                    "page": "providers/google",
+                    "sidebarTitle": "Google"
+                  },
+                  {
+                    "page": "providers/groq",
+                    "sidebarTitle": "Groq"
+                  },
+                  {
+                    "page": "providers/huggingface",
+                    "sidebarTitle": "HuggingFace"
+                  },
+                  {
+                    "page": "providers/hyperbolic",
+                    "sidebarTitle": "Hyperbolic"
+                  },
+                  {
+                    "page": "providers/mistral-ai",
+                    "sidebarTitle": "Mistral AI"
+                  },
+                  {
+                    "page": "providers/moonshot",
+                    "sidebarTitle": "Moonshot"
+                  },
+                  {
+                    "page": "providers/openai",
+                    "sidebarTitle": "OpenAI"
+                  },
+                  {
+                    "page": "providers/openai-like",
+                    "sidebarTitle": "OpenAI-like"
+                  },
+                  {
+                    "page": "providers/openrouter",
+                    "sidebarTitle": "OpenRouter"
+                  },
+                  {
+                    "page": "providers/perplexity",
+                    "sidebarTitle": "Perplexity"
+                  },
+                  {
+                    "page": "providers/togetherai",
+                    "sidebarTitle": "Together AI"
+                  },
+                  {
+                    "page": "providers/xai-grok",
+                    "sidebarTitle": "xAI Grok"
+                  }
                 ]
               }
             ]
@@ -120,7 +228,16 @@
             "group": "Comparisons",
             "icon": "scale",
             "expanded": false,
-            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
+            "pages": [
+              {
+                "page": "comparisons/bolt-vs-codinit",
+                "sidebarTitle": "Bolt vs CodinIT"
+              },
+              {
+                "page": "comparisons/lovable-vs-codinit",
+                "sidebarTitle": "Lovable vs CodinIT"
+              }
+            ]
           },
           {
             "group": "Prompting",
@@ -130,12 +247,34 @@
               {
                 "group": "Techniques",
                 "expanded": false,
-                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
+                "pages": [
+                  {
+                    "page": "prompting/discussion-mode",
+                    "sidebarTitle": "Discussion mode"
+                  },
+                  {
+                    "page": "prompting/prompt-engineering-guide",
+                    "sidebarTitle": "Prompt engineering"
+                  },
+                  {
+                    "page": "prompting/prompting-effectively",
+                    "sidebarTitle": "Prompting effectively"
+                  }
+                ]
               },
               {
                 "group": "Optimization",
                 "expanded": false,
-                "pages": ["prompting/maximize-token-efficiency", "prompting/plan-your-app"]
+                "pages": [
+                  {
+                    "page": "prompting/maximize-token-efficiency",
+                    "sidebarTitle": "Token efficiency"
+                  },
+                  {
+                    "page": "prompting/plan-your-app",
+                    "sidebarTitle": "Plan your app"
+                  }
+                ]
               }
             ]
           },
@@ -143,22 +282,53 @@
             "group": "Model Configuration",
             "icon": "settings",
             "expanded": false,
-            "pages": ["model-config/context-windows", "model-config/model-comparison"]
+            "pages": [
+              {
+                "page": "model-config/context-windows",
+                "sidebarTitle": "Context windows"
+              },
+              {
+                "page": "model-config/model-comparison",
+                "sidebarTitle": "Model comparison"
+              }
+            ]
           },
           {
             "group": "Hosting",
             "icon": "globe",
             "expanded": false,
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
+            "pages": [
+              {
+                "page": "integrations/vercel",
+                "sidebarTitle": "Vercel"
+              },
+              {
+                "page": "integrations/netlify",
+                "sidebarTitle": "Netlify"
+              },
+              {
+                "page": "integrations/cloudflare",
+                "sidebarTitle": "Cloudflare"
+              }
+            ]
           },
           {
             "group": "Running Models Locally",
             "icon": "cpu",
             "expanded": false,
             "pages": [
-              "running-models-locally/local-model-setup",
-              "providers/lmstudio",
-              "providers/ollama"
+              {
+                "page": "running-models-locally/local-model-setup",
+                "sidebarTitle": "Local model setup"
+              },
+              {
+                "page": "providers/lmstudio",
+                "sidebarTitle": "LM Studio"
+              },
+              {
+                "page": "providers/ollama",
+                "sidebarTitle": "Ollama"
+              }
             ]
           }
         ]
@@ -174,12 +344,26 @@
               {
                 "group": "AI Features",
                 "expanded": false,
-                "pages": ["essentials/ai-chat-commands", "essentials/project-templates"]
+                "pages": [
+                  {
+                    "page": "essentials/ai-chat-commands",
+                    "sidebarTitle": "AI chat commands"
+                  },
+                  {
+                    "page": "essentials/project-templates",
+                    "sidebarTitle": "Project templates"
+                  }
+                ]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["essentials/customization"]
+                "pages": [
+                  {
+                    "page": "essentials/customization",
+                    "sidebarTitle": "Customization"
+                  }
+                ]
               }
             ]
           },
@@ -187,7 +371,24 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
+            "pages": [
+              {
+                "page": "integrations/deployments",
+                "sidebarTitle": "Deployments"
+              },
+              {
+                "page": "integrations/git",
+                "sidebarTitle": "Git"
+              },
+              {
+                "page": "integrations/supabase",
+                "sidebarTitle": "Supabase"
+              },
+              {
+                "page": "mcp/mcp-overview",
+                "sidebarTitle": "MCP overview"
+              }
+            ]
           }
         ]
       },
@@ -198,7 +399,20 @@
             "group": "Support",
             "icon": "life-buoy",
             "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
+            "pages": [
+              {
+                "page": "support/frequently-asked-questions",
+                "sidebarTitle": "FAQ"
+              },
+              {
+                "page": "support/integration-issues",
+                "sidebarTitle": "Integration issues"
+              },
+              {
+                "page": "support/troubleshooting",
+                "sidebarTitle": "Troubleshooting"
+              }
+            ]
           }
         ]
       },
