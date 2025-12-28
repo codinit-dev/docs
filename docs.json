@@ -23,6 +23,13 @@
         }
       ]
     },
+    "anchors": [
+      {
+        "anchor": "Changelog",
+        "icon": "scroll-text",
+        "pages": ["changelog"]
+      }
+    ],
     "tabs": [
       {
         "tab": "Docs",
