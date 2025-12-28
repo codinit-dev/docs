@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "Docs",
   "colors": {
     "primary": "#3B82F6",
     "light": "#F8FAFC",
-    "dark": "#2c62f7"
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -23,13 +23,6 @@
         }
       ]
     },
-    "anchors": [
-      {
-        "anchor": "Changelog",
-        "icon": "scroll-text",
-        "pages": ["changelog"]
-      }
-    ],
     "tabs": [
       {
         "tab": "Docs",
@@ -38,16 +31,7 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": [
-              {
-                "page": "/",
-                "sidebarTitle": "Home"
-              },
-              {
-                "page": "introduction/welcome",
-                "sidebarTitle": "Welcome"
-              }
-            ]
+            "pages": ["/", "introduction/welcome"]
           },
           {
             "group": "Getting Started",
@@ -57,30 +41,12 @@
               {
                 "group": "Setup",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "quickstart",
-                    "sidebarTitle": "Quickstart"
-                  },
-                  {
-                    "page": "getting-started/installation",
-                    "sidebarTitle": "Installation"
-                  }
-                ]
+                "pages": ["quickstart", "getting-started/installation"]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "getting-started/select-your-model",
-                    "sidebarTitle": "Select your model"
-                  },
-                  {
-                    "page": "getting-started/your-first-project",
-                    "sidebarTitle": "Your first project"
-                  }
-                ]
+                "pages": ["getting-started/select-your-model", "getting-started/your-first-project"]
               }
             ]
           },
@@ -89,48 +55,24 @@
             "icon": "star",
             "expanded": false,
             "pages": [
-              {
-                "page": "features/overview",
-                "sidebarTitle": "Overview"
-              },
+              "features/overview",
               {
                 "group": "Development",
                 "expanded": false,
                 "pages": [
-                  {
-                    "page": "features/development/code-editor",
-                    "sidebarTitle": "Code editor"
-                  },
-                  {
-                    "page": "features/development/developers",
-                    "sidebarTitle": "Developers"
-                  },
-                  {
-                    "page": "features/development/terminal",
-                    "sidebarTitle": "Terminal"
-                  },
-                  {
-                    "page": "features/development/webcontainer",
-                    "sidebarTitle": "WebContainer"
-                  },
-                  {
-                    "page": "features/development/workbench",
-                    "sidebarTitle": "Workbench"
-                  }
+                  "features/development/code-editor",
+                  "features/development/developers",
+                  "features/development/terminal",
+                  "features/development/webcontainer",
+                  "features/development/workbench"
                 ]
               },
               {
                 "group": "AI Features",
                 "expanded": false,
                 "pages": [
-                  {
-                    "page": "essentials/ai-chat-commands",
-                    "sidebarTitle": "AI chat commands"
-                  },
-                  {
-                    "page": "essentials/project-templates",
-                    "sidebarTitle": "Project templates"
-                  }
+                  "essentials/ai-chat-commands",
+                  "essentials/project-templates"
                 ]
               }
             ]
@@ -140,86 +82,29 @@
             "icon": "cloud",
             "expanded": false,
             "pages": [
-              {
-                "page": "providers/cloud-providers",
-                "sidebarTitle": "Overview"
-              },
+              "providers/cloud-providers",
               {
                 "group": "Cloud Providers",
                 "expanded": false,
                 "pages": [
-                  {
-                    "page": "providers/anthropic",
-                    "sidebarTitle": "Anthropic"
-                  },
-                  {
-                    "page": "providers/aws-bedrock",
-                    "sidebarTitle": "AWS Bedrock"
-                  },
-                  {
-                    "page": "providers/cohere",
-                    "sidebarTitle": "Cohere"
-                  },
-                  {
-                    "page": "providers/deepseek",
-                    "sidebarTitle": "DeepSeek"
-                  },
-                  {
-                    "page": "providers/fireworks",
-                    "sidebarTitle": "Fireworks"
-                  },
-                  {
-                    "page": "providers/github",
-                    "sidebarTitle": "GitHub"
-                  },
-                  {
-                    "page": "providers/google",
-                    "sidebarTitle": "Google"
-                  },
-                  {
-                    "page": "providers/groq",
-                    "sidebarTitle": "Groq"
-                  },
-                  {
-                    "page": "providers/huggingface",
-                    "sidebarTitle": "HuggingFace"
-                  },
-                  {
-                    "page": "providers/hyperbolic",
-                    "sidebarTitle": "Hyperbolic"
-                  },
-                  {
-                    "page": "providers/mistral-ai",
-                    "sidebarTitle": "Mistral AI"
-                  },
-                  {
-                    "page": "providers/moonshot",
-                    "sidebarTitle": "Moonshot"
-                  },
-                  {
-                    "page": "providers/openai",
-                    "sidebarTitle": "OpenAI"
-                  },
-                  {
-                    "page": "providers/openai-like",
-                    "sidebarTitle": "OpenAI-like"
-                  },
-                  {
-                    "page": "providers/openrouter",
-                    "sidebarTitle": "OpenRouter"
-                  },
-                  {
-                    "page": "providers/perplexity",
-                    "sidebarTitle": "Perplexity"
-                  },
-                  {
-                    "page": "providers/togetherai",
-                    "sidebarTitle": "Together AI"
-                  },
-                  {
-                    "page": "providers/xai-grok",
-                    "sidebarTitle": "xAI Grok"
-                  }
+                  "providers/anthropic",
+                  "providers/aws-bedrock",
+                  "providers/cohere",
+                  "providers/deepseek",
+                  "providers/fireworks",
+                  "providers/github",
+                  "providers/google",
+                  "providers/groq",
+                  "providers/huggingface",
+                  "providers/hyperbolic",
+                  "providers/mistral-ai",
+                  "providers/moonshot",
+                  "providers/openai",
+                  "providers/openai-like",
+                  "providers/openrouter",
+                  "providers/perplexity",
+                  "providers/togetherai",
+                  "providers/xai-grok"
                 ]
               }
             ]
@@ -228,16 +113,7 @@
             "group": "Comparisons",
             "icon": "scale",
             "expanded": false,
-            "pages": [
-              {
-                "page": "comparisons/bolt-vs-codinit",
-                "sidebarTitle": "Bolt vs CodinIT"
-              },
-              {
-                "page": "comparisons/lovable-vs-codinit",
-                "sidebarTitle": "Lovable vs CodinIT"
-              }
-            ]
+            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
           },
           {
             "group": "Prompting",
@@ -247,34 +123,12 @@
               {
                 "group": "Techniques",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "prompting/discussion-mode",
-                    "sidebarTitle": "Discussion mode"
-                  },
-                  {
-                    "page": "prompting/prompt-engineering-guide",
-                    "sidebarTitle": "Prompt engineering"
-                  },
-                  {
-                    "page": "prompting/prompting-effectively",
-                    "sidebarTitle": "Prompting effectively"
-                  }
-                ]
+                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
               },
               {
                 "group": "Optimization",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "prompting/maximize-token-efficiency",
-                    "sidebarTitle": "Token efficiency"
-                  },
-                  {
-                    "page": "prompting/plan-your-app",
-                    "sidebarTitle": "Plan your app"
-                  }
-                ]
+                "pages": ["prompting/maximize-token-efficiency", "prompting/plan-your-app"]
               }
             ]
           },
@@ -282,53 +136,22 @@
             "group": "Model Configuration",
             "icon": "settings",
             "expanded": false,
-            "pages": [
-              {
-                "page": "model-config/context-windows",
-                "sidebarTitle": "Context windows"
-              },
-              {
-                "page": "model-config/model-comparison",
-                "sidebarTitle": "Model comparison"
-              }
-            ]
+            "pages": ["model-config/context-windows", "model-config/model-comparison"]
           },
           {
             "group": "Hosting",
             "icon": "globe",
             "expanded": false,
-            "pages": [
-              {
-                "page": "integrations/vercel",
-                "sidebarTitle": "Vercel"
-              },
-              {
-                "page": "integrations/netlify",
-                "sidebarTitle": "Netlify"
-              },
-              {
-                "page": "integrations/cloudflare",
-                "sidebarTitle": "Cloudflare"
-              }
-            ]
+            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
           },
           {
             "group": "Running Models Locally",
             "icon": "cpu",
             "expanded": false,
             "pages": [
-              {
-                "page": "running-models-locally/local-model-setup",
-                "sidebarTitle": "Local model setup"
-              },
-              {
-                "page": "providers/lmstudio",
-                "sidebarTitle": "LM Studio"
-              },
-              {
-                "page": "providers/ollama",
-                "sidebarTitle": "Ollama"
-              }
+              "running-models-locally/local-model-setup",
+              "providers/lmstudio",
+              "providers/ollama"
             ]
           }
         ]
@@ -344,26 +167,12 @@
               {
                 "group": "AI Features",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "essentials/ai-chat-commands",
-                    "sidebarTitle": "AI chat commands"
-                  },
-                  {
-                    "page": "essentials/project-templates",
-                    "sidebarTitle": "Project templates"
-                  }
-                ]
+                "pages": ["essentials/ai-chat-commands", "essentials/project-templates"]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": [
-                  {
-                    "page": "essentials/customization",
-                    "sidebarTitle": "Customization"
-                  }
-                ]
+                "pages": ["essentials/customization"]
               }
             ]
           },
@@ -371,24 +180,7 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": [
-              {
-                "page": "integrations/deployments",
-                "sidebarTitle": "Deployments"
-              },
-              {
-                "page": "integrations/git",
-                "sidebarTitle": "Git"
-              },
-              {
-                "page": "integrations/supabase",
-                "sidebarTitle": "Supabase"
-              },
-              {
-                "page": "mcp/mcp-overview",
-                "sidebarTitle": "MCP overview"
-              }
-            ]
+            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
           }
         ]
       },
@@ -399,20 +191,7 @@
             "group": "Support",
             "icon": "life-buoy",
             "expanded": false,
-            "pages": [
-              {
-                "page": "support/frequently-asked-questions",
-                "sidebarTitle": "FAQ"
-              },
-              {
-                "page": "support/integration-issues",
-                "sidebarTitle": "Integration issues"
-              },
-              {
-                "page": "support/troubleshooting",
-                "sidebarTitle": "Troubleshooting"
-              }
-            ]
+            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting", "changelog"]
           }
         ]
       },
@@ -425,18 +204,13 @@
   "redirects": [],
   "logo": {
     "light": "/logo/logo.svg",
-    "dark": "/logo/logo.png",
-    "href": "https://codinit.dev"
+    "dark": "/logo/logo.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Issues",
-        "href": "https://github.com/codinit-dev/codinit-dev/issues"
-      },
-      {
-        "label": "Changelog",
-        "href": "https://codinit.dev/docs/changelog"
+        "href": "https://github.com/codinit-dev/codinit-dev"
       }
     ],
     "primary": {
@@ -554,11 +328,6 @@
     "color": {
       "light": "#ffffff",
       "dark": "#0a0a0a"
-    }
-  },
-  "api": {
-    "playground": {
-      "display": "simple"
     }
   }
 }
