@@ -308,9 +308,18 @@
             "icon": "cpu",
             "expanded": false,
             "pages": [
-              "running-models-locally/local-model-setup",
-              "providers/lmstudio",
-              "providers/ollama"
+              {
+                "page": "running-models-locally/local-model-setup",
+                "sidebarTitle": "Local model setup"
+              },
+              {
+                "page": "providers/lmstudio",
+                "sidebarTitle": "LM Studio"
+              },
+              {
+                "page": "providers/ollama",
+                "sidebarTitle": "Ollama"
+              }
             ]
           }
         ]
