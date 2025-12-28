@@ -390,7 +390,20 @@
             "group": "Support",
             "icon": "life-buoy",
             "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting"]
+            "pages": [
+              {
+                "page": "support/frequently-asked-questions",
+                "sidebarTitle": "FAQ"
+              },
+              {
+                "page": "support/integration-issues",
+                "sidebarTitle": "Integration issues"
+              },
+              {
+                "page": "support/troubleshooting",
+                "sidebarTitle": "Troubleshooting"
+              }
+            ]
           }
         ]
       },
