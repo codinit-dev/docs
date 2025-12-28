@@ -38,7 +38,13 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": ["/", "introduction/welcome"]
+            "pages": [
+              "/",
+              {
+                "page": "introduction/welcome",
+                "label": "Welcome"
+              }
+            ]
           },
           {
             "group": "Getting Started",
