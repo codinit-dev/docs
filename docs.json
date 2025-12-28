@@ -335,12 +335,26 @@
               {
                 "group": "AI Features",
                 "expanded": false,
-                "pages": ["essentials/ai-chat-commands", "essentials/project-templates"]
+                "pages": [
+                  {
+                    "page": "essentials/ai-chat-commands",
+                    "sidebarTitle": "AI chat commands"
+                  },
+                  {
+                    "page": "essentials/project-templates",
+                    "sidebarTitle": "Project templates"
+                  }
+                ]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["essentials/customization"]
+                "pages": [
+                  {
+                    "page": "essentials/customization",
+                    "sidebarTitle": "Customization"
+                  }
+                ]
               }
             ]
           },
