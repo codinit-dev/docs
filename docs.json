@@ -62,7 +62,16 @@
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["getting-started/select-your-model", "getting-started/your-first-project"]
+                "pages": [
+                  {
+                    "page": "getting-started/select-your-model",
+                    "sidebarTitle": "Select your model"
+                  },
+                  {
+                    "page": "getting-started/your-first-project",
+                    "sidebarTitle": "Your first project"
+                  }
+                ]
               }
             ]
           },
