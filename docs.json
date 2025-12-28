@@ -86,7 +86,10 @@
             "icon": "star",
             "expanded": false,
             "pages": [
-              "features/overview",
+              {
+                "page": "features/overview",
+                "label": "Overview"
+              },
               {
                 "group": "Development",
                 "expanded": false,
