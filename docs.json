@@ -38,7 +38,16 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": ["/", "introduction/welcome"]
+            "pages": [
+              {
+                "page": "/",
+                "sidebarTitle": "Home"
+              },
+              {
+                "page": "introduction/welcome",
+                "sidebarTitle": "Welcome"
+              }
+            ]
           },
           {
             "group": "Getting Started",
