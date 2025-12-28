@@ -169,7 +169,14 @@
               {
                 "group": "Techniques",
                 "expanded": false,
-                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
+                "pages": [
+                  "prompting/discussion-mode",
+                  {
+                    "page": "prompting/prompt-engineering-guide",
+                    "label": "Prompt Engineering Guide"
+                  },
+                  "prompting/prompting-effectively"
+                ]
               },
               {
                 "group": "Optimization",
