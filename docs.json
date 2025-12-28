@@ -116,7 +116,10 @@
             "icon": "cloud",
             "expanded": false,
             "pages": [
-              "providers/cloud-providers",
+              {
+                "page": "providers/cloud-providers",
+                "label": "Providers"
+              },
               {
                 "group": "Cloud Providers",
                 "expanded": false,
