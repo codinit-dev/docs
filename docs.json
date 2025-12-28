@@ -150,7 +150,16 @@
             "group": "Comparisons",
             "icon": "scale",
             "expanded": false,
-            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
+            "pages": [
+              {
+                "page": "comparisons/bolt-vs-codinit",
+                "label": "Bolt.DIY vs CodinIT"
+              },
+              {
+                "page": "comparisons/lovable-vs-codinit",
+                "label": "Lovable vs CodinIT"
+              }
+            ]
           },
           {
             "group": "Prompting",
