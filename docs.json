@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
+  "theme": "mint",
   "name": "Docs",
   "colors": {
     "primary": "#3B82F6",
     "light": "#F8FAFC",
-    "dark": "#1D4ED8"
+    "dark": "#2c62f7"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -282,13 +282,18 @@
   "redirects": [],
   "logo": {
     "light": "/logo/logo.svg",
-    "dark": "/logo/logo.png"
+    "dark": "/logo/logo.png",
+    "href": "https://codinit.dev"
   },
   "navbar": {
     "links": [
       {
         "label": "Issues",
-        "href": "https://github.com/codinit-dev/codinit-dev"
+        "href": "https://github.com/codinit-dev/codinit-dev/issues"
+      },
+      {
+        "label": "Changelog",
+        "href": "https://codinit.dev/docs/changelog"
       }
     ],
     "primary": {
@@ -406,6 +411,11 @@
     "color": {
       "light": "#ffffff",
       "dark": "#0a0a0a"
+    }
+  },
+  "api": {
+    "playground": {
+      "display": "simple"
     }
   }
 }
