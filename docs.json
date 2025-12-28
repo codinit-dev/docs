@@ -362,7 +362,24 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
+            "pages": [
+              {
+                "page": "integrations/deployments",
+                "sidebarTitle": "Deployments"
+              },
+              {
+                "page": "integrations/git",
+                "sidebarTitle": "Git"
+              },
+              {
+                "page": "integrations/supabase",
+                "sidebarTitle": "Supabase"
+              },
+              {
+                "page": "mcp/mcp-overview",
+                "sidebarTitle": "MCP overview"
+              }
+            ]
           }
         ]
       },
