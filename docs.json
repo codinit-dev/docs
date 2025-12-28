@@ -273,7 +273,16 @@
             "group": "Model Configuration",
             "icon": "settings",
             "expanded": false,
-            "pages": ["model-config/context-windows", "model-config/model-comparison"]
+            "pages": [
+              {
+                "page": "model-config/context-windows",
+                "sidebarTitle": "Context windows"
+              },
+              {
+                "page": "model-config/model-comparison",
+                "sidebarTitle": "Model comparison"
+              }
+            ]
           },
           {
             "group": "Hosting",
