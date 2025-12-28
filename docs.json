@@ -54,7 +54,16 @@
               {
                 "group": "Setup",
                 "expanded": false,
-                "pages": ["quickstart", "getting-started/installation"]
+                "pages": [
+                  {
+                    "page": "quickstart",
+                    "label": "Quickstart"
+                  },
+                  {
+                    "page": "getting-started/installation",
+                    "label": "Installation"
+                  }
+                ]
               },
               {
                 "group": "Configuration",
