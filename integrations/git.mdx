@@ -123,301 +123,140 @@ template-repo/
 └── src/              # Your code
 ```
 
-## Repository Management
+## Managing Your Projects
 
-### Creating New Repositories
+### Creating New Projects
 
-**From Existing Projects:**
+**Start a new project:**
 
-```typescript
-// API endpoint for repository creation
-POST /api/github-template
-{
-  "action": "create-repo",
-  "name": "my-new-project",
-  "private": false,
-  "description": "Project created with CodinIT"
-}
-```
+You can create a new GitHub repository right from CodinIT:
+- Choose public (anyone can see) or private (only you can see)
+- Add a description
+- Set up protection rules
+- Add team members
+- Set up automatic testing
 
-**Repository Configuration:**
+### Bringing in Existing Projects
 
-- **Visibility**: Public or private repositories
-- **Branch Protection**: Main branch protection rules
-- **Collaborators**: Team member access management
-- **Topics and Labels**: Organization and categorization
-- **GitHub Actions**: Automated CI/CD workflows
+**Import from GitHub:**
 
-### Importing Existing Repositories
+You can bring in projects you already have on GitHub:
+- Paste the GitHub URL
+- Choose which branch to use
+- CodinIT will download it and set it up
 
-**Supported Import Methods:**
+After importing:
+- Install needed tools
+- Set up settings
+- Make sure it builds correctly
+- Start the development server
 
-- Direct GitHub repository URLs
-- GitHub organization repositories
-- Private repository access
-- Large repository handling
+### Keeping Things in Sync
 
-**Import Process:**
+**Automatic syncing:**
 
-```typescript
-// Repository import via API
-const importResult = await fetch('/api/git-proxy/import', {
-  method: 'POST',
-  body: JSON.stringify({
-    url: 'https://github.com/user/repo.git',
-    branch: 'main',
-    depth: 1, // Shallow clone for large repos
-  }),
-});
-```
+CodinIT keeps your code in sync with GitHub:
+- Saves changes automatically
+- Checks for updates every 30 seconds
+- Helps fix conflicts
+- Watches branch status
 
-**Post-Import Setup:**
-
-- Dependency installation
-- Environment configuration
-- Build verification
-- Development server startup
-
-### Repository Synchronization
-
-**Bidirectional Sync:**
-
-- Automatic commit creation on file changes
-- Pull request synchronization
-- Conflict detection and resolution
-- Branch status monitoring
-
-**Sync Configuration:**
-
-```json
-{
-  "sync": {
-    "autoCommit": true,
-    "pullInterval": 30000,
-    "conflictStrategy": "manual",
-    "ignorePatterns": [".env", "node_modules"]
-  }
-}
-```
-
-## Advanced Git Operations
-
-### Branch Management
-
-**Creating and Managing Branches:**
-
-```bash
-# Create new feature branch
-git checkout -b feature/user-authentication
-
-# Switch between branches
-git checkout main
-git checkout feature/user-authentication
-
-# Merge branches
-git merge feature/user-authentication
-```
-
-**Branch Protection Rules:**
-
-- Required pull request reviews
-- Required status checks
-- Restrictions on force pushes
-- Branch naming conventions
-
-### Commit Strategies
-
-**Atomic Commits:**
-
-- Each commit represents one logical change
-- Clear, descriptive commit messages
-- Related changes grouped together
-- Easy to understand and revert
-
-**Commit Message Conventions:**
-
-```
-feat: add user authentication system
-fix: resolve login form validation bug
-docs: update API documentation
-refactor: simplify user state management
-```
-
-### Conflict Resolution
-
-**Handling Merge Conflicts:**
-
-```bash
-# Check for conflicts
-git status
-
-# Resolve conflicts in files
-# Then add resolved files
-git add resolved-file.js
-
-# Complete the merge
-git commit
-```
-
-**Prevention Strategies:**
-
-- Regular branch synchronization
-- Clear ownership of code areas
-- Code review requirements
-- Automated testing before merges
-
-## Git Hooks and Automation
-
-### Pre-commit Quality Checks
-
-**Automated Validation:**
-
-```bash
-# .git/hooks/pre-commit
-#!/bin/sh
-npm run lint
-npm run test
-npm run type-check
-```
-
-**Code Quality Gates:**
-
-- ESLint for code style
-- Prettier for formatting
-- TypeScript type checking
-- Unit test execution
-
-### CI/CD Integration
-
-**GitHub Actions Workflows:**
-
-```yaml
-# .github/workflows/ci.yml
-name: CI Pipeline
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test
-      - name: Build project
-        run: npm run build
-```
-
-**Deployment Automation:**
-
-- Automatic preview deployments
-- Production deployment on merge
-- Rollback capabilities
-- Environment-specific configurations
-
-## Troubleshooting
+## Common Problems and Solutions
 
 <AccordionGroup>
-  <Accordion title="Authentication Issues" icon="key">
-    ### Git Authentication Problems
+  <Accordion title="Login Problems" icon="key">
+    ### Can't Connect to GitHub
 
-    **Common Issues:**
-    - Expired personal access tokens
-    - Incorrect repository permissions
-    - Two-factor authentication conflicts
-    - SSH key configuration problems
+    **Common problems:**
+    - Your access token expired
+    - You don't have permission
+    - Two-factor authentication issues
+    - SSH key problems
 
-    **Solutions:**
-    - Regenerate GitHub personal access tokens
-    - Verify repository access permissions
-    - Use SSH keys for secure authentication
-    - Check token expiration dates
-
-  </Accordion>
-
-  <Accordion title="Sync Conflicts" icon="git-merge">
-    ### Repository Synchronization Issues
-
-    **Common Issues:**
-    - Merge conflicts during sync
-    - Divergent branch histories
-    - Large file handling problems
-    - Network connectivity issues
-
-    **Solutions:**
-    - Resolve conflicts manually or use merge tools
-    - Force push only when necessary and safe
-    - Use Git LFS for large files
-    - Check network stability and retry operations
+    **How to fix:**
+    - Make a new GitHub access token
+    - Check your repository permissions
+    - Use SSH keys for better security
+    - Check when your token expires
 
   </Accordion>
 
-  <Accordion title="Performance Issues" icon="gauge">
-    ### Git Operation Performance
+  <Accordion title="Sync Problems" icon="git-merge">
+    ### Code Won't Sync
 
-    **Common Issues:**
-    - Slow clone operations for large repositories
-    - Memory issues with large histories
-    - Network latency problems
-    - Disk space constraints
+    **Common problems:**
+    - Conflicts when merging
+    - Branches went different directions
+    - Large files causing issues
+    - Internet connection problems
 
-    **Solutions:**
-    - Use shallow clones for large repositories
-    - Implement Git LFS for binary files
-    - Optimize network settings
-    - Clean up unnecessary branches and tags
+    **How to fix:**
+    - Fix conflicts by hand
+    - Only force push when you're sure it's safe
+    - Use Git LFS for big files
+    - Check your internet and try again
+
+  </Accordion>
+
+  <Accordion title="Slow Performance" icon="gauge">
+    ### Git is Slow
+
+    **Common problems:**
+    - Big projects take forever to download
+    - Running out of memory
+    - Slow internet
+    - Not enough disk space
+
+    **How to fix:**
+    - Use shallow clones (download less history)
+    - Use Git LFS for binary files
+    - Check your internet connection
+    - Delete old branches you don't need
 
   </Accordion>
 </AccordionGroup>
 
-## Best Practices
+## Good Habits
 
-### Repository Organization
+### Organizing Your Code
 
-**Branch Strategy:**
+**Branch names:**
 
-- `main`/`master`: Production-ready code
-- `develop`: Integration branch for features
-- `feature/*`: Individual feature development
-- `hotfix/*`: Critical bug fixes
-- `release/*`: Release preparation
+- `main`: The working version
+- `develop`: Where you combine new features
+- `feature/*`: New features you're building
+- `hotfix/*`: Quick fixes for urgent bugs
+- `release/*`: Getting ready to release
 
-**Commit Hygiene:**
+**Commit messages:**
 
-- Write clear, descriptive commit messages
-- Keep commits focused and atomic
-- Use conventional commit format
-- Squash related commits before merging
+- Write clear messages about what you changed
+- Keep each commit focused on one thing
+- Use a standard format
+- Combine related commits before merging
 
-### Collaboration Workflows
+### Working with Others
 
-**Code Review Process:**
+**Code review:**
 
-- Create feature branches for all changes
-- Submit pull requests for review
-- Require approvals before merging
-- Use automated checks and tests
+- Make a branch for each change
+- Ask others to review your code
+- Get approval before merging
+- Use automatic tests
 
-**Team Coordination:**
+**Team coordination:**
 
-- Regular branch synchronization
-- Clear ownership of code areas
-- Documentation of processes
-- Regular team communication
+- Sync branches regularly
+- Know who's working on what
+- Write down your processes
+- Talk to your team often
 
 <Callout type="info">
-  **Git Mastery**: Effective Git usage is a key skill for modern development. Mastering these advanced features will
-  significantly improve your development workflow.
+  **Git is Important**: Learning Git well will make you a better developer. These skills help you work on any project.
 </Callout>
 
 <Callout type="tip">
-  **Learn Continuously**: Git has extensive capabilities. Consider exploring advanced features like interactive
-  rebasing, advanced merge strategies, and custom hooks.
+  **Keep Learning**: Git can do a lot more than what's covered here. Explore features like rebasing and custom hooks as you get more comfortable.
 </Callout>
 
 ## Branching and merging
