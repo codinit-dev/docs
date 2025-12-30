@@ -22,19 +22,37 @@ New releases and improvements
   - Command context display
   - Real-time updates without page refresh
 - Added PromptSelector component for choosing system prompts
+  - Integrated into Chatbox for easy prompt switching
+  - Removed "Lazy Edits" button in favor of prompt selector
+  - Uses PromptLibrary for centralized prompt management
 - Added comprehensive MCP type definitions and schemas
+  - Separated type definitions into dedicated types/mcp file
+  - Refactored mcpService to use centralized types
+  - Updated MCP store to use types from types/mcp
 - Added MCP config validation and retry API endpoints
 - Added Electron IPC handlers for project initialization and file saving
+  - Project initialization IPC handlers in preload
+  - Local file saving functionality in workbench store
+  - Update IPC event handlers in electron preload
 - Added project name utility for generating unique project identifiers
+  - Project name retrieval in action runner
+  - Project name integration in chat history persistence
+- Added Electron utility functions for IPC communication
+- Added storage unit tests with comprehensive test coverage
 
 ### Performance improvements
 
-- Fixed critical performance regressions causing UI freezes and crashes
+- Fixed critical performance regressions causing UI freezes and crashes (PR #60)
   - Introduced concurrency limits for file writes (max 5 concurrent)
   - Implemented batched state updates for file operations
   - Added file write queue system to prevent memory overflow
   - Optimized action queue with max 50 pending actions limit
   - Added yield to main thread for better responsiveness
+  - Increased action sample interval to 500ms (5x reduction in update frequency)
+  - Increased file watch buffer to 1000ms for better event batching
+  - Implemented batch Nanostores updates in FilesStore (500ms batching)
+  - Added 1MB streaming content limit to prevent memory overflow
+  - Added requestIdleCallback yielding to prevent UI freezes
 - Improved Windows file system compatibility
 - Enhanced action runner with live output monitoring
 - Optimized file content streaming with 1MB chunk size limit
@@ -52,7 +70,21 @@ New releases and improvements
 - Fixed app freezes during multi-file generation
 - Fixed terminal output stalling issues
 - Fixed browser crashes ("Aw, Snap!") during intensive operations
-- Fixed console mocking and cleanup in diff spec tests
+- Fixed console mocking and cleanup in test suites
+  - Added console mocking to diff spec tests
+  - Added console mocking to message parser spec tests
+  - Added console mocking to storage tests
+  - Added console mocking to Markdown tests
+  - Added console mocking to toolMentionParser tests
+  - Added console mocking to diff tests
+  - Added console mocking to code validator tests
+  - Added console mocking to llm utils tests
+  - Added console mocking to LLMManager tests
+- Fixed unused imports across multiple API endpoints
+  - Removed unused imports from api.system.diagnostics
+  - Removed unused imports from api.check-env-key
+  - Removed unused imports from api.github-template
+  - Removed unused import from index route
 
 ### UI improvements
 
@@ -61,6 +93,43 @@ New releases and improvements
 - Updated dialog component styles for improved appearance
 - Added new CSS variable for editor scrollbar thumb color
 - Updated Fazier badge to rank-2 variants (dark and light modes)
+- Redesigned SettingsTab with framer-motion animations and improved UI layout
+- Refactored UpdateTab with improved UI and code simplification
+- Updated BaseChat styles for improved layout spacing
+- Updated BackgroundRays styles with improved positioning and effects
+
+### Prompt system improvements
+
+- Refactored prompt registry to remove base prompt and update labels
+- Updated stream-text to use PromptLibrary for prompt retrieval
+- Updated Chat to use default prompt from PromptLibrary
+- Added promptId and setPromptId props to BaseChat component
+- Simplified optimized prompt by removing duplicate mobile instructions
+- Simplified fine-tuned prompt mobile instructions to focus on Expo SDK 52
+- Updated api.chat to use promptId from request
+
+### Code cleanup
+
+- Removed system-prompt-universal.ts file
+- Removed legacy prompts.ts file
+- Removed base-prompt.ts file
+- Removed ConnectionForm component file
+- Refactored ConnectionsTab to remove inline ConnectionForm component
+- Removed unused embed image SVG files
+
+### Developer experience
+
+- Refactored useUpdateCheck hook with improved error handling
+- Updated GitHub funding username to codinit-dev
+- Updated README with better formatting and new badge links
+- Added 21st.dev SVG badge
+- Fixed linting errors in SCSS files
+- Fixed linting errors and formatted code across codebase
+- Removed unused imports throughout the application
+- Updated UnoCSS config with new color palette
+- Updated dark mode icon SVG
+- Added @types/node dependency
+- Updated pnpm lock file with new dependencies
 
 </Update>
 
