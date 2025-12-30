@@ -21,60 +21,43 @@ MCP lets you connect CodinIT to other services you use. For example, you can con
   </Card>
 </CardGroup>
 
-## System Architecture
+## How It Works
 
-<AccordionGroup>
-  <Accordion title="Core Components" icon="cog">
-    ### Main System Components
+### Main Parts
 
-    The MCP system consists of several interconnected components working together:
+MCP has a few main parts:
 
-    <CardGroup cols={2}>
-      <Card title="Integration Panel" icon="sidebar">
-        Central hub for managing all MCP connections and activities
-      </Card>
-      <Card title="Marketplace" icon="shopping-bag">
-        Pre-configured templates for popular services and APIs
-      </Card>
-      <Card title="Tool Registry" icon="wrench">
-        Catalog of all available tools from connected servers
-      </Card>
-      <Card title="Execution History" icon="clock">
-        Complete log of all tool executions and their results
-      </Card>
-    </CardGroup>
+<CardGroup cols={2}>
+  <Card title="Control Panel" icon="sidebar">
+    Where you manage all your connections
+  </Card>
+  <Card title="Marketplace" icon="shopping-bag">
+    Ready-made connections you can use
+  </Card>
+  <Card title="Tool List" icon="wrench">
+    All the actions you can do
+  </Card>
+  <Card title="History" icon="clock">
+    Record of what you've done
+  </Card>
+</CardGroup>
 
-  </Accordion>
+### Types of Connections
 
-  <Accordion title="Server Types" icon="server">
-    ### Connection Protocols
+MCP can connect in different ways:
 
-    MCP supports multiple connection protocols for different use cases:
+- **STDIO**: Local tools on your computer
+- **SSE**: Real-time streaming connections
+- **HTTP**: Web-based APIs
 
-    <BadgeGroup>
-      <Badge variant="secondary">STDIO - Local Processes</Badge>
-      <Badge variant="secondary">SSE - Server-Sent Events</Badge>
-      <Badge variant="secondary">HTTP - REST APIs</Badge>
-    </BadgeGroup>
+### Staying Safe
 
-    **STDIO Servers**: Local command-line tools and scripts
-    **SSE Servers**: Real-time streaming connections
-    **HTTP Servers**: RESTful API integrations
+MCP keeps you safe:
 
-  </Accordion>
-
-  <Accordion title="Security Model" icon="shield">
-    ### Approval & Security
-
-    Built-in security controls ensure safe tool execution:
-
-    - **Tool Approval**: Manual approval required for tool execution
-    - **Auto-Approval**: Trusted tools can be pre-approved
-    - **Timeout Protection**: Automatic denial after timeout period
-    - **Parameter Validation**: Input validation before execution
-
-  </Accordion>
-</AccordionGroup>
+- **Approval needed**: You have to approve actions before they run
+- **Auto-approve**: You can trust certain actions to run automatically
+- **Timeout**: Actions are cancelled if they take too long
+- **Check inputs**: Makes sure the data is valid before running
 
 ## Getting Started
 
