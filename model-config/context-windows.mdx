@@ -106,39 +106,39 @@ CodinIT can automatically shorten long conversations:
 - Search instead of reading many files
 - Break work into smaller pieces
 
-## Advanced context management
+## Advanced Tips
 
-### Plan/Act mode optimization
+### Use Plan/Act Mode Smartly
 
-Leverage Plan/Act mode for better context usage:
+Use different AI models for different tasks:
 
-- **Plan Mode**: Use smaller context for discussion and planning
-- **Act Mode**: Include necessary files when you're ready to write code
+- **Plan Mode**: Use cheaper AI for talking and planning
+- **Act Mode**: Use better AI when writing code
 
-Configuration example:
+Example:
 
 ```
-Plan Mode: DeepSeek V3 (128K) - Lower cost planning
-Act Mode: Claude Sonnet (1M) - Maximum context for coding
+Plan Mode: DeepSeek V3 (128K) - Cheap for planning
+Act Mode: Claude Sonnet (1M) - Better for coding
 ```
 
-### Context pruning strategies
+### How CodinIT Saves Space
 
-These are ways CodinIT can reduce the amount of text in your context window:
+CodinIT can automatically remove less important text:
 
-1. **Temporal pruning**: Remove older parts of your conversation that are no longer relevant
-2. **Semantic pruning**: Keep only the code sections related to your current task
-3. **Hierarchical pruning**: Keep the big picture but remove fine details
+1. **Remove old messages**: Delete old parts of the conversation
+2. **Keep relevant code**: Only keep code related to what you're doing now
+3. **Keep summaries**: Keep the main ideas but remove details
 
-### Token counting tips
+### Counting Tokens
 
-#### Rough estimates
+#### Quick math
 
-- **1 token ≈ 0.75 words** (so 1,000 tokens is about 750 words)
-- **1 token ≈ 4 characters**
+- **1 token ≈ 3/4 of a word** (1,000 tokens = about 750 words)
+- **1 token ≈ 4 letters**
 - **100 lines of code ≈ 500-1000 tokens**
 
-#### File size guidelines
+#### File sizes
 
 | File Type      | Tokens per KB |
 | -------------- | ------------- |
@@ -147,34 +147,34 @@ These are ways CodinIT can reduce the amount of text in your context window:
 | **Markdown**   | ~200-300      |
 | **Plain text** | ~200-250      |
 
-## Context window FAQ
+## Common Questions
 
-### Q: Why do responses get worse with very long conversations?
+### Q: Why does the AI get worse with long conversations?
 
-**A:** Models can lose focus with too much context. The "effective window" is typically 50-70% of the advertised limit.
+**A:** The AI loses focus when there's too much to remember. It works best with 50-70% of its maximum.
 
-### Q: Should I use the largest context window available?
+### Q: Should I always use the biggest context window?
 
-**A:** Not always. Larger contexts increase cost and can reduce response quality. Match the context to your task size.
+**A:** No. Bigger contexts cost more and can make the AI worse. Use what you need for your task.
 
-### Q: How can I tell how much context I'm using?
+### Q: How do I know how much context I'm using?
 
-**A:** CodinIT shows token usage in the interface. Watch for the context meter approaching limits.
+**A:** CodinIT shows you a meter. Watch it to see when you're getting close to the limit.
 
-### Q: What happens when I exceed the context limit?
+### Q: What happens if I go over the limit?
 
-**A:** CodinIT will either:
+**A:** CodinIT will:
 
-- Automatically compact the conversation (if enabled)
-- Show an error and suggest starting a new task
-- Truncate older messages (with warning)
+- Automatically shorten the conversation (if you turned that on)
+- Show an error and tell you to start a new chat
+- Remove old messages (with a warning)
 
-## Recommendations by use case
+## What to Use When
 
-| Use Case                | Recommended Context | Model Suggestion  |
+| What You're Doing                | Context Size | Which AI  |
 | ----------------------- | ------------------- | ----------------- |
 | **Quick fixes**         | 32K-128K            | DeepSeek V3       |
-| **Feature development** | 128K-200K           | Qwen3 Coder       |
-| **Large refactoring**   | 400K+               | Claude Sonnet 4.5 |
-| **Code review**         | 200K-400K           | GPT-5             |
-| **Documentation**       | 128K                | Any budget model  |
+| **Building features** | 128K-200K           | Qwen3 Coder       |
+| **Big changes**   | 400K+               | Claude Sonnet 4.5 |
+| **Reviewing code**         | 200K-400K           | GPT-5             |
+| **Writing docs**       | 128K                | Any cheap model  |
