@@ -1,83 +1,53 @@
 ---
 title: WebContainer
-description: Manage multiple development server instances with seamless port switching and real-time preview management for complex applications.
+description: Switch between different parts of your app while it's running
 ---
 
-Manage multiple development server instances running in WebContainer environments. The port dropdown provides seamless switching between different preview instances and server configurations.
+WebContainer lets you run your app and see it working. If your app has multiple parts (like a website and a backend), you can easily switch between them.
 
-## Overview
+## What is WebContainer?
 
-When running multiple development servers or microservices, the WebContainer Preview Management system allows you to switch between different application instances with a simple dropdown interface.
+Think of WebContainer like a mini computer inside CodinIT. It runs your code and shows you what it looks like, just like opening a website in your browser.
 
 <CardGroup cols={3}>
-  <Card title="Port Selection" icon="hash">
-    Quick switching between server instances
+  <Card title="Switch Views" icon="hash">
+    Jump between different parts of your app
   </Card>
-  <Card title="Instance Management" icon="server">
-    Multiple preview environments
+  <Card title="Multiple Parts" icon="server">
+    Run several things at once
   </Card>
-  <Card title="Status Indicators" icon="activity">
-    Active preview identification
+  <Card title="See What's Active" icon="activity">
+    Know which part you're looking at
   </Card>
 </CardGroup>
 
-## Preview Management
+## How to Use It
 
-<AccordionGroup>
-  <Accordion title="Port Organization" icon="list-ordered">
+### Switching Between Parts
 
-    ### Server Instance Selection
+When your app is running, you might see different "ports" (think of them as different doors to your app). You can click a dropdown to switch between them.
 
-    Organized access to all running preview instances:
-    - **Port-based sorting** - Numerical ordering of available ports
-    - **Active indication** - Clear highlighting of current preview
-    - **Quick switching** - One-click navigation between instances
-    - **Instance persistence** - Maintains selection across sessions
+- Click the port number to see all available parts
+- Select the one you want to view
+- Your preview updates instantly
 
-  </Accordion>
+### When You Need Multiple Parts
 
-  <Accordion title="Multi-Server Support" icon="network">
+Some apps have different pieces that work together:
 
-    ### Complex Application Management
+- **Website** - What users see and click on
+- **Backend** - The part that handles data and logic
+- **Tools** - Extra helpers for testing or building
 
-    Handle applications with multiple server components:
-    - **Frontend servers** - Main application interfaces
-    - **API servers** - Backend service endpoints
-    - **Development tools** - Additional development servers
-    - **Microservices** - Individual service previews
+You can view each part separately to make sure everything works correctly.
 
-  </Accordion>
+### Navigating Your App
 
-  <Accordion title="Navigation Integration" icon="link">
-  
-    ### Address Bar Integration
-
-    Seamlessly integrated with preview navigation:
-    - **URL path support** - Navigate within selected instance
-    - **Port preservation** - Maintains port context during navigation
-    - **Reload functionality** - Refresh current preview instance
-    - **External access** - Open previews in new tabs/windows
-
-  </Accordion>
-</AccordionGroup>
-
-## Usage Scenarios
-
-<BadgeGroup>
-  <Badge variant="secondary">Full-Stack Apps</Badge>
-  <Badge variant="secondary">Microservices</Badge>
-  <Badge variant="secondary">Multi-Tenant Apps</Badge>
-  <Badge variant="secondary">Development Tools</Badge>
-</BadgeGroup>
-
-### Common Use Cases
-
-- **Full-stack applications** - Frontend and backend servers
-- **Microservice architectures** - Multiple service endpoints
-- **Development tooling** - Build tools, testing servers
-- **Multi-environment** - Different configurations
+Once you pick a part to view:
+- Type URLs in the address bar to visit different pages
+- Click the refresh button to reload
+- Open in a new tab to see it in your regular browser
 
 <Callout type="info">
-  **Port Management**: The port dropdown automatically detects and lists all available WebContainer preview instances,
-  making it easy to switch between different parts of your application during development.
+  **Easy Switching**: CodinIT automatically finds all the running parts of your app. Just pick the one you want to see from the dropdown menu.
 </Callout>
