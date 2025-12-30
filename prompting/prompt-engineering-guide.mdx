@@ -11,52 +11,47 @@ Different AI models are good at different things. The key is to be clear about w
 
 ---
 
-## Technology stack specification for AI code generation
+## Tell the AI What Tools to Use
 
-### Be explicit about technologies for better LLM results
+### Be Specific About Your Tools
 
-AI models (LLMs) work best when you clearly specify your preferred technology stack for code generation. This ensures the AI-generated code uses the right frameworks, libraries, and architectural patterns from the start for optimal AI-powered development.
+The AI works better when you tell it exactly what tools and technologies you want to use. It's like telling a chef what ingredients to cook with.
 
-**Clear stack specification for AI prompting:**
+**Good example:**
 
 ```
-Build a modern e-commerce dashboard using AI code generation with:
-- React with TypeScript for the frontend
-- Supabase for backend and database
-- Tailwind CSS for styling
-- React Query for data fetching
-- React Router for navigation
+Build an online store dashboard with:
+- React for the website
+- Supabase for saving data
+- Tailwind CSS to make it look nice
+- React Router to move between pages
 ```
 
-### Recommended Technology Combinations
+### Popular Tool Combinations
 
-| Category               | Primary Choice     | Alternatives                   | Use Case                     |
-| ---------------------- | ------------------ | ------------------------------ | ---------------------------- |
-| **Frontend Framework** | React + TypeScript | Vue.js, Svelte, SolidJS        | Interactive web applications |
-| **Styling**            | Tailwind CSS       | CSS Modules, Styled Components | Utility-first styling        |
-| **Backend**            | Supabase           | Express.js, FastAPI            | Full-stack applications      |
-| **State Management**   | Zustand            | Redux, Jotai                   | Complex application state    |
-| **Data Fetching**      | TanStack Query     | SWR, Apollo                    | Server state management      |
+| What You're Building | Good Tools to Use | What It's For |
+| ---------------------- | ------------------ | ---------------------------- |
+| **Website** | React + TypeScript | Making interactive websites |
+| **Styling**            | Tailwind CSS       | Making things look pretty |
+| **Saving Data**            | Supabase           | Storing user information      |
+| **Managing Data**   | Zustand            | Keeping track of app information    |
 
-### Framework-Specific Considerations
+### Tips for Different Frameworks
 
-**React Applications:**
+**If you're using React:**
+- Say if you want modern or old-style components
+- Mention how you want to handle data
+- Tell it how pages should connect
 
-- Specify component structure (functional vs class components)
-- Include state management preferences
-- Define routing approach (React Router, Next.js App Router)
+**If you're using Vue:**
+- Specify which Vue style you prefer
+- Mention any UI libraries you like
+- Say what build tool you're using
 
-**Vue.js Applications:**
-
-- Specify composition API vs options API
-- Include UI library preferences (Quasar, Vuetify)
-- Define build tool (Vite, Vue CLI)
-
-**Backend Integration:**
-
-- Specify API patterns (REST, GraphQL)
-- Include authentication requirements
-- Define data validation approach (Zod, Joi)
+**For the Backend:**
+- Say if you want REST or GraphQL APIs
+- Mention if you need user login
+- Tell it how to check if data is correct
 
 ## Advanced AI prompting techniques for code generation
 
