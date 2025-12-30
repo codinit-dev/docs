@@ -1,203 +1,198 @@
 ---
 title: 'Maximize Token Efficiency'
-description: Optimize token usage to keep your costs down and work more effectively
+description: How to use AI without spending too much
 ---
 
-Optimize your token usage to reduce costs, improve response times, and work more efficiently with AI models. Understanding how tokens work and implementing best practices can significantly impact your development workflow.
+Learn how to use AI smartly so you don't run out of credits or money. Think of tokens like text messages - the more you send, the more it costs.
 
-## Understanding Tokens
+## What Are Tokens?
 
-CodinIT uses AI models powered by various providers (Anthropic, OpenAI, Google, etc.). Each interaction consumes **tokens**, which are chunks of text that AI models process.
+CodinIT uses AI that runs on "tokens." Tokens are small pieces of text that the AI reads and writes.
 
-### How Tokens Are Used
+### How Tokens Get Used
 
-Tokens are consumed in several ways:
+Tokens are used when:
 
-- **Input tokens**: Your prompts, questions, and context
-- **Output tokens**: AI-generated responses, code, and explanations
-- **Context tokens**: Project files and conversation history that provide context
+- **You ask questions**: Your messages to the AI
+- **AI answers**: The code and explanations the AI gives you
+- **Context**: The AI reading your project files to understand what you're building
 
-### Token Consumption Factors
+### What Affects Token Usage
 
-- **Model type**: Different models have different token costs and limits
-- **Context length**: Larger projects require more tokens for context
-- **Response complexity**: Detailed explanations use more tokens than simple answers
-- **Conversation length**: Longer chat histories consume more context tokens
+- **Which AI model**: Some models cost more than others
+- **Project size**: Bigger projects use more tokens
+- **Answer length**: Long explanations use more tokens than short ones
+- **Chat length**: Longer conversations use more tokens
 
 <Callout type="info">
-  **Token Limits**: Each AI model has maximum token limits for both input context and output generation. Exceeding these
-  limits can cause errors or truncated responses.
+  **Token Limits**: Each AI has a maximum amount of text it can handle at once. If you go over, you might get errors.
 </Callout>
 
-## Token Efficiency Strategies
+## How to Save Tokens
 
-### Use Built-in Features Over Prompts
+### Use Buttons Instead of Typing
 
-Leverage CodinIT's interface features instead of text prompts where possible:
+CodinIT has buttons and menus that don't use tokens:
 
-- **Example Prompts**: Use the suggested prompt buttons instead of typing similar requests
-- **File Operations**: Use the file tree and editor features instead of asking for file operations
-- **Terminal Commands**: Run commands directly in the terminal instead of asking the AI to execute them
+- **Example prompts**: Click suggested prompts instead of typing
+- **File operations**: Use the file tree to create/delete files
+- **Terminal**: Run commands yourself instead of asking AI
 
-### Optimize Your Communication Style
+### Write Better Requests
 
-**Be Specific and Concise:**
+**Be specific and short:**
 
 ```
 ❌ "Make this website look better"
-✅ "Add a hero section with gradient background, centered heading, and call-to-action button to the homepage"
+✅ "Add a hero section with gradient background, centered heading, and button"
 ```
 
-**Provide Context Efficiently:**
+**Give helpful details:**
 
 ```
-❌ "Fix the login page" (requires AI to explore entire codebase)
-✅ "Fix the password validation error on /login - the error occurs when password is less than 8 characters"
+❌ "Fix the login page" (AI has to search everything)
+✅ "Fix the password error on /login - it breaks when password is less than 8 characters"
 ```
 
-**Use Structured Requests:**
+**Use numbered lists:**
 
 ```
 ❌ "Add user authentication"
-✅ "Add user authentication with: 1) Login form with email/password, 2) Registration form, 3) Password reset, 4) Protected routes"
+✅ "Add user authentication with: 1) Login form, 2) Registration form, 3) Password reset, 4) Protected routes"
 ```
 
-## Key Efficiency Techniques
+## Smart Ways to Save Tokens
 
 ### Use Discussion Mode for Planning
 
-Switch to discussion mode when you need guidance without code implementation:
+When you just want to talk and plan (not write code), use discussion mode:
 
-- **Planning Phase**: Use discussion mode to plan features before implementing
-- **Architecture Decisions**: Get advice on system design and technology choices
-- **Code Review**: Discuss code improvements without making changes
-- **Learning**: Ask questions and get explanations without consuming implementation tokens
+- **Planning**: Talk about features before building them
+- **Getting advice**: Ask which tools to use
+- **Code review**: Discuss improvements without changing code
+- **Learning**: Ask questions without generating code
 
-### Strategic Development Approach
+### Plan Before You Build
 
-**Plan Before You Build:**
+**Think first:**
 
-- Outline your application structure and features upfront
-- Break complex projects into manageable phases
-- Identify potential challenges before implementation
-- Create a development roadmap to guide your work
+- Write down what your app should do
+- Break big projects into small pieces
+- Think about problems you might face
+- Make a plan for what to build first
 
-**Iterative Development:**
+**Build step by step:**
 
-- Implement features incrementally rather than all at once
-- Test and validate each component before moving to the next
-- Use version control to track progress and enable rollbacks
-- Focus on core functionality before adding advanced features
+- Add one feature at a time
+- Test each piece before moving on
+- Use Git to save your progress
+- Build the main features first, fancy stuff later
 
-### Error Handling Strategies
+### Don't Waste Tokens on Errors
 
-**Avoid Repeated Fix Attempts:**
+**When something breaks:**
 
-- Don't repeatedly click "Attempt fix" for the same error
-- Analyze error messages to understand root causes
-- Use discussion mode to get guidance on complex issues
-- Implement proper error handling in your code to prevent future issues
+- Don't keep clicking "fix" over and over
+- Read the error message to understand what's wrong
+- Use discussion mode to ask for help
+- Add error handling so it doesn't break again
 
-**Add Comprehensive Error Handling:**
+**Prevent errors:**
 
-- Include detailed logging to understand error patterns
-- Implement graceful error states in your UI
-- Add input validation to prevent common errors
-- Use try-catch blocks appropriately in your code
+- Add logging to see what's happening
+- Show friendly error messages to users
+- Check user input before using it
+- Use try-catch to handle errors gracefully
 
-### Project Size Management
+### Keep Your Project Small
 
-**Optimize Project Structure:**
+**Organize your files:**
 
-- Keep files under 500 lines when possible
-- Split large components into smaller, focused modules
-- Remove unused dependencies and code
-- Use efficient data structures and algorithms
+- Keep files under 500 lines
+- Split big files into smaller ones
+- Delete code you're not using
+- Use simple, efficient code
 
-**Context Window Management:**
+**Manage context:**
 
-- Be mindful of how much context your project provides
-- Use specific file references instead of broad requests
-- Clean up chat history when conversations become too long
-- Focus on specific components rather than entire applications
+- Don't include your whole project in every request
+- Reference specific files instead
+- Start a new chat when conversations get too long
+- Focus on one part of your app at a time
 
 <Callout type="info">
-  **Discussion Mode**: Use discussion mode for planning, architecture decisions, and getting guidance without
-  implementing code changes.
+  **Discussion Mode**: Use this when you want to talk and plan without writing code. It saves tokens!
 </Callout>
 
 <Callout type="tip">
-  **Version Control**: Leverage Git/version control features to manage project state without consuming AI tokens for
-  undo operations.
+  **Use Git**: Save your work with Git instead of asking AI to undo things. It's free!
 </Callout>
 
-## Model Selection Strategies
+## Choosing the Right AI Model
 
-### Choose Appropriate Models
+### Pick the Right Model for the Job
 
-Different AI models have different strengths and token costs:
+Different AI models cost different amounts:
 
-- **Use smaller models** for simple tasks, drafting, and initial development
-- **Reserve larger models** for complex reasoning, code review, and final polishing
-- **Consider model context limits** when working with large codebases
-- **Balance cost vs. capability** based on your current development phase
+- **Cheaper models** for simple tasks and quick questions
+- **Expensive models** for hard problems and important code
+- **Check limits** - some models can't handle huge projects
+- **Balance cost and quality** based on what you're doing
 
-### Provider-Specific Optimization
+### Different AI Models
 
-**Anthropic Claude:**
+**Claude (Anthropic):**
 
-- Excellent for reasoning and code generation
-- Higher token costs but superior code quality
-- Best for complex development tasks
+- Great at understanding and writing code
+- Costs more but gives better results
+- Use for complex projects
 
-**OpenAI GPT:**
+**GPT (OpenAI):**
 
-- Fast and cost-effective for many tasks
-- Good for quick iterations and prototyping
-- Consider GPT-4 for complex reasoning tasks
+- Fast and cheaper for many tasks
+- Good for trying things out quickly
+- Use GPT-4 for harder problems
 
-**Other Providers:**
+**Other Models:**
 
-- Evaluate based on specific use cases
-- Consider regional availability and data privacy requirements
-- Compare pricing and performance for your workload
+- Check what they're good at
+- Some work better in certain countries
+- Compare prices for what you need
 
-## Advanced Optimization Techniques
+## Advanced Tips
 
-### Context Management
+### Focus Your Requests
 
-**File-Specific Requests:**
+**Be specific about files:**
 
-- Reference specific files instead of asking about "the entire codebase"
-- Use imports and dependencies to provide necessary context
-- Focus on individual components rather than full applications
+- Name the exact files you're working on
+- Don't ask about "the whole project"
+- Focus on one part at a time
 
-**Progressive Development:**
+**Build gradually:**
 
-- Build core functionality first, then add features incrementally
-- Test each component thoroughly before moving to the next
-- Use modular architecture to keep context windows manageable
+- Start with the main features
+- Test each piece before adding more
+- Keep your code organized in small pieces
 
-### Performance Monitoring
+### Watch Your Usage
 
-**Track Your Usage:**
+**Track what you use:**
 
-- Monitor token consumption across different tasks
-- Identify patterns in high-token activities
-- Adjust your approach based on usage analytics
+- See which tasks use the most tokens
+- Notice patterns in what costs more
+- Change your approach based on what you learn
 
-**Optimize Workflows:**
+**Work smarter:**
 
-- Combine related changes into single requests
-- Use batch operations when possible
-- Plan complex changes to minimize back-and-forth communication
+- Combine related requests into one
+- Do multiple things at once when possible
+- Plan ahead to avoid going back and forth
 
 <Callout type="info">
-  **Token Awareness**: Understanding token consumption helps you work more efficiently and control costs. Focus on
-  quality over quantity in your interactions.
+  **Be Aware**: Understanding tokens helps you save money. Focus on asking good questions, not lots of questions.
 </Callout>
 
 <Callout type="tip">
-  **Continuous Learning**: As you work more with AI models, you'll develop intuition for which approaches are most
-  token-efficient for different types of tasks.
+  **Learn as You Go**: The more you use AI, the better you'll get at knowing which approach saves the most tokens.
 </Callout>

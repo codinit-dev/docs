@@ -1,166 +1,158 @@
 ---
 title: 'Prompt Engineering Guide'
-description: 'Master AI prompt engineering techniques for better code generation. Learn advanced LLM prompting strategies & optimize AI interactions.'
+description: 'How to talk to AI to get better code'
 ---
 
-Master the art of AI prompt engineering to get the best code generation results from LLMs (Large Language Models). This comprehensive guide covers advanced techniques for structuring AI prompts, optimizing for different AI models like Claude and GPT-4, and maximizing the quality of AI-generated code and intelligent development responses.
+Learn how to ask the AI for what you want in a way that gets you the best results. Think of it like giving clear instructions to a helpful assistant.
 
-## Understanding LLM capabilities for AI code generation
+## How AI Understands You
 
-Different AI models (LLMs) have different coding strengths and limitations. Effective AI prompt engineering involves adapting your communication style to leverage each LLM's code generation capabilities optimally for better AI-powered development results.
+Different AI models are good at different things. The key is to be clear about what you want, just like explaining something to a friend.
 
 ---
 
-## Technology stack specification for AI code generation
+## Tell the AI What Tools to Use
 
-### Be explicit about technologies for better LLM results
+### Be Specific About Your Tools
 
-AI models (LLMs) work best when you clearly specify your preferred technology stack for code generation. This ensures the AI-generated code uses the right frameworks, libraries, and architectural patterns from the start for optimal AI-powered development.
+The AI works better when you tell it exactly what tools and technologies you want to use. It's like telling a chef what ingredients to cook with.
 
-**Clear stack specification for AI prompting:**
+**Good example:**
 
 ```
-Build a modern e-commerce dashboard using AI code generation with:
-- React with TypeScript for the frontend
-- Supabase for backend and database
-- Tailwind CSS for styling
-- React Query for data fetching
-- React Router for navigation
+Build an online store dashboard with:
+- React for the website
+- Supabase for saving data
+- Tailwind CSS to make it look nice
+- React Router to move between pages
 ```
 
-### Recommended Technology Combinations
+### Popular Tool Combinations
 
-| Category               | Primary Choice     | Alternatives                   | Use Case                     |
-| ---------------------- | ------------------ | ------------------------------ | ---------------------------- |
-| **Frontend Framework** | React + TypeScript | Vue.js, Svelte, SolidJS        | Interactive web applications |
-| **Styling**            | Tailwind CSS       | CSS Modules, Styled Components | Utility-first styling        |
-| **Backend**            | Supabase           | Express.js, FastAPI            | Full-stack applications      |
-| **State Management**   | Zustand            | Redux, Jotai                   | Complex application state    |
-| **Data Fetching**      | TanStack Query     | SWR, Apollo                    | Server state management      |
+| What You're Building | Good Tools to Use | What It's For |
+| ---------------------- | ------------------ | ---------------------------- |
+| **Website** | React + TypeScript | Making interactive websites |
+| **Styling**            | Tailwind CSS       | Making things look pretty |
+| **Saving Data**            | Supabase           | Storing user information      |
+| **Managing Data**   | Zustand            | Keeping track of app information    |
 
-### Framework-Specific Considerations
+### Tips for Different Frameworks
 
-**React Applications:**
+**If you're using React:**
+- Say if you want modern or old-style components
+- Mention how you want to handle data
+- Tell it how pages should connect
 
-- Specify component structure (functional vs class components)
-- Include state management preferences
-- Define routing approach (React Router, Next.js App Router)
+**If you're using Vue:**
+- Specify which Vue style you prefer
+- Mention any UI libraries you like
+- Say what build tool you're using
 
-**Vue.js Applications:**
+**For the Backend:**
+- Say if you want REST or GraphQL APIs
+- Mention if you need user login
+- Tell it how to check if data is correct
 
-- Specify composition API vs options API
-- Include UI library preferences (Quasar, Vuetify)
-- Define build tool (Vite, Vue CLI)
+## How to Ask Better Questions
 
-**Backend Integration:**
+### Give the AI Context
 
-- Specify API patterns (REST, GraphQL)
-- Include authentication requirements
-- Define data validation approach (Zod, Joi)
+**Help the AI understand your situation:**
 
-## Advanced AI prompting techniques for code generation
+- Show it code you already have
+- Tell it which files you're working on
+- Mention any limits (like "needs to work on old phones")
+- Say if speed is important
 
-### Contextual information for better LLM results
+**Start Simple, Then Add Details:**
 
-**Provide relevant context for AI code generation:**
+- First, explain what you want in general
+- Then add more specific details
+- Ask follow-up questions if needed
+- Build on what the AI already created
 
-- Include existing code snippets when relevant for AI understanding
-- Reference specific files or components for LLM context
-- Mention current technology constraints for AI-powered development
-- Specify performance requirements for optimized code generation
+### Tips for Different AI Models
 
-**Progressive refinement with AI prompting:**
+**For Claude or Gemini:**
 
-- Start with high-level requirements for AI planning
-- Add implementation details iteratively for better LLM results
-- Use follow-up prompts for AI clarification
-- Build upon previous AI responses for iterative development
+- Give all the information at once
+- Use numbered lists to organize your thoughts
+- Include examples of what you want
+- Say how you want the answer formatted
 
-### LLM-specific optimization for AI coding
+**For GPT:**
 
-**Claude/Gemini AI models:**
+- Break big requests into smaller pieces
+- Use simple, clear language
+- Show examples of what you mean
+- Be specific about what you want
 
-- Provide comprehensive context upfront for better AI code generation
-- Use structured formats (numbered lists, sections) for LLM understanding
-- Include examples and edge cases for robust AI development
-- Specify output format preferences for consistent code generation
+### Avoid Common Mistakes
 
-**GPT AI models:**
+**Don't do this:**
 
-- Break complex requests into smaller parts for better LLM processing
-- Use clear, direct language for optimal AI code generation
-- Provide concrete examples for accurate LLM understanding
-- Specify desired output structure for consistent AI results
+- Be too vague ("make it better")
+- Forget to mention important details
+- Use different names for the same thing
+- Forget to say how things should connect
 
-### Error Prevention
+**Do this instead:**
 
-**Common Pitfalls to Avoid:**
-
-- Vague requirements that lead to assumptions
-- Missing technical specifications
-- Inconsistent naming conventions
-- Unspecified integration requirements
-
-**Validation Techniques:**
-
-- Include acceptance criteria
-- Specify testing requirements
-- Define success metrics
-- Request validation checkpoints
+- Include clear goals ("make the button blue and centered")
+- Specify what success looks like
+- Say how you'll test it
+- Ask for checkpoints along the way
 
 <Callout type="info">
-  **Version Specification**: When possible, specify framework versions to ensure compatibility and avoid deprecated
-  features.
+  **Version Numbers**: If you know which version of a tool you're using, tell the AI. This helps it give you code that works.
 </Callout>
 
 <Callout type="tip">
-  **Iterative Refinement**: Start with a clear prompt, then use follow-up messages to add details and make adjustments
-  as needed.
+  **Start Simple**: Begin with a clear request, then add more details in follow-up messages.
 </Callout>
 
-## AI prompt engineering best practices summary
+## Quick Tips Summary
 
-### Essential AI prompting principles for code generation
+### The Main Rules
 
-1. **Clarity first**: Be specific about what you want to build with AI code generation and how it should work
-2. **Technology specification**: Clearly state your preferred frameworks and libraries for LLM understanding
-3. **Context provision**: Include relevant background information and constraints for better AI results
-4. **Iterative AI approach**: Start simple, then add complexity through follow-up prompts for optimal code generation
+1. **Be clear**: Say exactly what you want and how it should work
+2. **Name your tools**: Tell the AI which technologies to use
+3. **Give context**: Share relevant information and any limits
+4. **Start simple**: Begin with basics, then add details
 
-### AI code generation quality checklist
+### Checklist Before You Ask
 
-**Before submitting AI prompts:**
+**Before you send your request:**
 
-- ✅ Goal is clearly defined for LLM understanding
-- ✅ Technology stack is specified for AI code generation
-- ✅ Key features are listed for comprehensive AI development
-- ✅ User requirements are outlined for accurate LLM results
-- ✅ Success criteria are defined for measurable AI outcomes
+- ✅ You clearly explained your goal
+- ✅ You listed the tools you want to use
+- ✅ You mentioned the main features you need
+- ✅ You described what success looks like
 
-**During AI-powered development:**
+**While building:**
 
-- 🔄 Provide feedback on AI-generated code for improvement
-- 🔄 Request specific modifications from LLM for refinement
-- 🔄 Ask for AI explanations when needed for understanding
-- 🔄 Use AI discussion mode for architecture planning
+- 🔄 Give feedback on what the AI creates
+- 🔄 Ask for specific changes
+- 🔄 Request explanations if confused
+- 🔄 Use discussion mode to plan
 
-### Common Success Patterns
+### What Makes a Good Request
 
-**Effective Prompts Include:**
+**Good requests have:**
 
-- Specific functionality requirements
-- Technology stack preferences
-- User experience considerations
-- Performance and scalability needs
-- Integration requirements
+- Clear description of what you want
+- List of tools to use
+- How it should look and feel
+- Any speed or size requirements
+- How it connects to other things
 
-**Ineffective Prompts Lack:**
+**Bad requests are missing:**
 
-- Clear objectives
-- Technical specifications
-- Implementation details
-- Success criteria
+- A clear goal
+- Technical details
+- Specific instructions
+- Definition of "done"
 
 <Callout type="info">
-  **Remember**: LLMs can only generate code based on the information you provide in prompts. The more specific and complete your AI prompts, the better the code generation results and AI-powered development outcomes.
+  **Remember**: The AI can only work with what you tell it. The more details you give, the better the results.
 </Callout>

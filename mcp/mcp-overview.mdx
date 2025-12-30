@@ -1,361 +1,259 @@
 ---
 title: MCP Integration
-description: Model Context Protocol integration for connecting external services and tools
+description: Connect CodinIT to other services and tools
 ---
 
-The Model Context Protocol (MCP) integration system enables seamless connection between your development environment and external services, APIs, and tools. MCP provides a standardized way to extend your application's capabilities through secure, approved tool executions.
+MCP (Model Context Protocol) lets CodinIT connect to other services like databases, payment systems, and more. Think of it like adding plugins to make CodinIT more powerful.
 
-## Overview
+## What is MCP?
 
-MCP allows you to connect to various external services like databases, payment processors, analytics platforms, and AI services. Each connection provides tools that can be executed with proper approval workflows, ensuring security while maintaining productivity.
+MCP lets you connect CodinIT to other services you use. For example, you can connect to a database to save user data, or to Stripe to process payments.
 
 <CardGroup cols={3}>
-  <Card title="Service Integration" icon="plug">
-    Connect to databases, APIs, and external services
+  <Card title="Connect Services" icon="plug">
+    Link to databases, APIs, and other tools
   </Card>
-  <Card title="Tool Execution" icon="zap">
-    Execute approved operations with security controls
+  <Card title="Run Actions" icon="zap">
+    Do things in those services safely
   </Card>
-  <Card title="Marketplace" icon="storefront">
-    Pre-configured integrations for popular services
+  <Card title="Ready-Made Connections" icon="storefront">
+    Pre-built connections for popular services
   </Card>
 </CardGroup>
 
-## System Architecture
+## How It Works
 
-<AccordionGroup>
-  <Accordion title="Core Components" icon="cog">
-    ### Main System Components
+### Main Parts
 
-    The MCP system consists of several interconnected components working together:
+MCP has a few main parts:
 
-    <CardGroup cols={2}>
-      <Card title="Integration Panel" icon="sidebar">
-        Central hub for managing all MCP connections and activities
-      </Card>
-      <Card title="Marketplace" icon="shopping-bag">
-        Pre-configured templates for popular services and APIs
-      </Card>
-      <Card title="Tool Registry" icon="wrench">
-        Catalog of all available tools from connected servers
-      </Card>
-      <Card title="Execution History" icon="clock">
-        Complete log of all tool executions and their results
-      </Card>
-    </CardGroup>
+<CardGroup cols={2}>
+  <Card title="Control Panel" icon="sidebar">
+    Where you manage all your connections
+  </Card>
+  <Card title="Marketplace" icon="shopping-bag">
+    Ready-made connections you can use
+  </Card>
+  <Card title="Tool List" icon="wrench">
+    All the actions you can do
+  </Card>
+  <Card title="History" icon="clock">
+    Record of what you've done
+  </Card>
+</CardGroup>
 
-  </Accordion>
+### Types of Connections
 
-  <Accordion title="Server Types" icon="server">
-    ### Connection Protocols
+MCP can connect in different ways:
 
-    MCP supports multiple connection protocols for different use cases:
+- **STDIO**: Local tools on your computer
+- **SSE**: Real-time streaming connections
+- **HTTP**: Web-based APIs
 
-    <BadgeGroup>
-      <Badge variant="secondary">STDIO - Local Processes</Badge>
-      <Badge variant="secondary">SSE - Server-Sent Events</Badge>
-      <Badge variant="secondary">HTTP - REST APIs</Badge>
-    </BadgeGroup>
+### Staying Safe
 
-    **STDIO Servers**: Local command-line tools and scripts
-    **SSE Servers**: Real-time streaming connections
-    **HTTP Servers**: RESTful API integrations
+MCP keeps you safe:
 
-  </Accordion>
+- **Approval needed**: You have to approve actions before they run
+- **Auto-approve**: You can trust certain actions to run automatically
+- **Timeout**: Actions are cancelled if they take too long
+- **Check inputs**: Makes sure the data is valid before running
 
-  <Accordion title="Security Model" icon="shield">
-    ### Approval & Security
-
-    Built-in security controls ensure safe tool execution:
-
-    - **Tool Approval**: Manual approval required for tool execution
-    - **Auto-Approval**: Trusted tools can be pre-approved
-    - **Timeout Protection**: Automatic denial after timeout period
-    - **Parameter Validation**: Input validation before execution
-
-  </Accordion>
-</AccordionGroup>
-
-## Getting Started
+## How to Start
 
 <Steps>
-  <Step title="Access MCP Panel">Click the MCP integrations button in the toolbar to open the main panel</Step>
-  <Step title="Browse Marketplace">Explore pre-configured templates for popular services</Step>
-  <Step title="Configure Integration">Fill in required credentials and connection details</Step>
-  <Step title="Test Connection">Verify the integration works before saving</Step>
-  <Step title="Execute Tools">Use approved tools in your development workflow</Step>
+  <Step title="Open MCP Panel">Click the MCP button in the toolbar</Step>
+  <Step title="Look at Marketplace">See what ready-made connections are available</Step>
+  <Step title="Set Up Connection">Enter your login info and settings</Step>
+  <Step title="Test It">Make sure it works before saving</Step>
+  <Step title="Use It">Start using the tools in your project</Step>
 </Steps>
 
-## Marketplace Integrations
+## Available Services
 
-<AccordionGroup>
-  <Accordion title="Database Services" icon="database">
-    ### Database & Storage
+### Databases
 
-    Connect to databases and storage services:
+Save and get data:
 
-    - **Supabase**: PostgreSQL with real-time subscriptions
-    - **Custom Databases**: Any PostgreSQL-compatible database
-    - **File Systems**: Local and remote file operations
+- **Supabase**: Database with real-time updates
+- **Custom Databases**: Any PostgreSQL database
+- **File Systems**: Save files locally or online
 
-  </Accordion>
+### Payments
 
-  <Accordion title="Payment & Commerce" icon="credit-card">
-    ### Payment Processing
+Handle money:
 
-    Integrate payment and subscription services:
+- **Stripe**: Accept payments and subscriptions
+- **Custom Payment APIs**: Other payment services
 
-    - **Stripe**: Payment processing and subscriptions
-    - **Custom Payment APIs**: Third-party payment processors
+### Analytics
 
-  </Accordion>
+Track how people use your app:
 
-  <Accordion title="Analytics & Monitoring" icon="bar-chart">
-    ### Analytics Platforms
+- **PostHog**: See what users do
+- **Custom Analytics**: Your own tracking systems
 
-    Connect to analytics and monitoring services:
+### Communication
 
-    - **PostHog**: Product analytics and feature flags
-    - **Custom Analytics**: Internal analytics platforms
+Send messages:
 
-  </Accordion>
+- **Slack**: Team chat and notifications
+- **Custom APIs**: Your own messaging systems
 
-  <Accordion title="Communication" icon="message-circle">
-    ### Communication Tools
+### Development
 
-    Integrate messaging and collaboration platforms:
+Build and deploy:
 
-    - **Slack**: Team communication and notifications
-    - **Custom APIs**: Internal communication systems
+- **GitHub**: Save code and work with others
+- **Vercel**: Put your app online
+- **21st.dev**: Generate components
 
-  </Accordion>
+### AI Services
 
-  <Accordion title="Development Tools" icon="code">
-    ### Development Services
+Use artificial intelligence:
 
-    Connect to development and deployment tools:
+- **Claude Code**: AI that writes code
+- **OpenAI**: GPT models
+- **Custom AI APIs**: Your own AI services
 
-    - **GitHub**: Repository management and code collaboration
-    - **Vercel**: Deployment and hosting platform
-    - **21st.dev**: Component generation and development tools
+### Productivity
 
-  </Accordion>
+Get organized:
 
-  <Accordion title="AI & ML Services" icon="sparkle">
-    ### Artificial Intelligence
+- **HubSpot**: Manage customers
+- **Notion**: Take notes and organize
+- **Custom Tools**: Your own productivity apps
 
-    Integrate AI and machine learning services:
+## Managing Connections
 
-    - **Claude Code**: AI-powered code generation
-    - **OpenAI**: GPT models and AI capabilities
-    - **Custom AI APIs**: Proprietary AI services
+### Adding New Services
 
-  </Accordion>
+Add your own custom connections:
 
-  <Accordion title="Productivity" icon="briefcase">
-    ### Productivity Tools
+- Choose connection type (STDIO, SSE, or HTTP)
+- Enter your API keys or tokens
+- Set up any special settings
+- Test it before saving
 
-    Connect to productivity and knowledge platforms:
+### Checking Status
 
-    - **HubSpot**: CRM and marketing automation
-    - **Notion**: Knowledge base and documentation
-    - **Custom Tools**: Internal productivity systems
+See how your connections are doing:
 
-  </Accordion>
-</AccordionGroup>
+- Check if they're connected
+- See how many tools are available
+- Get alerts if something's wrong
+- Automatic reconnection if disconnected
 
-## Server Management
+### Editing Connections
 
-<AccordionGroup>
-  <Accordion title="Adding Servers" icon="plus">
-    ### Manual Server Configuration
+Manage your existing connections:
 
-    Add custom MCP servers with full configuration control:
+- Update login info
+- Delete ones you don't use
+- Manage multiple at once
+- Save and restore settings
 
-    - **Server Types**: STDIO, SSE, or HTTP connections
-    - **Authentication**: API keys, tokens, and custom headers
-    - **Environment Variables**: Runtime configuration
-    - **Connection Testing**: Verify configuration before saving
+## Using Tools
 
-  </Accordion>
+### Finding Tools
 
-  <Accordion title="Server Monitoring" icon="activity">
-    ### Connection Health
+Look through available actions:
 
-    Monitor the status of all connected servers:
+- See all available tools
+- Search by name or type
+- See what info each tool needs
+- Read instructions for each tool
 
-    - **Connection Status**: Real-time availability checking
-    - **Tool Count**: Number of available tools per server
-    - **Error Reporting**: Connection and authentication issues
-    - **Auto-Reconnection**: Automatic retry on connection loss
+### Running Tools Safely
 
-  </Accordion>
+Execute tools with safety checks:
 
-  <Accordion title="Server Maintenance" icon="settings">
-    ### Configuration Management
+- Review before running
+- Check that inputs are correct
+- Auto-cancel after 30 seconds
+- Trust certain tools to run automatically
 
-    Manage existing server configurations:
+### Tracking Usage
 
-    - **Edit Settings**: Update credentials and configuration
-    - **Delete Servers**: Remove unused integrations
-    - **Bulk Operations**: Manage multiple servers simultaneously
-    - **Export/Import**: Backup and restore configurations
+See what you've done:
 
-  </Accordion>
-</AccordionGroup>
+- History of all actions
+- How long things took
+- Errors and problems
+- Most-used tools
 
-## Tool Execution Workflow
-
-<AccordionGroup>
-  <Accordion title="Tool Discovery" icon="search">
-    ### Finding Available Tools
-
-    Browse and search through all available tools:
-
-    - **Tool Registry**: Complete catalog of available operations
-    - **Search & Filter**: Find tools by name, server, or category
-    - **Parameter Preview**: View required and optional parameters
-    - **Documentation**: Access tool descriptions and usage examples
-
-  </Accordion>
-
-  <Accordion title="Approval Process" icon="check-circle">
-    ### Secure Tool Execution
-
-    Execute tools with built-in security controls:
-
-    - **Approval Interface**: Review tool calls before execution
-    - **Parameter Validation**: Ensure correct input values
-    - **Timeout Protection**: Automatic denial after 30 seconds
-    - **Trusted Tools**: Pre-approve frequently used operations
-
-  </Accordion>
-
-  <Accordion title="Execution Monitoring" icon="eye">
-    ### Track Tool Usage
-
-    Monitor and analyze tool execution patterns:
-
-    - **Execution History**: Complete log of all tool calls
-    - **Performance Metrics**: Execution time and success rates
-    - **Error Analysis**: Failed executions and error details
-    - **Usage Statistics**: Most frequently used tools
-
-  </Accordion>
-</AccordionGroup>
-
-## Advanced Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Auto-Approval</Badge>
-  <Badge variant="secondary">Bulk Operations</Badge>
-  <Badge variant="secondary">Export/Import</Badge>
-  <Badge variant="secondary">Real-time Monitoring</Badge>
-</BadgeGroup>
-
-### Advanced Capabilities
-
-- **Auto-Approval**: Pre-approve trusted tools for instant execution
-- **Bulk Operations**: Manage multiple servers and tools simultaneously
-- **Data Export**: Export execution history and configurations
-- **Real-time Updates**: Live status monitoring and notifications
-
-## Best Practices
+## Tips for Success
 
 <Callout type="info">
-  **Security First**: Always review tool parameters before approval, especially for operations that modify data or
-  execute commands.
+  **Safety First**: Always check what a tool will do before approving it, especially if it changes data.
 </Callout>
 
 <Callout type="tip">
-  **Start Small**: Begin with marketplace templates for popular services, then add custom integrations as needed.
+  **Start Simple**: Use ready-made connections first, then add custom ones later.
 </Callout>
 
 <Callout type="warning">
-  **Credential Management**: Store API keys and tokens securely. MCP configurations are stored locally and never
-  transmitted to external servers.
+  **Keep Secrets Safe**: Store API keys securely. MCP keeps everything on your computer and doesn't send it anywhere.
 </Callout>
 
-## Troubleshooting
+## Fixing Problems
 
-<AccordionGroup>
-  <Accordion title="Connection Issues" icon="wifi-off">
-    ### Server Connection Problems
+### Can't Connect
 
-    Common connection issues and solutions:
+Common connection problems:
 
-    - **Network Errors**: Check internet connectivity and firewall settings
-    - **Authentication Failures**: Verify API keys and credentials
-    - **Server Unavailable**: Check service status and retry later
-    - **Configuration Errors**: Validate server URLs and parameters
+- **No internet**: Check your internet and firewall
+- **Wrong password**: Check your API keys
+- **Service down**: Check if the service is working
+- **Wrong settings**: Double-check your URLs and settings
 
-  </Accordion>
+### Tools Won't Run
 
-  <Accordion title="Tool Execution" icon="alert-triangle">
-    ### Tool Execution Problems
+Problems running tools:
 
-    Issues with tool execution and approval:
+- **Timeout**: Tools cancel after 30 seconds
+- **Wrong info**: Check required fields
+- **No permission**: Make sure your API key has permission
+- **Too many requests**: Wait a bit and try again
 
-    - **Approval Timeouts**: Tools auto-deny after 30 seconds
-    - **Parameter Errors**: Check required field validation
-    - **Permission Issues**: Verify API permissions and scopes
-    - **Rate Limiting**: Respect API rate limits and retry logic
+### Running Slow
 
-  </Accordion>
+Make things faster:
 
-  <Accordion title="Performance" icon="gauge">
-    ### Performance Optimization
+- Reuse connections
+- Save frequently-used data
+- Do multiple things at once when possible
+- Watch for slow spots
 
-    Improve MCP system performance:
+## Examples
 
-    - **Connection Pooling**: Reuse connections for better performance
-    - **Caching**: Cache frequently accessed data
-    - **Batch Operations**: Group multiple operations when possible
-    - **Monitoring**: Track performance metrics and bottlenecks
+### Database Example
 
-  </Accordion>
-</AccordionGroup>
+```typescript
+// Get user data from Supabase
+const users = await mcp.executeTool('supabase', 'query_users', {
+  table: 'users',
+  filter: { status: 'active' }
+});
+```
 
-## Integration Examples
+### Payment Example
 
-<AccordionGroup>
-  <Accordion title="Database Integration" icon="database">
-    ### Connecting to Supabase
+```typescript
+// Process a payment with Stripe
+const payment = await mcp.executeTool('stripe', 'create_payment_intent', {
+  amount: 1000,
+  currency: 'usd',
+  customer_id: 'cus_123'
+});
+```
 
-    ```typescript
-    // Example: Query user data from Supabase
-    const users = await mcp.executeTool('supabase', 'query_users', {
-      table: 'users',
-      filter: { status: 'active' }
-    });
-    ```
+### AI Example
 
-  </Accordion>
-
-  <Accordion title="Payment Processing" icon="credit-card">
-    ### Stripe Integration
-
-    ```typescript
-    // Example: Process a payment
-    const payment = await mcp.executeTool('stripe', 'create_payment_intent', {
-      amount: 1000,
-      currency: 'usd',
-      customer_id: 'cus_123'
-    });
-    ```
-
-  </Accordion>
-
-  <Accordion title="AI Integration" icon="sparkle">
-    ### Claude Code Integration
-
-    ```typescript
-    // Example: Generate code with AI
-    const code = await mcp.executeTool('claude-code', 'generate_component', {
-      component_type: 'React',
-      description: 'User profile form'
-    });
-    ```
-
-  </Accordion>
-</AccordionGroup>
+```typescript
+// Generate code with AI
+const code = await mcp.executeTool('claude-code', 'generate_component', {
+  component_type: 'React',
+  description: 'User profile form'
+});
+```

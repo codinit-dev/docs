@@ -1,94 +1,65 @@
 ---
 title: Terminal
-description: Advanced terminal emulation with full command-line integration, multiple sessions, and seamless project environment access.
+description: Type commands to control your project, just like a computer's command line
 ---
 
-The Terminal Interface provides a fully-featured command-line environment directly within your development workspace, enabling seamless execution of build commands, package management, and system operations.
+The Terminal is like a text-based remote control for your project. Instead of clicking buttons, you type commands to tell your computer what to do.
 
-## Overview
+## What is the Terminal?
 
-Built on XTerm.js, the terminal component offers professional-grade terminal emulation with support for multiple sessions, theming, and interactive command execution. It integrates deeply with your project's environment, providing access to all development tools and scripts.
+Think of the Terminal as a way to talk directly to your computer using text commands. It's like texting your computer to ask it to do things.
 
 <CardGroup cols={3}>
-  <Card title="Command Execution" icon="terminal">
-    Run build scripts, package managers, and development tools
+  <Card title="Run Commands" icon="terminal">
+    Tell your computer what to do by typing
   </Card>
-  <Card title="Session Management" icon="layers">
-    Multiple terminal tabs for different workflows
+  <Card title="Multiple Tabs" icon="layers">
+    Open several terminals at once
   </Card>
-  <Card title="Theme Integration" icon="palette">
-    Consistent theming with your development environment
+  <Card title="See Results" icon="palette">
+    Watch what happens when you run commands
   </Card>
 </CardGroup>
 
-## Key Features
+## What Can You Do?
 
-<AccordionGroup>
-  <Accordion title="Terminal Emulation" icon="monitor">
-    ### Advanced Terminal Capabilities
+### Running Commands
 
-    Professional terminal emulation supporting:
-    - **Full ANSI escape sequences** - Rich text formatting and colors
-    - **Mouse support** - Interactive terminal applications
-    - **Unicode support** - International character display
-    - **Web links** - Clickable URLs in terminal output
+You can type commands to:
+- Start your app so you can see it working
+- Install new tools and libraries
+- Check if your code has any problems
+- Save your work to GitHub
 
-  </Accordion>
+### Common Commands
 
-  <Accordion title="Environment Integration" icon="cog">
-    ### Project Environment Access
+Here are some commands you might use:
+- `npm install` - Download tools your project needs
+- `npm start` - Start your app
+- `npm test` - Check if everything works correctly
+- `git status` - See what files you've changed
 
-    Complete access to your development environment:
-    - **Project directory** - Automatic navigation to workspace
-    - **Environment variables** - Access to configured variables
-    - **Installed tools** - Node.js, npm, git, and other tools
-    - **File permissions** - Full read/write access to project files
+### Using Multiple Terminals
 
-  </Accordion>
+You can open several terminal tabs at once, like having multiple conversations:
+- One tab runs your app
+- Another tab runs tests
+- A third tab is ready for quick commands
 
-  <Accordion title="Interactive Features" icon="zap">
-    ### Enhanced User Experience
+This way, you don't have to stop one thing to do another.
 
-    Modern terminal features for improved productivity:
-    - **Command history** - Navigate through previous commands
-    - **Auto-completion** - Intelligent command suggestions
-    - **Search functionality** - Find text within terminal output
-    - **Copy/paste support** - Standard clipboard operations
-    - **Live action console** - Real-time streaming output for running commands
+### Helpful Features
 
-  </Accordion>
+The terminal has some handy tricks:
+- **Command history** - Press the up arrow to see commands you typed before
+- **Copy and paste** - Copy text in and out of the terminal
+- **Search** - Find specific text in the terminal output
+- **Live updates** - See results appear as they happen
 
-  <Accordion title="Live Action Console" icon="activity">
-    ### Real-Time Command Monitoring
-
-    Monitor command execution with live streaming output:
-    - **Real-time output** - See command output as it happens
-    - **Progress tracking** - Visual progress indicators for long-running tasks
-    - **Command context** - Know which command is currently executing
-    - **Streaming display** - Continuous output updates without page refresh
-
-    <Callout type="info">
-      **Enable Live Console**: Toggle this feature in Settings → Features to see real-time command output in a floating console.
-    </Callout>
-
-  </Accordion>
-</AccordionGroup>
-
-## Usage Modes
-
-<BadgeGroup>
-  <Badge variant="secondary">Read-Write Mode</Badge>
-  <Badge variant="secondary">Read-Only Mode</Badge>
-  <Badge variant="secondary">Background Execution</Badge>
-</BadgeGroup>
-
-### Terminal States
-
-- **Active Session** - Full command execution and interaction
-- **Read-Only** - Output display without input capability
-- **Background** - Commands running without visible interface
+<Callout type="info">
+  **Live Console**: Turn on the live console in Settings → Features to see command results in a floating window while you work.
+</Callout>
 
 <Callout type="tip">
-  **Pro Tip**: Use multiple terminal tabs to run development servers, build processes, and testing simultaneously
-  without switching contexts.
+  **Quick Tip**: Open multiple terminal tabs to run your app in one tab while typing other commands in another tab.
 </Callout>

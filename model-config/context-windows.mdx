@@ -1,144 +1,144 @@
 ---
 title: "Context Window Guide"
-description: "Understand and manage AI model context windows to optimize performance, control costs, and work effectively with large codebases."
+description: "How much the AI can remember at once"
 ---
 
-## What is a context window?
+## What is a Context Window?
 
-A context window is the maximum amount of text an AI model can process at once. Think of it as the model's "working memory" - it determines how much of your conversation and code the model can consider when generating responses.
+A context window is how much text the AI can look at and remember at one time. Think of it like the AI's short-term memory.
 
 <Note>
-  **What are tokens?** Tokens are small chunks of text that AI models read. A token is roughly ¾ of a word. For example, the word "hamburger" becomes two tokens: "ham" and "burger". When we talk about context window sizes like "128K tokens," that means the AI can read about 96,000 words at once.
+  **What are tokens?** Tokens are small pieces of text. About 4 letters = 1 token. So "hamburger" is 2 tokens: "ham" and "burger". When we say "128K tokens," that means the AI can remember about 96,000 words at once.
 </Note>
 
 <Tip>
-  **Key point**: Larger context windows allow the model to understand more of your codebase at once, but may increase costs and response times.
+  **Important**: Bigger context windows let the AI see more of your project, but they cost more money and take longer.
 </Tip>
 
-### Quick reference
+### Size Guide
 
-| Size            | Tokens | Approximate Words | Use Case                  |
+| Size            | Tokens | About How Many Words | Good For                  |
 | --------------- | ------ | ----------------- | ------------------------- |
-| **Small**       | 8K-32K | 6,000-24,000      | Single files, quick fixes |
-| **Medium**      | 128K   | ~96,000           | Most coding projects      |
-| **Large**       | 200K   | ~150,000          | Complex codebases         |
-| **Extra Large** | 400K+  | ~300,000+         | Entire applications       |
-| **Massive**     | 1M+    | ~750,000+         | Multi-project analysis    |
+| **Small**       | 8K-32K | 6,000-24,000      | One file, quick fixes |
+| **Medium**      | 128K   | ~96,000           | Most projects      |
+| **Large**       | 200K   | ~150,000          | Big projects         |
+| **Extra Large** | 400K+  | ~300,000+         | Whole apps       |
+| **Huge**     | 1M+    | ~750,000+         | Multiple projects    |
 
-### Model context windows
+### Different AI Models
 
-| Model                 | Context Window | Effective Window\* | Notes                          |
+| AI Model                 | Context Window | Actually Works Well\* | Notes                          |
 | --------------------- | -------------- | ------------------ | ------------------------------ |
-| **Claude Sonnet 4.5** | 1M tokens      | ~500K tokens       | Best quality at high context   |
-| **GPT-5**             | 400K tokens    | ~300K tokens       | Three modes affect performance |
-| **Gemini 2.5 Pro**    | 1M+ tokens     | ~600K tokens       | Excellent for documents        |
-| **DeepSeek V3**       | 128K tokens    | ~100K tokens       | Optimal for most tasks         |
-| **Qwen3 Coder**       | 256K tokens    | ~200K tokens       | Good balance                   |
+| **Claude Sonnet 4.5** | 1M tokens      | ~500K tokens       | Best for big projects   |
+| **GPT-5**             | 400K tokens    | ~300K tokens       | Has three different modes |
+| **Gemini 2.5 Pro**    | 1M+ tokens     | ~600K tokens       | Great for reading documents        |
+| **DeepSeek V3**       | 128K tokens    | ~100K tokens       | Good for most things         |
+| **Qwen3 Coder**       | 256K tokens    | ~200K tokens       | Nice balance                   |
 
-\*Effective window is where the model maintains high quality. Beyond this point, the AI may start "forgetting" earlier parts of your conversation.
+\*The AI works best up to this point. After that, it might start forgetting earlier parts of your chat.
 
-### What counts toward context
+### What Uses Up the Context Window
 
-1. **Your current conversation** - All messages in the chat
-2. **File contents** - Any files you've shared or CodinIT has read
-3. **Tool outputs** - Results from executed commands
-4. **System prompts** - CodinIT's instructions (minimal impact)
+1. **Your messages** - Everything you and the AI say in the chat
+2. **Your files** - Files the AI reads from your project
+3. **Command results** - Output from commands that run
+4. **System instructions** - CodinIT's background instructions (uses very little)
 
-### Optimization strategies
+### How to Save Context Space
 
 #### 1. Start fresh for new features
 
 ```mdx
-/new - Creates a new task with clean context
+/new - Start a new chat with empty context
 ```
 
-Benefits:
+Why this helps:
 
-- Maximum context available
-- No irrelevant history
-- Better model focus
+- You get the full context window
+- No old, irrelevant messages
+- AI focuses better
 
-#### 2. Use @ mentions strategically
+#### 2. Only include files you need
 
-Instead of including entire files:
+Instead of including everything:
 
-- `@filename.ts` - Include only when needed
-- Use search instead of reading large files
-- Reference specific functions rather than whole files
+- `@filename.ts` - Only mention files when necessary
+- Use search instead of reading big files
+- Reference specific parts, not whole files
 
-#### 3. Enable auto-compact
+#### 3. Turn on auto-compact
 
-CodinIT can automatically summarize long conversations to free up space in the context window:
+CodinIT can automatically shorten long conversations:
 
-- Settings → Features → Auto-compact
-- Preserves important context
-- Reduces token usage
+- Go to Settings → Features → Auto-compact
+- Keeps important stuff
+- Uses fewer tokens
 
-## Context window warnings
+## Warning Signs
 
-### Signs you're hitting limits
+### How to Tell You're Running Out of Space
 
-| Warning Sign                  | What It Means                 | Solution                              |
+| Warning Sign                  | What It Means                 | What to Do                              |
 | ----------------------------- | ----------------------------- | ------------------------------------- |
-| **"Context window exceeded"** | Hard limit reached            | Start new task or enable auto-compact |
-| **Slower responses**          | Model struggling with context | Reduce included files                 |
-| **Repetitive suggestions**    | Context fragmentation         | Summarize and start fresh             |
-| **Missing recent changes**    | Context overflow              | Use checkpoints to track changes      |
+| **"Context window exceeded"** | You hit the limit            | Start a new chat or turn on auto-compact |
+| **Slow responses**          | AI is struggling | Include fewer files                 |
+| **AI repeats itself**    | Context is too fragmented         | Start fresh             |
+| **AI forgets recent changes**    | Too much context              | Use checkpoints      |
 
-### Best practices by project size
+### Tips by Project Size
 
-#### Small projects (\< 50 files)
+#### Small projects (less than 50 files)
 
-- Any model works well
-- Include relevant files freely
-- No special optimization needed
+- Any AI model works fine
+- Include files freely
+- Don't worry about optimization
 
 #### Medium projects (50-500 files)
 
-- Use 128K+ context models
-- Include only working set of files
-- Clear context between features
+- Use AI with 128K+ context
+- Only include files you're working on
+- Start new chats between features
 
 #### Large projects (500+ files)
 
-- Use 200K+ context models
-- Focus on specific modules
-- Use search instead of reading many files
-- Break work into smaller tasks
+- Use AI with 200K+ context
+- Focus on one part at a time
+- Search instead of reading many files
+- Break work into smaller pieces
 
-## Advanced context management
+## Advanced Tips
 
-### Plan/Act mode optimization
+### Use Plan/Act Mode Smartly
 
-Leverage Plan/Act mode for better context usage:
+Use different AI models for different tasks:
 
-- **Plan Mode**: Use smaller context for discussion and planning
-- **Act Mode**: Include necessary files when you're ready to write code
+- **Plan Mode**: Use cheaper AI for talking and planning
+- **Act Mode**: Use better AI when writing code
 
-Configuration example:
+Example:
 
 ```
-Plan Mode: DeepSeek V3 (128K) - Lower cost planning
-Act Mode: Claude Sonnet (1M) - Maximum context for coding
+Plan Mode: DeepSeek V3 (128K) - Cheap for planning
+Act Mode: Claude Sonnet (1M) - Better for coding
 ```
 
-### Context pruning strategies
+### How CodinIT Saves Space
 
-These are ways CodinIT can reduce the amount of text in your context window:
+CodinIT can automatically remove less important text:
 
-1. **Temporal pruning**: Remove older parts of your conversation that are no longer relevant
-2. **Semantic pruning**: Keep only the code sections related to your current task
-3. **Hierarchical pruning**: Keep the big picture but remove fine details
+1. **Remove old messages**: Delete old parts of the conversation
+2. **Keep relevant code**: Only keep code related to what you're doing now
+3. **Keep summaries**: Keep the main ideas but remove details
 
-### Token counting tips
+### Counting Tokens
 
-#### Rough estimates
+#### Quick math
 
-- **1 token ≈ 0.75 words** (so 1,000 tokens is about 750 words)
-- **1 token ≈ 4 characters**
+- **1 token ≈ 3/4 of a word** (1,000 tokens = about 750 words)
+- **1 token ≈ 4 letters**
 - **100 lines of code ≈ 500-1000 tokens**
 
-#### File size guidelines
+#### File sizes
 
 | File Type      | Tokens per KB |
 | -------------- | ------------- |
@@ -147,34 +147,34 @@ These are ways CodinIT can reduce the amount of text in your context window:
 | **Markdown**   | ~200-300      |
 | **Plain text** | ~200-250      |
 
-## Context window FAQ
+## Common Questions
 
-### Q: Why do responses get worse with very long conversations?
+### Q: Why does the AI get worse with long conversations?
 
-**A:** Models can lose focus with too much context. The "effective window" is typically 50-70% of the advertised limit.
+**A:** The AI loses focus when there's too much to remember. It works best with 50-70% of its maximum.
 
-### Q: Should I use the largest context window available?
+### Q: Should I always use the biggest context window?
 
-**A:** Not always. Larger contexts increase cost and can reduce response quality. Match the context to your task size.
+**A:** No. Bigger contexts cost more and can make the AI worse. Use what you need for your task.
 
-### Q: How can I tell how much context I'm using?
+### Q: How do I know how much context I'm using?
 
-**A:** CodinIT shows token usage in the interface. Watch for the context meter approaching limits.
+**A:** CodinIT shows you a meter. Watch it to see when you're getting close to the limit.
 
-### Q: What happens when I exceed the context limit?
+### Q: What happens if I go over the limit?
 
-**A:** CodinIT will either:
+**A:** CodinIT will:
 
-- Automatically compact the conversation (if enabled)
-- Show an error and suggest starting a new task
-- Truncate older messages (with warning)
+- Automatically shorten the conversation (if you turned that on)
+- Show an error and tell you to start a new chat
+- Remove old messages (with a warning)
 
-## Recommendations by use case
+## What to Use When
 
-| Use Case                | Recommended Context | Model Suggestion  |
+| What You're Doing                | Context Size | Which AI  |
 | ----------------------- | ------------------- | ----------------- |
 | **Quick fixes**         | 32K-128K            | DeepSeek V3       |
-| **Feature development** | 128K-200K           | Qwen3 Coder       |
-| **Large refactoring**   | 400K+               | Claude Sonnet 4.5 |
-| **Code review**         | 200K-400K           | GPT-5             |
-| **Documentation**       | 128K                | Any budget model  |
+| **Building features** | 128K-200K           | Qwen3 Coder       |
+| **Big changes**   | 400K+               | Claude Sonnet 4.5 |
+| **Reviewing code**         | 200K-400K           | GPT-5             |
+| **Writing docs**       | 128K                | Any cheap model  |

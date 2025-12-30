@@ -1,26 +1,26 @@
 ---
 title: "AWS Bedrock"
 sidebarTitle: "API Key"
-description: "Set up AWS Bedrock with CodinIT using API Keys to access frontier models like Claude and Amazon Nova."
+description: "How to connect AWS Bedrock AI to CodinIT"
 ---
 
-Access leading AI models through AWS Bedrock with simplified API Key setup.
+Use AWS Bedrock to access powerful AI models like Claude through Amazon's cloud service.
 
-**Website:** [https://docs.aws.amazon.com/bedrock/](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+**Website:** [AWS Bedrock Docs](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
-## Setup Steps
+## How to Set It Up
 
-### 1. Create Bedrock API Key
+### Step 1: Get Your API Key
 
-1. **Sign in:** [AWS Console](https://aws.amazon.com/console)
-2. **Access Bedrock:** Go to [Bedrock Console](https://console.aws.amazon.com/bedrock)
-3. **Create API Key:** Create a new Long Lived API Key
-   - Default policy: `AmazonBedrockLimitedAccess`
-   - [View policy details](https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html#managed-policies)
+1. **Log in:** Go to [AWS Console](https://aws.amazon.com/console)
+2. **Open Bedrock:** Visit [Bedrock Console](https://console.aws.amazon.com/bedrock)
+3. **Make an API Key:** Create a new Long Lived API Key
+   - Use the default setting: `AmazonBedrockLimitedAccess`
+   - [See what this allows](https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html#managed-policies)
 
-### 2. Configure IAM Permissions
+### Step 2: Set Permissions
 
-**Minimal permissions required:**
+**You need these permissions:**
 ```json
 {
   "Version": "2012-10-17",
@@ -36,44 +36,44 @@ Access leading AI models through AWS Bedrock with simplified API Key setup.
 }
 ```
 
-Create custom policy and attach to IAM user associated with your API key.
+Create this policy and attach it to your API key user.
 
-**Important:**
-- For model listing in CodinIT, add `bedrock:ListFoundationModels` permission
-- For AWS Marketplace models (e.g., Anthropic Claude), use `AmazonBedrockLimitedAccess` policy
-- For Anthropic models, submit First Time Use (FTU) form via [Playground](https://console.aws.amazon.com/bedrock/home#/text-generation-playground)
+**Important notes:**
+- To see model lists in CodinIT, add `bedrock:ListFoundationModels` permission
+- For Claude models, use `AmazonBedrockLimitedAccess` policy
+- For Anthropic models, fill out the First Time Use form in the [Playground](https://console.aws.amazon.com/bedrock/home#/text-generation-playground)
 
-### 3. Choose Region
+### Step 3: Pick a Region
 
-Select region for latency/compliance needs:
-- `us-east-1` (N. Virginia)
-- `us-west-2` (Oregon)
-- `eu-west-1` (Ireland)
-- `ap-southeast-1` (Singapore)
+Choose where the AI runs (closer = faster):
+- `us-east-1` (Virginia, USA)
+- `us-west-2` (Oregon, USA)
+- `eu-west-1` (Ireland, Europe)
+- `ap-southeast-1` (Singapore, Asia)
 
-**Note:** Some models require [Inference Profile](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) - check "Cross Region Inference" box if needed.
+**Note:** Some models need [Cross Region Inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) - check that box if needed.
 
-### 4. Configure CodinIT
+### Step 4: Connect to CodinIT
 
-1. Install CodinIT extension in VS Code
-2. Click settings icon (⚙️)
-3. Select **AWS Bedrock** as API Provider
+1. Install CodinIT in VS Code
+2. Click the settings icon (⚙️)
+3. Choose **AWS Bedrock** as your AI provider
 4. Enter your **API Key**
-5. Specify **AWS Region** (e.g., `us-east-1`)
-6. Select **Model** (e.g., `anthropic.claude-3-5-sonnet-20241022-v2:0`)
-7. Save and test
+5. Type your **AWS Region** (like `us-east-1`)
+6. Pick a **Model** (like `anthropic.claude-3-5-sonnet-20241022-v2:0`)
+7. Save and test it
 
-## Security Best Practices
+## Staying Safe
 
-1. **Secure access:** Prefer AWS SSO/federated roles over long-lived API keys when possible
-2. **Network security:** Consider [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html)
-3. **Monitoring:** Enable CloudTrail for API logging and CloudWatch for metrics
-4. **Cost management:** Use AWS Cost Explorer and set billing alerts
-5. **Regular audits:** Review IAM roles and CloudTrail logs periodically
+1. **Use secure login:** Use AWS SSO instead of API keys when you can
+2. **Network safety:** Consider using [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html)
+3. **Watch activity:** Turn on CloudTrail to see what's happening
+4. **Control costs:** Use AWS Cost Explorer and set up billing alerts
+5. **Check regularly:** Review your settings and logs often
 
-## Notes
+## Good to Know
 
-- **Pricing:** Usage-based, see [AWS Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/)
-- **Compliance:** HIPAA and SOC 2 Type II compliant
-- **Documentation:** [AWS Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-- **IAM Best Practices:** [AWS IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- **Cost:** You pay for what you use - see [AWS Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/)
+- **Security:** Meets HIPAA and SOC 2 Type II standards
+- **Help:** [AWS Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+- **Best practices:** [AWS IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)

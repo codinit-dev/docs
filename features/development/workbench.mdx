@@ -1,288 +1,215 @@
 ---
 title: Workbench
-description: Master the CodinIT development workbench with code editing, live preview, device simulation, and change tracking in one unified interface.
+description: Your complete workspace for building apps - write code, see it work, and track changes
 ---
 
-The Workbench is your complete development environment, providing everything you need to build, test, and deploy applications in one unified interface.
+The Workbench is your main workspace in CodinIT. It's where you write code, see your app running, and check what you've changed.
 
-## Overview
+## What is the Workbench?
 
-The workbench combines code editing, live preview, and change tracking into a seamless development experience. Whether you're building a web application, mobile app, or any other project, the workbench adapts to your workflow.
+Think of the Workbench as your desk where you have everything you need to build an app. You can write code, test it, and see what's different from before - all in one place.
 
 <CardGroup cols={3}>
-  <Card title="Code Editing" icon="code" href="#code-view">
-    Full-featured code editor with file management, search, and terminal integration
+  <Card title="Code View" icon="code" href="#code-view">
+    Write and organize your code files
   </Card>
-  <Card title="Live Preview" icon="eye" href="#preview-view">
-    Real-time application preview with device simulation and responsive testing
+  <Card title="Preview View" icon="eye" href="#preview-view">
+    See your app running on different devices
   </Card>
-  <Card title="Change Tracking" icon="git-branch" href="#diff-view">
-    Visual diff comparison and version history for all your file changes
+  <Card title="Changes View" icon="git-branch" href="#diff-view">
+    See what you've changed in your files
   </Card>
 </CardGroup>
 
-## Main Views
+## Three Main Views
 
-The workbench provides three primary views that you can switch between based on your current task:
+The workbench has three different views. You can switch between them depending on what you want to do:
 
 <Tabs>
   <Tab title="Code View">
-    ## Code Editing Interface
+    ## Writing Code
 
-    The code view is your primary workspace for writing and managing code. It features a resizable layout with multiple panels working together seamlessly.
+    This is where you write and organize your code files.
 
-    <AccordionGroup>
-      <Accordion title="File Navigation" icon="folder">
-        ### File Tree Panel
+    ### Your Files
 
-        Navigate your project structure with an intuitive file tree that supports:
-        - **Hierarchical browsing** - Expand and collapse folders to find files quickly
-        - **File type indicators** - Visual icons showing file types (JavaScript, CSS, images, etc.)
-        - **Unsaved changes** - Clear indicators for files with pending changes
-        - **Hidden file filtering** - Automatically hides common directories like `node_modules`
+    On the left, you see all your project files in a tree:
+    - Click folders to open them
+    - Click files to edit them
+    - Icons show what type of file it is
+    - A dot shows files you haven't saved yet
 
-        <Callout type="info">
-          **Quick Tip**: Use the search bar within the file tree to quickly locate specific files by name.
-        </Callout>
-      </Accordion>
+    <Callout type="info">
+      **Quick Tip**: Use the search box to find files by name.
+    </Callout>
 
-      <Accordion title="Code Editor" icon="edit">
-        ### Main Editing Area
+    ### The Editor
 
-        A powerful code editor with features designed for modern development:
-        - **Syntax highlighting** - Support for all major programming languages
-        - **Auto-completion** - Intelligent code suggestions as you type
-        - **Multiple cursors** - Edit multiple locations simultaneously
-        - **Find and replace** - Search within files with regex support
+    The big area in the middle is where you write code:
+    - **Colors** - Your code is colored to make it easier to read
+    - **Suggestions** - Get help as you type
+    - **Find and replace** - Search for text and change it
+    - **Edit multiple spots** - Change several places at once
 
-        #### File Management
-        - **Breadcrumb navigation** - See your current location in the file hierarchy
-        - **Save/Reset buttons** - Quick access to save changes or revert to original state
-        - **Auto-save** - Automatic saving prevents data loss
-      </Accordion>
+    You can save your work or undo changes with the buttons at the top.
 
-      <Accordion title="Search & Discovery" icon="search">
-        ### Project-Wide Search
+    ### Search Everything
 
-        Find anything in your codebase instantly:
-        - **Text search** - Search for specific words, phrases, or patterns
-        - **File filtering** - Limit searches to specific file types
-        - **Case sensitivity** - Toggle case-sensitive matching
-        - **Regular expressions** - Advanced pattern matching for complex searches
+    Need to find something in your whole project?
+    - Type what you're looking for
+    - See results from all files
+    - Click a result to jump to that file
 
-        Results are grouped by file with line numbers and highlighted matches for easy navigation.
-      </Accordion>
+    ### Terminal
 
-      <Accordion title="Terminal Integration" icon="terminal">
-        ### Command Line Access
-
-        Run commands directly within your development environment:
-        - **Multiple terminal tabs** - Work with different command sessions
-        - **Resizable panels** - Adjust terminal size to fit your workflow
-        - **Command history** - Access previously run commands
-        - **Environment integration** - Full access to your project's environment
-      </Accordion>
-    </AccordionGroup>
+    At the bottom, you can type commands:
+    - Open multiple terminal tabs
+    - Make it bigger or smaller
+    - Run commands to start your app or install tools
 
   </Tab>
 
   <Tab title="Preview View">
-    ## Live Application Preview
+    ## See Your App Running
 
-    See your application come to life with real-time preview capabilities that adapt to any device or screen size.
+    This view shows your app working, just like it would on a real phone, tablet, or computer.
 
-    <AccordionGroup>
-      <Accordion title="Live Preview" icon="play">
-        ### Real-Time Application Viewing
+    ### Live Preview
 
-        Experience your application exactly as users will see it:
-        - **Instant updates** - Changes appear immediately as you code
-        - **Full interactivity** - Test buttons, forms, and user interactions
-        - **Error display** - See runtime errors and debugging information
-        - **Loading states** - Observe how your app behaves during data fetching
-      </Accordion>
+    Watch your app in action:
+    - **Instant updates** - See changes as soon as you save your code
+    - **Click and test** - Try buttons and forms to make sure they work
+    - **See errors** - If something breaks, you'll see what went wrong
 
-      <Accordion title="Device Simulation" icon="smartphone">
-        ### Test Across Devices
+    ### Test on Different Devices
 
-        Ensure your application works perfectly on every device:
+    Make sure your app looks good everywhere:
 
-        <CardGroup cols={2}>
-          <Card title="📱 Mobile Devices" icon="mobile">
-            Test on iPhone SE, iPhone 12/13, iPhone Pro Max, and various Android sizes
+    <CardGroup cols={2}>
+      <Card title="📱 Phones" icon="mobile">
+            iPhone and Android phones of different sizes
           </Card>
-          <Card title="📱 Tablet Devices" icon="tablet">
-            iPad Mini, iPad Air, iPad Pro 11", and iPad Pro 12.9" configurations
+          <Card title="📱 Tablets" icon="tablet">
+            iPads and other tablets
           </Card>
-          <Card title="💻 Laptop & Desktop" icon="monitor">
-            Small, medium, and large laptop sizes plus full desktop resolutions
+          <Card title="💻 Computers" icon="monitor">
+            Laptops and desktop screens
           </Card>
-          <Card title="🖥️ Ultra-Wide Displays" icon="tv">
-            4K displays and other large format screens
+          <Card title="🖥️ Big Screens" icon="tv">
+            Large monitors and TVs
           </Card>
         </CardGroup>
 
-        **Orientation Support**: Test both portrait and landscape orientations for mobile and tablet devices.
-      </Accordion>
+    You can also flip devices sideways (landscape) or upright (portrait) to test both ways.
 
-      <Accordion title="Responsive Testing" icon="expand">
-        ### Screen Size Flexibility
+    ### Change the Size
 
-        Verify your responsive design works across all breakpoints:
-        - **Custom sizing** - Set exact pixel dimensions for testing
-        - **Resize handles** - Drag to adjust preview size in real-time
-        - **Breakpoint testing** - Quickly jump between common screen sizes
-        - **Frame simulation** - See how your app looks within device frames
-      </Accordion>
+    You can adjust the preview size:
+    - Pick a device from the list
+    - Drag the edges to make it bigger or smaller
+    - Type in exact sizes if you need to
 
-      <Accordion title="Screenshot Capture" icon="camera">
-        ### Visual Documentation
+    ### Take Screenshots
 
-        Capture and share your application's appearance:
-        - **Full-page screenshots** - Capture entire application views
-        - **Element selection** - Focus on specific UI components
-        - **Multiple formats** - Export in various image formats
-        - **Annotation tools** - Add notes and highlights to screenshots
-      </Accordion>
-    </AccordionGroup>
+    Capture pictures of your app:
+    - Take a screenshot of the whole page
+    - Save it to share with others
+    - Add notes or highlights if needed
 
   </Tab>
 
-  <Tab title="Diff View">
-    ## File Change Tracking
+  <Tab title="Changes View">
+    ## See What You Changed
 
-    Understand exactly what has changed in your files with powerful comparison tools and version history.
+    This view shows you exactly what's different in your files compared to before.
 
-    <AccordionGroup>
-      <Accordion title="Visual Diff Comparison" icon="git-diff">
-        ### Side-by-Side Changes
+    ### Compare Old and New
 
-        See differences clearly with syntax-highlighted comparisons:
-        - **Added lines** - Green highlighting for new content
-        - **Removed lines** - Red highlighting for deleted content
-        - **Inline changes** - Character-level differences within lines
-        - **Context lines** - Surrounding code for better understanding
-      </Accordion>
+    See your changes side by side:
+    - **Green lines** - New stuff you added
+    - **Red lines** - Things you removed
+    - **Highlighted words** - Specific words that changed
+    - **Context** - See the code around your changes
 
-      <Accordion title="Change Statistics" icon="bar-chart">
-        ### Modification Summary
+    ### Change Summary
 
-        Get quantitative insights into your changes:
-        - **Addition count** - Number of lines added to files
-        - **Deletion count** - Number of lines removed from files
-        - **File status** - Modified, new, or deleted file indicators
-        - **Change timeline** - When modifications were made
-      </Accordion>
+    Get a quick overview:
+    - **Lines added** - How many new lines you wrote
+    - **Lines removed** - How many lines you deleted
+    - **File status** - Which files are new, changed, or deleted
+    - **When** - See when you made the changes
 
-      <Accordion title="Version History" icon="history">
-        ### Change Timeline
+    ### History
 
-        Track the evolution of your files over time:
-        - **Multiple versions** - View different states of the same file
-        - **Timestamp tracking** - See exactly when changes were made
-        - **Revert capability** - Restore previous versions if needed
-        - **Change grouping** - Related modifications bundled together
-      </Accordion>
+    Look back at previous versions:
+    - **Different versions** - See how your file looked before
+    - **Time stamps** - Know when each change happened
+    - **Undo changes** - Go back to an older version if needed
+    - **Grouped changes** - Related changes shown together
 
-      <Accordion title="File Selection" icon="file-check">
-        ### Quick File Access
+    ### Find Changed Files
 
-        Jump directly to files that have been modified:
-        - **Modified files dropdown** - Quick access to all changed files
-        - **Search functionality** - Find specific changed files
-        - **File type filtering** - Focus on particular file types
-        - **Change indicators** - Visual badges showing modification counts
-      </Accordion>
-    </AccordionGroup>
+    Quickly jump to files you've edited:
+    - **Dropdown menu** - See all changed files
+    - **Search** - Find a specific file
+    - **Filter** - Show only certain types of files
+    - **Badges** - See how many changes each file has
 
   </Tab>
 </Tabs>
 
-## Key Features
+## How to Build an App
 
-<BadgeGroup>
-  <Badge variant="secondary">Real-time Preview</Badge>
-  <Badge variant="secondary">Device Simulation</Badge>
-  <Badge variant="secondary">Code Intelligence</Badge>
-  <Badge variant="secondary">Git Integration</Badge>
-  <Badge variant="secondary">Terminal Access</Badge>
-  <Badge variant="secondary">Change Tracking</Badge>
-</BadgeGroup>
-
-### Development Workflow
-
-The workbench supports your complete development cycle:
+Here's how you use the workbench to build something:
 
 <Steps>
-  <Step title="Code Your Application">
-    Use the powerful code editor with syntax highlighting, auto-completion, and intelligent suggestions to write clean,
-    efficient code.
+  <Step title="Write Your Code">
+    Use the code view to write your app. The editor helps you with colors and suggestions.
   </Step>
-  <Step title="Test Across Devices">
-    Switch to preview mode to see your application on different devices and screen sizes, ensuring it works perfectly
-    everywhere.
+  <Step title="Test It">
+    Switch to preview view to see your app running. Try it on different devices to make sure it looks good everywhere.
   </Step>
-  <Step title="Review Changes">
-    Use the diff view to understand what has changed, review modifications, and ensure code quality before committing.
+  <Step title="Check Your Changes">
+    Use the changes view to see what you modified. Make sure everything looks right before saving.
   </Step>
-  <Step title="Deploy & Share">
-    Use built-in deployment tools to push your code to GitHub, deploy to hosting platforms, or share with team members.
+  <Step title="Share It">
+    Save your work to GitHub and deploy it so others can use your app.
   </Step>
 </Steps>
 
-## Additional Tools
+## Other Helpful Tools
 
-Beyond the main views, the workbench includes several supporting tools to enhance your development experience.
+The workbench has extra tools to help you:
 
-<AccordionGroup>
-  <Accordion title="Deployment & Git" icon="rocket">
-    ### Project Deployment
+### Save to GitHub
 
-    Share your work with the world using integrated deployment tools:
-    - **GitHub integration** - Push directly to GitHub repositories
-    - **Repository creation** - Create new repos with proper configuration
-    - **Commit management** - Generate meaningful commit messages
-    - **Branch handling** - Work with different branches and merge strategies
+Share your code with others:
+- **Push to GitHub** - Save your code online
+- **Create repositories** - Make a new project on GitHub
+- **Branches** - Work on different versions of your code
 
-  </Accordion>
+### Manage Files
 
-  <Accordion title="File Management" icon="folder-sync">
-    ### Advanced File Operations
+Keep your files organized:
+- **Sync files** - Make sure everything is up to date
+- **Download** - Save your whole project as a ZIP file
+- **Import** - Bring in files from somewhere else
 
-    Keep your local and remote files in sync:
-    - **File synchronization** - Sync changes between local and remote environments
-    - **Download options** - Export your project as a ZIP file
-    - **Import capabilities** - Bring in files from external sources
-    - **Conflict resolution** - Handle file conflicts gracefully
+### Work with Others
 
-  </Accordion>
+Build apps with your team:
+- **File locking** - Prevent two people from editing the same file at once
+- **Notifications** - Know when someone changes a file
+- **Comments** - Leave notes for your teammates
 
-  <Accordion title="Collaboration" icon="users">
-    ### Team Development
+### Fix Problems
 
-    Work effectively with your team:
-    - **File locking** - Prevent conflicts when multiple people edit the same files
-    - **Change notifications** - See when team members modify shared files
-    - **Comment system** - Add notes and feedback on specific code sections
-    - **Review workflows** - Structured processes for code review and approval
-
-  </Accordion>
-
-  <Accordion title="Performance & Debugging" icon="zap">
-    ### Development Optimization
-
-    Ensure your application performs well:
-    - **Performance monitoring** - Track loading times and resource usage
-    - **Error tracking** - Identify and debug runtime issues
-    - **Console access** - View browser console output and debugging information
-    - **Network inspection** - Monitor API calls and data flow
-
-  </Accordion>
-</AccordionGroup>
-
-## Getting Started
+Make sure your app works well:
+- **Check speed** - See how fast your app loads
+- **Find errors** - Spot and fix bugs
+- **Console** - See messages from your app
+- **Network** - Watch how your app talks to servers
 
 <Callout type="tip">
-  **Quick Start**: Open any project file to automatically activate the workbench. The interface will adapt based on your
-  project type and current development needs.
+  **Getting Started**: Just open a file to start using the workbench. It will show you the tools you need.
 </Callout>
