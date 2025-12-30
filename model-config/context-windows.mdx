@@ -15,34 +15,34 @@ A context window is how much text the AI can look at and remember at one time. T
   **Important**: Bigger context windows let the AI see more of your project, but they cost more money and take longer.
 </Tip>
 
-### Quick reference
+### Size Guide
 
-| Size            | Tokens | Approximate Words | Use Case                  |
+| Size            | Tokens | About How Many Words | Good For                  |
 | --------------- | ------ | ----------------- | ------------------------- |
-| **Small**       | 8K-32K | 6,000-24,000      | Single files, quick fixes |
-| **Medium**      | 128K   | ~96,000           | Most coding projects      |
-| **Large**       | 200K   | ~150,000          | Complex codebases         |
-| **Extra Large** | 400K+  | ~300,000+         | Entire applications       |
-| **Massive**     | 1M+    | ~750,000+         | Multi-project analysis    |
+| **Small**       | 8K-32K | 6,000-24,000      | One file, quick fixes |
+| **Medium**      | 128K   | ~96,000           | Most projects      |
+| **Large**       | 200K   | ~150,000          | Big projects         |
+| **Extra Large** | 400K+  | ~300,000+         | Whole apps       |
+| **Huge**     | 1M+    | ~750,000+         | Multiple projects    |
 
-### Model context windows
+### Different AI Models
 
-| Model                 | Context Window | Effective Window\* | Notes                          |
+| AI Model                 | Context Window | Actually Works Well\* | Notes                          |
 | --------------------- | -------------- | ------------------ | ------------------------------ |
-| **Claude Sonnet 4.5** | 1M tokens      | ~500K tokens       | Best quality at high context   |
-| **GPT-5**             | 400K tokens    | ~300K tokens       | Three modes affect performance |
-| **Gemini 2.5 Pro**    | 1M+ tokens     | ~600K tokens       | Excellent for documents        |
-| **DeepSeek V3**       | 128K tokens    | ~100K tokens       | Optimal for most tasks         |
-| **Qwen3 Coder**       | 256K tokens    | ~200K tokens       | Good balance                   |
+| **Claude Sonnet 4.5** | 1M tokens      | ~500K tokens       | Best for big projects   |
+| **GPT-5**             | 400K tokens    | ~300K tokens       | Has three different modes |
+| **Gemini 2.5 Pro**    | 1M+ tokens     | ~600K tokens       | Great for reading documents        |
+| **DeepSeek V3**       | 128K tokens    | ~100K tokens       | Good for most things         |
+| **Qwen3 Coder**       | 256K tokens    | ~200K tokens       | Nice balance                   |
 
-\*Effective window is where the model maintains high quality. Beyond this point, the AI may start "forgetting" earlier parts of your conversation.
+\*The AI works best up to this point. After that, it might start forgetting earlier parts of your chat.
 
-### What counts toward context
+### What Uses Up the Context Window
 
-1. **Your current conversation** - All messages in the chat
-2. **File contents** - Any files you've shared or CodinIT has read
-3. **Tool outputs** - Results from executed commands
-4. **System prompts** - CodinIT's instructions (minimal impact)
+1. **Your messages** - Everything you and the AI say in the chat
+2. **Your files** - Files the AI reads from your project
+3. **Command results** - Output from commands that run
+4. **System instructions** - CodinIT's background instructions (uses very little)
 
 ### Optimization strategies
 
