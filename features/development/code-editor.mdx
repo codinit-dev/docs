@@ -1,90 +1,68 @@
 ---
 title: Code Editor Panel
-description: Professional code editing environment with syntax highlighting, intelligent file management, and seamless terminal integration.
+description: Where you write and organize your code files
 ---
 
-The Code Editor Panel serves as your primary workspace for writing, editing, and managing code files. It combines a powerful code editor with intuitive file navigation and terminal integration in a unified interface.
+The Code Editor is where you write your code. It's like a super-smart text editor that understands programming and helps you write better code.
 
-## Overview
+## What is the Code Editor?
 
-Designed for modern development workflows, the editor panel provides everything you need for efficient coding: syntax highlighting, intelligent file management, and seamless terminal access. The resizable layout adapts to your preferred working style.
+Think of the Code Editor as a special notebook for writing code. It colors your code to make it easier to read and helps you find mistakes.
 
 <CardGroup cols={3}>
-  <Card title="Code Editing" icon="code">
-    Advanced editor with syntax highlighting and intelligence
+  <Card title="Write Code" icon="code">
+    Type your code with helpful colors and hints
   </Card>
-  <Card title="File Management" icon="folder">
-    Hierarchical file browsing with advanced operations
+  <Card title="Organize Files" icon="folder">
+    See all your project files in a tree
   </Card>
-  <Card title="Terminal Integration" icon="terminal">
-    Built-in command line access
+  <Card title="Run Commands" icon="terminal">
+    Use the terminal without leaving the editor
   </Card>
 </CardGroup>
 
-## Main Interface
+## Main Parts
 
-<AccordionGroup>
-  <Accordion title="File Navigation" icon="folder-tree">
-    ### Project File Tree
+### Finding Your Files
 
-    Navigate your project structure with powerful browsing features:
-    - **Hierarchical display** - Expandable folder structure
-    - **File type indicators** - Visual icons for different file types
-    - **Unsaved changes** - Clear indicators for modified files
-    - **Hidden file filtering** - Automatic exclusion of system files
+On the left side, you'll see all your project files organized like folders on your computer:
+- Click folders to open them and see what's inside
+- Click files to open and edit them
+- Icons show you what type of file it is (JavaScript, image, etc.)
+- A dot appears next to files you've changed but haven't saved
 
-  </Accordion>
+### Writing Code
 
-  <Accordion title="Code Editor" icon="edit">
-    ### Main Editing Area
+The big area in the middle is where you write your code:
+- **Colors** - Different parts of your code show up in different colors to make it easier to read
+- **Suggestions** - As you type, the editor suggests what you might want to write next
+- **Find and replace** - Search for words in your code and change them
+- **Multiple spots** - Edit several places at once
 
-    Professional code editing with modern features:
-    - **Syntax highlighting** - Support for all major programming languages
-    - **Auto-completion** - Intelligent code suggestions
-    - **Multiple cursors** - Simultaneous editing at multiple locations
-    - **Find and replace** - Advanced search within files
+### Using the Terminal
 
-  </Accordion>
+At the bottom, you can open a terminal to run commands:
+- Open multiple terminal tabs for different tasks
+- Make it bigger or smaller by dragging
+- See commands you ran before
+- Run commands without leaving your code
 
-  <Accordion title="Terminal Access" icon="terminal">
-    ### Integrated Command Line
+## What You Can Do With Files
 
-    Execute commands without leaving your coding environment:
-    - **Multiple terminal tabs** - Different command sessions
-    - **Resizable panels** - Adjust terminal size as needed
-    - **Command history** - Access to previous commands
-    - **Environment integration** - Full project context
+You can manage your files in many ways:
+- **Create** - Make new files and folders
+- **Delete** - Remove files you don't need
+- **Rename** - Change file names
+- **Upload** - Drag files from your computer into the editor
+- **Search** - Find files quickly by name
 
-  </Accordion>
-</AccordionGroup>
+### Reviewing AI Changes
 
-## File Operations
-
-<BadgeGroup>
-  <Badge variant="secondary">Create Files/Folders</Badge>
-  <Badge variant="secondary">Delete/Rename</Badge>
-  <Badge variant="secondary">Drag & Drop Upload</Badge>
-  <Badge variant="secondary">File Locking</Badge>
-  <Badge variant="secondary">Diff Approval</Badge>
-</BadgeGroup>
-
-### File Management Features
-
-- **Context menus** - Right-click for quick operations
-- **Drag and drop** - Upload files from your computer
-- **File locking** - Prevent conflicts in team environments
-- **Search integration** - Quick file location
-- **Diff approval workflow** - Review and approve AI-generated file changes before applying them
-
-### Diff Approval Workflow
-
-CodinIT now includes an optional diff approval system that lets you review AI-generated changes before they're applied to your files:
-
-- **Visual diff comparison** - See exactly what changes the AI wants to make
-- **Side-by-side view** - Compare before and after versions inline
-- **Approve or reject** - Full control over which changes get applied
-- **Syntax highlighting** - Language-aware diff display for better readability
+When the AI wants to change your files, you can review the changes first:
+- **See the differences** - Compare the old and new versions side by side
+- **Approve or reject** - Choose which changes to keep
+- **Colored highlights** - See exactly what's being added or removed
 
 <Callout type="info">
-  **Enable Diff Approval**: Toggle this feature in Settings → Features to review all AI file changes before they're applied to your project.
+  **Review Changes**: Turn on diff approval in Settings → Features to check all AI changes before they're saved to your files.
 </Callout>
