@@ -44,67 +44,67 @@ A context window is how much text the AI can look at and remember at one time. T
 3. **Command results** - Output from commands that run
 4. **System instructions** - CodinIT's background instructions (uses very little)
 
-### Optimization strategies
+### How to Save Context Space
 
 #### 1. Start fresh for new features
 
 ```mdx
-/new - Creates a new task with clean context
+/new - Start a new chat with empty context
 ```
 
-Benefits:
+Why this helps:
 
-- Maximum context available
-- No irrelevant history
-- Better model focus
+- You get the full context window
+- No old, irrelevant messages
+- AI focuses better
 
-#### 2. Use @ mentions strategically
+#### 2. Only include files you need
 
-Instead of including entire files:
+Instead of including everything:
 
-- `@filename.ts` - Include only when needed
-- Use search instead of reading large files
-- Reference specific functions rather than whole files
+- `@filename.ts` - Only mention files when necessary
+- Use search instead of reading big files
+- Reference specific parts, not whole files
 
-#### 3. Enable auto-compact
+#### 3. Turn on auto-compact
 
-CodinIT can automatically summarize long conversations to free up space in the context window:
+CodinIT can automatically shorten long conversations:
 
-- Settings → Features → Auto-compact
-- Preserves important context
-- Reduces token usage
+- Go to Settings → Features → Auto-compact
+- Keeps important stuff
+- Uses fewer tokens
 
-## Context window warnings
+## Warning Signs
 
-### Signs you're hitting limits
+### How to Tell You're Running Out of Space
 
-| Warning Sign                  | What It Means                 | Solution                              |
+| Warning Sign                  | What It Means                 | What to Do                              |
 | ----------------------------- | ----------------------------- | ------------------------------------- |
-| **"Context window exceeded"** | Hard limit reached            | Start new task or enable auto-compact |
-| **Slower responses**          | Model struggling with context | Reduce included files                 |
-| **Repetitive suggestions**    | Context fragmentation         | Summarize and start fresh             |
-| **Missing recent changes**    | Context overflow              | Use checkpoints to track changes      |
+| **"Context window exceeded"** | You hit the limit            | Start a new chat or turn on auto-compact |
+| **Slow responses**          | AI is struggling | Include fewer files                 |
+| **AI repeats itself**    | Context is too fragmented         | Start fresh             |
+| **AI forgets recent changes**    | Too much context              | Use checkpoints      |
 
-### Best practices by project size
+### Tips by Project Size
 
-#### Small projects (\< 50 files)
+#### Small projects (less than 50 files)
 
-- Any model works well
-- Include relevant files freely
-- No special optimization needed
+- Any AI model works fine
+- Include files freely
+- Don't worry about optimization
 
 #### Medium projects (50-500 files)
 
-- Use 128K+ context models
-- Include only working set of files
-- Clear context between features
+- Use AI with 128K+ context
+- Only include files you're working on
+- Start new chats between features
 
 #### Large projects (500+ files)
 
-- Use 200K+ context models
-- Focus on specific modules
-- Use search instead of reading many files
-- Break work into smaller tasks
+- Use AI with 200K+ context
+- Focus on one part at a time
+- Search instead of reading many files
+- Break work into smaller pieces
 
 ## Advanced context management
 
