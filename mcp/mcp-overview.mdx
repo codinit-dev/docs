@@ -124,198 +124,136 @@ Get organized:
 - **Notion**: Take notes and organize
 - **Custom Tools**: Your own productivity apps
 
-## Server Management
+## Managing Connections
 
-<AccordionGroup>
-  <Accordion title="Adding Servers" icon="plus">
-    ### Manual Server Configuration
+### Adding New Services
 
-    Add custom MCP servers with full configuration control:
+Add your own custom connections:
 
-    - **Server Types**: STDIO, SSE, or HTTP connections
-    - **Authentication**: API keys, tokens, and custom headers
-    - **Environment Variables**: Runtime configuration
-    - **Connection Testing**: Verify configuration before saving
+- Choose connection type (STDIO, SSE, or HTTP)
+- Enter your API keys or tokens
+- Set up any special settings
+- Test it before saving
 
-  </Accordion>
+### Checking Status
 
-  <Accordion title="Server Monitoring" icon="activity">
-    ### Connection Health
+See how your connections are doing:
 
-    Monitor the status of all connected servers:
+- Check if they're connected
+- See how many tools are available
+- Get alerts if something's wrong
+- Automatic reconnection if disconnected
 
-    - **Connection Status**: Real-time availability checking
-    - **Tool Count**: Number of available tools per server
-    - **Error Reporting**: Connection and authentication issues
-    - **Auto-Reconnection**: Automatic retry on connection loss
+### Editing Connections
 
-  </Accordion>
+Manage your existing connections:
 
-  <Accordion title="Server Maintenance" icon="settings">
-    ### Configuration Management
+- Update login info
+- Delete ones you don't use
+- Manage multiple at once
+- Save and restore settings
 
-    Manage existing server configurations:
+## Using Tools
 
-    - **Edit Settings**: Update credentials and configuration
-    - **Delete Servers**: Remove unused integrations
-    - **Bulk Operations**: Manage multiple servers simultaneously
-    - **Export/Import**: Backup and restore configurations
+### Finding Tools
 
-  </Accordion>
-</AccordionGroup>
+Look through available actions:
 
-## Tool Execution Workflow
+- See all available tools
+- Search by name or type
+- See what info each tool needs
+- Read instructions for each tool
 
-<AccordionGroup>
-  <Accordion title="Tool Discovery" icon="search">
-    ### Finding Available Tools
+### Running Tools Safely
 
-    Browse and search through all available tools:
+Execute tools with safety checks:
 
-    - **Tool Registry**: Complete catalog of available operations
-    - **Search & Filter**: Find tools by name, server, or category
-    - **Parameter Preview**: View required and optional parameters
-    - **Documentation**: Access tool descriptions and usage examples
+- Review before running
+- Check that inputs are correct
+- Auto-cancel after 30 seconds
+- Trust certain tools to run automatically
 
-  </Accordion>
+### Tracking Usage
 
-  <Accordion title="Approval Process" icon="check-circle">
-    ### Secure Tool Execution
+See what you've done:
 
-    Execute tools with built-in security controls:
+- History of all actions
+- How long things took
+- Errors and problems
+- Most-used tools
 
-    - **Approval Interface**: Review tool calls before execution
-    - **Parameter Validation**: Ensure correct input values
-    - **Timeout Protection**: Automatic denial after 30 seconds
-    - **Trusted Tools**: Pre-approve frequently used operations
-
-  </Accordion>
-
-  <Accordion title="Execution Monitoring" icon="eye">
-    ### Track Tool Usage
-
-    Monitor and analyze tool execution patterns:
-
-    - **Execution History**: Complete log of all tool calls
-    - **Performance Metrics**: Execution time and success rates
-    - **Error Analysis**: Failed executions and error details
-    - **Usage Statistics**: Most frequently used tools
-
-  </Accordion>
-</AccordionGroup>
-
-## Advanced Features
-
-<BadgeGroup>
-  <Badge variant="secondary">Auto-Approval</Badge>
-  <Badge variant="secondary">Bulk Operations</Badge>
-  <Badge variant="secondary">Export/Import</Badge>
-  <Badge variant="secondary">Real-time Monitoring</Badge>
-</BadgeGroup>
-
-### Advanced Capabilities
-
-- **Auto-Approval**: Pre-approve trusted tools for instant execution
-- **Bulk Operations**: Manage multiple servers and tools simultaneously
-- **Data Export**: Export execution history and configurations
-- **Real-time Updates**: Live status monitoring and notifications
-
-## Best Practices
+## Tips for Success
 
 <Callout type="info">
-  **Security First**: Always review tool parameters before approval, especially for operations that modify data or
-  execute commands.
+  **Safety First**: Always check what a tool will do before approving it, especially if it changes data.
 </Callout>
 
 <Callout type="tip">
-  **Start Small**: Begin with marketplace templates for popular services, then add custom integrations as needed.
+  **Start Simple**: Use ready-made connections first, then add custom ones later.
 </Callout>
 
 <Callout type="warning">
-  **Credential Management**: Store API keys and tokens securely. MCP configurations are stored locally and never
-  transmitted to external servers.
+  **Keep Secrets Safe**: Store API keys securely. MCP keeps everything on your computer and doesn't send it anywhere.
 </Callout>
 
-## Troubleshooting
+## Fixing Problems
 
-<AccordionGroup>
-  <Accordion title="Connection Issues" icon="wifi-off">
-    ### Server Connection Problems
+### Can't Connect
 
-    Common connection issues and solutions:
+Common connection problems:
 
-    - **Network Errors**: Check internet connectivity and firewall settings
-    - **Authentication Failures**: Verify API keys and credentials
-    - **Server Unavailable**: Check service status and retry later
-    - **Configuration Errors**: Validate server URLs and parameters
+- **No internet**: Check your internet and firewall
+- **Wrong password**: Check your API keys
+- **Service down**: Check if the service is working
+- **Wrong settings**: Double-check your URLs and settings
 
-  </Accordion>
+### Tools Won't Run
 
-  <Accordion title="Tool Execution" icon="alert-triangle">
-    ### Tool Execution Problems
+Problems running tools:
 
-    Issues with tool execution and approval:
+- **Timeout**: Tools cancel after 30 seconds
+- **Wrong info**: Check required fields
+- **No permission**: Make sure your API key has permission
+- **Too many requests**: Wait a bit and try again
 
-    - **Approval Timeouts**: Tools auto-deny after 30 seconds
-    - **Parameter Errors**: Check required field validation
-    - **Permission Issues**: Verify API permissions and scopes
-    - **Rate Limiting**: Respect API rate limits and retry logic
+### Running Slow
 
-  </Accordion>
+Make things faster:
 
-  <Accordion title="Performance" icon="gauge">
-    ### Performance Optimization
+- Reuse connections
+- Save frequently-used data
+- Do multiple things at once when possible
+- Watch for slow spots
 
-    Improve MCP system performance:
+## Examples
 
-    - **Connection Pooling**: Reuse connections for better performance
-    - **Caching**: Cache frequently accessed data
-    - **Batch Operations**: Group multiple operations when possible
-    - **Monitoring**: Track performance metrics and bottlenecks
+### Database Example
 
-  </Accordion>
-</AccordionGroup>
+```typescript
+// Get user data from Supabase
+const users = await mcp.executeTool('supabase', 'query_users', {
+  table: 'users',
+  filter: { status: 'active' }
+});
+```
 
-## Integration Examples
+### Payment Example
 
-<AccordionGroup>
-  <Accordion title="Database Integration" icon="database">
-    ### Connecting to Supabase
+```typescript
+// Process a payment with Stripe
+const payment = await mcp.executeTool('stripe', 'create_payment_intent', {
+  amount: 1000,
+  currency: 'usd',
+  customer_id: 'cus_123'
+});
+```
 
-    ```typescript
-    // Example: Query user data from Supabase
-    const users = await mcp.executeTool('supabase', 'query_users', {
-      table: 'users',
-      filter: { status: 'active' }
-    });
-    ```
+### AI Example
 
-  </Accordion>
-
-  <Accordion title="Payment Processing" icon="credit-card">
-    ### Stripe Integration
-
-    ```typescript
-    // Example: Process a payment
-    const payment = await mcp.executeTool('stripe', 'create_payment_intent', {
-      amount: 1000,
-      currency: 'usd',
-      customer_id: 'cus_123'
-    });
-    ```
-
-  </Accordion>
-
-  <Accordion title="AI Integration" icon="sparkle">
-    ### Claude Code Integration
-
-    ```typescript
-    // Example: Generate code with AI
-    const code = await mcp.executeTool('claude-code', 'generate_component', {
-      component_type: 'React',
-      description: 'User profile form'
-    });
-    ```
-
-  </Accordion>
-</AccordionGroup>
+```typescript
+// Generate code with AI
+const code = await mcp.executeTool('claude-code', 'generate_component', {
+  component_type: 'React',
+  description: 'User profile form'
+});
+```
