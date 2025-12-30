@@ -34,67 +34,67 @@ CodinIT helps you with GitHub in several ways:
   **Your Code, Your Control**: Your code is always saved in Git, so you can use any Git tool you want.
 </Callout>
 
-## Git Proxy Operations
+## Working with GitHub
 
-### Remote Git Command Execution
+### What You Can Do
 
-The Git proxy allows secure execution of Git commands on remote repositories:
+CodinIT can do these Git things for you:
 
-**Supported Operations:**
+**Basic operations:**
 
-- Repository cloning and fetching
-- Branch creation and switching
-- Commit and push operations
-- Merge conflict resolution
-- Status checking and diff viewing
+- Copy projects from GitHub
+- Create and switch branches
+- Save and upload changes
+- Fix conflicts when they happen
+- Check what changed
 
-**Usage Example:**
+**Example commands:**
 
 ```bash
-# Clone a repository
+# Copy a project
 git clone https://github.com/user/repo.git
 
-# Create and switch to new branch
+# Make a new branch
 git checkout -b feature/new-feature
 
-# Push changes
+# Upload your changes
 git push origin main
 ```
 
-### Security and Access Control
+### Security
 
-**Authentication Methods:**
+**How you log in:**
 
-- Personal Access Tokens (PAT)
-- SSH keys (when supported)
-- OAuth integration with GitHub
-- Repository-specific permissions
+- Personal Access Tokens (a special password)
+- SSH keys (a secure key file)
+- OAuth (log in with GitHub)
+- Permission for specific projects
 
-**Security Features:**
+**Staying safe:**
 
-- Command validation and sanitization
-- Rate limiting and abuse prevention
-- Audit logging of all operations
-- Secure credential storage
+- Commands are checked for safety
+- Limits to prevent abuse
+- Records of what you do
+- Secure password storage
 
-## GitHub Template Integration
+## Starting from Templates
 
-### Template-Based Project Creation
+### Use Pre-Made Projects
 
-Quickly start projects using GitHub repository templates:
+Start quickly with ready-made project templates:
 
-**Available Template Types:**
+**Types of templates:**
 
-- Frontend frameworks (React, Vue, Angular)
+- Website frameworks (React, Vue, Angular)
 - Backend APIs (Express, FastAPI, NestJS)
-- Full-stack applications
-- Mobile app templates
-- DevOps and deployment templates
+- Complete apps (frontend + backend)
+- Mobile app starters
+- Deployment setups
 
-**Template Usage:**
+**How to use a template:**
 
 ```typescript
-// Import template via API
+// Start from a template
 const template = await fetch('/api/github-template', {
   method: 'POST',
   body: JSON.stringify({
@@ -104,23 +104,23 @@ const template = await fetch('/api/github-template', {
 });
 ```
 
-### Custom Template Creation
+### Make Your Own Templates
 
-**Creating Templates:**
+**Creating templates:**
 
-- Convert existing repositories to templates
-- Define template variables and configuration
-- Set up automated setup scripts
-- Include documentation and examples
+- Turn your project into a template
+- Set up variables and settings
+- Add setup scripts
+- Include instructions
 
-**Template Structure:**
+**Template folder structure:**
 
 ```
 template-repo/
-├── template.json      # Template configuration
-├── setup.js          # Automated setup script
-├── README.md         # Usage instructions
-└── src/              # Template source code
+├── template.json      # Settings
+├── setup.js          # Setup script
+├── README.md         # Instructions
+└── src/              # Your code
 ```
 
 ## Repository Management
