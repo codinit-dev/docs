@@ -60,6 +60,26 @@ description: "Solve common issues with CodinIT AI IDE, LLM providers, code gener
       Network issues typically resolve themselves - try again in a few minutes.
     </Info>
   </Accordion>
+
+  <Accordion title="Ollama models not appearing" icon="server">
+    **Problem**: Ollama models don't show up in the model selector dropdown.
+
+    **Solutions**:
+
+    1. **Install models first**: Ensure you've installed Ollama models on your device before using them
+    2. **Configure base URL**: Go to Settings → Local Providers and set the Ollama base URL (e.g., `http://127.0.0.1:11434`)
+    3. **Enable Ollama**: Make sure Ollama provider is enabled in settings
+    4. **Check Ollama service**: Verify Ollama is running on your system
+    5. **Refresh model list**: Return to chat and open the provider/model dropdown to see available models
+
+    **Docker users**:
+    - Use `host.docker.internal` instead of `localhost` or `127.0.0.1` for the base URL
+    - Ensure Docker has network access to your host machine
+
+    <Tip>
+      After configuring Ollama settings, models should appear automatically in the provider dropdown.
+    </Tip>
+  </Accordion>
 </AccordionGroup>
 
 ## MacOS Specific Issues

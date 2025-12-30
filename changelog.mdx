@@ -5,6 +5,65 @@ description: "Track the latest CodinIT releases, feature updates, bug fixes, and
 
 New releases and improvements
 
+## December 30, 2025
+
+<Update tags={[\"New releases\", \"Improvements\"]}>
+
+### New features
+
+- Added Diff Approval Workflow for reviewing AI-generated file changes
+  - Visual inline diff comparison with syntax highlighting
+  - Approve or reject changes before applying to files
+  - Side-by-side before/after view
+  - New action status: "awaiting-approval"
+- Added Live Action Console for real-time command monitoring
+  - Streaming command output in floating console
+  - Progress tracking for long-running tasks
+  - Command context display
+  - Real-time updates without page refresh
+- Added PromptSelector component for choosing system prompts
+- Added comprehensive MCP type definitions and schemas
+- Added MCP config validation and retry API endpoints
+- Added Electron IPC handlers for project initialization and file saving
+- Added project name utility for generating unique project identifiers
+
+### Performance improvements
+
+- Fixed critical performance regressions causing UI freezes and crashes
+  - Introduced concurrency limits for file writes (max 5 concurrent)
+  - Implemented batched state updates for file operations
+  - Added file write queue system to prevent memory overflow
+  - Optimized action queue with max 50 pending actions limit
+  - Added yield to main thread for better responsiveness
+- Improved Windows file system compatibility
+- Enhanced action runner with live output monitoring
+- Optimized file content streaming with 1MB chunk size limit
+- Improved file watcher buffer timing (300ms → 1000ms)
+- Added batch update scheduling for file changes (500ms delay)
+
+### Bug fixes
+
+- Fixed Ollama model selection issues
+  - Models now appear correctly in provider dropdown after configuration
+  - Fixed base URL configuration retrieval from provider settings
+  - Improved error handling and Docker host mapping
+  - Added proper validation for Ollama API responses
+- Fixed LMStudio provider error handling and Docker compatibility
+- Fixed app freezes during multi-file generation
+- Fixed terminal output stalling issues
+- Fixed browser crashes ("Aw, Snap!") during intensive operations
+- Fixed console mocking and cleanup in diff spec tests
+
+### UI improvements
+
+- Updated toast component font weight for better readability
+- Refactored editor styles with improved layout and scrollbar customization
+- Updated dialog component styles for improved appearance
+- Added new CSS variable for editor scrollbar thumb color
+- Updated Fazier badge to rank-2 variants (dark and light modes)
+
+</Update>
+
 ## December 20, 2025
 
 <Update tags={["Improvements"]}>
