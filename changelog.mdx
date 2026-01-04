@@ -5,6 +5,133 @@ description: "Track the latest CodinIT releases, feature updates, bug fixes, and
 
 New releases and improvements
 
+## January 4, 2026 - v1.2.0
+
+<Update tags={["New releases", "Improvements"]}>
+
+### Built-in Tools Infrastructure
+
+- Added comprehensive built-in tools system with 6 core tools:
+  - ReadFile: Intelligent file reading with smart truncation for large files
+  - LSRepo: Repository file listing with glob pattern support
+  - GrepRepo: Regex search across codebase with file filtering
+  - SearchWeb: Web search with Vercel ecosystem first-party docs support
+  - FetchFromWeb: Full web page content fetching and parsing
+  - TodoManager: Structured project task management
+- Implemented tool registry system for dynamic tool management
+
+### CodinIT Pro Subscription System
+
+- Added Pro subscription state management with API verification
+- Integrated Pro features in chat UI: Web Search and Lazy Edits toggles
+- Added Pro subscription management UI in settings
+- Implemented credit tracking and tier management
+
+### MCP (Model Context Protocol) Integration
+
+- Added comprehensive MCP server support (stdio, SSE, streamable-HTTP)
+- Implemented MCP configuration validation and retry endpoints
+- Added MCP marketplace with card grid layout and Pro tier indicators
+- Enhanced external tool connectivity through standardized protocol
+
+### Electron Desktop Enhancements
+
+- Added local file saving functionality for Electron
+- Implemented IPC communication for project initialization
+- Enhanced auto-update system with improved error handling
+
+### Project Management
+
+- Added project name utility for unique project identification
+- Implemented project name persistence in chat history
+- Enhanced workbench with improved file handling
+
+### UI/UX Improvements
+
+#### Settings Redesign
+
+- Complete SettingsTab redesign with framer-motion animations
+- Enhanced ControlPanel with new depth tokens and improved layout
+- Redesigned ConnectionsTab with horizontal navigation
+- Updated all settings components with modernized styling
+
+#### Chat Interface Enhancements
+
+- Redesigned send button with circular shape and upward arrow icon
+- Enhanced thought box with collapsible animation
+- Implemented progressive step reveal animations
+- Improved message spacing and border radius for better readability
+- Added mixed file and tool reference support in autocomplete
+
+#### Visual Design System
+
+- Migrated to modern Zinc color palette with improved contrast
+- Implemented depth token system for consistent visual hierarchy
+- Enhanced workbench header with synchronized width transitions
+- Updated artifact components with modernized card layouts
+
+#### Marketplace & Navigation
+
+- Redesigned MCP marketplace with card grid layout
+- Added Pro tier indicators throughout the interface
+- Replaced sidebar navigation with horizontal tab navigation
+- Enhanced action buttons with rounded pill design
+
+### Performance improvements
+
+#### Memory Management
+
+- Fixed UI freezes with requestIdleCallback yielding implementation
+- Added 1MB streaming content limit to prevent memory overflow
+- Implemented concurrent file writes with queue system
+- Added action queue limits to prevent memory overflow
+
+#### File System Optimizations
+
+- Implemented batch Nanostores updates in FilesStore
+- Increased file watch buffer to 1000ms for better performance
+- Enhanced file locking mechanisms
+
+### Bug fixes
+
+- Improved Hyperbolic API error handling with detailed debugging
+- Fixed workbench positioning to use relative flow layout
+- Removed unnecessary z-index conflicts
+- Fixed header positioning and transparency issues
+- Corrected border opacity in electron title bar
+- Prevented duplicate yml file uploads in release workflow
+- Fixed duplicate release creation and type conflicts
+- Enhanced update checker with reduced API calls
+
+### Test Suite
+
+- Added comprehensive tests for diff utility functions
+- Added tests for LLM message processing functions
+- Implemented console mocking and cleanup in test suites
+- Added storage unit tests and MCP-related tests
+
+### Code Quality Enhancements
+
+- Fixed various linting errors across SCSS and TypeScript files
+- Improved error handling and logging throughout the codebase
+- Enhanced type definitions and removed unused imports
+- Centralized repository configuration management
+
+### Build & Dependencies
+
+- Added @types/node dependency for better TypeScript support
+- Updated UnoCSS configuration with new color palette
+- Enhanced electron build process with improved IPC handlers
+
+### Repository Management
+
+- Added backend folder to gitignore
+- Centralized version and repository configuration
+- Fixed duplicate release workflow issues
+- Updated GitHub funding username
+
+</Update>
+
 ## December 30, 2025
 
 <Update tags={["New releases", "Improvements"]}>
