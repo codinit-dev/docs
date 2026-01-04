@@ -31,7 +31,10 @@
             "group": "Introduction",
             "icon": "book-open",
             "expanded": false,
-            "pages": ["/", "introduction/welcome"]
+            "pages": [
+              "/",
+              "introduction/welcome"
+            ]
           },
           {
             "group": "Getting Started",
@@ -41,12 +44,18 @@
               {
                 "group": "Setup",
                 "expanded": false,
-                "pages": ["quickstart", "getting-started/installation"]
+                "pages": [
+                  "quickstart",
+                  "getting-started/installation"
+                ]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["getting-started/select-your-model", "getting-started/your-first-project"]
+                "pages": [
+                  "getting-started/select-your-model",
+                  "getting-started/your-first-project"
+                ]
               }
             ]
           },
@@ -77,7 +86,7 @@
               }
             ]
           },
-            {
+          {
             "group": "Providers",
             "icon": "cloud",
             "expanded": false,
@@ -113,7 +122,10 @@
             "group": "Comparisons",
             "icon": "scale",
             "expanded": false,
-            "pages": ["comparisons/bolt-vs-codinit", "comparisons/lovable-vs-codinit"]
+            "pages": [
+              "comparisons/bolt-vs-codinit",
+              "comparisons/lovable-vs-codinit"
+            ]
           },
           {
             "group": "Prompting",
@@ -123,12 +135,19 @@
               {
                 "group": "Techniques",
                 "expanded": false,
-                "pages": ["prompting/discussion-mode", "prompting/prompt-engineering-guide", "prompting/prompting-effectively"]
+                "pages": [
+                  "prompting/discussion-mode",
+                  "prompting/prompt-engineering-guide",
+                  "prompting/prompting-effectively"
+                ]
               },
               {
                 "group": "Optimization",
                 "expanded": false,
-                "pages": ["prompting/maximize-token-efficiency", "prompting/plan-your-app"]
+                "pages": [
+                  "prompting/maximize-token-efficiency",
+                  "prompting/plan-your-app"
+                ]
               }
             ]
           },
@@ -136,13 +155,20 @@
             "group": "Model Configuration",
             "icon": "settings",
             "expanded": false,
-            "pages": ["model-config/context-windows", "model-config/model-comparison"]
+            "pages": [
+              "model-config/context-windows",
+              "model-config/model-comparison"
+            ]
           },
           {
             "group": "Hosting",
             "icon": "globe",
             "expanded": false,
-            "pages": ["integrations/vercel", "integrations/netlify", "integrations/cloudflare"]
+            "pages": [
+              "integrations/vercel",
+              "integrations/netlify",
+              "integrations/cloudflare"
+            ]
           },
           {
             "group": "Running Models Locally",
@@ -158,6 +184,7 @@
       },
       {
         "tab": "Essentials",
+        "hidden": true,
         "groups": [
           {
             "group": "Essentials",
@@ -167,12 +194,17 @@
               {
                 "group": "AI Features",
                 "expanded": false,
-                "pages": ["essentials/ai-chat-commands", "essentials/project-templates"]
+                "pages": [
+                  "essentials/ai-chat-commands",
+                  "essentials/project-templates"
+                ]
               },
               {
                 "group": "Configuration",
                 "expanded": false,
-                "pages": ["essentials/customization"]
+                "pages": [
+                  "essentials/customization"
+                ]
               }
             ]
           },
@@ -180,7 +212,12 @@
             "group": "Integrations",
             "icon": "plug",
             "expanded": false,
-            "pages": ["integrations/deployments", "integrations/git", "integrations/supabase", "mcp/mcp-overview"]
+            "pages": [
+              "integrations/deployments",
+              "integrations/git",
+              "integrations/supabase",
+              "mcp/mcp-overview"
+            ]
           }
         ]
       },
@@ -191,7 +228,12 @@
             "group": "Support",
             "icon": "life-buoy",
             "expanded": false,
-            "pages": ["support/frequently-asked-questions", "support/integration-issues", "support/troubleshooting", "changelog"]
+            "pages": [
+              "support/frequently-asked-questions",
+              "support/integration-issues",
+              "support/troubleshooting",
+              "changelog"
+            ]
           }
         ]
       },
