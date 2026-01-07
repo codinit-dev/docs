@@ -163,13 +163,33 @@ Discussion mode always includes interactive quick action buttons:
 
 ## Integration with Other Features
 
-### Combining with Regular Chat
+### Combining with Build Mode
 
-You can switch between discussion mode and regular chat mode:
+You can seamlessly switch between discussion mode and build mode:
 
 1. Use **discussion mode** for planning and architectural decisions
-2. Switch to **regular chat** for implementation and code writing
+2. Click **"Implement this plan"** quick action to switch to build mode and execute the plan
 3. Return to **discussion mode** for reviewing and refining implemented code
+4. The AI maintains context across mode switches
+
+### Search Grounding
+
+Discussion mode has access to web search capabilities:
+
+- **Automatic search** when uncertain about technical information, package details, or API specifications
+- **First-party documentation** search for faster, more accurate results
+- **Current information** rather than relying on potentially outdated knowledge
+- **URL content fetching** when users share links for context
+
+### Support Resources Integration
+
+Discussion mode automatically redirects to official documentation for specific topics:
+
+- **Token efficiency**: Redirects to maximize-token-efficiency guide
+- **Effective prompting**: Links to prompting-effectively documentation
+- **Supabase integration**: Points to Supabase integration docs
+- **Deployment/hosting**: Directs to Netlify and hosting FAQs
+- Uses link quick actions to open documentation in new tabs
 
 ### Using with Project Context
 
@@ -178,8 +198,8 @@ Discussion mode works best when you provide:
 - **Current project structure** and technology stack
 - **Existing code snippets** for review
 - **Performance requirements** and constraints
-- **Team size and expertise** levels
-- **Timeline and resource** considerations
+- **Specific file paths** for targeted guidance
+- **Running processes** (automatically detected by CodinIT)
 
 ## Common Use Cases
 
