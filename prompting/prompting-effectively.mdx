@@ -228,16 +228,31 @@ You can select these in the settings to optimize for your needs.
   system.
 </Callout>
 
-```txt theme={"system"}
-For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+## Custom System Prompts
 
-By default, this template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+You can enhance CodinIT's behavior by adding custom instructions to your project. These work alongside CodinIT's built-in system prompts.
+
+### Example Custom Instructions
+
+```txt
+For all designs I ask you to make, have them be beautiful, not cookie cutter. 
+Make webpages that are fully featured and worthy for production.
+
+By default, this template supports JSX syntax with Tailwind CSS classes, 
+the shadcn/ui library, React hooks, and Lucide React for icons. 
+Do not install other packages for UI themes, icons, etc unless absolutely 
+necessary or I request them.
 
 Use icons from lucide-react for logos.
-
-Use stock photos from unsplash where appropriate.
+Use stock photos from Pexels where appropriate.
 ```
 
-### Tips for the project or system prompts
+### Tips for Custom Instructions
 
-- Include instructions to CodinIT.dev to only change relevant code.
+- **Be specific**: Include instructions about your preferred coding style, libraries, or patterns
+- **Set boundaries**: Tell CodinIT to only change relevant code, not rewrite entire files
+- **Define standards**: Specify naming conventions, file organization, or testing requirements
+- **Provide context**: Explain project-specific constraints or requirements
+- **Override defaults**: Explicitly state if you want different tools than CodinIT's defaults
+
+Note: Custom instructions complement but don't replace CodinIT's core system prompts, which handle artifact generation, WebContainer constraints, and mode-specific behavior.
