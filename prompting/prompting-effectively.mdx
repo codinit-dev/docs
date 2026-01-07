@@ -3,16 +3,24 @@ title: 'Prompt Effectively'
 description: 'Master the art of clear, effective communication with AI models'
 ---
 
-The quality of your results depends heavily on how clearly and effectively you communicate your intentions. Good prompting is a skill that combines clarity, specificity, and understanding of how AI models process information.
+The quality of your results depends heavily on how clearly and effectively you communicate your intentions. CodinIT uses sophisticated system prompts that guide the AI's behavior, and understanding how to work with these prompts will help you get better results.
 
 ## Understanding AI Communication
 
-AI models process your requests through text, so the way you phrase your questions and instructions directly impacts the quality of responses. Effective prompting involves:
+CodinIT processes your requests through specialized system prompts that include:
+
+- **Chain of thought reasoning**: The AI shows its thinking process before providing solutions
+- **Artifact-based responses**: Code and commands are wrapped in structured artifacts
+- **Context awareness**: The AI understands your project structure, running processes, and file changes
+- **Search grounding**: Automatic web search for current information when needed
+
+Effective prompting involves:
 
 - **Clarity**: Being specific about what you want
-- **Context**: Providing necessary background information
+- **Context**: Providing necessary background information (file paths, error messages, requirements)
 - **Structure**: Organizing your requests logically
 - **Iteration**: Refining your approach based on responses
+- **Mode selection**: Using discussion mode for planning, build mode for implementation
 
 ## Example Prompts
 
@@ -80,59 +88,85 @@ These examples demonstrate effective prompting patterns that you can adapt to yo
 
 ### Understanding AI Reasoning
 
-CodinIT provides visual insights into the AI's thinking process:
+CodinIT's system prompts include chain-of-thought instructions that make the AI's reasoning visible:
 
-**Thinking Process Display:**
+**Chain of Thought (`<codinitThinking>` tags):**
 
-- See step-by-step reasoning for complex tasks
-- Understand how the AI breaks down problems
-- Follow the logical flow of solutions
+- The AI shows 2-6 concrete steps it will take before implementing
+- Helps you understand the approach before code is generated
+- Appears at the start of every response in build mode
+- Lists specific actions like "Set up Vite + React project structure" or "Implement core functionality"
 
 **Thought Artifacts:**
 
-- Expandable reasoning containers
+- Expandable reasoning containers in the UI
 - Detailed explanation of decision-making
 - Visual representation of problem-solving steps
+- Shows the AI's planning process transparently
+
+This thinking process is mandatory in CodinIT's system prompts and helps ensure the AI takes a systematic approach to your requests.
 
 ### Using Discussion Mode Effectively
 
 **Planning Phase:**
 
-- Use discussion mode for architecture decisions
+- Click the "Discuss" button to activate discussion mode
+- The AI switches to a specialized consultant prompt
 - Get guidance without code implementation
-- Explore multiple solution approaches
+- Receive plans with numbered steps in plain English
+- Explore multiple solution approaches with reasoning
 - Understand trade-offs and implications
 
 **Implementation Phase:**
 
-- Switch to regular chat for code generation
-- Reference discussion insights in prompts
-- Build upon planned architectures
+- Click "Implement this plan" quick action button
+- Automatically switches to build mode with context
+- The AI generates code based on the discussed plan
+- Reference discussion insights in follow-up prompts
 - Iterate based on discussion feedback
+
+**Key Differences:**
+
+- **Discussion mode**: Plans in plain English, no code snippets, consultative tone
+- **Build mode**: Generates code in artifacts, implements features, shows chain of thought
 
 ## Optimizing for Different AI Models
 
 ### Understanding Model Capabilities
 
-Different AI providers have different strengths:
+CodinIT supports multiple AI providers through its provider system. Different models have different strengths:
 
 **Claude (Anthropic):**
 
 - Excellent at reasoning and analysis
 - Strong code generation capabilities
 - Good for complex problem-solving
+- Works well with CodinIT's chain-of-thought prompting
+- Larger context windows for bigger projects
 
 **GPT Models (OpenAI):**
 
 - Fast and versatile
 - Good for creative tasks
 - Strong at following detailed instructions
+- Cost-effective for simpler tasks
 
-**Other Models:**
+**Other Models (DeepSeek, Gemini, Groq, etc.):**
 
 - Specialized capabilities vary by provider
 - Consider context limits and pricing
 - Test different models for your use case
+- Some excel at specific tasks (e.g., DeepSeek for code)
+
+### Prompt Library Options
+
+CodinIT offers three system prompt variants:
+
+1. **Default Prompt**: Battle-tested standard prompt with comprehensive guidelines
+2. **Fine-Tuned Prompt**: Optimized for better results with advanced techniques
+3. **Experimental Prompt**: Optimized for lower token usage (experimental)
+
+You can select these in the settings to optimize for your needs.
 
 ### Adapting Your Prompts
 
@@ -194,16 +228,31 @@ Different AI providers have different strengths:
   system.
 </Callout>
 
-```txt theme={"system"}
-For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+## Custom System Prompts
 
-By default, this template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+You can enhance CodinIT's behavior by adding custom instructions to your project. These work alongside CodinIT's built-in system prompts.
+
+### Example Custom Instructions
+
+```txt
+For all designs I ask you to make, have them be beautiful, not cookie cutter. 
+Make webpages that are fully featured and worthy for production.
+
+By default, this template supports JSX syntax with Tailwind CSS classes, 
+the shadcn/ui library, React hooks, and Lucide React for icons. 
+Do not install other packages for UI themes, icons, etc unless absolutely 
+necessary or I request them.
 
 Use icons from lucide-react for logos.
-
-Use stock photos from unsplash where appropriate.
+Use stock photos from Pexels where appropriate.
 ```
 
-### Tips for the project or system prompts
+### Tips for Custom Instructions
 
-- Include instructions to CodinIT.dev to only change relevant code.
+- **Be specific**: Include instructions about your preferred coding style, libraries, or patterns
+- **Set boundaries**: Tell CodinIT to only change relevant code, not rewrite entire files
+- **Define standards**: Specify naming conventions, file organization, or testing requirements
+- **Provide context**: Explain project-specific constraints or requirements
+- **Override defaults**: Explicitly state if you want different tools than CodinIT's defaults
+
+Note: Custom instructions complement but don't replace CodinIT's core system prompts, which handle artifact generation, WebContainer constraints, and mode-specific behavior.

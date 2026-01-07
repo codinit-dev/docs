@@ -3,11 +3,11 @@ title: Discussion Mode
 description: Technical consultant mode for collaborative problem-solving and guidance
 ---
 
-Discussion mode transforms the AI into a technical consultant who provides guidance, plans, and structured approaches to development challenges without directly implementing code.
+Discussion mode transforms the AI into a technical consultant who provides guidance, plans, and structured approaches to development challenges without directly implementing code. When activated, CodinIT switches to a specialized system prompt designed specifically for consultative interactions.
 
 ## Overview
 
-In discussion mode, the AI acts as an experienced senior software engineer and technical consultant, offering strategic advice, architectural guidance, and detailed planning for your development projects.
+In discussion mode, the AI acts as an experienced senior software engineer and technical consultant, offering strategic advice, architectural guidance, and detailed planning for your development projects. Unlike build mode, discussion mode focuses on planning and guidance rather than code generation.
 
 ## Key Features
 
@@ -19,12 +19,15 @@ In discussion mode, the AI acts as an experienced senior software engineer and t
 
 ## How It Works
 
-When you activate discussion mode, the AI switches to a specialized prompt that focuses on:
+When you activate discussion mode, CodinIT switches to a specialized system prompt (`discussPrompt`) that fundamentally changes how the AI responds:
 
-- **Planning Over Implementation**: Providing detailed plans rather than writing code
-- **Educational Approach**: Explaining concepts and teaching best practices
-- **Strategic Thinking**: Considering long-term implications and scalability
-- **Collaborative Problem-Solving**: Working with you to develop optimal solutions
+- **Planning Over Implementation**: Provides detailed numbered plans with file references and plain English descriptions instead of code
+- **Educational Approach**: Explains concepts, reasoning, and best practices with "why" behind recommendations
+- **Strategic Thinking**: Uses chain-of-thought reasoning to analyze problems before providing solutions
+- **Collaborative Problem-Solving**: Offers quick action buttons for implementing plans, continuing discussions, or opening referenced files
+- **No Code Generation**: Responses describe changes in plain English rather than providing code snippets
+
+The system prompt explicitly instructs the AI to use phrases like "You should add..." instead of "I will implement..." to maintain the consultative role.
 
 ## When to Use Discussion Mode
 
@@ -64,13 +67,20 @@ Click the "Discuss" button in the chat interface to switch to technical consulta
 
 ### Response Format
 
-In discussion mode, responses typically include:
+In discussion mode, responses follow a specific structure:
 
-- **Clear Plans**: Numbered steps for implementing solutions
-- **Technology Recommendations**: Specific tools and approaches
-- **Best Practice Guidance**: Industry-standard approaches
-- **Educational Context**: Explanations of why certain approaches are recommended
-- **Quick Actions**: Interactive buttons for common next steps
+- **Chain of Thought**: Visible reasoning process showing how the AI analyzes the problem
+- **Clear Plans**: Numbered steps starting with "## The Plan" heading, describing changes in plain English only
+- **File References**: Specific file paths with corresponding quick action buttons to open them
+- **Technology Recommendations**: Specific tools and approaches with reasoning
+- **Best Practice Guidance**: Industry-standard approaches with explanations
+- **Quick Actions**: Interactive buttons at the end of every response:
+  - **Implement**: For executing the outlined plan in build mode
+  - **Message**: For continuing the conversation with specific follow-ups
+  - **Link**: For opening external documentation or resources
+  - **File**: For opening referenced files in the editor
+
+The AI is explicitly instructed to never include code snippets in plans, only plain English descriptions of what needs to change.
 
 ## Best Practices for Discussion Mode
 
@@ -124,38 +134,62 @@ Use the AI's recommendations as a foundation for more detailed questions about i
 
 Discussion mode responses emphasize planning and strategy:
 
-- **Step-by-step implementation plans**
-- **Technology recommendations with reasoning**
-- **Consideration of trade-offs and alternatives**
-- **Scalability and maintainability considerations**
+- **Step-by-step implementation plans** with "## The Plan" heading
+- **Technology recommendations with reasoning** explaining why specific tools are suggested
+- **Consideration of trade-offs and alternatives** for different approaches
+- **Scalability and maintainability considerations** for long-term success
+- **File-specific guidance** indicating exactly which files need modification
 
 ### Educational Approach
 
 Responses include educational elements:
 
-- **Explanation of concepts and principles**
-- **Rationale behind recommendations**
-- **Industry best practices and standards**
-- **Common pitfalls and how to avoid them**
+- **Chain of thought reasoning** visible to users before solutions
+- **Explanation of concepts and principles** with context
+- **Rationale behind recommendations** explaining the "why"
+- **Industry best practices and standards** with current information
+- **Common pitfalls and how to avoid them** based on experience
 
 ### Interactive Elements
 
-Discussion mode often includes interactive elements:
+Discussion mode always includes interactive quick action buttons:
 
-- **Quick action buttons** for common next steps
-- **File references** for examining specific code
-- **Link suggestions** for additional resources
-- **Structured recommendations** with clear priorities\*\*
+- **Implement buttons** to execute plans in build mode (labeled "Implement this plan", "Fix this bug", "Fix these issues", or database-specific actions)
+- **Message buttons** for continuing conversations with specific prompts
+- **Link buttons** for opening external documentation (especially for topics in support resources)
+- **File buttons** for opening referenced files in the editor
+- **Ordered by priority**: Implement actions first, then message, link, and file actions
+- **Limited to 4-5 actions** to avoid overwhelming users
 
 ## Integration with Other Features
 
-### Combining with Regular Chat
+### Combining with Build Mode
 
-You can switch between discussion mode and regular chat mode:
+You can seamlessly switch between discussion mode and build mode:
 
 1. Use **discussion mode** for planning and architectural decisions
-2. Switch to **regular chat** for implementation and code writing
+2. Click **"Implement this plan"** quick action to switch to build mode and execute the plan
 3. Return to **discussion mode** for reviewing and refining implemented code
+4. The AI maintains context across mode switches
+
+### Search Grounding
+
+Discussion mode has access to web search capabilities:
+
+- **Automatic search** when uncertain about technical information, package details, or API specifications
+- **First-party documentation** search for faster, more accurate results
+- **Current information** rather than relying on potentially outdated knowledge
+- **URL content fetching** when users share links for context
+
+### Support Resources Integration
+
+Discussion mode automatically redirects to official documentation for specific topics:
+
+- **Token efficiency**: Redirects to maximize-token-efficiency guide
+- **Effective prompting**: Links to prompting-effectively documentation
+- **Supabase integration**: Points to Supabase integration docs
+- **Deployment/hosting**: Directs to Netlify and hosting FAQs
+- Uses link quick actions to open documentation in new tabs
 
 ### Using with Project Context
 
@@ -164,8 +198,8 @@ Discussion mode works best when you provide:
 - **Current project structure** and technology stack
 - **Existing code snippets** for review
 - **Performance requirements** and constraints
-- **Team size and expertise** levels
-- **Timeline and resource** considerations
+- **Specific file paths** for targeted guidance
+- **Running processes** (automatically detected by CodinIT)
 
 ## Common Use Cases
 
@@ -211,16 +245,40 @@ Analyzing existing codebases, identifying improvement opportunities, planning re
   mode when you're ready to implement the plans and write code.
 </Callout>
 
-## How to use Discussion Mode
+## How to Use Discussion Mode
 
-Discussion Mode lets you explore ideas by chatting with CodinIT without making changes to your code. It is versatile and works well for a wide range of topics. You can use it any time you want to brainstorm or think through ideas.
+Discussion mode lets you explore ideas by chatting with CodinIT without making changes to your code. It is versatile and works well for planning, learning, and problem-solving.
 
-Follow the steps below to use Discussion Mode in a CodinIT project:
+### Activating Discussion Mode
 
-1. Open your CodinIT project.
-2. In the bottom-right corner of the chatbox, click **Discuss**.
-3. Enter your question or prompt, and read the response. You can then either:
-   - Continue the discussion.
-   - Use one of the quick action buttons to implement the suggestion.
+1. Open your CodinIT project
+2. In the bottom-right corner of the chatbox, click the **Discuss** button (chat icon)
+3. The button highlights when discussion mode is active
+4. Click again to return to build mode
 
-<Tip>Discussion Mode highlights blue when active. Click it again to turn it off and return to Build mode.</Tip>
+### Using Discussion Mode Effectively
+
+Once activated, you can:
+
+1. **Ask planning questions** about architecture, design patterns, or implementation approaches
+2. **Request code reviews** for guidance on improving existing code
+3. **Explore technologies** to learn about frameworks, libraries, and best practices
+4. **Debug strategically** by discussing error patterns and systematic approaches
+5. **Use quick actions** to:
+   - Implement the plan in build mode
+   - Continue the discussion with suggested follow-ups
+   - Open referenced files in the editor
+   - Access external documentation
+
+### Response Behavior
+
+In discussion mode, the AI will:
+
+- Show its reasoning process using chain-of-thought
+- Provide plans with numbered steps in plain English
+- Reference specific files with quick action buttons
+- Avoid generating code snippets (descriptions only)
+- Always include interactive quick actions at the end
+- Redirect to official documentation for specific topics
+
+<Tip>Discussion mode is ideal for planning before implementation. Use the "Implement this plan" button to seamlessly switch to build mode and execute your plan.</Tip>

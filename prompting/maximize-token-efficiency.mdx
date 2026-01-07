@@ -7,22 +7,29 @@ Learn how to use AI smartly so you don't run out of credits or money. Think of t
 
 ## What Are Tokens?
 
-CodinIT uses AI that runs on "tokens." Tokens are small pieces of text that the AI reads and writes.
+CodinIT uses AI that runs on "tokens." Tokens are small pieces of text that the AI reads and writes. Understanding token usage helps you optimize costs and stay within model limits.
 
 ### How Tokens Get Used
 
-Tokens are used when:
+Tokens are consumed in several ways:
 
-- **You ask questions**: Your messages to the AI
-- **AI answers**: The code and explanations the AI gives you
-- **Context**: The AI reading your project files to understand what you're building
+- **System prompts**: CodinIT's built-in prompts (default, fine-tuned, or experimental) that guide AI behavior
+- **Your messages**: The questions and requests you send to the AI
+- **AI responses**: The code, explanations, and artifacts the AI generates
+- **Project context**: File contents, file changes, and running processes the AI reads
+- **Chain of thought**: The reasoning process shown in `<codinitThinking>` tags
+- **Conversation history**: Previous messages in the chat thread
 
 ### What Affects Token Usage
 
-- **Which AI model**: Some models cost more than others
-- **Project size**: Bigger projects use more tokens
-- **Answer length**: Long explanations use more tokens than short ones
-- **Chat length**: Longer conversations use more tokens
+- **Which AI model**: Some models cost more per token (Claude vs GPT vs DeepSeek)
+- **System prompt choice**: Fine-tuned prompt uses more tokens than experimental
+- **Project size**: Bigger projects with more files use more context tokens
+- **Answer length**: Long explanations and code use more tokens than short ones
+- **Chat length**: Longer conversations accumulate more history tokens
+- **Mode selection**: Discussion mode may use fewer tokens (no code generation)
+- **Chain of thought**: Visible reasoning adds tokens but improves quality
+- **File context**: The AI reading multiple files to understand your project
 
 <Callout type="info">
   **Token Limits**: Each AI has a maximum amount of text it can handle at once. If you go over, you might get errors.
@@ -65,12 +72,15 @@ CodinIT has buttons and menus that don't use tokens:
 
 ### Use Discussion Mode for Planning
 
-When you just want to talk and plan (not write code), use discussion mode:
+When you just want to talk and plan (not write code), use discussion mode to save tokens:
 
-- **Planning**: Talk about features before building them
-- **Getting advice**: Ask which tools to use
+- **Planning**: Talk about features before building them (no code artifacts generated)
+- **Getting advice**: Ask which tools to use (plain English responses)
 - **Code review**: Discuss improvements without changing code
 - **Learning**: Ask questions without generating code
+- **Architecture decisions**: Get guidance on system design
+
+Discussion mode uses a different system prompt that focuses on planning rather than code generation, which can reduce token usage while still providing valuable guidance. Use the "Implement this plan" button when ready to switch to build mode.
 
 ### Plan Before You Build
 
@@ -121,43 +131,67 @@ When you just want to talk and plan (not write code), use discussion mode:
 - Focus on one part of your app at a time
 
 <Callout type="info">
-  **Discussion Mode**: Use this when you want to talk and plan without writing code. It saves tokens!
+  **Discussion Mode**: Use this when you want to talk and plan without writing code. It uses a different system prompt focused on guidance rather than code generation, which can save tokens.
 </Callout>
 
 <Callout type="tip">
-  **Use Git**: Save your work with Git instead of asking AI to undo things. It's free!
+  **Start New Chats**: When conversations get long, start a new chat to reduce context tokens. CodinIT maintains your project files, so you won't lose work.
 </Callout>
 
-## Choosing the Right AI Model
+<Callout type="tip">
+  **Use Git**: Save your work with Git instead of asking AI to undo things. It's free and doesn't use tokens!
+</Callout>
+
+## Choosing the Right AI Model and Prompt
 
 ### Pick the Right Model for the Job
 
-Different AI models cost different amounts:
+CodinIT supports multiple AI providers with different token costs:
 
-- **Cheaper models** for simple tasks and quick questions
-- **Expensive models** for hard problems and important code
-- **Check limits** - some models can't handle huge projects
+- **Cheaper models** (GPT-3.5, DeepSeek) for simple tasks and quick questions
+- **Mid-range models** (GPT-4, Claude Sonnet) for most development work
+- **Premium models** (Claude Opus) for complex problems and important code
+- **Check context limits** - some models can't handle huge projects
 - **Balance cost and quality** based on what you're doing
 
 ### Different AI Models
 
 **Claude (Anthropic):**
 
-- Great at understanding and writing code
-- Costs more but gives better results
-- Use for complex projects
+- Excellent at reasoning and complex code
+- Larger context windows (200K+ tokens)
+- Higher cost per token but better quality
+- Works well with CodinIT's chain-of-thought prompting
+- Best for: Complex projects, refactoring, architecture
 
 **GPT (OpenAI):**
 
-- Fast and cheaper for many tasks
-- Good for trying things out quickly
-- Use GPT-4 for harder problems
+- Fast and cost-effective for many tasks
+- Good for iterative development
+- GPT-4 for harder problems, GPT-3.5 for simple tasks
+- Best for: Quick iterations, simple features, prototyping
 
-**Other Models:**
+**DeepSeek:**
 
-- Check what they're good at
-- Some work better in certain countries
-- Compare prices for what you need
+- Very cost-effective for code generation
+- Good code quality at lower cost
+- Best for: Budget-conscious development, learning
+
+**Other Models (Gemini, Groq, etc.):**
+
+- Check provider-specific strengths
+- Consider regional availability
+- Compare pricing for your use case
+
+### System Prompt Selection
+
+CodinIT offers three prompt variants that affect token usage:
+
+1. **Default Prompt**: Balanced approach with comprehensive guidelines
+2. **Fine-Tuned Prompt**: More detailed instructions, higher token usage, better results
+3. **Experimental Prompt**: Optimized for lower token usage (may sacrifice some quality)
+
+Choose the experimental prompt if token efficiency is your top priority.
 
 ## Advanced Tips
 

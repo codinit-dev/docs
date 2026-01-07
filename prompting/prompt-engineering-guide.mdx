@@ -3,11 +3,18 @@ title: 'Prompt Engineering Guide'
 description: 'How to talk to AI to get better code'
 ---
 
-Learn how to ask the AI for what you want in a way that gets you the best results. Think of it like giving clear instructions to a helpful assistant.
+Learn how to ask the AI for what you want in a way that gets you the best results. CodinIT uses sophisticated system prompts that guide the AI's behavior, and understanding how to work with these prompts will help you get better results.
 
-## How AI Understands You
+## How CodinIT Processes Your Requests
 
-Different AI models are good at different things. The key is to be clear about what you want, just like explaining something to a friend.
+CodinIT uses different system prompts depending on the mode and settings you choose:
+
+- **Build Mode**: Uses either the default, fine-tuned, or experimental prompt to generate code and implement features
+- **Discussion Mode**: Uses a specialized consultant prompt focused on planning and guidance
+- **Chain of Thought**: The AI shows its reasoning process before providing solutions
+- **Search Grounding**: Automatically searches the web for current information when needed
+
+Different AI models are good at different things. The key is to be clear about what you want and provide sufficient context.
 
 ---
 
@@ -15,7 +22,7 @@ Different AI models are good at different things. The key is to be clear about w
 
 ### Be Specific About Your Tools
 
-The AI works better when you tell it exactly what tools and technologies you want to use. It's like telling a chef what ingredients to cook with.
+CodinIT's system prompts include built-in preferences (like using Vite for web servers and Supabase for databases), but you can override these by being explicit. The AI works better when you tell it exactly what tools and technologies you want to use.
 
 **Good example:**
 
@@ -26,6 +33,20 @@ Build an online store dashboard with:
 - Tailwind CSS to make it look nice
 - React Router to move between pages
 ```
+
+### Built-in Technology Preferences
+
+CodinIT has default preferences configured in its system prompts:
+
+- **Web servers**: Vite (default)
+- **Databases**: Supabase (default), or JavaScript-based alternatives like libsql or sqlite
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Icons**: Lucide React
+- **Images**: Pexels stock photos (direct URLs only)
+- **Package management**: npm
+- **Node.js scripts**: Preferred over shell scripts
+
+You can override these by explicitly specifying different tools in your prompts.
 
 ### Popular Tool Combinations
 
@@ -73,19 +94,30 @@ Build an online store dashboard with:
 
 ### Tips for Different AI Models
 
-**For Claude or Gemini:**
+CodinIT supports multiple AI providers, each with different strengths:
 
-- Give all the information at once
+**For Claude (Anthropic):**
+
+- Excellent at reasoning and complex problem-solving
+- Give all the information at once for best results
 - Use numbered lists to organize your thoughts
 - Include examples of what you want
-- Say how you want the answer formatted
+- Works well with CodinIT's chain-of-thought prompting
 
-**For GPT:**
+**For GPT (OpenAI):**
 
+- Fast and versatile for most tasks
 - Break big requests into smaller pieces
 - Use simple, clear language
 - Show examples of what you mean
 - Be specific about what you want
+
+**For other models (Gemini, DeepSeek, etc.):**
+
+- Check context window limits for large projects
+- Test different models for your specific use case
+- Consider cost vs. quality trade-offs
+- Some models excel at specific tasks (e.g., code generation vs. explanation)
 
 ### Avoid Common Mistakes
 
@@ -104,12 +136,32 @@ Build an online store dashboard with:
 - Ask for checkpoints along the way
 
 <Callout type="info">
-  **Version Numbers**: If you know which version of a tool you're using, tell the AI. This helps it give you code that works.
+  **Version Numbers**: If you know which version of a tool you're using, tell the AI. CodinIT can use search grounding to find current documentation and best practices for specific versions.
 </Callout>
 
 <Callout type="tip">
-  **Start Simple**: Begin with a clear request, then add more details in follow-up messages.
+  **Use Discussion Mode**: For planning and architecture decisions, switch to discussion mode to get guidance without code generation. Then use the "Implement this plan" button to execute in build mode.
 </Callout>
+
+## Understanding CodinIT's System Constraints
+
+CodinIT operates in WebContainer, an in-browser Node.js runtime with specific limitations:
+
+### What Works
+
+- JavaScript and WebAssembly code
+- Node.js scripts and npm packages
+- Vite and other JavaScript-based tools
+- Python (standard library only)
+
+### What Doesn't Work
+
+- Native binaries (C/C++ compiled code)
+- Git commands (use CodinIT's built-in Git integration instead)
+- Python pip packages (standard library only)
+- Supabase CLI (use CodinIT's Supabase integration)
+
+The AI is aware of these constraints and will suggest compatible alternatives automatically.
 
 ## Quick Tips Summary
 
