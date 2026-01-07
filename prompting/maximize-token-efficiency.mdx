@@ -22,10 +22,14 @@ Tokens are consumed in several ways:
 
 ### What Affects Token Usage
 
-- **Which AI model**: Some models cost more than others
-- **Project size**: Bigger projects use more tokens
-- **Answer length**: Long explanations use more tokens than short ones
-- **Chat length**: Longer conversations use more tokens
+- **Which AI model**: Some models cost more per token (Claude vs GPT vs DeepSeek)
+- **System prompt choice**: Fine-tuned prompt uses more tokens than experimental
+- **Project size**: Bigger projects with more files use more context tokens
+- **Answer length**: Long explanations and code use more tokens than short ones
+- **Chat length**: Longer conversations accumulate more history tokens
+- **Mode selection**: Discussion mode may use fewer tokens (no code generation)
+- **Chain of thought**: Visible reasoning adds tokens but improves quality
+- **File context**: The AI reading multiple files to understand your project
 
 <Callout type="info">
   **Token Limits**: Each AI has a maximum amount of text it can handle at once. If you go over, you might get errors.
