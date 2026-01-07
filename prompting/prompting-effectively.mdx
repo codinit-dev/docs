@@ -88,19 +88,23 @@ These examples demonstrate effective prompting patterns that you can adapt to yo
 
 ### Understanding AI Reasoning
 
-CodinIT provides visual insights into the AI's thinking process:
+CodinIT's system prompts include chain-of-thought instructions that make the AI's reasoning visible:
 
-**Thinking Process Display:**
+**Chain of Thought (`<codinitThinking>` tags):**
 
-- See step-by-step reasoning for complex tasks
-- Understand how the AI breaks down problems
-- Follow the logical flow of solutions
+- The AI shows 2-6 concrete steps it will take before implementing
+- Helps you understand the approach before code is generated
+- Appears at the start of every response in build mode
+- Lists specific actions like "Set up Vite + React project structure" or "Implement core functionality"
 
 **Thought Artifacts:**
 
-- Expandable reasoning containers
+- Expandable reasoning containers in the UI
 - Detailed explanation of decision-making
 - Visual representation of problem-solving steps
+- Shows the AI's planning process transparently
+
+This thinking process is mandatory in CodinIT's system prompts and helps ensure the AI takes a systematic approach to your requests.
 
 ### Using Discussion Mode Effectively
 
