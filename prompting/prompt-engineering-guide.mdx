@@ -136,12 +136,32 @@ CodinIT supports multiple AI providers, each with different strengths:
 - Ask for checkpoints along the way
 
 <Callout type="info">
-  **Version Numbers**: If you know which version of a tool you're using, tell the AI. This helps it give you code that works.
+  **Version Numbers**: If you know which version of a tool you're using, tell the AI. CodinIT can use search grounding to find current documentation and best practices for specific versions.
 </Callout>
 
 <Callout type="tip">
-  **Start Simple**: Begin with a clear request, then add more details in follow-up messages.
+  **Use Discussion Mode**: For planning and architecture decisions, switch to discussion mode to get guidance without code generation. Then use the "Implement this plan" button to execute in build mode.
 </Callout>
+
+## Understanding CodinIT's System Constraints
+
+CodinIT operates in WebContainer, an in-browser Node.js runtime with specific limitations:
+
+### What Works
+
+- JavaScript and WebAssembly code
+- Node.js scripts and npm packages
+- Vite and other JavaScript-based tools
+- Python (standard library only)
+
+### What Doesn't Work
+
+- Native binaries (C/C++ compiled code)
+- Git commands (use CodinIT's built-in Git integration instead)
+- Python pip packages (standard library only)
+- Supabase CLI (use CodinIT's Supabase integration)
+
+The AI is aware of these constraints and will suggest compatible alternatives automatically.
 
 ## Quick Tips Summary
 
