@@ -22,7 +22,7 @@ Different AI models are good at different things. The key is to be clear about w
 
 ### Be Specific About Your Tools
 
-The AI works better when you tell it exactly what tools and technologies you want to use. It's like telling a chef what ingredients to cook with.
+CodinIT's system prompts include built-in preferences (like using Vite for web servers and Supabase for databases), but you can override these by being explicit. The AI works better when you tell it exactly what tools and technologies you want to use.
 
 **Good example:**
 
@@ -33,6 +33,20 @@ Build an online store dashboard with:
 - Tailwind CSS to make it look nice
 - React Router to move between pages
 ```
+
+### Built-in Technology Preferences
+
+CodinIT has default preferences configured in its system prompts:
+
+- **Web servers**: Vite (default)
+- **Databases**: Supabase (default), or JavaScript-based alternatives like libsql or sqlite
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Icons**: Lucide React
+- **Images**: Pexels stock photos (direct URLs only)
+- **Package management**: npm
+- **Node.js scripts**: Preferred over shell scripts
+
+You can override these by explicitly specifying different tools in your prompts.
 
 ### Popular Tool Combinations
 
