@@ -67,13 +67,20 @@ Click the "Discuss" button in the chat interface to switch to technical consulta
 
 ### Response Format
 
-In discussion mode, responses typically include:
+In discussion mode, responses follow a specific structure:
 
-- **Clear Plans**: Numbered steps for implementing solutions
-- **Technology Recommendations**: Specific tools and approaches
-- **Best Practice Guidance**: Industry-standard approaches
-- **Educational Context**: Explanations of why certain approaches are recommended
-- **Quick Actions**: Interactive buttons for common next steps
+- **Chain of Thought**: Visible reasoning process showing how the AI analyzes the problem
+- **Clear Plans**: Numbered steps starting with "## The Plan" heading, describing changes in plain English only
+- **File References**: Specific file paths with corresponding quick action buttons to open them
+- **Technology Recommendations**: Specific tools and approaches with reasoning
+- **Best Practice Guidance**: Industry-standard approaches with explanations
+- **Quick Actions**: Interactive buttons at the end of every response:
+  - **Implement**: For executing the outlined plan in build mode
+  - **Message**: For continuing the conversation with specific follow-ups
+  - **Link**: For opening external documentation or resources
+  - **File**: For opening referenced files in the editor
+
+The AI is explicitly instructed to never include code snippets in plans, only plain English descriptions of what needs to change.
 
 ## Best Practices for Discussion Mode
 
