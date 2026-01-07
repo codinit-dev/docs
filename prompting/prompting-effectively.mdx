@@ -134,25 +134,39 @@ This thinking process is mandatory in CodinIT's system prompts and helps ensure 
 
 ### Understanding Model Capabilities
 
-Different AI providers have different strengths:
+CodinIT supports multiple AI providers through its provider system. Different models have different strengths:
 
 **Claude (Anthropic):**
 
 - Excellent at reasoning and analysis
 - Strong code generation capabilities
 - Good for complex problem-solving
+- Works well with CodinIT's chain-of-thought prompting
+- Larger context windows for bigger projects
 
 **GPT Models (OpenAI):**
 
 - Fast and versatile
 - Good for creative tasks
 - Strong at following detailed instructions
+- Cost-effective for simpler tasks
 
-**Other Models:**
+**Other Models (DeepSeek, Gemini, Groq, etc.):**
 
 - Specialized capabilities vary by provider
 - Consider context limits and pricing
 - Test different models for your use case
+- Some excel at specific tasks (e.g., DeepSeek for code)
+
+### Prompt Library Options
+
+CodinIT offers three system prompt variants:
+
+1. **Default Prompt**: Battle-tested standard prompt with comprehensive guidelines
+2. **Fine-Tuned Prompt**: Optimized for better results with advanced techniques
+3. **Experimental Prompt**: Optimized for lower token usage (experimental)
+
+You can select these in the settings to optimize for your needs.
 
 ### Adapting Your Prompts
 
