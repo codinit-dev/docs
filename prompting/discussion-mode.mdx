@@ -19,12 +19,15 @@ In discussion mode, the AI acts as an experienced senior software engineer and t
 
 ## How It Works
 
-When you activate discussion mode, the AI switches to a specialized prompt that focuses on:
+When you activate discussion mode, CodinIT switches to a specialized system prompt (`discussPrompt`) that fundamentally changes how the AI responds:
 
-- **Planning Over Implementation**: Providing detailed plans rather than writing code
-- **Educational Approach**: Explaining concepts and teaching best practices
-- **Strategic Thinking**: Considering long-term implications and scalability
-- **Collaborative Problem-Solving**: Working with you to develop optimal solutions
+- **Planning Over Implementation**: Provides detailed numbered plans with file references and plain English descriptions instead of code
+- **Educational Approach**: Explains concepts, reasoning, and best practices with "why" behind recommendations
+- **Strategic Thinking**: Uses chain-of-thought reasoning to analyze problems before providing solutions
+- **Collaborative Problem-Solving**: Offers quick action buttons for implementing plans, continuing discussions, or opening referenced files
+- **No Code Generation**: Responses describe changes in plain English rather than providing code snippets
+
+The system prompt explicitly instructs the AI to use phrases like "You should add..." instead of "I will implement..." to maintain the consultative role.
 
 ## When to Use Discussion Mode
 
