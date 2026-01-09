@@ -23,18 +23,16 @@ Step 1: Set up your development environment
   <Accordion icon="download" title="Install CodinIT">
     **Desktop App Version (Recommended)**
 
-    Download the latest release from GitHub:
+    Download the latest prebuilt release for macOS, Windows, and Linux:
     - Visit [GitHub Releases](https://github.com/codinit-dev/codinit-dev/releases/latest)
-    - Download the installer for your platform:
-      - **Windows**: `.exe` installer
-      - **macOS**: `.dmg` installer
-      - **Linux**: `.AppImage` or `.deb` package
+    - Download the installer for your platform
     - Run the installer and follow the setup wizard
     - Full-featured native application with automatic updates
 
-    **Alternative: Build from Source (for developers)**
+    **Alternative: Run from Source**
 
-    Desktop App:
+    Clone the repository and install dependencies:
+
     ```bash
     git clone https://github.com/codinit-dev/codinit-dev.git
     cd codinit-dev
@@ -44,23 +42,32 @@ Step 1: Set up your development environment
 
     ```bash pnpm
     pnpm install
-    cp .env.example .env.local
-    pnpm run dev
     ```
 
     ```bash npm
     npm install
-    cp .env.example .env.local
+    ```
+
+    Configure your environment by creating a `.env` file and adding your preferred AI provider keys:
+
+    ```bash
+    # Create .env file with your AI provider API keys
+    # You can mix and match multiple providers
+    ```
+
+    Run the development server:
+
+    ```bash pnpm
+    pnpm run dev
+    ```
+
+    ```bash npm
     npm run dev
     ```
 
-    ```bash yarn
-    yarn install
-    cp .env.example .env.local
-    yarn dev
-    ```
+    The application will be available at `http://localhost:5173`
 
-    <Tip>Both versions offer Different features - choose based on your preference for native or web applications.</Tip>
+    <Tip>Choose the desktop app for a native experience or run from source for development and customization.</Tip>
   </Accordion>
   <Accordion icon="play" title="Launch CodinIT">
     1. Open the CodinIT application
