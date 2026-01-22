@@ -38,9 +38,25 @@ Run models locally using Ollama for privacy, offline access, and control. Requir
 
 See [Ollama model library](https://ollama.com/library) for full list.
 
+## Dynamic Context Windows
+
+CodinIT automatically calculates optimal context windows based on model parameter size:
+
+- **70B+ models:** 32k context window (e.g., Llama 70B)
+- **30B+ models:** 16k context window
+- **7B+ models:** 8k context window
+- **Smaller models:** 4k context window (default)
+
+**Special model families:**
+- Llama 70B models: 32k context
+- Llama 405B models: 128k context
+
+Model labels in CodinIT show both parameter size and context window (e.g., "qwen2.5-coder:32b (32B, 16k ctx)").
+
 ## Notes
 
-- **Context window:** Minimum 12,000 tokens recommended, 32,000 ideal
+- **Auto-detection:** CodinIT automatically detects Ollama running on port 11434
+- **Context window:** Dynamically calculated based on model capabilities
 - **Resource demands:** Large models require significant system resources
 - **Offline capability:** Works without internet after model download
 - **Performance:** May be slow on average hardware
