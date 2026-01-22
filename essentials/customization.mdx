@@ -232,14 +232,22 @@ Configure local AI inference:
 - **OpenAI-compatible**: Custom OpenAI-compatible endpoints
 
 **Local provider settings:**
-- Custom base URL
-- Connection testing
-- Model discovery
+- Automatic detection of running providers
+- Custom base URL configuration
+- Real-time connection status
+- Model discovery and listing
 - Enable/disable toggle
 
 <Tip>
-Local providers require the respective software running on your machine. Connection status is shown in real-time.
+CodinIT automatically detects when Ollama (port 11434) or LM Studio (port 1234) are running on your machine. Detected providers are automatically enabled and appear in your model selector. Connection status updates in real-time.
 </Tip>
+
+**Auto-detection features:**
+- Scans for local providers on startup
+- Automatically enables detected providers
+- Disables providers when they go offline
+- Shows loading states during detection
+- Integrates seamlessly with model selection
 
 ### API keys
 
