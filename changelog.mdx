@@ -5,6 +5,56 @@ description: "Track the latest CodinIT releases, feature updates, bug fixes, and
 
 New releases and improvements
 
+## January 21, 2026
+
+<Update tags={["Improvements", "Bug fixes"]}>
+
+### Local Model Provider Enhancements
+
+- Added automatic detection for local model providers (Ollama and LMStudio)
+  - New `useLocalProviders` hook that detects running instances
+  - Automatically enables detected local providers in settings
+  - Local models now appear in provider/model selectors when available
+- Improved Ollama provider with proper context window calculation based on model size
+- Fixed `updateProviderSettings` function signature for correct type handling
+
+### OpenRouter Model Updates
+
+- Fixed Claude model IDs to use dots instead of dashes (4.5 not 4-5)
+- Removed non-existent GPT models (5.2-thinking, 5.2-instant)
+- Added GPT-4o as reliable fallback model
+- Fixed DeepSeek model ID to use correct free tier variant
+- Updated Claude Sonnet 4.5 context limit to 1M (actual value)
+- All models now use verified OpenRouter API model IDs
+
+### Bug fixes
+
+- Fixed local model server failure issues (PR #69)
+  - Improved error handling for Ollama and LMStudio connections
+  - Better detection and validation of local model availability
+- Fixed tool passing to AI SDK
+  - Removed tools that aren't implemented with valid Zod schemas
+  - Tools are now processed server-side only, avoiding zod-to-json-schema conversion errors
+  - Prevents 'Cannot read properties of undefined (reading "typeName")' errors
+  - Functionality maintained through server-side tool processing (MCP + built-in tools)
+- Updated StickToBottom hook implementation for better scroll behavior
+- Updated Button component styling for improved consistency
+
+### Dependency updates
+
+- Bumped @remix-run/react from 2.17.1 to 2.17.3
+- Bumped @remix-run/node from 2.17.1 to 2.17.2
+- Bumped @modelcontextprotocol/sdk from 1.24.2 to 1.25.2
+- Bumped jspdf from 3.0.3 to 4.0.0
+
+### Documentation
+
+- Removed desktop app instructions from README
+  - Simplified setup documentation
+  - Focused on web-based deployment
+
+</Update>
+
 ## January 4, 2026 - v1.2.0
 
 <Update tags={["New releases", "Improvements"]}>
