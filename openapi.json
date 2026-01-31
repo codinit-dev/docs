@@ -808,6 +808,149 @@
         }
       }
     },
+    "/api/mcp-validate-config": {
+      "post": {
+        "tags": ["MCP"],
+        "summary": "Validate MCP server configuration",
+        "description": "Validates the configuration for a Model Context Protocol server before applying it.",
+        "operationId": "validateMCPConfig",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["serverName", "config"],
+                "properties": {
+                  "serverName": {
+                    "type": "string",
+                    "description": "Name of the MCP server to validate"
+                  },
+                  "config": {
+                    "$ref": "#/components/schemas/MCPServerConfig"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "valid": {
+                      "type": "boolean"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp-retry": {
+      "post": {
+        "tags": ["MCP"],
+        "summary": "Retry MCP server connection",
+        "description": "Attempts to reconnect to a failed or disconnected MCP server and retrieves available tools.",
+        "operationId": "retryMCPConnection",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["serverName"],
+                "properties": {
+                  "serverName": {
+                    "type": "string",
+                    "description": "Name of the MCP server to retry"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Server tools after successful reconnection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "inputSchema": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/check-env-key": {
       "get": {
         "tags": ["Utilities"],
