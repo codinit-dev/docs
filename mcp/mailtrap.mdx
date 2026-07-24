@@ -1,0 +1,70 @@
+---
+title: "Mailtrap MCP"
+description: "Connect Mailtrap's Email API to CodinIT using the official Mailtrap MCP server for sending transactional emails, sandbox testing, and email infrastructure management."
+---
+
+# Mailtrap MCP
+
+The [Mailtrap MCP server](https://github.com/mailtrap/mailtrap-mcp) connects CodinIT to Mailtrap's Email API, letting you send transactional emails, test in sandbox, manage templates, and check delivery logs directly from your AI workflow.
+
+## Prerequisites
+
+- A [Mailtrap account](https://mailtrap.io/signup)
+- A Mailtrap API token from [API settings](https://mailtrap.io/api-tokens)
+- Your Account ID from [account management](https://mailtrap.io/account-management)
+- A verified [sending domain](https://mailtrap.io/sending/domains) for production sending
+
+## Configuration
+
+Add the following to your MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "mailtrap": {
+      "command": "npx",
+      "args": ["-y", "mcp-mailtrap"],
+      "env": {
+        "MAILTRAP_API_TOKEN": "your_mailtrap_api_token",
+        "DEFAULT_FROM_EMAIL": "your_sender@example.com",
+        "MAILTRAP_ACCOUNT_ID": "your_account_id",
+        "MAILTRAP_TEST_INBOX_ID": "your_test_inbox_id"
+      }
+    }
+  }
+}
+```
+
+## What you can do
+
+Once configured, you can use natural language to:
+
+**Send emails:**
+- Send transactional emails via Mailtrap's Email API
+- Use existing email templates
+- Send to multiple recipients
+
+**Test in sandbox:**
+- Send test emails without delivering to real inboxes
+- Preview email content and formatting safely in dev and staging
+
+**Manage email infrastructure:**
+- List and verify sending domains
+- Check delivery logs and sending stats
+- Manage contacts and contact lists
+- Create and manage email templates
+
+## Environment variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `MAILTRAP_API_TOKEN` | Yes | Your Mailtrap API token |
+| `DEFAULT_FROM_EMAIL` | Yes | Default sender email address |
+| `MAILTRAP_ACCOUNT_ID` | Yes | Your Mailtrap account ID |
+| `MAILTRAP_TEST_INBOX_ID` | No | Sandbox inbox ID for testing |
+
+## Resources
+
+- [Mailtrap MCP server on GitHub](https://github.com/mailtrap/mailtrap-mcp)
+- [Mailtrap Email API docs](https://mailtrap.io/docs)
+- [Mailtrap signup](https://mailtrap.io/signup)
